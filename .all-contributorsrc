@@ -1,0 +1,13 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [],
+  "contributorsPerLine": 7,
+  "projectName": "Cake.7zip",
+  "projectOwner": "nils-a",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
