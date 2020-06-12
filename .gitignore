@@ -25,6 +25,7 @@ tools/*
 BuildArtifacts/
 [Oo]bj/
 [Bb]in/
+[Tt]estresults/
 
 # OS Specific files
 *~
@@ -51,3 +52,4 @@ docs/input/tasks/*
 
 # Wyam related
 config.wyam.*
+

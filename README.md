@@ -6,7 +6,7 @@
 [![Codecov Report][codecovimage]][codecov]
 [![NuGet package][nugetimage]][nuget]
 
-> makes 7zip available as a tool in cake
+> makes [7zip](https://7-zip.org/) available as a tool in [cake](https://cakebuild.net/)
 
 ## Table of Contents
 

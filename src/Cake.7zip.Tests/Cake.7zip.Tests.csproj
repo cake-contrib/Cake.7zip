@@ -5,6 +5,8 @@
     <TargetFrameworks Condition="'$(OS)'!='Unix'">$(TargetFrameworks);net461</TargetFrameworks>
 
     <IsPackable>false</IsPackable>
+
+    <RootNamespace>Cake.SevenZip.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,8 +19,8 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="../Cake.7zip/Cake.7zip.csproj" />
-  </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Cake.7zip\Cake.7zip.csproj" />
+  </ItemGroup>
 </Project>

@@ -15,13 +15,14 @@
     <!-- Properties related to packaging -->
     <Authors>Nils Andresen</Authors>
     <Copyright>Copyright © $(FullYear) — Nils Andresen</Copyright>
-    <Description>makes 7zip available as a tool in cake</Description>
+    <Description>makes SevenZip available as a tool in cake</Description>
     <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://nils-a.github.io/Cake.7zip</PackageProjectUrl>
-    <PackageTags>cake;addin;7zip</PackageTags>
-    <RepositoryUrl>https://github.com/nils-a/Cake.7zip.git</RepositoryUrl>
-    <PackageReleaseNotes>https://github.com/nils-a/Cake.7zip/releases/tag/$(Version)</PackageReleaseNotes>
+    <PackageProjectUrl>https://nils-a.github.io/Cake.SevenZip</PackageProjectUrl>
+    <PackageTags>cake;addin;SevenZip</PackageTags>
+    <RepositoryUrl>https://github.com/nils-a/Cake.SevenZip.git</RepositoryUrl>
+    <PackageReleaseNotes>https://github.com/nils-a/Cake.SevenZip/releases/tag/$(Version)</PackageReleaseNotes>
+    <RootNamespace>Cake.SevenZip</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
