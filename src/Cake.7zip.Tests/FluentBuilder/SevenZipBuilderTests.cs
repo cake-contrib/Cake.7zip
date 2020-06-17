@@ -1,8 +1,6 @@
 namespace Cake.SevenZip.Tests.Builder
 {
     using Cake.Core.IO;
-    using Cake.SevenZip.Switches;
-    using Cake.SevenZip.Builder;
 
     using Xunit;
 
@@ -13,13 +11,13 @@ namespace Cake.SevenZip.Tests.Builder
         {
             var fixture = new FluentBuilderFixture();
             fixture.Context
-              .WithAddCommand()
+              .InAddMode()
               .WithArchive(new FilePath("out.zip"))
               .WithFiles(new FilePath("a.txt"))
               .WithFiles(new FilePath("b.txt"))
               .WithVolume(2, VolumeUnit.Gigabytes);
 
-            const string expected = @"-a -v2g ""out.zip"" ""a.txt"" ""b.txt""";
+            const string expected = @"a -v2g ""out.zip"" ""a.txt"" ""b.txt""";
 
             var actual = fixture.EvaluateArgs();
 

@@ -1,7 +1,6 @@
 namespace Cake.SevenZip
 {
     using Cake.Core.Tooling;
-    using Cake.SevenZip.Commands;
 
     /// <summary>
     /// Settings for running 7zip.
@@ -15,6 +14,6 @@ namespace Cake.SevenZip
         /// <value>
         /// The command.
         /// </value>
-        public BaseCommand Command { get; set; }
+        public ICommand Command { get; set; }
     }
 }

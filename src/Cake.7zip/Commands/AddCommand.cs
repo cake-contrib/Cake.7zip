@@ -1,12 +1,10 @@
-namespace Cake.SevenZip.Commands
+namespace Cake.SevenZip
 {
     using System;
-    using System.IO;
     using System.Linq;
 
     using Cake.Core;
     using Cake.Core.IO;
-    using Cake.SevenZip.Switches;
 
     /* Switches that can be used with this command
     -i (Include)
@@ -32,8 +30,10 @@ namespace Cake.SevenZip.Commands
     /// <summary>
     /// Represents an Add-Command.
     /// </summary>
-    public sealed class AddCommand : BaseCommand,
-        ISupportSwitchVolume
+    public sealed class AddCommand : ICommand,
+        ISupportSwitchVolume,
+        ISupportSwitchCompressionMethod,
+        ISupportSwitchArchiveType
     {
         /// <summary>
         /// Gets or sets The list of Files to add to the package.
@@ -51,18 +51,17 @@ namespace Cake.SevenZip.Commands
         /// </summary>
         public FilePath Archive { get; set; }
 
-        /// <summary>
-        /// Gets or Sets Volume-switches.
-        /// </summary>
+        /// <inheritdoc />
         public SwitchVolumeCollection Volumes { get; set; }
 
-        /// <summary>
-        /// Gets or sets the method-switch.
-        /// </summary>
-        public SwitchCompressionMethod Method { get; set; }
+        /// <inheritdoc/>
+        public SwitchCompressionMethod CompressionMethod { get; set; }
+
+        /// <inheritdoc />
+        public SwitchArchiveType ArchiveType { get; set; }
 
         /// <inheritdoc/>
-        internal override void BuildArguments(ref ProcessArgumentBuilder builder)
+        public void BuildArguments(ref ProcessArgumentBuilder builder)
         {
             if (Archive == null)
             {
@@ -75,12 +74,13 @@ namespace Cake.SevenZip.Commands
                 throw new ArgumentException("some input (Files or Directories) is required for add.");
             }
 
-            builder.Append("-a");
+            builder.Append("a");
 
-            foreach (var sw in new BaseSwitch[]
+            foreach (var sw in new ISwitch[]
             {
-        Method,
-        Volumes,
+                ArchiveType,
+                CompressionMethod,
+                Volumes,
             })
             {
                 if (sw == null)

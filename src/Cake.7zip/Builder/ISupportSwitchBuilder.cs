@@ -1,7 +1,5 @@
-namespace Cake.SevenZip.Builder
+namespace Cake.SevenZip
 {
-    using Cake.SevenZip.Switches;
-
     /// <summary>
     /// Base for builders that support switches.
     /// </summary>

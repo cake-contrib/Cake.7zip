@@ -1,15 +1,15 @@
-namespace Cake.SevenZip.Builder
+namespace Cake.SevenZip
 {
     using Cake.Core.IO;
-    using Cake.SevenZip.Commands;
-    using Cake.SevenZip.Switches;
 
     /// <summary>
     /// Builder for <see cref="AddCommand"/>.
     /// </summary>
     /// <seealso cref="ISupportSwitchBuilder{ISupportSwitchVolume}" />
     public sealed class AddCommandBuilder :
-        ISupportSwitchBuilder<ISupportSwitchVolume>
+        ISupportSwitchBuilder<ISupportSwitchVolume>,
+        ISupportSwitchBuilder<ISupportSwitchCompressionMethod>,
+        ISupportSwitchBuilder<ISupportSwitchArchiveType>
     {
         private AddCommand command;
 
@@ -24,6 +24,12 @@ namespace Cake.SevenZip.Builder
 
         /// <inheritdoc/>
         ISupportSwitchVolume ISupportSwitchBuilder<ISupportSwitchVolume>.Command => command;
+
+        /// <inheritdoc/>
+        ISupportSwitchArchiveType ISupportSwitchBuilder<ISupportSwitchArchiveType>.Command => command;
+
+        /// <inheritdoc />
+        ISupportSwitchCompressionMethod ISupportSwitchBuilder<ISupportSwitchCompressionMethod>.Command => command;
 
         /// <summary>
         /// Sets the archive on the <see cref="AddCommand"/>.

@@ -4,6 +4,7 @@ namespace Cake.SevenZip
     using System.Collections.Generic;
 
     using Cake.Core;
+    using Cake.Core.Diagnostics;
     using Cake.Core.IO;
     using Cake.Core.Tooling;
 
@@ -13,6 +14,8 @@ namespace Cake.SevenZip
     /// <seealso cref="Tool{SevenZipSettings}" />
     public sealed class SevenZipRunner : Tool<SevenZipSettings>
     {
+        private readonly ICakeLog log;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SevenZipRunner"/> class.
         /// </summary>
@@ -20,13 +23,16 @@ namespace Cake.SevenZip
         /// <param name="environment">The environment.</param>
         /// <param name="processRunner">The process runner.</param>
         /// <param name="tools">The tool locator.</param>
+        /// <param name="log">The log.</param>
         public SevenZipRunner(
           IFileSystem fileSystem,
           ICakeEnvironment environment,
           IProcessRunner processRunner,
-          IToolLocator tools)
+          IToolLocator tools,
+          ICakeLog log)
           : base(fileSystem, environment, processRunner, tools)
         {
+            this.log = log;
         }
 
         /// <summary>
@@ -51,7 +57,6 @@ namespace Cake.SevenZip
             yield return "7za";
 
             // TODO: What about checking HCR\Applications\7z.exe\shell\open\command
-            // TODO: There's also https://www.nuget.org/packages/7-Zip.CommandLine
         }
 
         /// <inheritdoc/>

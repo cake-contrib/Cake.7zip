@@ -15,14 +15,16 @@
     <!-- Properties related to packaging -->
     <Authors>Nils Andresen</Authors>
     <Copyright>Copyright © $(FullYear) — Nils Andresen</Copyright>
-    <Description>makes SevenZip available as a tool in cake</Description>
-    <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
+    <Description>makes 7zip available as a tool in cake</Description>
+    <PackageIconUrl></PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://nils-a.github.io/Cake.SevenZip</PackageProjectUrl>
+    <PackageProjectUrl>https://nils-a.github.io/Cake.7zip</PackageProjectUrl>
     <PackageTags>cake;addin;SevenZip</PackageTags>
-    <RepositoryUrl>https://github.com/nils-a/Cake.SevenZip.git</RepositoryUrl>
-    <PackageReleaseNotes>https://github.com/nils-a/Cake.SevenZip/releases/tag/$(Version)</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/nils-a/Cake.7zip.git</RepositoryUrl>
+    <PackageReleaseNotes>https://github.com/nils-a/Cake.7zip/releases/tag/</PackageReleaseNotes>
     <RootNamespace>Cake.SevenZip</RootNamespace>
+    <Version>0.0.1</Version>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,5 +33,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>

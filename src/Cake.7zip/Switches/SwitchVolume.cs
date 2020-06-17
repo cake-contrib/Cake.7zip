@@ -1,4 +1,4 @@
-namespace Cake.SevenZip.Switches
+namespace Cake.SevenZip
 {
     using System;
 
@@ -8,8 +8,8 @@ namespace Cake.SevenZip.Switches
     /// <summary>
     /// The Volume-Switch (-v).
     /// </summary>
-    /// <seealso cref="BaseSwitch" />
-    public class SwitchVolume : BaseSwitch
+    /// <seealso cref="ISwitch" />
+    public class SwitchVolume : ISwitch
     {
         /// <summary>
         /// Gets or sets the size.
@@ -28,7 +28,7 @@ namespace Cake.SevenZip.Switches
         public VolumeUnit Unit { get; set; }
 
         /// <inheritdoc/>
-        internal override void BuildArguments(ref ProcessArgumentBuilder builder)
+        public void BuildArguments(ref ProcessArgumentBuilder builder)
         {
             if (Size < 1)
             {

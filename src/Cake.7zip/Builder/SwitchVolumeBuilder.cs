@@ -1,7 +1,5 @@
-namespace Cake.SevenZip.Builder
+namespace Cake.SevenZip
 {
-    using Cake.SevenZip.Switches;
-
     /// <summary>
     /// Extensions for all Builders that support <see cref="ISupportSwitchVolume"/>.
     /// <seealso cref="ISupportSwitchBuilder{ISupportSwitchVolume}"/>

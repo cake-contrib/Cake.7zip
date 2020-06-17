@@ -1,4 +1,4 @@
-﻿namespace Cake.SevenZip.Switches
+namespace Cake.SevenZip
 {
     /// <summary>
     /// Command supports the volumes-switch.

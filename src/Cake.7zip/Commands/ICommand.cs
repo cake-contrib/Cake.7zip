@@ -1,18 +1,18 @@
-namespace Cake.SevenZip.Commands
+namespace Cake.SevenZip
 {
     using Cake.Core.IO;
 
     /// <summary>
     /// Base-Class for commands like <see cref="AddCommand"/>.
     /// </summary>
-    public abstract class BaseCommand
+    public interface ICommand
     {
         /// <summary>
         /// Builds the arguments.
         /// Used internally.
         /// </summary>
         /// <param name="builder">The builder.</param>
-        internal abstract void BuildArguments(ref ProcessArgumentBuilder builder);
+        void BuildArguments(ref ProcessArgumentBuilder builder);
 
         /* Missing:
     b  Benchmark

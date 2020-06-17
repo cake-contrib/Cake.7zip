@@ -1,4 +1,4 @@
-namespace Cake.SevenZip.Switches
+namespace Cake.SevenZip
 {
     using System.Collections.Generic;
 
@@ -8,9 +8,9 @@ namespace Cake.SevenZip.Switches
     /// Base for a collection of switches.
     /// </summary>
     /// <typeparam name="T">The Switch-Type.</typeparam>
-    /// <seealso cref="BaseSwitch" />
-    public class SwitchCollection<T> : BaseSwitch
-      where T : BaseSwitch
+    /// <seealso cref="ISwitch" />
+    public class SwitchCollection<T> : ISwitch
+      where T : ISwitch
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SwitchCollection{T}"/> class.
@@ -38,7 +38,7 @@ namespace Cake.SevenZip.Switches
         }
 
         /// <inheritdoc/>
-        internal override void BuildArguments(ref ProcessArgumentBuilder builder)
+        public void BuildArguments(ref ProcessArgumentBuilder builder)
         {
             foreach (var sw in Switches)
             {

@@ -7,8 +7,6 @@ namespace Cake.SevenZip.Tests
 
     public class SevenZipRunnerFixture : ToolFixture<SevenZipSettings>
     {
-        private ICakeEnvironment environment;
-
         public SevenZipRunnerFixture()
           : base("SevenZip.exe")
         {
@@ -17,7 +15,7 @@ namespace Cake.SevenZip.Tests
 
         protected override void RunTool()
         {
-            var tool = new SevenZipRunner(FileSystem, Environment, ProcessRunner, Tools);
+            var tool = new SevenZipRunner(FileSystem, Environment, ProcessRunner, Tools, new FakeLog());
             tool.Run(Settings);
         }
 

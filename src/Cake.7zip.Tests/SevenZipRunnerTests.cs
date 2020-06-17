@@ -4,8 +4,6 @@ namespace Cake.SevenZip.Tests
 
     using Cake.Core;
     using Cake.Core.IO;
-    using Cake.SevenZip.Commands;
-    using Cake.SevenZip.Switches;
     using Cake.Testing;
 
     using Xunit;
@@ -73,7 +71,7 @@ namespace Cake.SevenZip.Tests
                     }
                 }
             };
-            const string expected = @"-a ""out.zip"" ""a.txt"" ""b.txt""";
+            const string expected = @"a ""out.zip"" ""a.txt"" ""b.txt""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -105,7 +103,7 @@ namespace Cake.SevenZip.Tests
                     }
                 }
             };
-            const string expected = @"-a -v1g -v2m ""out.zip"" ""a.txt"" ""b.txt""";
+            const string expected = @"a -v1g -v2m ""out.zip"" ""a.txt"" ""b.txt""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -113,9 +111,9 @@ namespace Cake.SevenZip.Tests
         }
     }
 
-    internal class NoCommand : BaseCommand
+    internal class NoCommand : ICommand
     {
-        internal override void BuildArguments(ref ProcessArgumentBuilder builder)
+        public void BuildArguments(ref ProcessArgumentBuilder builder)
         {
             // no-op
         }

@@ -20,17 +20,23 @@
 ## Install
 
 ```cs
+#tool nuget:?package=7-Zip.CommandLine
 #addin nuget:?package=Cake.7zip
 ```
 
 ## Usage
 
 ```cs
+#tool nuget:?package=7-Zip.CommandLine
 #addin nuget:?package=Cake.7zip
 
-Task("MyTask").Does(() => {
-  7zip();
-});
+SevenZip(s => s
+  .InAddMode()
+  .WithArchive(File("fluent.zip"))
+  .WithArchiveType(SwitchArchiveType.Zip)
+  .WithFiles(File("a.txt"), File("b.txt"))
+  .WithVolume(700, VolumeUnit.Megabytes)
+  .WithCompressionMethodLevel(9));
 ```
 
 ## Maintainer

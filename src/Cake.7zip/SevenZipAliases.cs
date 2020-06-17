@@ -4,7 +4,6 @@ namespace Cake.SevenZip
 
     using Cake.Core;
     using Cake.Core.Annotations;
-    using Cake.SevenZip.Builder;
 
     /// <summary>
     /// <para>Functions to call <see href="https://7-zip.org/">7-Zip</see>.</para>
@@ -12,6 +11,7 @@ namespace Cake.SevenZip
     /// In order to use this addin, make sure 7zip is installed on the system
     /// and add the following to your build.cake.
     /// <code><![CDATA[
+    /// #tool "nuget:?package=7-Zip.CommandLine"
     /// #addin "nuget:?package=Cake.7zip"
     /// ]]></code>
     /// </para>
@@ -41,7 +41,7 @@ namespace Cake.SevenZip
         /// </code>
         /// </example>
         [CakeMethodAlias]
-        public static void SevenZipBuilder(this ICakeContext context, Action<SevenZipBuilderContext> action)
+        public static void SevenZip(this ICakeContext context, Action<SevenZipBuilderContext> action)
         {
             var builder = new SevenZipBuilderContext();
             action(builder);
@@ -84,7 +84,8 @@ namespace Cake.SevenZip
               context.FileSystem,
               context.Environment,
               context.ProcessRunner,
-              context.Tools);
+              context.Tools,
+              context.Log);
             runner.Run(settings);
         }
     }

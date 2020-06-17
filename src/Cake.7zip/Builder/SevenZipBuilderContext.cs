@@ -1,7 +1,5 @@
-namespace Cake.SevenZip.Builder
+namespace Cake.SevenZip
 {
-    using Cake.SevenZip.Commands;
-
     /// <summary>
     /// Builder for Commands.
     /// Do NOT call WithCommand... multiple times.
@@ -28,7 +26,7 @@ namespace Cake.SevenZip.Builder
         /// Makes this Builder an AddCommand-Builder.
         /// </summary>
         /// <returns><see cref="AddCommandBuilder"/>.</returns>
-        public AddCommandBuilder WithAddCommand()
+        public AddCommandBuilder InAddMode()
         {
             var command = new AddCommand();
             Settings.Command = command;

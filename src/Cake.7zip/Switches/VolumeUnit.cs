@@ -1,7 +1,7 @@
-namespace Cake.SevenZip.Switches
+namespace Cake.SevenZip
 {
     /// <summary>
-    /// Units for <see cref="SwitchVolume"/>.
+    /// Units for <see cref="SwitchCompressionMethod"/>.
     /// </summary>
     public sealed class VolumeUnit
     {
