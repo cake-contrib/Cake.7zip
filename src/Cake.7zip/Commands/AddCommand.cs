@@ -6,34 +6,14 @@ namespace Cake.SevenZip
     using Cake.Core;
     using Cake.Core.IO;
 
-    /* Switches that can be used with this command
-    -i (Include)
-    -m (Method)
-    -p (Set Password)
-    -r (Recurse)
-    -sdel (Delete files after including to archive)
-    -sfx (create SFX)
-    -si (use StdIn)
-    -sni (Store NT security information)
-    -sns (Store NTFS alternate Streams)
-    -so (use StdOut)
-    -spf (Use fully qualified file paths)
-    -ssw (Compress shared files)
-    -stl (Set archive timestamp from the most recently modified file)
-    -t (Type of archive)
-    -u (Update)
-    -v (Volumes)
-    -w (Working Dir)
-    -x (Exclude)
-    */
-
     /// <summary>
     /// Represents an Add-Command.
     /// </summary>
     public sealed class AddCommand : ICommand,
         ISupportSwitchVolume,
         ISupportSwitchCompressionMethod,
-        ISupportSwitchArchiveType
+        ISupportSwitchArchiveType,
+        ISupportSwitchPassword
     {
         /// <summary>
         /// Gets or sets The list of Files to add to the package.
@@ -59,6 +39,9 @@ namespace Cake.SevenZip
 
         /// <inheritdoc />
         public SwitchArchiveType ArchiveType { get; set; }
+
+        /// <inheritdoc />
+        public SwitchPassword Password { get; set; }
 
         /// <inheritdoc/>
         public void BuildArguments(ref ProcessArgumentBuilder builder)

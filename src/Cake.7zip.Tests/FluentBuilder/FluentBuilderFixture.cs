@@ -1,11 +1,9 @@
 namespace Cake.SevenZip.Tests
 {
-    using Cake.Core;
     using Cake.Core.IO;
 
     public class FluentBuilderFixture
     {
-        internal ICakeContext _cakeContext;
         internal SevenZipBuilderContext Context { get; private set; }
 
         public FluentBuilderFixture()

@@ -1,16 +1,23 @@
 namespace Cake.SevenZip.Tests.Settings
 {
-  using System;
+    using System;
 
-  using Cake.Core.IO;
+    using Cake.Core.IO;
 
-  public class SevenZipSettingsFixture
-  {
-    public string Parse(Action<ProcessArgumentBuilder> action)
+    public class SevenZipSettingsFixture
     {
-      var builder = new ProcessArgumentBuilder();
-      action(builder);
-      return builder.Render();
+        public string Parse(Action<ProcessArgumentBuilder> action)
+        {
+            var builder = new ProcessArgumentBuilder();
+            action(builder);
+            return builder.Render();
+        }
+
+        public string ParseSafe(Action<ProcessArgumentBuilder> action)
+        {
+            var builder = new ProcessArgumentBuilder();
+            action(builder);
+            return builder.RenderSafe();
+        }
     }
-  }
 }
