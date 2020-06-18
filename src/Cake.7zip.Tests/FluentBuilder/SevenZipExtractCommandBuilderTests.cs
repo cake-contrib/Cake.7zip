@@ -230,5 +230,21 @@ namespace Cake.SevenZip.Tests.Builder
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Extract_can_use_DisableParsingOfArchiveName()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InExtractMode()
+              .WithArchive(new FilePath("in.zip"))
+              .WithDisableParsingOfArchiveName();
+
+            const string expected = @"x ""in.zip"" -y -an";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

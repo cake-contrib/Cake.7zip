@@ -5,8 +5,6 @@ namespace Cake.SevenZip
 
     /// <summary>
     /// RecurseSubdirectories-switch (-r).
-    /// Does not implement -r0 (enable recurse subdirectories only for wildcard names.)
-    /// because currently no wildcard names are supported, here.
     /// </summary>
     /// <seealso cref="ISwitch" />
     public class SwitchRecurseSubdirectories : ISwitch

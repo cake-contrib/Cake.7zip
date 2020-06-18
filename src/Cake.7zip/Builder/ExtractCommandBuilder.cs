@@ -16,7 +16,8 @@ namespace Cake.SevenZip
         ISupportSwitchBuilder<ISupportSwitchIncludeFilenames>,
         ISupportSwitchBuilder<ISupportSwitchExcludeFilenames>,
         ISupportSwitchBuilder<ISupportSwitchIncludeArchiveFilenames>,
-        ISupportSwitchBuilder<ISupportSwitchExcludeArchiveFilenames>
+        ISupportSwitchBuilder<ISupportSwitchExcludeArchiveFilenames>,
+        ISupportSwitchBuilder<ISupportSwitchDisableParsingOfArchiveName>
     {
         private readonly ExtractCommand command;
 
@@ -59,6 +60,9 @@ namespace Cake.SevenZip
         /// <inheritdoc />
         ISupportSwitchExcludeArchiveFilenames ISupportSwitchBuilder<ISupportSwitchExcludeArchiveFilenames>.Command => command;
 
+        /// <inheritdoc />
+        ISupportSwitchDisableParsingOfArchiveName ISupportSwitchBuilder<ISupportSwitchDisableParsingOfArchiveName>.Command => command;
+
         /// <summary>
         /// Sets the archive on the <see cref="AddCommand"/>.
         /// </summary>
@@ -82,7 +86,7 @@ namespace Cake.SevenZip
 
         /// <summary>
         /// Sets UseFullPaths to false on the <see cref="AddCommand"/>.
-        /// (copies all extracted files to one directory)
+        /// (copies all extracted files to one directory).
         /// </summary>
         /// <returns>The builder, for fluent use.</returns>
         public ExtractCommandBuilder WithoutFullPathExtraction()
