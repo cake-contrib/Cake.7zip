@@ -246,5 +246,21 @@ namespace Cake.SevenZip.Tests.Builder
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Extract_can_use_OverwireMode()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InExtractMode()
+              .WithArchive(new FilePath("in.zip"))
+              .WithOverwriteMode(OverwriteMode.Overwrite);
+
+            const string expected = @"x ""in.zip"" -y -aoa";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

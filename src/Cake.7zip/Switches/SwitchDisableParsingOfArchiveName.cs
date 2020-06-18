@@ -1,4 +1,4 @@
-﻿namespace Cake.SevenZip
+namespace Cake.SevenZip
 {
     /// <summary>
     /// SwitchDisableParsingOfArchiveName-switch (-an).
@@ -9,7 +9,7 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="SwitchDisableParsingOfArchiveName"/> class.
         /// </summary>
-        /// <param name="recurse">The recuse-type.</param>
+        /// <param name="value">The Value.</param>
         public SwitchDisableParsingOfArchiveName(bool value)
             : base("an", value)
         {

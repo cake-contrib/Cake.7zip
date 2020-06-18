@@ -19,7 +19,8 @@ namespace Cake.SevenZip
         ISupportSwitchArchiveType,
         ISupportSwitchIncludeArchiveFilenames,
         ISupportSwitchExcludeArchiveFilenames,
-        ISupportSwitchDisableParsingOfArchiveName
+        ISupportSwitchDisableParsingOfArchiveName,
+        ISupportSwitchOverwriteMode
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtractCommand"/> class.
@@ -76,6 +77,9 @@ namespace Cake.SevenZip
         /// <inheritdoc />
         public SwitchDisableParsingOfArchiveName DisableParsingOfArchiveName { get; set; }
 
+        /// <inheritdoc />
+        public SwitchOverwriteMode OverwriteMode { get; set; }
+
         /// <inheritdoc/>
         public void BuildArguments(ref ProcessArgumentBuilder builder)
         {
@@ -102,6 +106,7 @@ namespace Cake.SevenZip
                 IncludeArchiveFilenames,
                 ExcludeArchiveFilenames,
                 DisableParsingOfArchiveName,
+                OverwriteMode,
             })
             {
                 if (sw == null)
