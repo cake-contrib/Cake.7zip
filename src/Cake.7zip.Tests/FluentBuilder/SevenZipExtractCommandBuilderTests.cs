@@ -262,5 +262,21 @@ namespace Cake.SevenZip.Tests.Builder
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Extract_can_use_OutputDirectory()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InExtractMode()
+              .WithArchive(new FilePath("in.zip"))
+              .WithOutputDirectory(new DirectoryPath("c:\\temp"));
+
+            const string expected = @"x ""in.zip"" -y -o""c:/temp""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

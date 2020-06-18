@@ -18,7 +18,8 @@ namespace Cake.SevenZip
         ISupportSwitchBuilder<ISupportSwitchIncludeArchiveFilenames>,
         ISupportSwitchBuilder<ISupportSwitchExcludeArchiveFilenames>,
         ISupportSwitchBuilder<ISupportSwitchDisableParsingOfArchiveName>,
-        ISupportSwitchBuilder<ISupportSwitchOverwriteMode>
+        ISupportSwitchBuilder<ISupportSwitchOverwriteMode>,
+        ISupportSwitchBuilder<ISupportSwitchOutputDirectory>
     {
         private readonly ExtractCommand command;
 
@@ -66,6 +67,9 @@ namespace Cake.SevenZip
 
         /// <inheritdoc />
         ISupportSwitchOverwriteMode ISupportSwitchBuilder<ISupportSwitchOverwriteMode>.Command => command;
+
+        /// <inheritdoc />
+        ISupportSwitchOutputDirectory ISupportSwitchBuilder<ISupportSwitchOutputDirectory>.Command => command;
 
         /// <summary>
         /// Sets the archive on the <see cref="AddCommand"/>.
