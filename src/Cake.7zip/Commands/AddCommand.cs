@@ -16,7 +16,8 @@ namespace Cake.SevenZip
         ISupportSwitchPassword,
         ISupportSwitchSni,
         ISupportSwitchSns,
-        ISupportSwitchSsw
+        ISupportSwitchSsw,
+        ISupportSwitchStl
     {
         /// <summary>
         /// Gets or sets The list of Files to add to the package.
@@ -55,6 +56,9 @@ namespace Cake.SevenZip
         /// <inheritdoc />
         public SwitchCompressFilesOpenForWriting Ssw { get; set; }
 
+        /// <inheritdoc />
+        public SwitchSetTimestampFromMostRecentFile Stl { get; set; }
+
         /// <inheritdoc/>
         public void BuildArguments(ref ProcessArgumentBuilder builder)
         {
@@ -80,6 +84,7 @@ namespace Cake.SevenZip
                 Sni,
                 Sns,
                 Ssw,
+                Stl,
             })
             {
                 if (sw == null)

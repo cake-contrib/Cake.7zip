@@ -1,0 +1,23 @@
+namespace Cake.SevenZip
+{
+    /// <summary>
+    /// Extensions for all Builders that support <see cref="ISupportSwitchSsw"/>.
+    /// <seealso cref="ISupportSwitchBuilder{T}"/>
+    /// </summary>
+    public static class SwitchSswBuilder
+    {
+        /// <summary>
+        /// fluent setter for <see cref="ISupportSwitchSsw"/>.
+        /// </summary>
+        /// <typeparam name="T">the builder to support the <see cref="ISupportSwitchSsw"/>.</typeparam>
+        /// <param name="this">The builder-instance.</param>
+        /// <returns>The builder-instance for fluent re-use.</returns>
+        public static T WithCompressFilesOpenForWriting<T>(this T @this)
+            where T : ISupportSwitchBuilder<ISupportSwitchSsw>
+        {
+            @this.Command.Ssw = new SwitchCompressFilesOpenForWriting(true);
+
+            return @this;
+        }
+    }
+}

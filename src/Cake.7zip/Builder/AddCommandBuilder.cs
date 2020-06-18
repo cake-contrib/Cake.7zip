@@ -13,7 +13,8 @@ namespace Cake.SevenZip
         ISupportSwitchBuilder<ISupportSwitchPassword>,
         ISupportSwitchBuilder<ISupportSwitchSni>,
         ISupportSwitchBuilder<ISupportSwitchSns>,
-        ISupportSwitchBuilder<ISupportSwitchSsw>
+        ISupportSwitchBuilder<ISupportSwitchSsw>,
+        ISupportSwitchBuilder<ISupportSwitchStl>
     {
         private AddCommand command;
 
@@ -46,6 +47,9 @@ namespace Cake.SevenZip
 
         /// <inheritdoc />
         ISupportSwitchSsw ISupportSwitchBuilder<ISupportSwitchSsw>.Command => command;
+
+        /// <inheritdoc />
+        ISupportSwitchStl ISupportSwitchBuilder<ISupportSwitchStl>.Command => command;
 
         /// <summary>
         /// Sets the archive on the <see cref="AddCommand"/>.

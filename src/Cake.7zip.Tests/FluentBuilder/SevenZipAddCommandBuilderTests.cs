@@ -188,5 +188,22 @@ namespace Cake.SevenZip.Tests.Builder
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Add_can_use_Stl()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithSetTimestampFromMostRecentFile();
+
+            const string expected = @"a -stl ""out.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
     }
 }
