@@ -5,7 +5,7 @@ namespace Cake.SevenZip
     /// (Set archive timestamp from the most recently modified file).
     /// </summary>
     /// <seealso cref="ISupportSwitch" />
-    public interface ISupportSwitchStl : ISupportSwitch
+    public interface ISupportSwitchTimestampFromMostRecentFile : ISupportSwitch
     {
         /// <summary>
         /// Gets or sets the Stl-switch.
@@ -13,6 +13,6 @@ namespace Cake.SevenZip
         /// <value>
         /// The archive timestamp from the most recently modified file-switch.
         /// </value>
-        SwitchSetTimestampFromMostRecentFile Stl { get; set; }
+        SwitchSetTimestampFromMostRecentFile TimestampFromMostRecentFile { get; set; }
     }
 }

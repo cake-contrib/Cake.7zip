@@ -5,7 +5,7 @@ namespace Cake.SevenZip
     /// (NT security information).
     /// </summary>
     /// <seealso cref="ISupportSwitch" />
-    public interface ISupportSwitchSni : ISupportSwitch
+    public interface ISupportSwitchNtSecurityInformation : ISupportSwitch
     {
         /// <summary>
         /// Gets or sets the sni-switch.
@@ -13,6 +13,6 @@ namespace Cake.SevenZip
         /// <value>
         /// The NT security information-switch.
         /// </value>
-        SwitchNtSecurityInformation Sni { get; set; }
+        SwitchNtSecurityInformation NtSecurityInformation { get; set; }
     }
 }

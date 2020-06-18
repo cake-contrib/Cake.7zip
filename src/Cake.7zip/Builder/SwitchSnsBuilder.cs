@@ -1,21 +1,21 @@
 namespace Cake.SevenZip
 {
     /// <summary>
-    /// Extensions for all Builders that support <see cref="ISupportSwitchSns"/>.
+    /// Extensions for all Builders that support <see cref="ISupportSwitchNtfsAlternateStreams"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}"/>
     /// </summary>
     public static class SwitchSnsBuilder
     {
         /// <summary>
-        /// fluent setter for <see cref="ISupportSwitchSns"/>.
+        /// fluent setter for <see cref="ISupportSwitchNtfsAlternateStreams"/>.
         /// </summary>
-        /// <typeparam name="T">the builder to support the <see cref="ISupportSwitchSns"/>.</typeparam>
+        /// <typeparam name="T">the builder to support the <see cref="ISupportSwitchNtfsAlternateStreams"/>.</typeparam>
         /// <param name="this">The builder-instance.</param>
         /// <returns>The builder-instance for fluent re-use.</returns>
         public static T WithNtfsAlternateStreams<T>(this T @this)
-            where T : ISupportSwitchBuilder<ISupportSwitchSns>
+            where T : ISupportSwitchBuilder<ISupportSwitchNtfsAlternateStreams>
         {
-            @this.Command.Sns = new SwitchNtfsAlternateStreams(true);
+            @this.Command.NtfsAlternateStreams = new SwitchNtfsAlternateStreams(true);
 
             return @this;
         }

@@ -3,8 +3,8 @@ namespace Cake.SevenZip
     /// <summary>
     /// A Collection of <see cref="SwitchIncludeFilename"/>.
     /// </summary>
-    /// <seealso cref="SwitchCollection{T}" />
-    public class SwitchIncludeFilenameCollection : SwitchCollection<SwitchIncludeFilename>
+    /// <seealso cref="BaseSwitchCollection{T}" />
+    public class SwitchIncludeFilenameCollection : BaseSwitchCollection<SwitchIncludeFilename>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SwitchIncludeFilenameCollection"/> class.

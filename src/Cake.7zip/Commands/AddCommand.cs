@@ -14,10 +14,10 @@ namespace Cake.SevenZip
         ISupportSwitchCompressionMethod,
         ISupportSwitchArchiveType,
         ISupportSwitchPassword,
-        ISupportSwitchSni,
-        ISupportSwitchSns,
-        ISupportSwitchSsw,
-        ISupportSwitchStl,
+        ISupportSwitchNtSecurityInformation,
+        ISupportSwitchNtfsAlternateStreams,
+        ISupportSwitchCompressFilesOpenForWriting,
+        ISupportSwitchTimestampFromMostRecentFile,
         ISupportSwitchWorkingDirectory,
         ISupportSwitchRecurseSubdirectories,
         ISupportSwitchIncludeFilenames,
@@ -54,16 +54,16 @@ namespace Cake.SevenZip
         public SwitchPassword Password { get; set; }
 
         /// <inheritdoc />
-        public SwitchNtSecurityInformation Sni { get; set; }
+        public SwitchNtSecurityInformation NtSecurityInformation { get; set; }
 
         /// <inheritdoc />
-        public SwitchNtfsAlternateStreams Sns { get; set; }
+        public SwitchNtfsAlternateStreams NtfsAlternateStreams { get; set; }
 
         /// <inheritdoc />
-        public SwitchCompressFilesOpenForWriting Ssw { get; set; }
+        public SwitchCompressFilesOpenForWriting CompressFilesOpenForWriting { get; set; }
 
         /// <inheritdoc />
-        public SwitchSetTimestampFromMostRecentFile Stl { get; set; }
+        public SwitchSetTimestampFromMostRecentFile TimestampFromMostRecentFile { get; set; }
 
         /// <inheritdoc />
         public SwitchWorkingDirectory WorkingDirectory { get; set; }
@@ -105,10 +105,10 @@ namespace Cake.SevenZip
                 Volumes,
                 CompressionMethod,
                 Password,
-                Sni,
-                Sns,
-                Ssw,
-                Stl,
+                NtSecurityInformation,
+                NtfsAlternateStreams,
+                CompressFilesOpenForWriting,
+                TimestampFromMostRecentFile,
                 WorkingDirectory,
                 RecurseSubdirectories,
                 IncludeFilenames,

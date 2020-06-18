@@ -5,7 +5,7 @@ namespace Cake.SevenZip
     /// (Compress files open for writing).
     /// </summary>
     /// <seealso cref="ISupportSwitch" />
-    public interface ISupportSwitchSsw : ISupportSwitch
+    public interface ISupportSwitchCompressFilesOpenForWriting : ISupportSwitch
     {
         /// <summary>
         /// Gets or sets the Ssw-switch.
@@ -13,6 +13,6 @@ namespace Cake.SevenZip
         /// <value>
         /// The Compress files open for writing-switch.
         /// </value>
-        SwitchCompressFilesOpenForWriting Ssw { get; set; }
+        SwitchCompressFilesOpenForWriting CompressFilesOpenForWriting { get; set; }
     }
 }

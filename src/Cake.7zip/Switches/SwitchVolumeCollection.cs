@@ -3,8 +3,8 @@ namespace Cake.SevenZip
     /// <summary>
     /// A Collection of <see cref="SwitchVolume"/>.
     /// </summary>
-    /// <seealso cref="SwitchCollection{T}" />
-    public class SwitchVolumeCollection : SwitchCollection<SwitchVolume>
+    /// <seealso cref="BaseSwitchCollection{T}" />
+    public class SwitchVolumeCollection : BaseSwitchCollection<SwitchVolume>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SwitchVolumeCollection"/> class.

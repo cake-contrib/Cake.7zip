@@ -11,10 +11,10 @@ namespace Cake.SevenZip
         ISupportSwitchBuilder<ISupportSwitchCompressionMethod>,
         ISupportSwitchBuilder<ISupportSwitchArchiveType>,
         ISupportSwitchBuilder<ISupportSwitchPassword>,
-        ISupportSwitchBuilder<ISupportSwitchSni>,
-        ISupportSwitchBuilder<ISupportSwitchSns>,
-        ISupportSwitchBuilder<ISupportSwitchSsw>,
-        ISupportSwitchBuilder<ISupportSwitchStl>,
+        ISupportSwitchBuilder<ISupportSwitchNtSecurityInformation>,
+        ISupportSwitchBuilder<ISupportSwitchNtfsAlternateStreams>,
+        ISupportSwitchBuilder<ISupportSwitchCompressFilesOpenForWriting>,
+        ISupportSwitchBuilder<ISupportSwitchTimestampFromMostRecentFile>,
         ISupportSwitchBuilder<ISupportSwitchWorkingDirectory>,
         ISupportSwitchBuilder<ISupportSwitchRecurseSubdirectories>,
         ISupportSwitchBuilder<ISupportSwitchIncludeFilenames>,
@@ -46,16 +46,16 @@ namespace Cake.SevenZip
         ISupportSwitchPassword ISupportSwitchBuilder<ISupportSwitchPassword>.Command => command;
 
         /// <inheritdoc />
-        ISupportSwitchSni ISupportSwitchBuilder<ISupportSwitchSni>.Command => command;
+        ISupportSwitchNtSecurityInformation ISupportSwitchBuilder<ISupportSwitchNtSecurityInformation>.Command => command;
 
         /// <inheritdoc />
-        ISupportSwitchSns ISupportSwitchBuilder<ISupportSwitchSns>.Command => command;
+        ISupportSwitchNtfsAlternateStreams ISupportSwitchBuilder<ISupportSwitchNtfsAlternateStreams>.Command => command;
 
         /// <inheritdoc />
-        ISupportSwitchSsw ISupportSwitchBuilder<ISupportSwitchSsw>.Command => command;
+        ISupportSwitchCompressFilesOpenForWriting ISupportSwitchBuilder<ISupportSwitchCompressFilesOpenForWriting>.Command => command;
 
         /// <inheritdoc />
-        ISupportSwitchStl ISupportSwitchBuilder<ISupportSwitchStl>.Command => command;
+        ISupportSwitchTimestampFromMostRecentFile ISupportSwitchBuilder<ISupportSwitchTimestampFromMostRecentFile>.Command => command;
 
         /// <inheritdoc />
         ISupportSwitchWorkingDirectory ISupportSwitchBuilder<ISupportSwitchWorkingDirectory>.Command => command;

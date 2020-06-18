@@ -191,6 +191,24 @@ namespace Cake.SevenZip.Tests.Builder
         }
 
         [Fact]
+        public void Add_can_use_multiple_Volumes()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithVolume(5)
+              .WithVolume(2, VolumeUnit.Kilobytes);
+
+            const string expected = @"a -v5 -v2k ""out.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void Add_can_use_Ssw()
         {
             var fixture = new FluentBuilderFixture();
@@ -276,6 +294,23 @@ namespace Cake.SevenZip.Tests.Builder
         }
 
         [Fact]
+        public void Add_can_use_IncludeFiles_with_recusion()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithIncludeFilenames(RecurseType.Enable, "*.pdf");
+
+            const string expected = @"a -ir!*.pdf ""out.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void Add_can_use_ExcludeFiles()
         {
             var fixture = new FluentBuilderFixture();
@@ -286,6 +321,23 @@ namespace Cake.SevenZip.Tests.Builder
               .WithExcludeFilenames("*.pdf");
 
             const string expected = @"a -x!*.pdf ""out.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Add_can_use_ExcludeFiles_with_recusion()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithExcludeFilenames(RecurseType.Disable, "*.pdf");
+
+            const string expected = @"a -xr-!*.pdf ""out.zip"" ""in.txt""";
 
             var actual = fixture.EvaluateArgs();
 

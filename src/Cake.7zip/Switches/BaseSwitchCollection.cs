@@ -9,13 +9,13 @@ namespace Cake.SevenZip
     /// </summary>
     /// <typeparam name="T">The Switch-Type.</typeparam>
     /// <seealso cref="ISwitch" />
-    public abstract class SwitchCollection<T> : ISwitch
+    public abstract class BaseSwitchCollection<T> : ISwitch
       where T : ISwitch
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SwitchCollection{T}"/> class.
+        /// Initializes a new instance of the <see cref="BaseSwitchCollection{T}"/> class.
         /// </summary>
-        protected SwitchCollection()
+        protected BaseSwitchCollection()
         {
             Switches = new List<T>();
         }

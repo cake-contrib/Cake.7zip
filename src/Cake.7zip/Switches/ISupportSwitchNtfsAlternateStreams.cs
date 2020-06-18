@@ -5,7 +5,7 @@ namespace Cake.SevenZip
     /// (NTFS alternate Streams).
     /// </summary>
     /// <seealso cref="ISupportSwitch" />
-    public interface ISupportSwitchSns : ISupportSwitch
+    public interface ISupportSwitchNtfsAlternateStreams : ISupportSwitch
     {
         /// <summary>
         /// Gets or sets the Sns-switch.
@@ -13,6 +13,6 @@ namespace Cake.SevenZip
         /// <value>
         /// The NTFS alternate Streams-switch.
         /// </value>
-        SwitchNtfsAlternateStreams Sns { get; set; }
+        SwitchNtfsAlternateStreams NtfsAlternateStreams { get; set; }
     }
 }
