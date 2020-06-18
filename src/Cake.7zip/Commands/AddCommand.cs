@@ -22,7 +22,8 @@ namespace Cake.SevenZip
         ISupportSwitchRecurseSubdirectories,
         ISupportSwitchIncludeFilenames,
         ISupportSwitchExcludeFilenames,
-        ISupportSwitchUpdateOptions
+        ISupportSwitchUpdateOptions,
+        ISupportSwitchDeleteAfterCompression
     {
         /// <summary>
         /// Gets or sets The list of Files to add to the package.
@@ -79,6 +80,9 @@ namespace Cake.SevenZip
         /// <inheritdoc />
         public SwitchUpdateOptions UpdateOptions { get; set; }
 
+        /// <inheritdoc />
+        public SwitchDeleteAfterCompression DeleteAfterCompression { get; set; }
+
         /// <inheritdoc/>
         public void BuildArguments(ref ProcessArgumentBuilder builder)
         {
@@ -110,6 +114,7 @@ namespace Cake.SevenZip
                 IncludeFilenames,
                 ExcludeFilenames,
                 UpdateOptions,
+                DeleteAfterCompression,
             })
             {
                 if (sw == null)

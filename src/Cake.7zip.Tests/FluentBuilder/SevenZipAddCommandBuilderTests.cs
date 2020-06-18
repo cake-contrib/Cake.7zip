@@ -309,5 +309,22 @@ namespace Cake.SevenZip.Tests.Builder
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Add_can_use_DeleteAfterCompression()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithDeleteAfterCompression();
+
+            const string expected = @"a -sdel ""out.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
     }
 }
