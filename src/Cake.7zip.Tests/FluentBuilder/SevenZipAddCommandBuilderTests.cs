@@ -171,5 +171,22 @@ namespace Cake.SevenZip.Tests.Builder
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Add_can_use_Ssw()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithCompressFilesOpenForWriting();
+
+            const string expected = @"a -ssw ""out.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

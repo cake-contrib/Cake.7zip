@@ -1,6 +1,5 @@
-﻿namespace Cake.SevenZip
+namespace Cake.SevenZip
 {
-
     /// <summary>
     /// Extensions for all Builders that support <see cref="ISupportSwitchSns"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}"/>
@@ -8,7 +7,7 @@
     public static class SwitchSnsBuilder
     {
         /// <summary>
-        /// fluent setter for <see cref="ISupportSwitchSni"/>.
+        /// fluent setter for <see cref="ISupportSwitchSns"/>.
         /// </summary>
         /// <typeparam name="T">the builder to support the <see cref="ISupportSwitchSns"/>.</typeparam>
         /// <param name="this">The builder-instance.</param>

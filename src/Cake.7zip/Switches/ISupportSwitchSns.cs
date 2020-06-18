@@ -1,4 +1,4 @@
-﻿namespace Cake.SevenZip
+namespace Cake.SevenZip
 {
     /// <summary>
     /// Command supports the sns-switch.
