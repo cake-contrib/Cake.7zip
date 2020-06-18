@@ -1,11 +1,11 @@
-namespace Cake.SevenZip
+﻿namespace Cake.SevenZip
 {
     /// <summary>
     /// Command supports the i-switch.
     /// (Include filenames).
     /// </summary>
     /// <seealso cref="ISupportSwitch" />
-    public interface ISupportSwitchIncludeFilenames : ISupportSwitch
+    public interface ISupportSwitchIncludeArchiveFilenames : ISupportSwitch
     {
         /// <summary>
         /// Gets or sets the IncludeFilenames-switch.
@@ -13,6 +13,6 @@ namespace Cake.SevenZip
         /// <value>
         /// The IncludeFlienames.
         /// </value>
-        SwitchIncludeFilenameCollection IncludeFilenames { get; set; }
+        SwitchIncludeArchiveFilenameCollection IncludeArchiveFilenames { get; set; }
     }
 }

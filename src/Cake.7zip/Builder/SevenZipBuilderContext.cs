@@ -32,5 +32,16 @@ namespace Cake.SevenZip
             Settings.Command = command;
             return new AddCommandBuilder(ref command);
         }
+
+        /// <summary>
+        /// Makes this Builder an ExtractCommand-Builder.
+        /// </summary>
+        /// <returns><see cref="ExtractCommandBuilder"/>.</returns>
+        public ExtractCommandBuilder InExtractMode()
+        {
+            var command = new ExtractCommand();
+            Settings.Command = command;
+            return new ExtractCommandBuilder(ref command);
+        }
     }
 }
