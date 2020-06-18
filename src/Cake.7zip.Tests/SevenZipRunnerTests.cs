@@ -15,7 +15,7 @@ namespace Cake.SevenZip.Tests
         {
             var fixture = new SevenZipRunnerFixture { Settings = null };
 
-            Action result = () => fixture.Run();
+            void result() => fixture.Run();
 
             Assert.Throws<ArgumentNullException>(result);
         }
@@ -33,7 +33,7 @@ namespace Cake.SevenZip.Tests
             fixture.GivenDefaultToolDoNotExist();
             const string expectedMessage = "7-Zip: Could not locate executable.";
 
-            Action result = () => fixture.Run();
+            void result() => fixture.Run();
 
             var ex = Assert.Throws<CakeException>(result);
             Assert.Equal(expectedMessage, ex.Message);
@@ -51,7 +51,7 @@ namespace Cake.SevenZip.Tests
             };
             const string expectedMessage = "7-Zip: Command can not be null - a command is needed to run!";
 
-            Action result = () => fixture.Run();
+            void result() => fixture.Run();
 
             var ex = Assert.Throws<CakeException>(result);
             Assert.Equal(expectedMessage, ex.Message);

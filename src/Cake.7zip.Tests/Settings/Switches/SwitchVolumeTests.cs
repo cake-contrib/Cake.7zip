@@ -92,7 +92,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
             var sut = new SwitchVolume();
             const string expectedMessage = "Can not create volumes with size < 1";
 
-            Action result = () => fixture.Parse(b => sut.BuildArguments(ref b));
+            void result() => fixture.Parse(b => sut.BuildArguments(ref b));
 
             var ex = Assert.Throws<ArgumentException>(result);
             Assert.Equal(expectedMessage, ex.Message);
@@ -108,7 +108,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
             };
             const string expectedMessage = "Can not create volumes with size < 1";
 
-            Action result = () => fixture.Parse(b => sut.BuildArguments(ref b));
+            void result() => fixture.Parse(b => sut.BuildArguments(ref b));
 
             var ex = Assert.Throws<ArgumentException>(result);
             Assert.Equal(expectedMessage, ex.Message);

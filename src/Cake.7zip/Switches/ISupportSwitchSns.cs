@@ -8,7 +8,7 @@ namespace Cake.SevenZip
     public interface ISupportSwitchSns : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the volume-switch.
+        /// Gets or sets the Sns-switch.
         /// </summary>
         /// <value>
         /// The volumes.

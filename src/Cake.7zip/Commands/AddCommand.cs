@@ -17,7 +17,8 @@ namespace Cake.SevenZip
         ISupportSwitchSni,
         ISupportSwitchSns,
         ISupportSwitchSsw,
-        ISupportSwitchStl
+        ISupportSwitchStl,
+        ISupportSwitchWorkingDirectory
     {
         /// <summary>
         /// Gets or sets The list of Files to add to the package.
@@ -59,6 +60,9 @@ namespace Cake.SevenZip
         /// <inheritdoc />
         public SwitchSetTimestampFromMostRecentFile Stl { get; set; }
 
+        /// <inheritdoc />
+        public SwitchWorkingDirectory WorkingDirectory { get; set; }
+
         /// <inheritdoc/>
         public void BuildArguments(ref ProcessArgumentBuilder builder)
         {
@@ -85,6 +89,7 @@ namespace Cake.SevenZip
                 Sns,
                 Ssw,
                 Stl,
+                WorkingDirectory,
             })
             {
                 if (sw == null)

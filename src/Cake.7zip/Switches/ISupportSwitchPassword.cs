@@ -1,4 +1,4 @@
-﻿namespace Cake.SevenZip
+namespace Cake.SevenZip
 {
     /// <summary>
     /// Command supports the volumes-switch.
@@ -7,7 +7,7 @@
     public interface ISupportSwitchPassword : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the volume-switch.
+        /// Gets or sets the password-switch.
         /// </summary>
         /// <value>
         /// The volumes.

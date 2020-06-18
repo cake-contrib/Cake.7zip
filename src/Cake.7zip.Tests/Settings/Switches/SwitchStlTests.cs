@@ -1,6 +1,5 @@
-﻿namespace Cake.SevenZip.Tests.Settings.Switches
+namespace Cake.SevenZip.Tests.Settings.Switches
 {
-
     using Xunit;
 
     public class SwitchStlTests

@@ -1,4 +1,4 @@
-﻿namespace Cake.SevenZip
+namespace Cake.SevenZip
 {
     /// <summary>
     /// Command supports the stl-switch.
@@ -8,7 +8,7 @@
     public interface ISupportSwitchStl : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the volume-switch.
+        /// Gets or sets the Stl-switch.
         /// </summary>
         /// <value>
         /// The volumes.
