@@ -1,8 +1,8 @@
-﻿namespace Cake.SevenZip
+namespace Cake.SevenZip
 {
     /// <summary>
     /// Extensions for all Builders that support <see cref="ISupportSwitchPassword"/>.
-    /// <seealso cref="ISupportSwitchBuilder{ISupportSwitchPassword}"/>
+    /// <seealso cref="ISupportSwitchBuilder{T}"/>
     /// </summary>
     public static class SwitchPasswordBuilder
     {

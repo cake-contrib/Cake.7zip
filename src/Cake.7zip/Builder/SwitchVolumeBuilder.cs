@@ -2,7 +2,7 @@ namespace Cake.SevenZip
 {
     /// <summary>
     /// Extensions for all Builders that support <see cref="ISupportSwitchVolume"/>.
-    /// <seealso cref="ISupportSwitchBuilder{ISupportSwitchVolume}"/>
+    /// <seealso cref="ISupportSwitchBuilder{T}"/>
     /// </summary>
     public static class SwitchVolumeBuilder
     {

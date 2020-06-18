@@ -13,7 +13,9 @@ namespace Cake.SevenZip
         ISupportSwitchVolume,
         ISupportSwitchCompressionMethod,
         ISupportSwitchArchiveType,
-        ISupportSwitchPassword
+        ISupportSwitchPassword,
+        ISupportSwitchSni,
+        ISupportSwitchSns
     {
         /// <summary>
         /// Gets or sets The list of Files to add to the package.
@@ -43,6 +45,12 @@ namespace Cake.SevenZip
         /// <inheritdoc />
         public SwitchPassword Password { get; set; }
 
+        /// <inheritdoc />
+        public SwitchNtSecurityInformation Sni { get; set; }
+
+        /// <inheritdoc />
+        public SwitchNtfsAlternateStreams Sns { get; set; }
+
         /// <inheritdoc/>
         public void BuildArguments(ref ProcessArgumentBuilder builder)
         {
@@ -62,8 +70,11 @@ namespace Cake.SevenZip
             foreach (var sw in new ISwitch[]
             {
                 ArchiveType,
-                CompressionMethod,
                 Volumes,
+                CompressionMethod,
+                Password,
+                Sni,
+                Sns,
             })
             {
                 if (sw == null)
