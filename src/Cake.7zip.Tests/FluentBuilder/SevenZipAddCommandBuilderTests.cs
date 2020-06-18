@@ -276,7 +276,7 @@ namespace Cake.SevenZip.Tests.Builder
         }
 
         [Fact]
-        public void Add_can_use_ExcludeFIles()
+        public void Add_can_use_ExcludeFiles()
         {
             var fixture = new FluentBuilderFixture();
             fixture.Context
@@ -286,6 +286,24 @@ namespace Cake.SevenZip.Tests.Builder
               .WithExcludeFilenames("*.pdf");
 
             const string expected = @"a -x!*.pdf ""out.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Add_can_use_UpdateOptions()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithUpdateOptions(x => x.P = UpdateAction.Copy)
+              .WithUpdateOptions(x => x.Q = UpdateAction.Ignore);
+
+            const string expected = @"a -up1q0 ""out.zip"" ""in.txt""";
 
             var actual = fixture.EvaluateArgs();
 

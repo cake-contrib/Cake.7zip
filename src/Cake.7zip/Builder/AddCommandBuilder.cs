@@ -18,7 +18,8 @@ namespace Cake.SevenZip
         ISupportSwitchBuilder<ISupportSwitchWorkingDirectory>,
         ISupportSwitchBuilder<ISupportSwitchRecurseSubdirectories>,
         ISupportSwitchBuilder<ISupportSwitchIncludeFilenames>,
-        ISupportSwitchBuilder<ISupportSwitchExcludeFilenames>
+        ISupportSwitchBuilder<ISupportSwitchExcludeFilenames>,
+        ISupportSwitchBuilder<ISupportSwitchUpdateOptions>
     {
         private readonly AddCommand command;
 
@@ -66,6 +67,9 @@ namespace Cake.SevenZip
 
         /// <inheritdoc />
         ISupportSwitchExcludeFilenames ISupportSwitchBuilder<ISupportSwitchExcludeFilenames>.Command => command;
+
+        /// <inheritdoc />
+        ISupportSwitchUpdateOptions ISupportSwitchBuilder<ISupportSwitchUpdateOptions>.Command => command;
 
         /// <summary>
         /// Sets the archive on the <see cref="AddCommand"/>.

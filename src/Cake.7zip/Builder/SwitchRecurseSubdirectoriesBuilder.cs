@@ -11,7 +11,7 @@ namespace Cake.SevenZip
         /// </summary>
         /// <typeparam name="T">the builder to support the <see cref="ISupportSwitchRecurseSubdirectories"/>.</typeparam>
         /// <param name="this">The builder-instance.</param>
-        /// <param name="type">The Recurse-type</param>
+        /// <param name="type">The Recurse-type.</param>
         /// <returns>The builder-instance for fluent re-use.</returns>
         public static T WithRecurseSubdirectories<T>(this T @this, RecurseType type)
             where T : ISupportSwitchBuilder<ISupportSwitchRecurseSubdirectories>

@@ -1,6 +1,5 @@
-﻿namespace Cake.SevenZip
+namespace Cake.SevenZip
 {
-
     /// <summary>
     /// A Collection of <see cref="SwitchIncludeFilename"/>.
     /// </summary>
