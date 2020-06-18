@@ -11,7 +11,7 @@ namespace Cake.SevenZip
         /// Gets or sets the Stl-switch.
         /// </summary>
         /// <value>
-        /// The volumes.
+        /// The archive timestamp from the most recently modified file-switch.
         /// </value>
         SwitchSetTimestampFromMostRecentFile Stl { get; set; }
     }

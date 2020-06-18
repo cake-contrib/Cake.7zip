@@ -11,7 +11,7 @@ namespace Cake.SevenZip
         /// Gets or sets the Ssw-switch.
         /// </summary>
         /// <value>
-        /// The volumes.
+        /// The Compress files open for writing-switch.
         /// </value>
         SwitchCompressFilesOpenForWriting Ssw { get; set; }
     }

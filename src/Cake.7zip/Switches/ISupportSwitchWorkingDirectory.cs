@@ -1,4 +1,4 @@
-﻿namespace Cake.SevenZip
+namespace Cake.SevenZip
 {
     /// <summary>
     /// Command supports the w-switch.
@@ -11,7 +11,7 @@
         /// Gets or sets the working direcotry-switch.
         /// </summary>
         /// <value>
-        /// The volumes.
+        /// The Working directory-switch.
         /// </value>
         SwitchWorkingDirectory WorkingDirectory { get; set; }
     }

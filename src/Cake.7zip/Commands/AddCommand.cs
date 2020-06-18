@@ -18,7 +18,10 @@ namespace Cake.SevenZip
         ISupportSwitchSns,
         ISupportSwitchSsw,
         ISupportSwitchStl,
-        ISupportSwitchWorkingDirectory
+        ISupportSwitchWorkingDirectory,
+        ISupportSwitchRecurseSubdirectories,
+        ISupportSwitchIncludeFilenames,
+        ISupportSwitchExcludeFilenames
     {
         /// <summary>
         /// Gets or sets The list of Files to add to the package.
@@ -63,6 +66,15 @@ namespace Cake.SevenZip
         /// <inheritdoc />
         public SwitchWorkingDirectory WorkingDirectory { get; set; }
 
+        /// <inheritdoc />
+        public SwitchRecurseSubdirectories RecurseSubdirectories { get; set; }
+
+        /// <inheritdoc />
+        public SwitchIncludeFilenameCollection IncludeFilenames { get; set; }
+
+        /// <inheritdoc />
+        public SwitchExcludeFilenameCollection ExcludeFilenames { get; set; }
+
         /// <inheritdoc/>
         public void BuildArguments(ref ProcessArgumentBuilder builder)
         {
@@ -90,6 +102,9 @@ namespace Cake.SevenZip
                 Ssw,
                 Stl,
                 WorkingDirectory,
+                RecurseSubdirectories,
+                IncludeFilenames,
+                ExcludeFilenames,
             })
             {
                 if (sw == null)

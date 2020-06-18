@@ -10,7 +10,7 @@ namespace Cake.SevenZip
         /// Gets or sets the password-switch.
         /// </summary>
         /// <value>
-        /// The volumes.
+        /// The Password.
         /// </value>
         SwitchPassword Password { get; set; }
     }

@@ -1,7 +1,5 @@
 namespace Cake.SevenZip
 {
-    using System;
-
     using Cake.Core;
     using Cake.Core.IO;
 

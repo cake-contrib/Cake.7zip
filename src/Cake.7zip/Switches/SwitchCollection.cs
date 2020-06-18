@@ -9,7 +9,7 @@ namespace Cake.SevenZip
     /// </summary>
     /// <typeparam name="T">The Switch-Type.</typeparam>
     /// <seealso cref="ISwitch" />
-    public class SwitchCollection<T> : ISwitch
+    public abstract class SwitchCollection<T> : ISwitch
       where T : ISwitch
     {
         /// <summary>

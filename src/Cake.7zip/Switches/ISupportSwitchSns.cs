@@ -11,7 +11,7 @@ namespace Cake.SevenZip
         /// Gets or sets the Sns-switch.
         /// </summary>
         /// <value>
-        /// The volumes.
+        /// The NTFS alternate Streams-switch.
         /// </value>
         SwitchNtfsAlternateStreams Sns { get; set; }
     }

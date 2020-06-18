@@ -11,7 +11,7 @@ namespace Cake.SevenZip
         /// Gets or sets the sni-switch.
         /// </summary>
         /// <value>
-        /// The volumes.
+        /// The NT security information-switch.
         /// </value>
         SwitchNtSecurityInformation Sni { get; set; }
     }
