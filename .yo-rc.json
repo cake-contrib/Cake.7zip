@@ -2,7 +2,7 @@
   "generator-cake-addin": {
     "promptValues": {
       "projectName": "7zip",
-      "repositoryOwner": "nils-a",
+      "repositoryOwner": "cake-contrib",
       "projectMaintainer": "nils-a",
       "author": "Nils Andresen",
       "description": "makes 7zip available as a tool in cake",
