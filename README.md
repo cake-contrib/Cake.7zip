@@ -83,8 +83,8 @@ Thanks goes to these wonderful people ([emoji key][emoji-key]):
 [all-contributors]: https://github.com/all-contributors/all-contributors
 [appveyor]: https://ci.appveyor.com/project/cakecontrib/cake-7zip
 [appveyorimage]: https://img.shields.io/appveyor/ci/cakecontrib/cake-7zip.svg?logo=appveyor&style=flat-square
-[codecov]: https://codecov.io/gh/cakecontrib/Cake.7zip
-[codecovimage]: https://img.shields.io/codecov/c/github/cakecontrib/Cake.7zip.svg?logo=codecov&style=flat-square
+[codecov]: https://codecov.io/gh/cake-contrib/Cake.7zip
+[codecovimage]: https://img.shields.io/codecov/c/github/cake-contrib/Cake.7zip.svg?logo=codecov&style=flat-square
 [contrib-covenant]: https://www.contributor-covenant.org/version/1/4/code-of-conduct
 [emoji-key]: https://allcontributors.org/docs/en/emoji-key
 [maintainer]: https://github.com/nils-a
