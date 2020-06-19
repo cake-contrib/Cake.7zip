@@ -41,6 +41,19 @@ SevenZip(s => s
   .WithCompressionMethodLevel(9));
 ```
 
+### Extracting files
+
+```cs
+#tool nuget:?package=7-Zip.CommandLine
+#addin nuget:?package=Cake.7zip
+
+SevenZip(s => s
+  .InExtractMode()
+  .WithArchive(File("path/to/file.zip"))
+  .WithArchiveType(SwitchArchiveType.Zip)
+  .WithOutputDirectory("some/other/directory"));
+```
+
 ## Maintainer
 
 [Nils Andresen @nils-a][maintainer]
@@ -68,10 +81,10 @@ Thanks goes to these wonderful people ([emoji key][emoji-key]):
 [MIT License © Nils Andresen][license]
 
 [all-contributors]: https://github.com/all-contributors/all-contributors
-[appveyor]: https://ci.appveyor.com/project/nilsa/cake-7zip
-[appveyorimage]: https://img.shields.io/appveyor/ci/nilsa/cake-7zip.svg?logo=appveyor&style=flat-square
-[codecov]: https://codecov.io/gh/nils-a/Cake.7zip
-[codecovimage]: https://img.shields.io/codecov/c/github/nils-a/Cake.7zip.svg?logo=codecov&style=flat-square
+[appveyor]: https://ci.appveyor.com/project/cakecontrib/cake-7zip
+[appveyorimage]: https://img.shields.io/appveyor/ci/cakecontrib/cake-7zip.svg?logo=appveyor&style=flat-square
+[codecov]: https://codecov.io/gh/cakecontrib/Cake.7zip
+[codecovimage]: https://img.shields.io/codecov/c/github/cakecontrib/Cake.7zip.svg?logo=codecov&style=flat-square
 [contrib-covenant]: https://www.contributor-covenant.org/version/1/4/code-of-conduct
 [emoji-key]: https://allcontributors.org/docs/en/emoji-key
 [maintainer]: https://github.com/nils-a
