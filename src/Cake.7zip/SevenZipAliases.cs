@@ -39,6 +39,19 @@ namespace Cake.SevenZip
         /// });
         /// ]]>
         /// </code>
+        /// <code>
+        /// <![CDATA[
+        /// Task("UnzipIt")
+        ///     .Does(() =>
+        /// {
+        ///     SevenZip(m => m
+        ///       .InExtractMode()
+        ///       .WithArchive(File("path/to/file.zip"))
+        ///       .WithArchiveType(SwitchArchiveType.Zip)
+        ///       .WithOutputDirectory("some/other/directory"));
+        /// });
+        /// ]]>
+        /// </code>
         /// </example>
         [CakeMethodAlias]
         public static void SevenZip(this ICakeContext context, Action<SevenZipBuilderContext> action)

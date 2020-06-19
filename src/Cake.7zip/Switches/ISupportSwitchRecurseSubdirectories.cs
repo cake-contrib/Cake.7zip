@@ -8,10 +8,10 @@ namespace Cake.SevenZip
     public interface ISupportSwitchRecurseSubdirectories : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the ExcludeFilenames-switch.
+        /// Gets or sets the RecurseSubdirectories-switch.
         /// </summary>
         /// <value>
-        /// The ExcludeFilenames.
+        /// The RecurseSubdirectories.
         /// </value>
         SwitchRecurseSubdirectories RecurseSubdirectories { get; set; }
     }
