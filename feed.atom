@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+	<id>http://cake-contrib.github.io/Cake.7zip</id>
+	<title>Cake.7zip</title>
+	<link rel="self" href="http://cake-contrib.github.io/Cake.7zip" />
+	<rights>2020</rights>
+	<updated>2020-06-19T18:29:26Z</updated>
+</feed>

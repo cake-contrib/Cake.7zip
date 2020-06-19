@@ -1,21 +1,19 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.7zip/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.7zip/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.7zip - Cake.7zip</title>
+        <title>Cake.7zip - API - SwitchArchiveType.Gzip Property</title>
         <link href="/Cake.7zip/assets/css/highlight.css" rel="stylesheet">
-        <link href="/Cake.7zip/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/Cake.7zip/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/Cake.7zip/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/Cake.7zip/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/Cake.7zip/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/Cake.7zip/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/Cake.7zip/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/Cake.7zip/assets/css/override.css" rel="stylesheet" />
+        <link href="/Cake.7zip/assets/css/override.css" rel="stylesheet">
         <script src="/Cake.7zip/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/Cake.7zip/assets/js/bootstrap.min.js"></script>        
         <script src="/Cake.7zip/assets/js/app.min.js"></script>         
@@ -31,7 +29,7 @@
 
         
     </head>
-    <body class="hold-transition wyam layout-boxed layout-top-nav no-gutter">    
+    <body class="hold-transition wyam layout-boxed  ">    
         <div class="top-banner"></div>
         <div class="wrapper with-container">
             <!-- Header -->
@@ -43,6 +41,10 @@
                          
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
                                         
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
@@ -54,7 +56,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
                         <ul class="nav navbar-nav">                            
-                                    <li><a href="/Cake.7zip/api">API</a></li>
+                                    <li class="active"><a href="/Cake.7zip/api">API</a></li>
  
                         </ul>       
                     </div>
@@ -65,19 +67,87 @@
             </header>
             
             <!-- Left side column. contains the logo and sidebar -->
-            <aside class="main-sidebar hidden">
+            <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/cake-contrib/Cake.7zip/tree/develop/docs/input/index.cshtml"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
-    <div id="infobar-headings"></div>
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Value">Value</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
                                      
-                    
+                    	
+	    <script src="/Cake.7zip/assets/js/lunr.min.js"></script>
+    <script src="/Cake.7zip/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
 
                     <ul class="sidebar-menu">
                         
+			<li class="header">Namespace</li>
+		<li><a href="/Cake.7zip/api/Cake.SevenZip">Cake<wbr>.SevenZip</a></li>
+		<li class="header">Type</li>
+		<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchArchiveType">SwitchArchiveType</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Property Members</li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchArchiveType/F2D32467">Bzip2</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchArchiveType/A6DC247A">Cab</a></li>
+				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip/SwitchArchiveType/BDBE2DC1">Gzip</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchArchiveType/4ADCF018">Lzma</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchArchiveType/46C3DAA0">SevenZip</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchArchiveType/3779FA7E">Tar</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchArchiveType/B97CBF62">Xz</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchArchiveType/19BFB352">Zip</a></li>
+			<li class="header">Method Members</li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchArchiveType/55FE6BEF">BuildArguments<wbr>(<wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></li>
+
 
                     </ul>
                             
@@ -90,40 +160,60 @@
 
 
 
-		<section class="content-header">
-			<h1>Cake.7zip</h1>
-		</section>
-	<section class="content">
-		
-<div class="container">				
-	<h1>What is it?</h1>
-    <p>
-        Cake.7zip is an Addin for <a href="http://cakebuild.net/">Cake</a> to use <a href="https://www.7-zip.org/">7Zip</a>.
-    </p>
-</div>
-<div class="container">
-	<h1>Usage</h1>
-  <div>
-  <h2>Usage in Cake</H2>
-    <p>
-        Have a look at <a href="api/Cake.SevenZip/SevenZipAliases/">SevenZipAliases</a> on how to integrate with <a href="http://cakebuild.net/">Cake</a>. There are also some examples there.
-    </p>
-  </div>
-  <div>
-  <h2>Available Commands</H2>
-    <p>
-        All available Commands are listed at the <a href="api/Cake.SevenZip/ICommand/">ICommand</a>-Interface.
-    </p>
-  </div>
-  <div>
-  <h2>Available Switches</H2>
-    <p>
-        All available Switches are listed at the <a href="api/Cake.SevenZip/ISupportSwitch/">ISupportSwitch</a>-Interface. However, not all commands support every switch.
-    </p>
-  </div>
-</div>
+<section class="content-header">
+			<h3><a href="/Cake.7zip/api/Cake.SevenZip/SwitchArchiveType">SwitchArchiveType</a>.</h3>
+	<h1>Gzip <small>Property</small></h1>
+</section>
+<section class="content">
+	
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    Gets the type: GZip.
+    </div>
 
-	</section>
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<dl class="dl-horizontal">	
+						
+						<dt>Namespace</dt>
+						<dd><a href="/Cake.7zip/api/Cake.SevenZip">Cake<wbr>.SevenZip</a></dd>
+					
+						<dt>Containing Type</dt>
+						<dd><a href="/Cake.7zip/api/Cake.SevenZip/SwitchArchiveType">SwitchArchiveType</a></dd>		
+					
+				</dl>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>public static SwitchArchiveType Gzip { get; }</code></pre>
+
+
+
+
+
+	<h1 id="Value">Value</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+					<td><a href="/Cake.7zip/api/Cake.SevenZip/SwitchArchiveType">SwitchArchiveType</a></td>
+					<td></td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>	
+
+
+	
+</section>
                 
             </div>           
             
@@ -208,5 +298,5 @@
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>
