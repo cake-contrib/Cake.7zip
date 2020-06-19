@@ -1,17 +1,24 @@
-﻿namespace Cake.SevenZip
+namespace Cake.SevenZip
 {
     /// <summary>
-    /// Command supports the an-switch.
-    /// (Disable parsing of archive_name).
-    /// </summary>
+    /// <para>
+    /// Command supports switch -an (Disable parsing of archive_name).
+    /// </para>
+    /// <para>
+    /// The Switch is <see cref="SwitchDisableParsingOfArchiveName"/>.
+    /// </para>
+    /// <para>
+    /// The Builder is <see cref="SwitchDisableParsingOfArchiveNameBuilder"/>.
+    /// </para>
     /// <seealso cref="ISupportSwitch" />
+    /// </summary>
     public interface ISupportSwitchDisableParsingOfArchiveName : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the DisableParsingOfArchiveName-switch.
+        /// Gets or sets the SwitchDisableParsingOfArchiveName.
         /// </summary>
         /// <value>
-        /// The DisableParsingOfArchiveName.
+        /// SwitchDisableParsingOfArchiveName.
         /// </value>
         SwitchDisableParsingOfArchiveName DisableParsingOfArchiveName { get; set; }
     }

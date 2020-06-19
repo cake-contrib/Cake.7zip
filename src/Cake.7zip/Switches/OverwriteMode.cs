@@ -1,7 +1,14 @@
 namespace Cake.SevenZip
 {
     /// <summary>
+    /// <para>
     /// Specifies the overwrite mode during extraction, to overwrite files already present on disk.
+    /// </para>
+    /// <para>
+    /// <list type="bullet">
+    /// <item><description><see cref="SwitchOverwriteMode"/></description></item>
+    /// </list>
+    /// </para>
     /// </summary>
     public class OverwriteMode
     {

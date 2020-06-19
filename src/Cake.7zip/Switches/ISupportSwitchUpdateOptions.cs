@@ -1,17 +1,24 @@
 namespace Cake.SevenZip
 {
     /// <summary>
-    /// Command supports the u-switch.
-    /// (Update options).
-    /// </summary>
+    /// <para>
+    /// Command supports switch -u (Update options).
+    /// </para>
+    /// <para>
+    /// The Switch is <see cref="SwitchUpdateOptions"/>.
+    /// </para>
+    /// <para>
+    /// The Builder is <see cref="SwitchUpdateOptionsBuilder"/>.
+    /// </para>
     /// <seealso cref="ISupportSwitch" />
+    /// </summary>
     public interface ISupportSwitchUpdateOptions : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the u-switch.
+        /// Gets or sets the SwitchUpdateOptions.
         /// </summary>
         /// <value>
-        /// The Update options-switch.
+        /// SwitchUpdateOptions.
         /// </value>
         SwitchUpdateOptions UpdateOptions { get; set; }
     }

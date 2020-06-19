@@ -2,6 +2,11 @@ namespace Cake.SevenZip
 {
     /// <summary>
     /// Units for <see cref="SwitchCompressionMethod"/>.
+    /// <para>
+    /// <list type="bullet">
+    /// <item><description><see cref="SwitchUpdateOptions"/></description></item>
+    /// </list>
+    /// </para>
     /// </summary>
     public sealed class VolumeUnit
     {

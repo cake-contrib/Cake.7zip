@@ -5,10 +5,13 @@ namespace Cake.SevenZip
     using Cake.Core.IO;
 
     /// <summary>
-    /// Base for a collection of switches.
+    /// Base for for switches that can be given multiple times.
+    /// An example is <see cref="ISupportSwitchExcludeFilenames"/> (-x!*.pdf -x!*.xml) which uses
+    /// <see cref="SwitchExcludeFilenameCollection"/> (which implements this BaseCollection) to set
+    /// multiple <see cref="SwitchExcludeFilename"/>.
+    /// <seealso cref="ISwitch" />
     /// </summary>
     /// <typeparam name="T">The Switch-Type.</typeparam>
-    /// <seealso cref="ISwitch" />
     public abstract class BaseSwitchCollection<T> : ISwitch
       where T : ISwitch
     {

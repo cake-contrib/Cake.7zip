@@ -1,16 +1,24 @@
 namespace Cake.SevenZip
 {
     /// <summary>
-    /// Command supports the volumes-switch.
-    /// </summary>
+    /// <para>
+    /// Command supports switch -v (Create Volumes).
+    /// </para>
+    /// <para>
+    /// The Switch is <see cref="SwitchVolumeCollection"/>.
+    /// </para>
+    /// <para>
+    /// The Builder is <see cref="SwitchVolumeBuilder"/>.
+    /// </para>
     /// <seealso cref="ISupportSwitch" />
+    /// </summary>
     public interface ISupportSwitchVolume : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the volume-switch.
+        /// Gets or sets the SwitchVolumeCollection.
         /// </summary>
         /// <value>
-        /// The volumes.
+        /// SwitchVolumeCollection.
         /// </value>
         SwitchVolumeCollection Volumes { get; set; }
     }

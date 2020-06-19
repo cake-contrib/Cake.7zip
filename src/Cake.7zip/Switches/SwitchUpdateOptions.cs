@@ -7,9 +7,20 @@ namespace Cake.SevenZip
     using Cake.Core.IO;
 
     /// <summary>
-    /// The update action -Switch (-u).
-    /// </summary>
+    /// <para>
+    /// -u (Update options) switch.
+    /// </para>
+    /// <para>
+    /// Specifies how to update files in an archive and (or) how to create new archives.
+    /// </para>
+    /// <para>
+    /// <list type="bullet">
+    /// <item><description><see cref="ISupportSwitchUpdateOptions"/></description></item>
+    /// <item><description><see cref="SwitchUpdateOptionsBuilder"/></description></item>
+    /// </list>
+    /// </para>
     /// <seealso cref="ISwitch" />
+    /// </summary>
     public class SwitchUpdateOptions : ISwitch
     {
         /// <summary>

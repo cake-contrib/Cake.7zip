@@ -4,7 +4,18 @@ namespace Cake.SevenZip
     using Cake.Core.IO;
 
     /// <summary>
-    /// Switch for type of the archive.
+    /// <para>
+    /// -t (set Type of archive) switch.
+    /// </para>
+    /// <para>
+    /// Specifies the type of archive.
+    /// </para>
+    /// <para>
+    /// <list type="bullet">
+    /// <item><description><see cref="ISupportSwitchArchiveType"/></description></item>
+    /// <item><description><see cref="SwitchArchiveTypeBuilder"/></description></item>
+    /// </list>
+    /// </para>
     /// </summary>
     /// <seealso cref="ISwitch" />
     public class SwitchArchiveType : ISwitch

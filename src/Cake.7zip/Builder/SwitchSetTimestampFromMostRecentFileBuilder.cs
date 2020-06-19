@@ -4,7 +4,7 @@ namespace Cake.SevenZip
     /// Extensions for all Builders that support <see cref="ISupportSwitchTimestampFromMostRecentFile"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}"/>
     /// </summary>
-    public static class SwitchStlBuilder
+    public static class SwitchSetTimestampFromMostRecentFileBuilder
     {
         /// <summary>
         /// fluent setter for <see cref="ISupportSwitchTimestampFromMostRecentFile"/>.

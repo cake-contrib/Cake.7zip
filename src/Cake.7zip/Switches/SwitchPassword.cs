@@ -4,9 +4,20 @@ namespace Cake.SevenZip
     using Cake.Core.IO;
 
     /// <summary>
-    /// The Password-Switch (-p).
-    /// </summary>
+    /// <para>
+    /// -p (set Password) switch.
+    /// </para>
+    /// <para>
+    /// Specifies password.
+    /// </para>
+    /// <para>
+    /// <list type="bullet">
+    /// <item><description><see cref="ISupportSwitchPassword"/></description></item>
+    /// <item><description><see cref="SwitchPasswordBuilder"/></description></item>
+    /// </list>
+    /// </para>
     /// <seealso cref="ISwitch" />
+    /// </summary>
     public class SwitchPassword : ISwitch
     {
         private readonly string password;

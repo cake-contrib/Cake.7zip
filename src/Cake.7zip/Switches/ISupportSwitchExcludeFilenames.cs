@@ -1,17 +1,24 @@
-﻿namespace Cake.SevenZip
+namespace Cake.SevenZip
 {
     /// <summary>
-    /// Command supports the x-switch.
-    /// (Exclude filenames).
-    /// </summary>
+    /// <para>
+    /// Command supports switch -x (Exclude filenames).
+    /// </para>
+    /// <para>
+    /// The Switch is <see cref="SwitchExcludeFilenameCollection"/>.
+    /// </para>
+    /// <para>
+    /// The Builder is <see cref="SwitchExcludeFilenamesBuilder"/>.
+    /// </para>
     /// <seealso cref="ISupportSwitch" />
+    /// </summary>
     public interface ISupportSwitchExcludeFilenames : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the ExcludeFilenames-switch.
+        /// Gets or sets the SwitchExcludeFilenameCollection.
         /// </summary>
         /// <value>
-        /// The ExcludeFilenames.
+        /// SwitchExcludeFilenameCollection.
         /// </value>
         SwitchExcludeFilenameCollection ExcludeFilenames { get; set; }
     }

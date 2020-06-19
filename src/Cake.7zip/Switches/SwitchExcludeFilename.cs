@@ -4,9 +4,22 @@ namespace Cake.SevenZip
     using Cake.Core.IO;
 
     /// <summary>
-    /// The exclude-Files- switch (-x).
+    /// <para>
+    /// -x (Exclude filenames) switch.
+    /// </para>
+    /// <para>
+    /// Specifies which filenames or wildcarded names must be excluded from the operation.
+    /// Multiple exclude switches are supported.
+    /// </para>
+    /// <para>
+    /// <list type="bullet">
+    /// <item><description><see cref="ISupportSwitchExcludeFilenames"/></description></item>
+    /// <item><description><see cref="SwitchExcludeFilenamesBuilder"/></description></item>
+    /// <item><description><see cref="SwitchExcludeFilenameCollection"/></description></item>
+    /// </list>
+    /// </para>
+    /// <seealso cref="ISwitch" />
     /// </summary>
-    /// <seealso cref="Cake.SevenZip.ISwitch" />
     public class SwitchExcludeFilename : ISwitch
     {
         private readonly string wildcard;

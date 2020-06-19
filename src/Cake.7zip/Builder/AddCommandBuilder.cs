@@ -4,8 +4,8 @@ namespace Cake.SevenZip
 
     /// <summary>
     /// Builder for <see cref="AddCommand"/>.
-    /// </summary>
     /// <seealso cref="ISupportSwitchBuilder{T}" />
+    /// </summary>
     public sealed class AddCommandBuilder :
         ISupportSwitchBuilder<ISupportSwitchVolume>,
         ISupportSwitchBuilder<ISupportSwitchCompressionMethod>,

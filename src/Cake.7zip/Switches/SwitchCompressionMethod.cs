@@ -4,9 +4,20 @@ namespace Cake.SevenZip
     using Cake.Core.IO;
 
     /// <summary>
-    /// Method-Switch (-m).
-    /// </summary>
+    /// <para>
+    /// -m (Set compression Method) switch.
+    /// </para>
+    /// <para>
+    /// Specifies the compression method.
+    /// </para>
+    /// <para>
+    /// <list type="bullet">
+    /// <item><description><see cref="ISupportSwitchCompressionMethod"/></description></item>
+    /// <item><description><see cref="SwitchCompressionMethodBuilder"/></description></item>
+    /// </list>
+    /// </para>
     /// <seealso cref="ISwitch" />
+    /// </summary>
     public class SwitchCompressionMethod : ISwitch
     {
         /// <summary>

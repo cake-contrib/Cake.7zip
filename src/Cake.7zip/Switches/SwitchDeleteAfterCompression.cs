@@ -1,9 +1,22 @@
 namespace Cake.SevenZip
 {
     /// <summary>
-    /// The Delete files after compression-Switch (-sdel).
-    /// </summary>
+    /// <para>
+    /// -sdel (Delete files after compression) switch.
+    /// </para>
+    /// <para>
+    /// If -sdel switch is specified, 7-Zip deletes files after including to archive.
+    /// So it works like moving files to archive.
+    /// 7-Zip deletes files at the end of operation and only if archive was successfully created.
+    /// </para>
+    /// <para>
+    /// <list type="bullet">
+    /// <item><description><see cref="ISupportSwitchDeleteAfterCompression"/></description></item>
+    /// <item><description><see cref="SwitchDeleteAfterCompressionBuilder"/></description></item>
+    /// </list>
+    /// </para>
     /// <seealso cref="ISwitch" />
+    /// </summary>
     public class SwitchDeleteAfterCompression : BaseBoolSwitch
     {
         /// <summary>

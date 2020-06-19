@@ -4,17 +4,17 @@ namespace Cake.SevenZip.Tests
 
     public class FluentBuilderFixture
     {
-        internal SevenZipBuilderContext Context { get; private set; }
+        internal CommandBuilder Context { get; private set; }
 
         public FluentBuilderFixture()
         {
-            Context = new SevenZipBuilderContext();
+            Context = new CommandBuilder();
         }
 
         public string EvaluateArgs()
         {
             var args = new ProcessArgumentBuilder();
-            Context.Settings.Command.BuildArguments(ref args);
+            Context.Command.BuildArguments(ref args);
             return args.Render();
         }
     }

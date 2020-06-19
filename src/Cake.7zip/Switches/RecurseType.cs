@@ -1,7 +1,18 @@
 namespace Cake.SevenZip
 {
     /// <summary>
+    /// <para>
     /// Specifies the method of treating wildcards and filenames on the command line.
+    /// </para>
+    /// <para>
+    /// <list type="bullet">
+    /// <item><description><see cref="SwitchIncludeFilename"/></description></item>
+    /// <item><description><see cref="SwitchExcludeFilename"/></description></item>
+    /// <item><description><see cref="SwitchIncludeArchiveFilename"/></description></item>
+    /// <item><description><see cref="SwitchExcludeArchiveFilename"/></description></item>
+    /// <item><description><see cref="SwitchRecurseSubdirectories"/></description></item>
+    /// </list>
+    /// </para>
     /// </summary>
     public sealed class RecurseType
     {

@@ -1,17 +1,24 @@
-﻿namespace Cake.SevenZip
+namespace Cake.SevenZip
 {
     /// <summary>
-    /// Command supports the sdel-switch.
-    /// (Delete files after compression).
-    /// </summary>
+    /// <para>
+    /// Command supports switch -sdel (Delete files after compression).
+    /// </para>
+    /// <para>
+    /// The Switch is <see cref="SwitchDeleteAfterCompression"/>.
+    /// </para>
+    /// <para>
+    /// The Builder is <see cref="SwitchDeleteAfterCompressionBuilder"/>.
+    /// </para>
     /// <seealso cref="ISupportSwitch" />
+    /// </summary>
     public interface ISupportSwitchDeleteAfterCompression : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the sni-switch.
+        /// Gets or sets the SwitchDeleteAfterCompression.
         /// </summary>
         /// <value>
-        /// The NT security information-switch.
+        /// SwitchDeleteAfterCompression.
         /// </value>
         SwitchDeleteAfterCompression DeleteAfterCompression { get; set; }
     }

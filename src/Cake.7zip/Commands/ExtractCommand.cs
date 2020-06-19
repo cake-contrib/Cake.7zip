@@ -6,7 +6,19 @@ namespace Cake.SevenZip
     using Cake.Core.IO;
 
     /// <summary>
-    /// Represents an Extract-Command.
+    /// Extract-Command - With or without full path
+    /// (Commands: e and x).
+    /// <para>
+    /// With UseFullPath set to false, this represents the e-command:
+    /// Extracts files from an archive to the current directory or to the output directory.
+    /// The output directory can be specified by -o (Set Output Directory) switch.
+    /// This command copies all extracted files to one directory.
+    /// </para>
+    /// <para>
+    /// With UseFullPath set to true, this represents the x-command:
+    /// Extracts files from an archive with their full paths in the current directory,
+    /// or in an output directory if specified.
+    /// </para>
     /// </summary>
     public sealed class ExtractCommand : ICommand,
         ISupportSwitchIncludeFilenames,

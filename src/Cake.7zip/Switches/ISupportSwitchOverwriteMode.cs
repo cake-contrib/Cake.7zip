@@ -1,17 +1,24 @@
-﻿namespace Cake.SevenZip
+namespace Cake.SevenZip
 {
     /// <summary>
-    /// Command supports the ao-switch.
-    /// (Overwrite mode).
-    /// </summary>
+    /// <para>
+    /// Command supports switch -ao (Overwrite mode).
+    /// </para>
+    /// <para>
+    /// The Switch is <see cref="SwitchOverwriteMode"/>.
+    /// </para>
+    /// <para>
+    /// The Builder is <see cref="SwitchOverwriteModeBuilder"/>.
+    /// </para>
     /// <seealso cref="ISupportSwitch" />
+    /// </summary>
     public interface ISupportSwitchOverwriteMode : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the ao-switch.
+        /// Gets or sets the SwitchOverwriteMode.
         /// </summary>
         /// <value>
-        /// The OverwriteMode-switch.
+        /// SwitchOverwriteMode.
         /// </value>
         SwitchOverwriteMode OverwriteMode { get; set; }
     }

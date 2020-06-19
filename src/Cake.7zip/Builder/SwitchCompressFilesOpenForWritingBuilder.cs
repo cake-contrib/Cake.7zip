@@ -1,10 +1,10 @@
-namespace Cake.SevenZip
+﻿namespace Cake.SevenZip
 {
     /// <summary>
     /// Extensions for all Builders that support <see cref="ISupportSwitchCompressFilesOpenForWriting"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}"/>
     /// </summary>
-    public static class SwitchSswBuilder
+    public static class SwitchCompressFilesOpenForWritingBuilder
     {
         /// <summary>
         /// fluent setter for <see cref="ISupportSwitchCompressFilesOpenForWriting"/>.

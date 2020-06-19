@@ -1,17 +1,24 @@
 namespace Cake.SevenZip
 {
     /// <summary>
-    /// Command supports the o-switch.
-    /// (set Output directory).
-    /// </summary>
+    /// <para>
+    /// Command supports switch -o (set Output directory).
+    /// </para>
+    /// <para>
+    /// The Switch is <see cref="SwitchOutputDirectory"/>.
+    /// </para>
+    /// <para>
+    /// The Builder is <see cref="SwitchOutputDirectoryBuilder"/>.
+    /// </para>
     /// <seealso cref="ISupportSwitch" />
+    /// </summary>
     public interface ISupportSwitchOutputDirectory : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the OutputDirectory-switch.
+        /// Gets or sets the SwitchOutputDirectory.
         /// </summary>
         /// <value>
-        /// The OutputDirectory.
+        /// SwitchOutputDirectory.
         /// </value>
         SwitchOutputDirectory OutputDirectory { get; set; }
     }

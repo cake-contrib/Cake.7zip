@@ -1,9 +1,9 @@
-﻿namespace Cake.SevenZip
+namespace Cake.SevenZip
 {
     using Cake.Core.IO;
 
     /// <summary>
-    /// Base for all Command-Support-Switches.
+    /// Base for all Switches.
     /// </summary>
     public interface ISwitch
     {

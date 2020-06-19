@@ -4,8 +4,8 @@ namespace Cake.SevenZip
 
     /// <summary>
     /// Builder for <see cref="ExtractCommand"/>.
-    /// </summary>
     /// <seealso cref="ISupportSwitchBuilder{T}" />
+    /// </summary>
     public class ExtractCommandBuilder :
         ISupportSwitchBuilder<ISupportSwitchArchiveType>,
         ISupportSwitchBuilder<ISupportSwitchCompressionMethod>,

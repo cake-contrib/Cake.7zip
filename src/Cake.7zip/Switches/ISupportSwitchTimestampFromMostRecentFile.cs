@@ -1,17 +1,24 @@
 namespace Cake.SevenZip
 {
     /// <summary>
-    /// Command supports the stl-switch.
-    /// (Set archive timestamp from the most recently modified file).
-    /// </summary>
+    /// <para>
+    /// Command supports switch -stl (Set archive timestamp from the most recently modified file).
+    /// </para>
+    /// <para>
+    /// The Switch is <see cref="SwitchSetTimestampFromMostRecentFile"/>.
+    /// </para>
+    /// <para>
+    /// The Builder is <see cref="SwitchSetTimestampFromMostRecentFileBuilder"/>.
+    /// </para>
     /// <seealso cref="ISupportSwitch" />
+    /// </summary>
     public interface ISupportSwitchTimestampFromMostRecentFile : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the Stl-switch.
+        /// Gets or sets the SwitchSetTimestampFromMostRecentFile.
         /// </summary>
         /// <value>
-        /// The archive timestamp from the most recently modified file-switch.
+        /// SwitchSetTimestampFromMostRecentFile.
         /// </value>
         SwitchSetTimestampFromMostRecentFile TimestampFromMostRecentFile { get; set; }
     }

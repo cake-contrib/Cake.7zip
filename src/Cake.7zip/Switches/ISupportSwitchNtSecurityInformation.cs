@@ -1,17 +1,24 @@
 namespace Cake.SevenZip
 {
     /// <summary>
-    /// Command supports the sni-switch.
-    /// (NT security information).
-    /// </summary>
+    /// <para>
+    /// Command supports switch -sni (NT security information).
+    /// </para>
+    /// <para>
+    /// The Switch is <see cref="SwitchNtSecurityInformation"/>.
+    /// </para>
+    /// <para>
+    /// The Builder is <see cref="SwitchNtSecurityInformationBuilder"/>.
+    /// </para>
     /// <seealso cref="ISupportSwitch" />
+    /// </summary>
     public interface ISupportSwitchNtSecurityInformation : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the sni-switch.
+        /// Gets or sets the SwitchNtSecurityInformation.
         /// </summary>
         /// <value>
-        /// The NT security information-switch.
+        /// SwitchNtSecurityInformation.
         /// </value>
         SwitchNtSecurityInformation NtSecurityInformation { get; set; }
     }

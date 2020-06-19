@@ -26,6 +26,8 @@
 
 ## Usage
 
+See also the [local documentation][documentation] and [api][api]
+
 ### Adding files
 
 ```cs
@@ -93,3 +95,5 @@ Thanks goes to these wonderful people ([emoji key][emoji-key]):
 [license]: LICENSE.txt
 [standard-readme]: https://github.com/RichardLitt/standard-readme
 [standard-readme compliant]: https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square
+[documentation]: https://cake-contrib.github.io/Cake.7zip/
+[api]: https://cakebuild.net/api/Cake.7zip/

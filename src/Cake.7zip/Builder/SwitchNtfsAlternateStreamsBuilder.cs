@@ -4,7 +4,7 @@ namespace Cake.SevenZip
     /// Extensions for all Builders that support <see cref="ISupportSwitchNtfsAlternateStreams"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}"/>
     /// </summary>
-    public static class SwitchSnsBuilder
+    public static class SwitchNtfsAlternateStreamsBuilder
     {
         /// <summary>
         /// fluent setter for <see cref="ISupportSwitchNtfsAlternateStreams"/>.

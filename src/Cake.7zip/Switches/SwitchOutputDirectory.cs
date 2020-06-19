@@ -4,9 +4,21 @@ namespace Cake.SevenZip
     using Cake.Core.IO;
 
     /// <summary>
-    /// The OutputDirectory-Switch (-o).
-    /// </summary>
+    /// <para>
+    /// -o (set Output directory) switch.
+    /// </para>
+    /// <para>
+    /// Specifies a destination directory where files are to be extracted.
+    /// This switch can be used only with extraction commands.
+    /// </para>
+    /// <para>
+    /// <list type="bullet">
+    /// <item><description><see cref="ISupportSwitchOutputDirectory"/></description></item>
+    /// <item><description><see cref="SwitchOutputDirectoryBuilder"/></description></item>
+    /// </list>
+    /// </para>
     /// <seealso cref="ISwitch" />
+    /// </summary>
     public class SwitchOutputDirectory : ISwitch
     {
         private readonly DirectoryPath directory;

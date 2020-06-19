@@ -1,16 +1,24 @@
 namespace Cake.SevenZip
 {
     /// <summary>
-    /// Command supports the type-switch.
-    /// </summary>
+    /// <para>
+    /// Command supports switch -t (set Type of archive).
+    /// </para>
+    /// <para>
+    /// The Switch is <see cref="SwitchArchiveType"/>.
+    /// </para>
+    /// <para>
+    /// The Builder is <see cref="SwitchArchiveTypeBuilder"/>.
+    /// </para>
     /// <seealso cref="ISupportSwitch" />
+    /// </summary>
     public interface ISupportSwitchArchiveType : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the type of the archive.
+        /// Gets or sets the SwitchArchiveType.
         /// </summary>
         /// <value>
-        /// The type of the archive.
+        /// SwitchArchiveType.
         /// </value>
         SwitchArchiveType ArchiveType { get; set; }
     }

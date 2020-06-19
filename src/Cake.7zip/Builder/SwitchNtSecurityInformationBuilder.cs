@@ -4,7 +4,7 @@ namespace Cake.SevenZip
     /// Extensions for all Builders that support <see cref="ISupportSwitchNtSecurityInformation"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}"/>
     /// </summary>
-    public static class SwitchSniBuilder
+    public static class SwitchNtSecurityInformationBuilder
     {
         /// <summary>
         /// fluent setter for <see cref="ISupportSwitchNtSecurityInformation"/>.

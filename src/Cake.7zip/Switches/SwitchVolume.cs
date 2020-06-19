@@ -6,9 +6,21 @@ namespace Cake.SevenZip
     using Cake.Core.IO;
 
     /// <summary>
-    /// The Volume-Switch (-v).
-    /// </summary>
+    /// <para>
+    /// -v (Create Volumes) switch.
+    /// </para>
+    /// <para>
+    /// Specifies volume sizes.
+    /// </para>
+    /// <para>
+    /// <list type="bullet">
+    /// <item><description><see cref="ISupportSwitchVolume"/></description></item>
+    /// <item><description><see cref="SwitchVolumeBuilder"/></description></item>
+    /// <item><description><see cref="SwitchVolumeCollection"/></description></item>
+    /// </list>
+    /// </para>
     /// <seealso cref="ISwitch" />
+    /// </summary>
     public class SwitchVolume : ISwitch
     {
         /// <summary>

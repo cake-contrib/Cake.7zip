@@ -7,7 +7,8 @@ namespace Cake.SevenZip
     using Cake.Core.IO;
 
     /// <summary>
-    /// Represents an Add-Command.
+    /// Adds files to archive.
+    /// (Command: a).
     /// </summary>
     public sealed class AddCommand : ICommand,
         ISupportSwitchVolume,

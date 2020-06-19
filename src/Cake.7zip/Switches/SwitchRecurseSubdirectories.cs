@@ -4,9 +4,20 @@ namespace Cake.SevenZip
     using Cake.Core.IO;
 
     /// <summary>
-    /// RecurseSubdirectories-switch (-r).
-    /// </summary>
+    /// <para>
+    /// -r (Recurse subdirectories) switch.
+    /// </para>
+    /// <para>
+    /// Specifies the method of treating wildcards and filenames on the command line.
+    /// </para>
+    /// <para>
+    /// <list type="bullet">
+    /// <item><description><see cref="ISupportSwitchRecurseSubdirectories"/></description></item>
+    /// <item><description><see cref="SwitchRecurseSubdirectoriesBuilder"/></description></item>
+    /// </list>
+    /// </para>
     /// <seealso cref="ISwitch" />
+    /// </summary>
     public class SwitchRecurseSubdirectories : ISwitch
     {
         private readonly RecurseType recurse;

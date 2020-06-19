@@ -1,16 +1,24 @@
 namespace Cake.SevenZip
 {
     /// <summary>
-    /// Command supports the volumes-switch.
-    /// </summary>
+    /// <para>
+    /// Command supports switch -p (set Password) .
+    /// </para>
+    /// <para>
+    /// The Switch is <see cref="SwitchPassword"/>.
+    /// </para>
+    /// <para>
+    /// The Builder is <see cref="SwitchPasswordBuilder"/>.
+    /// </para>
     /// <seealso cref="ISupportSwitch" />
+    /// </summary>
     public interface ISupportSwitchPassword : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the password-switch.
+        /// Gets or sets the SwitchPassword.
         /// </summary>
         /// <value>
-        /// The Password.
+        /// SwitchPassword.
         /// </value>
         SwitchPassword Password { get; set; }
     }

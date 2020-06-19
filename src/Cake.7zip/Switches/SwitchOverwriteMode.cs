@@ -4,9 +4,20 @@ namespace Cake.SevenZip
     using Cake.Core.IO;
 
     /// <summary>
-    /// The update Overwrite mode -Switch (-ao).
-    /// </summary>
+    /// <para>
+    /// -ao (Overwrite mode) switch.
+    /// </para>
+    /// <para>
+    /// Specifies the overwrite mode during extraction, to overwrite files already present on disk.
+    /// </para>
+    /// <para>
+    /// <list type="bullet">
+    /// <item><description><see cref="ISupportSwitchOverwriteMode"/></description></item>
+    /// <item><description><see cref="SwitchOverwriteModeBuilder"/></description></item>
+    /// </list>
+    /// </para>
     /// <seealso cref="ISwitch" />
+    /// </summary>
     public class SwitchOverwriteMode : ISwitch
     {
         private readonly OverwriteMode mode;

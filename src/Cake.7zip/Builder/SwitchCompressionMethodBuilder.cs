@@ -1,4 +1,4 @@
-namespace Cake.SevenZip
+﻿namespace Cake.SevenZip
 {
     using System;
 
@@ -6,7 +6,7 @@ namespace Cake.SevenZip
     /// Extensions for all Builders that support <see cref="ISupportSwitchCompressionMethod"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}"/>
     /// </summary>
-    public static class SwitchCompressionMethodsBuilder
+    public static class SwitchCompressionMethodBuilder
     {
         /// <summary>
         /// fluent setter for <see cref="ISupportSwitchCompressionMethod"/> using an action.

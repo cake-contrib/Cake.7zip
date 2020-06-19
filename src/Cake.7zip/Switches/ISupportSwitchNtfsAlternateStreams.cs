@@ -1,17 +1,24 @@
 namespace Cake.SevenZip
 {
     /// <summary>
-    /// Command supports the sns-switch.
-    /// (NTFS alternate Streams).
-    /// </summary>
+    /// <para>
+    /// Command supports switch -sns (NTFS alternate Streams).
+    /// </para>
+    /// <para>
+    /// The Switch is <see cref="SwitchNtfsAlternateStreams"/>.
+    /// </para>
+    /// <para>
+    /// The Builder is <see cref="SwitchNtfsAlternateStreamsBuilder"/>.
+    /// </para>
     /// <seealso cref="ISupportSwitch" />
+    /// </summary>
     public interface ISupportSwitchNtfsAlternateStreams : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the Sns-switch.
+        /// Gets or sets the SwitchNtfsAlternateStreams.
         /// </summary>
         /// <value>
-        /// The NTFS alternate Streams-switch.
+        /// SwitchNtfsAlternateStreams.
         /// </value>
         SwitchNtfsAlternateStreams NtfsAlternateStreams { get; set; }
     }

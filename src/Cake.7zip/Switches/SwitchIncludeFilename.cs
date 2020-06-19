@@ -4,9 +4,22 @@ namespace Cake.SevenZip
     using Cake.Core.IO;
 
     /// <summary>
-    /// The include-Files- switch (-i).
+    /// <para>
+    /// -i (Include filenames) switch.
+    /// </para>
+    /// <para>
+    /// Specifies additional include filenames and wildcards.
+    /// Multiple include switches are supported.
+    /// </para>
+    /// <para>
+    /// <list type="bullet">
+    /// <item><description><see cref="ISupportSwitchIncludeFilenames"/></description></item>
+    /// <item><description><see cref="SwitchIncludeFilenamesBuilder"/></description></item>
+    /// <item><description><see cref="SwitchIncludeFilenameCollection"/></description></item>
+    /// </list>
+    /// </para>
+    /// <seealso cref="ISwitch" />
     /// </summary>
-    /// <seealso cref="Cake.SevenZip.ISwitch" />
     public class SwitchIncludeFilename : ISwitch
     {
         private readonly string wildcard;

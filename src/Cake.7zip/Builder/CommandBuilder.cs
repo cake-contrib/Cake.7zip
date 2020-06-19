@@ -1,26 +1,18 @@
 namespace Cake.SevenZip
 {
     /// <summary>
-    /// Builder for Commands.
+    /// Builder for all <see cref="ICommand"/>s.
     /// Do NOT call WithCommand... multiple times.
     /// </summary>
-    public sealed class SevenZipBuilderContext
+    public sealed class CommandBuilder
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SevenZipBuilderContext"/> class.
-        /// </summary>
-        internal SevenZipBuilderContext()
-        {
-            Settings = new SevenZipSettings();
-        }
-
-        /// <summary>
-        /// Gets the settings.
+        /// Gets or sets the Command.
         /// </summary>
         /// <value>
-        /// The settings.
+        /// The Command.
         /// </value>
-        internal SevenZipSettings Settings { get; }
+        internal ICommand Command { get; set; }
 
         /// <summary>
         /// Makes this Builder an AddCommand-Builder.
@@ -29,7 +21,7 @@ namespace Cake.SevenZip
         public AddCommandBuilder InAddMode()
         {
             var command = new AddCommand();
-            Settings.Command = command;
+            Command = command;
             return new AddCommandBuilder(ref command);
         }
 
@@ -40,7 +32,7 @@ namespace Cake.SevenZip
         public ExtractCommandBuilder InExtractMode()
         {
             var command = new ExtractCommand();
-            Settings.Command = command;
+            Command = command;
             return new ExtractCommandBuilder(ref command);
         }
     }

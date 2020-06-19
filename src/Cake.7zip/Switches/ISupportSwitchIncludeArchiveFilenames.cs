@@ -1,17 +1,24 @@
 namespace Cake.SevenZip
 {
     /// <summary>
-    /// Command supports the ai-switch.
-    /// (Include archive filenames).
-    /// </summary>
+    /// <para>
+    /// Command supports switch -ai (Include archive filenames).
+    /// </para>
+    /// <para>
+    /// The Switch is <see cref="SwitchIncludeArchiveFilenameCollection"/>.
+    /// </para>
+    /// <para>
+    /// The Builder is <see cref="SwitchIncludeArchiveFilenamesBuilder"/>.
+    /// </para>
     /// <seealso cref="ISupportSwitch" />
+    /// </summary>
     public interface ISupportSwitchIncludeArchiveFilenames : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the IncludeArchiveFilenames-switch.
+        /// Gets or sets the SwitchIncludeArchiveFilenameCollection.
         /// </summary>
         /// <value>
-        /// The IncludeArchiveFlienames.
+        /// SwitchIncludeArchiveFilenameCollection.
         /// </value>
         SwitchIncludeArchiveFilenameCollection IncludeArchiveFilenames { get; set; }
     }

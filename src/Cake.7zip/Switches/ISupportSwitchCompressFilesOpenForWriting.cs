@@ -1,17 +1,24 @@
 namespace Cake.SevenZip
 {
     /// <summary>
-    /// Command supports the ssw-switch.
-    /// (Compress files open for writing).
-    /// </summary>
+    /// <para>
+    /// Command supports switch -ssw (Compress files open for writing).
+    /// </para>
+    /// <para>
+    /// The Switch is <see cref="SwitchCompressFilesOpenForWriting"/>.
+    /// </para>
+    /// <para>
+    /// The Builder is <see cref="SwitchCompressFilesOpenForWritingBuilder"/>.
+    /// </para>
     /// <seealso cref="ISupportSwitch" />
+    /// </summary>
     public interface ISupportSwitchCompressFilesOpenForWriting : ISupportSwitch
     {
         /// <summary>
-        /// Gets or sets the Ssw-switch.
+        /// Gets or sets the SwitchCompressFilesOpenForWriting.
         /// </summary>
         /// <value>
-        /// The Compress files open for writing-switch.
+        /// SwitchCompressFilesOpenForWriting.
         /// </value>
         SwitchCompressFilesOpenForWriting CompressFilesOpenForWriting { get; set; }
     }
