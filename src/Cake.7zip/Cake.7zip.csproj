@@ -18,10 +18,10 @@
     <Description>makes 7zip available as a tool in cake</Description>
     <PackageIconUrl></PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://nils-a.github.io/Cake.7zip</PackageProjectUrl>
+    <PackageProjectUrl>https://cake-contrib.github.io/Cake.7zip</PackageProjectUrl>
     <PackageTags>cake;addin;SevenZip</PackageTags>
-    <RepositoryUrl>https://github.com/nils-a/Cake.7zip.git</RepositoryUrl>
-    <PackageReleaseNotes>https://github.com/nils-a/Cake.7zip/releases/tag/</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/cake-contrib/Cake.7zip.git</RepositoryUrl>
+    <PackageReleaseNotes>https://github.com/cake-contrib/Cake.7zip/releases</PackageReleaseNotes>
     <RootNamespace>Cake.SevenZip</RootNamespace>
     <Version>0.0.1</Version>
     <PackageIcon>icon.png</PackageIcon>
