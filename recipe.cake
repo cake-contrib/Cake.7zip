@@ -7,6 +7,7 @@ BuildParameters.SetParameters(
   buildSystem: BuildSystem,
   sourceDirectoryPath: "./src",
   title: "Cake.7zip",
+  masterBranchName: "main",
   repositoryOwner: "cake-contrib",
   repositoryName: "Cake.7zip",
   shouldRunGitVersion: true,
