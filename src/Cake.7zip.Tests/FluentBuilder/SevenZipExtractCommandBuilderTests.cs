@@ -232,6 +232,72 @@ namespace Cake.SevenZip.Tests.Builder
         }
 
         [Fact]
+        public void Extract_can_use_IncludeArchiveFiles_multiple_times()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InExtractMode()
+              .WithArchive(new FilePath("in.zip"))
+              .WithIncludeArchiveFilenames(RecurseType.Enable, "*.pdf", "*.xps")
+              .WithIncludeArchiveFilenames("*.txt", "*.ini");
+
+            const string expected = @"x ""in.zip"" -y -air!*.pdf -air!*.xps -ai!*.txt -ai!*.ini";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Extract_can_use_ExcludeArchiveFiles()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InExtractMode()
+              .WithArchive(new FilePath("in.zip"))
+              .WithExcludeArchiveFilenames("*.pdf");
+
+            const string expected = @"x ""in.zip"" -y -ax!*.pdf";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Extract_can_use_ExcludeArchiveFiles_with_recusion()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InExtractMode()
+              .WithArchive(new FilePath("in.zip"))
+              .WithExcludeArchiveFilenames(RecurseType.Enable, "*.pdf");
+
+            const string expected = @"x ""in.zip"" -y -axr!*.pdf";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Extract_can_use_ExcludeArchiveFiles_multiple_times()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InExtractMode()
+              .WithArchive(new FilePath("in.zip"))
+              .WithExcludeArchiveFilenames(RecurseType.Enable, "*.pdf", "*.xps")
+              .WithExcludeArchiveFilenames("*.txt", "*.ini");
+
+            const string expected = @"x ""in.zip"" -y -axr!*.pdf -axr!*.xps -ax!*.txt -ax!*.ini";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void Extract_can_use_DisableParsingOfArchiveName()
         {
             var fixture = new FluentBuilderFixture();

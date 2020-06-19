@@ -1,6 +1,5 @@
 namespace Cake.SevenZip.Tests
 {
-    using Cake.Core;
     using Cake.Core.IO;
     using Cake.Testing;
     using Cake.Testing.Fixtures;
@@ -8,7 +7,7 @@ namespace Cake.SevenZip.Tests
     public class SevenZipRunnerFixture : ToolFixture<SevenZipSettings>
     {
         public SevenZipRunnerFixture()
-          : base("SevenZip.exe")
+          : base("7za.exe")
         {
             FakeEnvironment.CreateWindowsEnvironment();
         }

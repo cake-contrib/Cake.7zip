@@ -311,6 +311,24 @@ namespace Cake.SevenZip.Tests.Builder
         }
 
         [Fact]
+        public void Add_can_use_IncludeFiles_multiple_times()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithIncludeFilenames(RecurseType.Enable, "*.pdf", "*.xps")
+              .WithIncludeFilenames("*.txt", "*.ini");
+
+            const string expected = @"a -ir!*.pdf -ir!*.xps -i!*.txt -i!*.ini ""out.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void Add_can_use_ExcludeFiles()
         {
             var fixture = new FluentBuilderFixture();
@@ -338,6 +356,24 @@ namespace Cake.SevenZip.Tests.Builder
               .WithExcludeFilenames(RecurseType.Disable, "*.pdf");
 
             const string expected = @"a -xr-!*.pdf ""out.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Add_can_use_ExcludeFiles_multiple_times()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithExcludeFilenames(RecurseType.Disable, "*.pdf", "*.xps")
+              .WithExcludeFilenames("*.txt", "*.ini");
+
+            const string expected = @"a -xr-!*.pdf -xr-!*.xps -x!*.txt -x!*.ini ""out.zip"" ""in.txt""";
 
             var actual = fixture.EvaluateArgs();
 

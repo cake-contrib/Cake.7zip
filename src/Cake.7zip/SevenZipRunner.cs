@@ -67,11 +67,6 @@ namespace Cake.SevenZip
 
         private ProcessArgumentBuilder GetArguments(SevenZipSettings settings)
         {
-            if (settings == null)
-            {
-                throw new CakeException($"{GetToolName()}: Settings can not be null - a command is needed to run!");
-            }
-
             if (settings.Command == null)
             {
                 throw new CakeException($"{GetToolName()}: Command can not be null - a command is needed to run!");

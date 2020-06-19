@@ -109,6 +109,24 @@ namespace Cake.SevenZip.Tests
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Should_Throw_CakeException_If_Command_throws()
+        {
+            var fixture = new SevenZipRunnerFixture
+            {
+                Settings = new SevenZipSettings
+                {
+                    Command = new ThrowCommand()
+                }
+            };
+            const string expectedMessage = "7-Zip: Intentionally not implemented.";
+
+            void result() => fixture.Run();
+
+            var ex = Assert.Throws<CakeException>(result);
+            Assert.Equal(expectedMessage, ex.Message);
+        }
     }
 
     internal class NoCommand : ICommand
@@ -116,6 +134,14 @@ namespace Cake.SevenZip.Tests
         public void BuildArguments(ref ProcessArgumentBuilder builder)
         {
             // no-op
+        }
+    }
+
+    internal class ThrowCommand : ICommand
+    {
+        public void BuildArguments(ref ProcessArgumentBuilder builder)
+        {
+            throw new NotImplementedException("Intentionally not implemented.");
         }
     }
 }

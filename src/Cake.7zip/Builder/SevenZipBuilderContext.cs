@@ -20,7 +20,7 @@ namespace Cake.SevenZip
         /// <value>
         /// The settings.
         /// </value>
-        internal SevenZipSettings Settings { get; private set; }
+        internal SevenZipSettings Settings { get; }
 
         /// <summary>
         /// Makes this Builder an AddCommand-Builder.

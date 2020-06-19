@@ -8,14 +8,14 @@ namespace Cake.SevenZip.Tests
 
     public class SevenZipAliasesFixture : SevenZipRunnerFixture
     {
-        internal ICakeContext _context;
+        internal ICakeContext Context { get; private set; }
 
         public SevenZipAliasesFixture()
         {
             var argumentsMoq = new Mock<ICakeArguments>();
             var registryMoq = new Mock<IRegistry>();
             var dataService = new Mock<ICakeDataService>();
-            _context = new CakeContext(
+            Context = new CakeContext(
               FileSystem,
               Environment,
               Globber,
@@ -29,7 +29,7 @@ namespace Cake.SevenZip.Tests
 
         protected override void RunTool()
         {
-            SevenZipAliases.SevenZip(_context, Settings);
+            SevenZipAliases.SevenZip(Context, Settings);
         }
     }
 }
