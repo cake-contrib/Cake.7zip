@@ -26,6 +26,8 @@
 
 ## Usage
 
+### Adding files
+
 ```cs
 #tool nuget:?package=7-Zip.CommandLine
 #addin nuget:?package=Cake.7zip
