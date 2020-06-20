@@ -28,12 +28,40 @@ namespace Cake.SevenZip
     {
         /// <summary>
         /// Gets or sets The list of Files to add to the package.
+        /// <para>
+        /// Files will always be placed directly into the archive without any
+        /// directory-structure.
+        /// </para>
+        /// Setting Files like this:
+        /// <code>
+        /// Files = new[] {
+        ///   new FilePath("C:\\some\\place\\a.txt"),
+        ///   new FilePath("C:\\some\\other\\place\\b.txt"),
+        ///   new FilePath("C:\\a\\totally\\different\\place\\c.txt")
+        /// };
+        /// </code>
+        /// Will result in a file:
+        /// <code>
+        /// Archive.zip
+        /// - a.txt
+        /// - b.txt
+        /// - c.txt
+        /// </code>
+        /// without any directory structure.
+        /// <seealso cref="Directories"/>
         /// </summary>
         public FilePathCollection Files { get; set; }
 
         /// <summary>
         /// Gets or sets the list of Directories to add to the package.
-        /// Consider using the recurse-switch and/or filter-switch if you add Directories.
+        /// <para>
+        /// Adding a directory will add the directory itself to the root of the archive
+        /// including all files in it. However, no subdirectories will be
+        /// added unless the <see cref="SwitchRecurseSubdirectories"/> is used.
+        /// </para>
+        /// <seealso cref="Files"/>
+        /// <seealso cref="SwitchIncludeFilename"/>
+        /// <seealso cref="SwitchExcludeFilename"/>
         /// </summary>
         public DirectoryPathCollection Directories { get; set; }
 

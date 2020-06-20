@@ -88,6 +88,11 @@ namespace Cake.SevenZip
 
         /// <summary>
         /// Sets the dierectories on the <see cref="AddCommand"/>.
+        /// <para>
+        /// See the comments on <see cref="AddCommand.Files"/> and
+        /// <see cref="AddCommand.Directories"/> regarding files and
+        /// directory structures.
+        /// </para>
         /// </summary>
         /// <param name="directories">The directories.</param>
         /// <returns>The builder, for fluent use.</returns>
@@ -108,6 +113,11 @@ namespace Cake.SevenZip
 
         /// <summary>
         /// Sets the files on the <see cref="AddCommand"/>.
+        /// <para>
+        /// See the comments on <see cref="AddCommand.Files"/> and
+        /// <see cref="AddCommand.Directories"/> regarding files and
+        /// directory structures.
+        /// </para>
         /// </summary>
         /// <param name="files">The files.</param>
         /// <returns>The builder, for fluent use.</returns>
