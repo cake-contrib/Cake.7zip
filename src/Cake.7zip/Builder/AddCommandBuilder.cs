@@ -1,5 +1,7 @@
 namespace Cake.SevenZip
 {
+    using System.Linq;
+
     using Cake.Core.IO;
 
     /// <summary>
@@ -87,11 +89,11 @@ namespace Cake.SevenZip
         }
 
         /// <summary>
-        /// Sets the dierectories on the <see cref="AddCommand"/>.
+        /// Sets the directories on the <see cref="AddCommand"/>.
         /// <para>
-        /// See the comments on <see cref="AddCommand.Files"/> and
-        /// <see cref="AddCommand.Directories"/> regarding files and
-        /// directory structures.
+        /// See the comments on <see cref="AddCommand.Files"/>,
+        /// <see cref="AddCommand.Directories"/> and <see cref="AddCommand.DirectoryContents"/>
+        /// regarding files and directory structures.
         /// </para>
         /// </summary>
         /// <param name="directories">The directories.</param>
@@ -112,11 +114,56 @@ namespace Cake.SevenZip
         }
 
         /// <summary>
+        /// See <see cref="WithDirectories(DirectoryPath[])"/>.
+        /// </summary>
+        /// <param name="directories">The directories.</param>
+        /// <returns>The builder, for fluent use.</returns>
+        public AddCommandBuilder WithDirectories(DirectoryPathCollection directories)
+        {
+            return WithDirectories(directories.ToArray());
+        }
+
+        /// <summary>
+        /// Sets the directoryContents on the <see cref="AddCommand"/>.
+        /// <para>
+        /// See the comments on <see cref="AddCommand.Files"/>,
+        /// <see cref="AddCommand.Directories"/> and <see cref="AddCommand.DirectoryContents"/>
+        /// regarding files and directory structures.
+        /// </para>
+        /// </summary>
+        /// <param name="directories">The directories.</param>
+        /// <returns>The builder, for fluent use.</returns>
+        public AddCommandBuilder WithDirectoryContents(params DirectoryPath[] directories)
+        {
+            if (command.DirectoryContents == null)
+            {
+                command.DirectoryContents = new DirectoryPathCollection();
+            }
+
+            foreach (var d in directories)
+            {
+                command.DirectoryContents.Add(d);
+            }
+
+            return this;
+        }
+
+        /// <summary>
+        /// See <see cref="WithDirectoryContents(DirectoryPath[])"/>.
+        /// </summary>
+        /// <param name="directories">The directories.</param>
+        /// <returns>The builder, for fluent use.</returns>
+        public AddCommandBuilder WithDirectoryContents(DirectoryPathCollection directories)
+        {
+            return WithDirectoryContents(directories.ToArray());
+        }
+
+        /// <summary>
         /// Sets the files on the <see cref="AddCommand"/>.
         /// <para>
-        /// See the comments on <see cref="AddCommand.Files"/> and
-        /// <see cref="AddCommand.Directories"/> regarding files and
-        /// directory structures.
+        /// See the comments on <see cref="AddCommand.Files"/>,
+        /// <see cref="AddCommand.Directories"/> and <see cref="AddCommand.DirectoryContents"/>
+        /// regarding files and directory structures.
         /// </para>
         /// </summary>
         /// <param name="files">The files.</param>
@@ -134,6 +181,16 @@ namespace Cake.SevenZip
             }
 
             return this;
+        }
+
+        /// <summary>
+        /// See <see cref="WithFiles(FilePath[])"/>.
+        /// </summary>
+        /// <param name="files">The files.</param>
+        /// <returns>The builder, for fluent use.</returns>
+        public AddCommandBuilder WithFiles(FilePathCollection files)
+        {
+            return WithFiles(files.ToArray());
         }
     }
 }

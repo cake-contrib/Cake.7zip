@@ -1,6 +1,7 @@
 namespace Cake.SevenZip
 {
     using System;
+    using System.IO;
     using System.Linq;
 
     using Cake.Core;
@@ -49,6 +50,7 @@ namespace Cake.SevenZip
         /// </code>
         /// without any directory structure.
         /// <seealso cref="Directories"/>
+        /// <seealso cref="DirectoryContents"/>
         /// </summary>
         public FilePathCollection Files { get; set; }
 
@@ -60,10 +62,26 @@ namespace Cake.SevenZip
         /// added unless the <see cref="SwitchRecurseSubdirectories"/> is used.
         /// </para>
         /// <seealso cref="Files"/>
+        /// <seealso cref="DirectoryContents"/>
         /// <seealso cref="SwitchIncludeFilename"/>
         /// <seealso cref="SwitchExcludeFilename"/>
         /// </summary>
         public DirectoryPathCollection Directories { get; set; }
+
+        /// <summary>
+        /// Gets or sets the list of Directory-contents to add to the package.
+        /// <para>
+        /// Adding a directory this way will add the files of the directory
+        /// to the root of the archive but not the directory itself.
+        /// (No subdirectories will be added unless the
+        /// <see cref="SwitchRecurseSubdirectories"/> is used.)
+        /// </para>
+        /// <seealso cref="Files"/>
+        /// <seealso cref="Directories"/>
+        /// <seealso cref="SwitchIncludeFilename"/>
+        /// <seealso cref="SwitchExcludeFilename"/>
+        /// </summary>
+        public DirectoryPathCollection DirectoryContents { get; set; }
 
         /// <summary>
         /// Gets or sets the archive to add the files to.
@@ -121,7 +139,8 @@ namespace Cake.SevenZip
             }
 
             if ((Files == null || Files.Count == 0)
-                && (Directories == null || Directories.Count == 0))
+                && (Directories == null || Directories.Count == 0)
+                && (DirectoryContents == null || DirectoryContents.Count == 0))
             {
                 throw new ArgumentException("some input (Files or Directories) is required for add.");
             }
@@ -169,6 +188,15 @@ namespace Cake.SevenZip
                 foreach (var d in Directories)
                 {
                     builder.AppendQuoted(d.FullPath);
+                }
+            }
+
+            if (DirectoryContents != null)
+            {
+                foreach (var d in DirectoryContents)
+                {
+                    var glob = d.CombineWithFilePath("*");
+                    builder.AppendQuoted(glob.FullPath);
                 }
             }
         }
