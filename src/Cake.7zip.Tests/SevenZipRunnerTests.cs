@@ -1,10 +1,13 @@
 namespace Cake.SevenZip.Tests
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
 
     using Cake.Core;
     using Cake.Core.IO;
     using Cake.Testing;
+
+    using Moq;
 
     using Xunit;
 
@@ -55,6 +58,118 @@ namespace Cake.SevenZip.Tests
 
             var ex = Assert.Throws<CakeException>(result);
             Assert.Equal(expectedMessage, ex.Message);
+        }
+
+        [Fact]
+        public void Should_Access_registry()
+        {
+            var fixture = new SevenZipRunnerFixture
+            {
+                Settings = new SevenZipSettings
+                {
+                    Command = new NoCommand()
+                }
+            };
+
+            fixture.GivenDefaultToolDoNotExist();
+            fixture.GivenProcessExitsWithCode(0);
+            var installLocation = fixture.FileSystem.CreateDirectory("/temp7z");
+            var file = fixture.FileSystem.CreateFile(installLocation.Path.CombineWithFilePath("7z.exe"));
+
+            var sevenZipKey = new Mock<IRegistryKey>();
+            sevenZipKey.Setup(k => k.GetValue("Path")).Returns(installLocation.Path.FullPath);
+            sevenZipKey.Setup(k => k.GetValue("Path64")).Returns(null);
+            var softwareKey = new Mock<IRegistryKey>();
+            softwareKey.Setup(k => k.OpenKey("7-Zip")).Returns(sevenZipKey.Object);
+            var hklm = new Mock<IRegistryKey>();
+            hklm.Setup(k => k.OpenKey("Software")).Returns(softwareKey.Object);
+            fixture.Registry.Setup(r => r.LocalMachine).Returns(hklm.Object);
+
+            var result = fixture.Run();
+
+            sevenZipKey.Verify(k => k.GetValue("Path"), Times.Once);
+            sevenZipKey.Verify(k => k.GetValue("Path64"), Times.Once);
+            Assert.Equal(file.Path.FullPath, result.Path.FullPath);
+        }
+
+        [Fact]
+        public void Should_Access_64bit_tool_from_registry()
+        {
+            var fixture = new SevenZipRunnerFixture
+            {
+                Settings = new SevenZipSettings
+                {
+                    Command = new NoCommand()
+                }
+            };
+
+            fixture.Environment.Platform.Is64Bit = true;
+            fixture.GivenDefaultToolDoNotExist();
+            fixture.GivenProcessExitsWithCode(0);
+            var installLocation = fixture.FileSystem.CreateDirectory("/temp7z");
+            var file = fixture.FileSystem.CreateFile(installLocation.Path.CombineWithFilePath("7z.exe"));
+
+            var sevenZipKey = new Mock<IRegistryKey>();
+            sevenZipKey.Setup(k => k.GetValue("Path")).Returns(null);
+            sevenZipKey.Setup(k => k.GetValue("Path64")).Returns(installLocation.Path.FullPath);
+            var softwareKey = new Mock<IRegistryKey>();
+            softwareKey.Setup(k => k.OpenKey("7-Zip")).Returns(sevenZipKey.Object);
+            var hklm = new Mock<IRegistryKey>();
+            hklm.Setup(k => k.OpenKey("Software")).Returns(softwareKey.Object);
+            fixture.Registry.Setup(r => r.LocalMachine).Returns(hklm.Object);
+
+            var result = fixture.Run();
+
+            Assert.Equal(file.Path.FullPath, result.Path.FullPath);
+        }
+
+        [Fact]
+        public void Should_not_access_registry_if_Default_exists()
+        {
+            var fixture = new SevenZipRunnerFixture
+            {
+                Settings = new SevenZipSettings
+                {
+                    Command = new NoCommand()
+                }
+            };
+
+            fixture.GivenProcessExitsWithCode(0);
+
+            var sevenZipKey = new Mock<IRegistryKey>();
+            sevenZipKey.Setup(k => k.GetValue("Path")).Returns(string.Empty);
+            sevenZipKey.Setup(k => k.GetValue("Path64")).Returns(String.Empty);
+            var softwareKey = new Mock<IRegistryKey>();
+            softwareKey.Setup(k => k.OpenKey("7-Zip")).Returns(sevenZipKey.Object);
+            var hklm = new Mock<IRegistryKey>();
+            hklm.Setup(k => k.OpenKey("Software")).Returns(softwareKey.Object);
+            fixture.Registry.Setup(r => r.LocalMachine).Returns(hklm.Object);
+
+            var result = fixture.Run();
+
+            sevenZipKey.Verify(k => k.GetValue("Path"), Times.Never);
+            Assert.Equal(fixture.DefaultToolPath.FullPath, result.Path.FullPath);
+        }
+
+        [Fact]
+        public void Should_throw_ToolNotFound_if_registry_throws()
+        {
+            var fixture = new SevenZipRunnerFixture
+            {
+                Settings = new SevenZipSettings
+                {
+                    Command = new NoCommand()
+                }
+            };
+
+            fixture.GivenDefaultToolDoNotExist();
+            var hklm = new Mock<IRegistryKey>();
+            hklm.Setup(k => k.OpenKey("Software")).Throws(new AccessViolationException("No!"));
+            fixture.Registry.Setup(r => r.LocalMachine).Returns(hklm.Object);
+
+            void action() => fixture.Run();
+
+            Assert.Throws<CakeException>(action);
         }
 
         [Fact]
@@ -113,11 +228,14 @@ namespace Cake.SevenZip.Tests
         [Fact]
         public void Should_Throw_CakeException_If_Command_throws()
         {
+            var command = new Mock<ICommand>();
+            command.Setup(c => c.BuildArguments(ref It.Ref<ProcessArgumentBuilder>.IsAny))
+                .Throws(new NotImplementedException("Intentionally not implemented."));
             var fixture = new SevenZipRunnerFixture
             {
                 Settings = new SevenZipSettings
                 {
-                    Command = new ThrowCommand()
+                    Command = command.Object
                 }
             };
             const string expectedMessage = "7-Zip: Intentionally not implemented.";
@@ -134,14 +252,6 @@ namespace Cake.SevenZip.Tests
         public void BuildArguments(ref ProcessArgumentBuilder builder)
         {
             // no-op
-        }
-    }
-
-    internal class ThrowCommand : ICommand
-    {
-        public void BuildArguments(ref ProcessArgumentBuilder builder)
-        {
-            throw new NotImplementedException("Intentionally not implemented.");
         }
     }
 }
