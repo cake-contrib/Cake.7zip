@@ -4,15 +4,17 @@ namespace Cake.SevenZip
 
     using Cake.Core;
     using Cake.Core.Annotations;
-    using Cake.Core.Tooling;
 
     /// <summary>
     /// <para>Functions to call <see href="https://7-zip.org/">7-Zip</see>.</para>
     /// <para>
-    /// In order to use this addin, 7za.exe has to be available.
-    /// The only tested option currently is unsing
-    /// <see href="https://www.nuget.org/packages/7-Zip.CommandLine/">7-Zip.CommandLine from nuget</see>
-    /// though other options may work.
+    /// In order to use this addin, 7z.exe or 7za.exe has to be available.
+    /// One option is using
+    /// <see href="https://www.nuget.org/packages/7-Zip.CommandLine/">7-Zip.CommandLine from nuget</see>.
+    /// The other option is to have 7z installed on your system (I.e. There is a registry-key HKLM/Software/7-Zip/Path
+    /// that points to a directory containing 7z.exe or 7za.exe).
+    /// </para>
+    /// <para>
     /// Currently the following formats are supported: 7z, xz, lzma, cab, zip, gzip, bzip2 and tar.
     /// (Those are the formats supported by the standalone 7za.exe.)
     /// </para>
@@ -132,7 +134,8 @@ namespace Cake.SevenZip
               context.Environment,
               context.ProcessRunner,
               context.Tools,
-              context.Log);
+              context.Log,
+              context.Registry);
             runner.Run(settings);
         }
     }

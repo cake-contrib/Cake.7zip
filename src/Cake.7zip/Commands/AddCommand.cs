@@ -1,6 +1,7 @@
 namespace Cake.SevenZip
 {
     using System;
+    using System.IO;
     using System.Linq;
 
     using Cake.Core;
@@ -28,14 +29,59 @@ namespace Cake.SevenZip
     {
         /// <summary>
         /// Gets or sets The list of Files to add to the package.
+        /// <para>
+        /// Files will always be placed directly into the archive without any
+        /// directory-structure.
+        /// </para>
+        /// Setting Files like this:
+        /// <code>
+        /// Files = new[] {
+        ///   new FilePath("C:\\some\\place\\a.txt"),
+        ///   new FilePath("C:\\some\\other\\place\\b.txt"),
+        ///   new FilePath("C:\\a\\totally\\different\\place\\c.txt")
+        /// };
+        /// </code>
+        /// Will result in a file:
+        /// <code>
+        /// Archive.zip
+        /// - a.txt
+        /// - b.txt
+        /// - c.txt
+        /// </code>
+        /// without any directory structure.
+        /// <seealso cref="Directories"/>
+        /// <seealso cref="DirectoryContents"/>
         /// </summary>
         public FilePathCollection Files { get; set; }
 
         /// <summary>
         /// Gets or sets the list of Directories to add to the package.
-        /// Consider using the recurse-switch and/or filter-switch if you add Directories.
+        /// <para>
+        /// Adding a directory will add the directory itself to the root of the archive
+        /// including all files in it. However, no subdirectories will be
+        /// added unless the <see cref="SwitchRecurseSubdirectories"/> is used.
+        /// </para>
+        /// <seealso cref="Files"/>
+        /// <seealso cref="DirectoryContents"/>
+        /// <seealso cref="SwitchIncludeFilename"/>
+        /// <seealso cref="SwitchExcludeFilename"/>
         /// </summary>
         public DirectoryPathCollection Directories { get; set; }
+
+        /// <summary>
+        /// Gets or sets the list of Directory-contents to add to the package.
+        /// <para>
+        /// Adding a directory this way will add the files of the directory
+        /// to the root of the archive but not the directory itself.
+        /// (No subdirectories will be added unless the
+        /// <see cref="SwitchRecurseSubdirectories"/> is used.)
+        /// </para>
+        /// <seealso cref="Files"/>
+        /// <seealso cref="Directories"/>
+        /// <seealso cref="SwitchIncludeFilename"/>
+        /// <seealso cref="SwitchExcludeFilename"/>
+        /// </summary>
+        public DirectoryPathCollection DirectoryContents { get; set; }
 
         /// <summary>
         /// Gets or sets the archive to add the files to.
@@ -93,7 +139,8 @@ namespace Cake.SevenZip
             }
 
             if ((Files == null || Files.Count == 0)
-                && (Directories == null || Directories.Count == 0))
+                && (Directories == null || Directories.Count == 0)
+                && (DirectoryContents == null || DirectoryContents.Count == 0))
             {
                 throw new ArgumentException("some input (Files or Directories) is required for add.");
             }
@@ -141,6 +188,15 @@ namespace Cake.SevenZip
                 foreach (var d in Directories)
                 {
                     builder.AppendQuoted(d.FullPath);
+                }
+            }
+
+            if (DirectoryContents != null)
+            {
+                foreach (var d in DirectoryContents)
+                {
+                    var glob = d.CombineWithFilePath("*");
+                    builder.AppendQuoted(glob.FullPath);
                 }
             }
         }

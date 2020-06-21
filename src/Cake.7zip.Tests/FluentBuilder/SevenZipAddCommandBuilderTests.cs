@@ -67,6 +67,70 @@ namespace Cake.SevenZip.Tests.Builder
         }
 
         [Fact]
+        public void Add_can_use_Archive_and_file_using_collection()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithFiles(new FilePathCollection(new[] { new FilePath("c:\\foo.txt") }));
+
+            const string expected = @"a ""out.zip"" ""c:/foo.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Add_can_use_Archive_and_directory_using_collection()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithDirectories(new DirectoryPathCollection(new[] { new DirectoryPath("c:\\foo") }));
+
+            const string expected = @"a ""out.zip"" ""c:/foo""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Add_can_use_Archive_and_directoryContent()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithDirectoryContents(new DirectoryPath("c:\\foo"));
+
+            const string expected = @"a ""out.zip"" ""c:/foo/*""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Add_can_use_Archive_and_directoryContent_using_collection()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithDirectoryContents(new DirectoryPathCollection(new[] { new DirectoryPath("c:\\foo") }));
+
+            const string expected = @"a ""out.zip"" ""c:/foo/*""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void Add_can_use_ArchiveType()
         {
             var fixture = new FluentBuilderFixture();
