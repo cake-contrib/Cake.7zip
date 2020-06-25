@@ -6,6 +6,21 @@ namespace Cake.SevenZip
     /// Builder for <see cref="ExtractCommand"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}" />
     /// </summary>
+    /// <example>
+    /// <code>
+    /// <![CDATA[
+    /// Task("UnzipIt")
+    ///     .Does(() =>
+    /// {
+    ///     SevenZip(m => m
+    ///       .InExtractMode()
+    ///       .WithArchive(File("path/to/file.zip"))
+    ///       .WithArchiveType(SwitchArchiveType.Zip)
+    ///       .WithOutputDirectory("some/other/directory"));
+    /// });
+    /// ]]>
+    /// </code>
+    /// </example>
     public class ExtractCommandBuilder :
         ISupportSwitchBuilder<ISupportSwitchArchiveType>,
         ISupportSwitchBuilder<ISupportSwitchCompressionMethod>,
