@@ -73,6 +73,7 @@
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Value">Value</a></p>
+<p><a href="#SeeAlso">See Also</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -143,6 +144,7 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/78362752">CompressionMethod</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/E84D8681">Delete<wbr>After<wbr>Compression</a></li>
 				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/D7D2F47C">Directories</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/993BC6D8">DirectoryContents</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/BC5D1E32">ExcludeFilenames</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/A602C71D">Files</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/C9C5A4F3">IncludeFilenames</a></li>
@@ -179,7 +181,15 @@
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Gets or sets the list of Directories to add to the package.
-    Consider using the recurse-switch and/or filter-switch if you add Directories.
+    <p>
+    Adding a directory will add the directory itself to the root of the archive
+    including all files in it. However, no subdirectories will be
+    added unless the <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/SwitchRecurseSubdirectories">SwitchRecurseSubdirectories</a></code> is used.
+    </p>
+    
+    
+    
+    
     </div>
 
 		<div class="panel panel-default">
@@ -221,6 +231,13 @@
 		</div>
 	</div>	
 
+	<h1 id="SeeAlso">See Also</h1>
+	<ul class="list-unstyled">
+			<li><code><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/A602C71D">Files</a></code></li>
+			<li><code><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/993BC6D8">DirectoryContents</a></code></li>
+			<li><code><a href="/Cake.7zip/api/Cake.SevenZip/SwitchIncludeFilename">SwitchIncludeFilename</a></code></li>
+			<li><code><a href="/Cake.7zip/api/Cake.SevenZip/SwitchExcludeFilename">SwitchExcludeFilename</a></code></li>
+	</ul>
 
 	
 </section>

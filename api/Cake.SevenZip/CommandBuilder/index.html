@@ -140,6 +140,8 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseBoolSwitch">BaseBoolSwitch</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseSwitchCollection_1">BaseSwitchCollection<wbr>&lt;T&gt;<wbr></a></li>
 				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip/CommandBuilder">CommandBuilder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder">DeleteCommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommand">ExtractCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommandBuilder">Extract<wbr>Command<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/OverwriteMode">OverwriteMode</a></li>
@@ -238,7 +240,7 @@
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
     Builder for all <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/ICommand">ICommand</a></code>s.
-    Do NOT call WithCommand... multiple times.
+    Do NOT call In...Mode() multiple times.
     </div>
 
 		<div class="panel panel-default">
@@ -304,6 +306,15 @@ class Type type-node
 								<td>
 									<div>
     Makes this Builder an AddCommand-Builder.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/CommandBuilder/5BA58193">InDeleteMode<wbr>()<wbr></a></td>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder">DeleteCommandBuilder</a></td>
+								<td>
+									<div>
+    Makes this Builder a DeleteCommand-Builder.
     </div>
 								</td>
 							</tr>

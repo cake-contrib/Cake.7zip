@@ -202,7 +202,21 @@
 								<td><a href="/Cake.7zip/api/Cake.SevenZip/CommandBuilder">CommandBuilder</a></td>
 									<td>
     Builder for all <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/ICommand">ICommand</a></code>s.
-    Do NOT call WithCommand... multiple times.
+    Do NOT call In...Mode() multiple times.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></td>
+									<td>
+    Deletes files from the archive.
+    (Command: d).
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder">DeleteCommandBuilder</a></td>
+									<td>
+    Builder for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></code>.
+    
     </td>
 							</tr>
 							<tr>
@@ -265,10 +279,13 @@
 									<td>
     <p>Functions to call <a href="https://7-zip.org/">7-Zip</a>.</p>
     <p>
-    In order to use this addin, 7za.exe has to be available.
-    The only tested option currently is unsing
-    <a href="https://www.nuget.org/packages/7-Zip.CommandLine/">7-Zip.CommandLine from nuget</a>
-    though other options may work.
+    In order to use this addin, 7z.exe or 7za.exe has to be available.
+    One option is using
+    <a href="https://www.nuget.org/packages/7-Zip.CommandLine/">7-Zip.CommandLine from nuget</a>.
+    The other option is to have 7z installed on your system (I.e. There is a registry-key HKLM/Software/7-Zip/Path
+    that points to a directory containing 7z.exe or 7za.exe).
+    </p>
+    <p>
     Currently the following formats are supported: 7z, xz, lzma, cab, zip, gzip, bzip2 and tar.
     (Those are the formats supported by the standalone 7za.exe.)
     </p>

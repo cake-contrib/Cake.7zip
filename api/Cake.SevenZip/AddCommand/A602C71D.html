@@ -73,6 +73,7 @@
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Value">Value</a></p>
+<p><a href="#SeeAlso">See Also</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -143,6 +144,7 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/78362752">CompressionMethod</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/E84D8681">Delete<wbr>After<wbr>Compression</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/D7D2F47C">Directories</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/993BC6D8">DirectoryContents</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/BC5D1E32">ExcludeFilenames</a></li>
 				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/A602C71D">Files</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/C9C5A4F3">IncludeFilenames</a></li>
@@ -178,7 +180,25 @@
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-    Gets or sets The list of Files to add to the package.
+    Gets or sets the list of Files to add to the package.
+    <p>
+    Files will always be placed directly into the archive without any
+    directory-structure.
+    </p>
+    Setting Files like this:
+    <pre><code class="cs">Files = new[] {
+  new FilePath("C:\\some\\place\\a.txt"),
+  new FilePath("C:\\some\\other\\place\\b.txt"),
+  new FilePath("C:\\a\\totally\\different\\place\\c.txt")
+};</code></pre>
+    Will result in a file:
+    <pre><code class="cs">Archive.zip
+- a.txt
+- b.txt
+- c.txt</code></pre>
+    without any directory structure.
+    
+    
     </div>
 
 		<div class="panel panel-default">
@@ -220,6 +240,11 @@
 		</div>
 	</div>	
 
+	<h1 id="SeeAlso">See Also</h1>
+	<ul class="list-unstyled">
+			<li><code><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/D7D2F47C">Directories</a></code></li>
+			<li><code><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/993BC6D8">DirectoryContents</a></code></li>
+	</ul>
 
 	
 </section>

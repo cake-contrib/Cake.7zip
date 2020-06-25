@@ -142,6 +142,8 @@
 				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip/BaseBoolSwitch">BaseBoolSwitch</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseSwitchCollection_1">BaseSwitchCollection<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/CommandBuilder">CommandBuilder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder">DeleteCommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommand">ExtractCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommandBuilder">Extract<wbr>Command<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/OverwriteMode">OverwriteMode</a></li>
@@ -268,12 +270,12 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchDeleteAfterCompression">Switch<wbr>Delete<wbr>After<wbr>Compression</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchDisableParsingOfArchiveName">Switch<wbr>Disable<wbr>Parsing<wbr>Of<wbr>Archive<wbr>Name</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchCompressFilesOpenForWriting">Switch<wbr>Compress<wbr>Files<wbr>Open<wbr>For<wbr>Writing</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchNtSecurityInformation">Switch<wbr>Nt<wbr>Security<wbr>Information</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchNtfsAlternateStreams">Switch<wbr>Ntfs<wbr>Alternate<wbr>Streams</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchSetTimestampFromMostRecentFile">Switch<wbr>Set<wbr>Timestamp<wbr>From<wbr>Most<wbr>Recent<wbr>File</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchCompressFilesOpenForWriting">Switch<wbr>Compress<wbr>Files<wbr>Open<wbr>For<wbr>Writing</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchNtfsAlternateStreams">Switch<wbr>Ntfs<wbr>Alternate<wbr>Streams</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchDeleteAfterCompression">Switch<wbr>Delete<wbr>After<wbr>Compression</a></li>								
 									</ul>
 								</dd>			
 							
@@ -287,18 +289,18 @@
 	click Interface0 "/Cake.7zip/api/Cake.SevenZip/ISwitch"
 	Type["BaseBoolSwitch"]
 class Type type-node
-	Derived0["SwitchDeleteAfterCompression"]--&gt;Type
-	click Derived0 "/Cake.7zip/api/Cake.SevenZip/SwitchDeleteAfterCompression"
-	Derived1["SwitchDisableParsingOfArchiveName"]--&gt;Type
-	click Derived1 "/Cake.7zip/api/Cake.SevenZip/SwitchDisableParsingOfArchiveName"
-	Derived2["SwitchCompressFilesOpenForWriting"]--&gt;Type
-	click Derived2 "/Cake.7zip/api/Cake.SevenZip/SwitchCompressFilesOpenForWriting"
-	Derived3["SwitchNtSecurityInformation"]--&gt;Type
-	click Derived3 "/Cake.7zip/api/Cake.SevenZip/SwitchNtSecurityInformation"
+	Derived0["SwitchDisableParsingOfArchiveName"]--&gt;Type
+	click Derived0 "/Cake.7zip/api/Cake.SevenZip/SwitchDisableParsingOfArchiveName"
+	Derived1["SwitchNtSecurityInformation"]--&gt;Type
+	click Derived1 "/Cake.7zip/api/Cake.SevenZip/SwitchNtSecurityInformation"
+	Derived2["SwitchSetTimestampFromMostRecentFile"]--&gt;Type
+	click Derived2 "/Cake.7zip/api/Cake.SevenZip/SwitchSetTimestampFromMostRecentFile"
+	Derived3["SwitchCompressFilesOpenForWriting"]--&gt;Type
+	click Derived3 "/Cake.7zip/api/Cake.SevenZip/SwitchCompressFilesOpenForWriting"
 	Derived4["SwitchNtfsAlternateStreams"]--&gt;Type
 	click Derived4 "/Cake.7zip/api/Cake.SevenZip/SwitchNtfsAlternateStreams"
-	Derived5["SwitchSetTimestampFromMostRecentFile"]--&gt;Type
-	click Derived5 "/Cake.7zip/api/Cake.SevenZip/SwitchSetTimestampFromMostRecentFile"
+	Derived5["SwitchDeleteAfterCompression"]--&gt;Type
+	click Derived5 "/Cake.7zip/api/Cake.SevenZip/SwitchDeleteAfterCompression"
 
 						</div>
 					</div>

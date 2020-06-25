@@ -72,6 +72,7 @@
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Examples">Examples</a></p>
 <p><a href="#Constructors">Constructors</a></p>
 <p><a href="#Methods">Methods</a></p>
 <p><a href="#ExtensionMethods">Extension Methods</a></p>
@@ -143,6 +144,8 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseBoolSwitch">BaseBoolSwitch</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseSwitchCollection_1">BaseSwitchCollection<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/CommandBuilder">CommandBuilder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder">DeleteCommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommand">ExtractCommand</a></li>
 				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommandBuilder">Extract<wbr>Command<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/OverwriteMode">OverwriteMode</a></li>
@@ -323,6 +326,18 @@ class Type type-node
     ISupportSwitchBuilder&lt;ISupportSwitchOverwriteMode&gt;, 
     ISupportSwitchBuilder&lt;ISupportSwitchOutputDirectory&gt;</code></pre>
 
+	<h1 id="Examples">Examples</h1>
+	<div>
+    <pre><code class="cs">Task("UnzipIt")
+    .Does(() =&gt;
+{
+    SevenZip(m =&gt; m
+      .InExtractMode()
+      .WithArchive(File("path/to/file.zip"))
+      .WithArchiveType(SwitchArchiveType.Zip)
+      .WithOutputDirectory("some/other/directory"));
+});</code></pre>
+    </div>
 
 
 

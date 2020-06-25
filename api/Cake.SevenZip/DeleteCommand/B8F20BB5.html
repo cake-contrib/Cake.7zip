@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.7zip/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.7zip/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.7zip - API - SevenZipRunner.SevenZipRunner(IFileSystem, ICakeEnvironment, IProcessRunner, IToolLocator, ICakeLog) Constructor</title>
+        <title>Cake.7zip - API - DeleteCommand.UpdateOptions Property</title>
         <link href="/Cake.7zip/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.7zip/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/Cake.7zip/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -72,8 +72,7 @@
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
-<p><a href="#Parameters">Parameters</a></p>
-<p><a href="#ReturnValue">Return Value</a></p>
+<p><a href="#Value">Value</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -135,14 +134,21 @@
 			<li class="header">Namespace</li>
 		<li><a href="/Cake.7zip/api/Cake.SevenZip">Cake<wbr>.SevenZip</a></li>
 		<li class="header">Type</li>
-		<li><a href="/Cake.7zip/api/Cake.SevenZip/SevenZipRunner">SevenZipRunner</a></li>
+		<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></li>
 		<li role="separator" class="divider"></li>
-			<li class="header">Constructors</li>
-				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip/SevenZipRunner/2141C80B">SevenZipRunner<wbr>(IFileSystem, <wbr>ICakeEnvironment, <wbr>IProcessRunner, <wbr>IToolLocator, <wbr>ICakeLog)<wbr></a></li>
+			<li class="header">Property Members</li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand/AF004145">Archive</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand/6B4DD472">CompressionMethod</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand/C9FDE0AE">ExcludeFilenames</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand/E8B1FBFA">FileGlob</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand/BC655A6F">IncludeFilenames</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand/15BF9BC0">NtfsAlternateStreams</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand/9E9A828A">Password</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand/27C85324">Recurse<wbr>Subdirectories</a></li>
+				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand/B8F20BB5">UpdateOptions</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand/08901019">WorkingDirectory</a></li>
 			<li class="header">Method Members</li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip/SevenZipRunner/70F31AA7">Get<wbr>Tool<wbr>Executable<wbr>Names<wbr>()<wbr></a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip/SevenZipRunner/86EF5A51">GetToolName<wbr>()<wbr></a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip/SevenZipRunner/48A75A08">Run<wbr>(SevenZipSettings)<wbr></a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand/C39AA016">BuildArguments<wbr>(<wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></li>
 
 
                     </ul>
@@ -157,79 +163,39 @@
 
 
 <section class="content-header">
-			<h3><a href="/Cake.7zip/api/Cake.SevenZip/SevenZipRunner">SevenZipRunner</a>.</h3>
-	<h1>SevenZipRunner<wbr>(IFileSystem, <wbr>ICakeEnvironment, <wbr>IProcessRunner, <wbr>IToolLocator, <wbr>ICakeLog)<wbr> <small>Constructor</small></h1>
+			<h3><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a>.</h3>
+	<h1>UpdateOptions <small>Property</small></h1>
 </section>
 <section class="content">
 	
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-    Initializes a new instance of the <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/SevenZipRunner">SevenZipRunner</a></code> class.
+    Gets or sets the SwitchUpdateOptions.
     </div>
 
 		<div class="panel panel-default">
-  			<div class="panel-body">	
+  			<div class="panel-body">
 				<dl class="dl-horizontal">	
 						
 						<dt>Namespace</dt>
 						<dd><a href="/Cake.7zip/api/Cake.SevenZip">Cake<wbr>.SevenZip</a></dd>
 					
 						<dt>Containing Type</dt>
-						<dd><a href="/Cake.7zip/api/Cake.SevenZip/SevenZipRunner">SevenZipRunner</a></dd>		
+						<dd><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></dd>		
 					
 				</dl>
   			</div>
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public SevenZipRunner(IFileSystem fileSystem, ICakeEnvironment environment, IProcessRunner processRunner, IToolLocator tools, ICakeLog log)</code></pre>
+	<pre><code>public SwitchUpdateOptions UpdateOptions { get; set; }</code></pre>
 
 
 
 
 
-	<h1 id="Parameters">Parameters</h1>
-	<div class="box">
-		<div class="box-body no-padding table-responsive">
-			<table class="table table-striped table-hover three-cols">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Type</th>
-						<th>Description</th>
-					</tr>
-				</thead>
-					<tbody><tr>
-						<td>fileSystem</td>
-						<td>IFileSystem</td>
-						<td>The file system.</td>
-					</tr>
-					<tr>
-						<td>environment</td>
-						<td>ICakeEnvironment</td>
-						<td>The environment.</td>
-					</tr>
-					<tr>
-						<td>processRunner</td>
-						<td>IProcessRunner</td>
-						<td>The process runner.</td>
-					</tr>
-					<tr>
-						<td>tools</td>
-						<td>IToolLocator</td>
-						<td>The tool locator.</td>
-					</tr>
-					<tr>
-						<td>log</td>
-						<td>ICakeLog</td>
-						<td>The log.</td>
-					</tr>
-			</tbody></table>
-		</div>
-	</div>	
-
-	<h1 id="ReturnValue">Return Value</h1>
+	<h1 id="Value">Value</h1>
 	<div class="box">
 		<div class="box-body no-padding table-responsive">
 			<table class="table table-striped table-hover two-cols">
@@ -240,8 +206,10 @@
 					</tr>
 				</thead>
 				<tbody><tr>
-					<td>void</td>
-					<td></td>
+					<td><a href="/Cake.7zip/api/Cake.SevenZip/SwitchUpdateOptions">SwitchUpdateOptions</a></td>
+					<td>
+    SwitchUpdateOptions.
+    </td>
 				</tr>
 			</tbody></table>
 		</div>

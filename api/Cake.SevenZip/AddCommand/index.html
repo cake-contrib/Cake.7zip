@@ -141,6 +141,8 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseBoolSwitch">BaseBoolSwitch</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseSwitchCollection_1">BaseSwitchCollection<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/CommandBuilder">CommandBuilder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder">DeleteCommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommand">ExtractCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommandBuilder">Extract<wbr>Command<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/OverwriteMode">OverwriteMode</a></li>
@@ -408,7 +410,34 @@ class Type type-node
 								<td>
 									<div>
     Gets or sets the list of Directories to add to the package.
-    Consider using the recurse-switch and/or filter-switch if you add Directories.
+    <p>
+    Adding a directory will add the directory itself to the root of the archive
+    including all files in it. However, no subdirectories will be
+    added unless the <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/SwitchRecurseSubdirectories">SwitchRecurseSubdirectories</a></code> is used.
+    </p>
+    
+    
+    
+    
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/993BC6D8">DirectoryContents</a></td>
+								<td>Directory<wbr>Path<wbr>Collection</td>
+								<td>
+									<div>
+    Gets or sets the list of Directory-contents to add to the package.
+    <p>
+    Adding a directory this way will add the files of the directory
+    to the root of the archive but not the directory itself.
+    (No subdirectories will be added unless the
+    <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/SwitchRecurseSubdirectories">SwitchRecurseSubdirectories</a></code> is used.)
+    </p>
+    
+    
+    
+    
     </div>
 								</td>
 							</tr>
@@ -426,7 +455,25 @@ class Type type-node
 								<td>FilePathCollection</td>
 								<td>
 									<div>
-    Gets or sets The list of Files to add to the package.
+    Gets or sets the list of Files to add to the package.
+    <p>
+    Files will always be placed directly into the archive without any
+    directory-structure.
+    </p>
+    Setting Files like this:
+    <pre><code class="cs">Files = new[] {
+  new FilePath("C:\\some\\place\\a.txt"),
+  new FilePath("C:\\some\\other\\place\\b.txt"),
+  new FilePath("C:\\a\\totally\\different\\place\\c.txt")
+};</code></pre>
+    Will result in a file:
+    <pre><code class="cs">Archive.zip
+- a.txt
+- b.txt
+- c.txt</code></pre>
+    without any directory structure.
+    
+    
     </div>
 								</td>
 							</tr>

@@ -141,6 +141,8 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseBoolSwitch">BaseBoolSwitch</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseSwitchCollection_1">BaseSwitchCollection<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/CommandBuilder">CommandBuilder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder">DeleteCommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommand">ExtractCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommandBuilder">Extract<wbr>Command<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/OverwriteMode">OverwriteMode</a></li>
@@ -240,10 +242,13 @@
 	<div class="lead">
     <p>Functions to call <a href="https://7-zip.org/">7-Zip</a>.</p>
     <p>
-    In order to use this addin, 7za.exe has to be available.
-    The only tested option currently is unsing
-    <a href="https://www.nuget.org/packages/7-Zip.CommandLine/">7-Zip.CommandLine from nuget</a>
-    though other options may work.
+    In order to use this addin, 7z.exe or 7za.exe has to be available.
+    One option is using
+    <a href="https://www.nuget.org/packages/7-Zip.CommandLine/">7-Zip.CommandLine from nuget</a>.
+    The other option is to have 7z installed on your system (I.e. There is a registry-key HKLM/Software/7-Zip/Path
+    that points to a directory containing 7z.exe or 7za.exe).
+    </p>
+    <p>
     Currently the following formats are supported: 7z, xz, lzma, cab, zip, gzip, bzip2 and tar.
     (Those are the formats supported by the standalone 7za.exe.)
     </p>

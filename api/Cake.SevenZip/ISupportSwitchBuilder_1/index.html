@@ -141,6 +141,8 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseBoolSwitch">BaseBoolSwitch</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseSwitchCollection_1">BaseSwitchCollection<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/CommandBuilder">CommandBuilder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder">DeleteCommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommand">ExtractCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommandBuilder">Extract<wbr>Command<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/OverwriteMode">OverwriteMode</a></li>
@@ -256,6 +258,7 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder">DeleteCommandBuilder</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommandBuilder">AddCommandBuilder</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommandBuilder">Extract<wbr>Command<wbr>Builder</a></li>								
 									</ul>
@@ -267,10 +270,12 @@
 							graph BT
 	Type["ISupportSwitchBuilder&lt;T&gt;"]
 class Type type-node
-	Implementing0["AddCommandBuilder"]-.-&gt;Type
-	click Implementing0 "/Cake.7zip/api/Cake.SevenZip/AddCommandBuilder"
-	Implementing1["ExtractCommandBuilder"]-.-&gt;Type
-	click Implementing1 "/Cake.7zip/api/Cake.SevenZip/ExtractCommandBuilder"
+	Implementing0["DeleteCommandBuilder"]-.-&gt;Type
+	click Implementing0 "/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder"
+	Implementing1["AddCommandBuilder"]-.-&gt;Type
+	click Implementing1 "/Cake.7zip/api/Cake.SevenZip/AddCommandBuilder"
+	Implementing2["ExtractCommandBuilder"]-.-&gt;Type
+	click Implementing2 "/Cake.7zip/api/Cake.SevenZip/ExtractCommandBuilder"
 
 						</div>
 					</div>

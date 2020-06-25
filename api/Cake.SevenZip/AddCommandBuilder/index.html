@@ -72,6 +72,7 @@
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Examples">Examples</a></p>
 <p><a href="#Methods">Methods</a></p>
 <p><a href="#ExtensionMethods">Extension Methods</a></p>
 <p><a href="#SeeAlso">See Also</a></p>
@@ -142,6 +143,8 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseBoolSwitch">BaseBoolSwitch</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseSwitchCollection_1">BaseSwitchCollection<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/CommandBuilder">CommandBuilder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder">DeleteCommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommand">ExtractCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommandBuilder">Extract<wbr>Command<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/OverwriteMode">OverwriteMode</a></li>
@@ -325,6 +328,19 @@ class Type type-node
     ISupportSwitchBuilder&lt;ISupportSwitchUpdateOptions&gt;, 
     ISupportSwitchBuilder&lt;ISupportSwitchDeleteAfterCompression&gt;</code></pre>
 
+	<h1 id="Examples">Examples</h1>
+	<div>
+    <pre><code class="cs">Task("ZipIt")
+    .Does(() =&gt;
+{
+    SevenZip(m =&gt; m
+        .InAddMode()
+        .WithArchive(File("path/to/file.zip"))
+        .WithFile(File("a.txt"))
+        .WithFile(File("b.txt"))
+        .WithVolume(1, VolumeUnit.Gigabyte));
+});</code></pre>
+    </div>
 
 
 
@@ -360,7 +376,44 @@ class Type type-node
 								<td><a href="/Cake.7zip/api/Cake.SevenZip/AddCommandBuilder">AddCommandBuilder</a></td>
 								<td>
 									<div>
-    Sets the dierectories on the <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand">AddCommand</a></code>.
+    Sets the directories on the <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand">AddCommand</a></code>.
+    <p>
+    See the comments on <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/A602C71D">Files</a></code>,
+    <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/D7D2F47C">Directories</a></code> and <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/993BC6D8">DirectoryContents</a></code>
+    regarding files and directory structures.
+    </p>
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/AddCommandBuilder/75A55D5E">WithDirectories<wbr>(<wbr>Directory<wbr>Path<wbr>Collection)<wbr></a></td>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/AddCommandBuilder">AddCommandBuilder</a></td>
+								<td>
+									<div>
+    See <code class="cs">Cake.SevenZip.AddCommandBuilder.WithDirectories(DirectoryPath[])</code>.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/AddCommandBuilder/AE9D78E6">With<wbr>Directory<wbr>Contents<wbr>(DirectoryPath[])<wbr></a></td>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/AddCommandBuilder">AddCommandBuilder</a></td>
+								<td>
+									<div>
+    Sets the directoryContents on the <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand">AddCommand</a></code>.
+    <p>
+    See the comments on <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/A602C71D">Files</a></code>,
+    <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/D7D2F47C">Directories</a></code> and <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/993BC6D8">DirectoryContents</a></code>
+    regarding files and directory structures.
+    </p>
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/AddCommandBuilder/A7B6B898">With<wbr>Directory<wbr>Contents<wbr>(<wbr>Directory<wbr>Path<wbr>Collection)<wbr></a></td>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/AddCommandBuilder">AddCommandBuilder</a></td>
+								<td>
+									<div>
+    See <code class="cs">Cake.SevenZip.AddCommandBuilder.WithDirectoryContents(DirectoryPath[])</code>.
     </div>
 								</td>
 							</tr>
@@ -370,6 +423,20 @@ class Type type-node
 								<td>
 									<div>
     Sets the files on the <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand">AddCommand</a></code>.
+    <p>
+    See the comments on <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/A602C71D">Files</a></code>,
+    <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/D7D2F47C">Directories</a></code> and <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand/993BC6D8">DirectoryContents</a></code>
+    regarding files and directory structures.
+    </p>
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/AddCommandBuilder/E11818F3">WithFiles<wbr>(FilePathCollection)<wbr></a></td>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/AddCommandBuilder">AddCommandBuilder</a></td>
+								<td>
+									<div>
+    See <code class="cs">Cake.SevenZip.AddCommandBuilder.WithFiles(FilePath[])</code>.
     </div>
 								</td>
 							</tr>

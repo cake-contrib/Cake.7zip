@@ -139,6 +139,8 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseBoolSwitch">BaseBoolSwitch</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseSwitchCollection_1">BaseSwitchCollection<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/CommandBuilder">CommandBuilder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder">DeleteCommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommand">ExtractCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommandBuilder">Extract<wbr>Command<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/OverwriteMode">OverwriteMode</a></li>
@@ -257,27 +259,28 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchNtSecurityInformation">I<wbr>Support<wbr>Switch<wbr>Nt<wbr>Security<wbr>Information</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchIncludeArchiveFilenames">I<wbr>Support<wbr>Switch<wbr>Include<wbr>Archive<wbr>Filenames</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommand">ExtractCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchCompressionMethod">I<wbr>Support<wbr>Switch<wbr>Compression<wbr>Method</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchDisableParsingOfArchiveName">I<wbr>Support<wbr>Switch<wbr>Disable<wbr>Parsing<wbr>Of<wbr>Archive<wbr>Name</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchNtfsAlternateStreams">I<wbr>Support<wbr>Switch<wbr>Ntfs<wbr>Alternate<wbr>Streams</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchDeleteAfterCompression">I<wbr>Support<wbr>Switch<wbr>Delete<wbr>After<wbr>Compression</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchTimestampFromMostRecentFile">I<wbr>Support<wbr>Switch<wbr>Timestamp<wbr>From<wbr>Most<wbr>Recent<wbr>File</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchOutputDirectory">I<wbr>Support<wbr>Switch<wbr>Output<wbr>Directory</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchCompressFilesOpenForWriting">I<wbr>Support<wbr>Switch<wbr>Compress<wbr>Files<wbr>Open<wbr>For<wbr>Writing</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand">AddCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchPassword">I<wbr>Support<wbr>Switch<wbr>Password</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchWorkingDirectory">I<wbr>Support<wbr>Switch<wbr>Working<wbr>Directory</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchVolume">ISupportSwitchVolume</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchRecurseSubdirectories">I<wbr>Support<wbr>Switch<wbr>Recurse<wbr>Subdirectories</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchExcludeArchiveFilenames">I<wbr>Support<wbr>Switch<wbr>Exclude<wbr>Archive<wbr>Filenames</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchOverwriteMode">I<wbr>Support<wbr>Switch<wbr>Overwrite<wbr>Mode</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchArchiveType">I<wbr>Support<wbr>Switch<wbr>Archive<wbr>Type</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchExcludeFilenames">I<wbr>Support<wbr>Switch<wbr>Exclude<wbr>Filenames</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommand">ExtractCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchWorkingDirectory">I<wbr>Support<wbr>Switch<wbr>Working<wbr>Directory</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchDisableParsingOfArchiveName">I<wbr>Support<wbr>Switch<wbr>Disable<wbr>Parsing<wbr>Of<wbr>Archive<wbr>Name</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchCompressionMethod">I<wbr>Support<wbr>Switch<wbr>Compression<wbr>Method</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand">AddCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchVolume">ISupportSwitchVolume</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchOverwriteMode">I<wbr>Support<wbr>Switch<wbr>Overwrite<wbr>Mode</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchOutputDirectory">I<wbr>Support<wbr>Switch<wbr>Output<wbr>Directory</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchUpdateOptions">I<wbr>Support<wbr>Switch<wbr>Update<wbr>Options</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchNtfsAlternateStreams">I<wbr>Support<wbr>Switch<wbr>Ntfs<wbr>Alternate<wbr>Streams</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchPassword">I<wbr>Support<wbr>Switch<wbr>Password</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchTimestampFromMostRecentFile">I<wbr>Support<wbr>Switch<wbr>Timestamp<wbr>From<wbr>Most<wbr>Recent<wbr>File</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchNtSecurityInformation">I<wbr>Support<wbr>Switch<wbr>Nt<wbr>Security<wbr>Information</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchExcludeArchiveFilenames">I<wbr>Support<wbr>Switch<wbr>Exclude<wbr>Archive<wbr>Filenames</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchCompressFilesOpenForWriting">I<wbr>Support<wbr>Switch<wbr>Compress<wbr>Files<wbr>Open<wbr>For<wbr>Writing</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchIncludeFilenames">I<wbr>Support<wbr>Switch<wbr>Include<wbr>Filenames</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchIncludeArchiveFilenames">I<wbr>Support<wbr>Switch<wbr>Include<wbr>Archive<wbr>Filenames</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchDeleteAfterCompression">I<wbr>Support<wbr>Switch<wbr>Delete<wbr>After<wbr>Compression</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -287,48 +290,50 @@
 							graph BT
 	Type["ISupportSwitch"]
 class Type type-node
-	Implementing0["ISupportSwitchNtSecurityInformation"]-.-&gt;Type
-	click Implementing0 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchNtSecurityInformation"
-	Implementing1["ISupportSwitchIncludeArchiveFilenames"]-.-&gt;Type
-	click Implementing1 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchIncludeArchiveFilenames"
-	Implementing2["ExtractCommand"]-.-&gt;Type
-	click Implementing2 "/Cake.7zip/api/Cake.SevenZip/ExtractCommand"
-	Implementing3["ISupportSwitchCompressionMethod"]-.-&gt;Type
-	click Implementing3 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchCompressionMethod"
-	Implementing4["ISupportSwitchDisableParsingOfArchiveName"]-.-&gt;Type
-	click Implementing4 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchDisableParsingOfArchiveName"
-	Implementing5["ISupportSwitchNtfsAlternateStreams"]-.-&gt;Type
-	click Implementing5 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchNtfsAlternateStreams"
-	Implementing6["ISupportSwitchDeleteAfterCompression"]-.-&gt;Type
-	click Implementing6 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchDeleteAfterCompression"
-	Implementing7["ISupportSwitchTimestampFromMostRecentFile"]-.-&gt;Type
-	click Implementing7 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchTimestampFromMostRecentFile"
-	Implementing8["ISupportSwitchOutputDirectory"]-.-&gt;Type
-	click Implementing8 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchOutputDirectory"
-	Implementing9["ISupportSwitchCompressFilesOpenForWriting"]-.-&gt;Type
-	click Implementing9 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchCompressFilesOpenForWriting"
-	Implementing10["AddCommand"]-.-&gt;Type
-	click Implementing10 "/Cake.7zip/api/Cake.SevenZip/AddCommand"
-	Implementing11["ISupportSwitchPassword"]-.-&gt;Type
-	click Implementing11 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchPassword"
-	Implementing12["ISupportSwitchWorkingDirectory"]-.-&gt;Type
-	click Implementing12 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchWorkingDirectory"
-	Implementing13["ISupportSwitchVolume"]-.-&gt;Type
-	click Implementing13 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchVolume"
-	Implementing14["ISupportSwitchRecurseSubdirectories"]-.-&gt;Type
-	click Implementing14 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchRecurseSubdirectories"
-	Implementing15["ISupportSwitchExcludeArchiveFilenames"]-.-&gt;Type
-	click Implementing15 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchExcludeArchiveFilenames"
-	Implementing16["ISupportSwitchOverwriteMode"]-.-&gt;Type
-	click Implementing16 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchOverwriteMode"
-	Implementing17["ISupportSwitchArchiveType"]-.-&gt;Type
-	click Implementing17 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchArchiveType"
-	Implementing18["ISupportSwitchExcludeFilenames"]-.-&gt;Type
-	click Implementing18 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchExcludeFilenames"
-	Implementing19["ISupportSwitchUpdateOptions"]-.-&gt;Type
-	click Implementing19 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchUpdateOptions"
-	Implementing20["ISupportSwitchIncludeFilenames"]-.-&gt;Type
-	click Implementing20 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchIncludeFilenames"
+	Implementing0["ISupportSwitchRecurseSubdirectories"]-.-&gt;Type
+	click Implementing0 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchRecurseSubdirectories"
+	Implementing1["ISupportSwitchArchiveType"]-.-&gt;Type
+	click Implementing1 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchArchiveType"
+	Implementing2["ISupportSwitchExcludeFilenames"]-.-&gt;Type
+	click Implementing2 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchExcludeFilenames"
+	Implementing3["DeleteCommand"]-.-&gt;Type
+	click Implementing3 "/Cake.7zip/api/Cake.SevenZip/DeleteCommand"
+	Implementing4["ExtractCommand"]-.-&gt;Type
+	click Implementing4 "/Cake.7zip/api/Cake.SevenZip/ExtractCommand"
+	Implementing5["ISupportSwitchWorkingDirectory"]-.-&gt;Type
+	click Implementing5 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchWorkingDirectory"
+	Implementing6["ISupportSwitchDisableParsingOfArchiveName"]-.-&gt;Type
+	click Implementing6 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchDisableParsingOfArchiveName"
+	Implementing7["ISupportSwitchCompressionMethod"]-.-&gt;Type
+	click Implementing7 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchCompressionMethod"
+	Implementing8["AddCommand"]-.-&gt;Type
+	click Implementing8 "/Cake.7zip/api/Cake.SevenZip/AddCommand"
+	Implementing9["ISupportSwitchVolume"]-.-&gt;Type
+	click Implementing9 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchVolume"
+	Implementing10["ISupportSwitchOverwriteMode"]-.-&gt;Type
+	click Implementing10 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchOverwriteMode"
+	Implementing11["ISupportSwitchOutputDirectory"]-.-&gt;Type
+	click Implementing11 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchOutputDirectory"
+	Implementing12["ISupportSwitchUpdateOptions"]-.-&gt;Type
+	click Implementing12 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchUpdateOptions"
+	Implementing13["ISupportSwitchNtfsAlternateStreams"]-.-&gt;Type
+	click Implementing13 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchNtfsAlternateStreams"
+	Implementing14["ISupportSwitchPassword"]-.-&gt;Type
+	click Implementing14 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchPassword"
+	Implementing15["ISupportSwitchTimestampFromMostRecentFile"]-.-&gt;Type
+	click Implementing15 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchTimestampFromMostRecentFile"
+	Implementing16["ISupportSwitchNtSecurityInformation"]-.-&gt;Type
+	click Implementing16 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchNtSecurityInformation"
+	Implementing17["ISupportSwitchExcludeArchiveFilenames"]-.-&gt;Type
+	click Implementing17 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchExcludeArchiveFilenames"
+	Implementing18["ISupportSwitchCompressFilesOpenForWriting"]-.-&gt;Type
+	click Implementing18 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchCompressFilesOpenForWriting"
+	Implementing19["ISupportSwitchIncludeFilenames"]-.-&gt;Type
+	click Implementing19 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchIncludeFilenames"
+	Implementing20["ISupportSwitchIncludeArchiveFilenames"]-.-&gt;Type
+	click Implementing20 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchIncludeArchiveFilenames"
+	Implementing21["ISupportSwitchDeleteAfterCompression"]-.-&gt;Type
+	click Implementing21 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitchDeleteAfterCompression"
 
 						</div>
 					</div>

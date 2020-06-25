@@ -141,6 +141,8 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseBoolSwitch">BaseBoolSwitch</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseSwitchCollection_1">BaseSwitchCollection<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/CommandBuilder">CommandBuilder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder">DeleteCommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommand">ExtractCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommandBuilder">Extract<wbr>Command<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/OverwriteMode">OverwriteMode</a></li>
@@ -271,6 +273,7 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommand">ExtractCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand">AddCommand</a></li>								
 									</ul>
@@ -284,10 +287,12 @@
 	click Interface0 "/Cake.7zip/api/Cake.SevenZip/ISupportSwitch"
 	Type["ISupportSwitchNtfsAlternateStreams"]
 class Type type-node
-	Implementing0["ExtractCommand"]-.-&gt;Type
-	click Implementing0 "/Cake.7zip/api/Cake.SevenZip/ExtractCommand"
-	Implementing1["AddCommand"]-.-&gt;Type
-	click Implementing1 "/Cake.7zip/api/Cake.SevenZip/AddCommand"
+	Implementing0["DeleteCommand"]-.-&gt;Type
+	click Implementing0 "/Cake.7zip/api/Cake.SevenZip/DeleteCommand"
+	Implementing1["ExtractCommand"]-.-&gt;Type
+	click Implementing1 "/Cake.7zip/api/Cake.SevenZip/ExtractCommand"
+	Implementing2["AddCommand"]-.-&gt;Type
+	click Implementing2 "/Cake.7zip/api/Cake.SevenZip/AddCommand"
 
 						</div>
 					</div>
