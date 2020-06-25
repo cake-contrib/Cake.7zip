@@ -1,7 +1,6 @@
 namespace Cake.SevenZip
 {
     using System;
-    using System.IO;
     using System.Linq;
 
     using Cake.Core;
@@ -28,7 +27,7 @@ namespace Cake.SevenZip
         ISupportSwitchDeleteAfterCompression
     {
         /// <summary>
-        /// Gets or sets The list of Files to add to the package.
+        /// Gets or sets the list of Files to add to the package.
         /// <para>
         /// Files will always be placed directly into the archive without any
         /// directory-structure.

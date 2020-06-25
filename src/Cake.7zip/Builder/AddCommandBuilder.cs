@@ -8,6 +8,22 @@ namespace Cake.SevenZip
     /// Builder for <see cref="AddCommand"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}" />
     /// </summary>
+    /// <example>
+    /// <code>
+    /// <![CDATA[
+    /// Task("ZipIt")
+    ///     .Does(() =>
+    /// {
+    ///     SevenZip(m => m
+    ///         .InAddMode()
+    ///         .WithArchive(File("path/to/file.zip"))
+    ///         .WithFile(File("a.txt"))
+    ///         .WithFile(File("b.txt"))
+    ///         .WithVolume(1, VolumeUnit.Gigabyte));
+    /// });
+    /// ]]>
+    /// </code>
+    /// </example>
     public sealed class AddCommandBuilder :
         ISupportSwitchBuilder<ISupportSwitchVolume>,
         ISupportSwitchBuilder<ISupportSwitchCompressionMethod>,

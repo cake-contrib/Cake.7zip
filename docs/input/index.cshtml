@@ -4,7 +4,11 @@ NoSidebar: true
 NoContainer: false
 NoGutter: true
 ---
-
+<script>
+if(!document.location.href.endsWith("/")){
+  document.location.href = document.location.href + "/"; // or else the relative hyperlinks won't work...
+}
+</script>
 <div class="container">				
 	<h1>What is it?</h1>
     <p>
