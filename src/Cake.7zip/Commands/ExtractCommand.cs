@@ -6,7 +6,7 @@ namespace Cake.SevenZip
     using Cake.Core.IO;
 
     /// <summary>
-    /// Extract-Command - With or without full path
+    /// Extract files from archive - with or without full path
     /// (Commands: e and x).
     /// <para>
     /// With UseFullPath set to false, this represents the e-command:
@@ -21,6 +21,7 @@ namespace Cake.SevenZip
     /// </para>
     /// </summary>
     public sealed class ExtractCommand : ICommand,
+        IHaveArgumentArchive,
         ISupportSwitchIncludeFilenames,
         ISupportSwitchCompressionMethod,
         ISupportSwitchPassword,
@@ -43,9 +44,7 @@ namespace Cake.SevenZip
             UseFullPaths = true;
         }
 
-        /// <summary>
-        /// Gets or sets the archive to extract.
-        /// </summary>
+        /// <inheritdoc />
         public FilePath Archive { get; set; }
 
         /// <summary>

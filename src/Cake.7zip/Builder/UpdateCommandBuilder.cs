@@ -1,30 +1,32 @@
 namespace Cake.SevenZip
 {
+    using System.Linq;
+
+    using Cake.Core.IO;
+
     /// <summary>
-    /// Builder for <see cref="AddCommand"/>.
+    /// Builder for <see cref="UpdateCommand"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}" />
     /// </summary>
     /// <example>
     /// <code>
     /// <![CDATA[
-    /// Task("ZipIt")
+    /// Task("UpdateIt")
     ///     .Does(() =>
     /// {
     ///     SevenZip(m => m
-    ///         .InAddMode()
+    ///         .InUpdateMode()
     ///         .WithArchive(File("path/to/file.zip"))
     ///         .WithFile(File("a.txt"))
-    ///         .WithFile(File("b.txt"))
-    ///         .WithVolume(1, VolumeUnit.Gigabyte));
+    ///         .WithFile(File("b.txt"));
     /// });
     /// ]]>
     /// </code>
     /// </example>
-    public sealed class AddCommandBuilder :
+    public sealed class UpdateCommandBuilder :
         ISupportArgumentBuilder<IHaveArgumentArchive>,
         ISupportArgumentBuilder<IHaveArgumentFiles>,
         ISupportArgumentBuilder<IHaveArgumentDirectories>,
-        ISupportSwitchBuilder<ISupportSwitchVolume>,
         ISupportSwitchBuilder<ISupportSwitchCompressionMethod>,
         ISupportSwitchBuilder<ISupportSwitchArchiveType>,
         ISupportSwitchBuilder<ISupportSwitchPassword>,
@@ -36,16 +38,15 @@ namespace Cake.SevenZip
         ISupportSwitchBuilder<ISupportSwitchRecurseSubdirectories>,
         ISupportSwitchBuilder<ISupportSwitchIncludeFilenames>,
         ISupportSwitchBuilder<ISupportSwitchExcludeFilenames>,
-        ISupportSwitchBuilder<ISupportSwitchUpdateOptions>,
-        ISupportSwitchBuilder<ISupportSwitchDeleteAfterCompression>
+        ISupportSwitchBuilder<ISupportSwitchUpdateOptions>
     {
-        private readonly AddCommand command;
+        private readonly UpdateCommand command;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AddCommandBuilder"/> class.
+        /// Initializes a new instance of the <see cref="UpdateCommandBuilder"/> class.
         /// </summary>
         /// <param name="command">The command.</param>
-        internal AddCommandBuilder(ref AddCommand command)
+        internal UpdateCommandBuilder(ref UpdateCommand command)
         {
             this.command = command;
         }
@@ -58,9 +59,6 @@ namespace Cake.SevenZip
 
         /// <inheritdoc/>
         IHaveArgumentDirectories ISupportArgumentBuilder<IHaveArgumentDirectories>.Command => command;
-
-        /// <inheritdoc/>
-        ISupportSwitchVolume ISupportSwitchBuilder<ISupportSwitchVolume>.Command => command;
 
         /// <inheritdoc/>
         ISupportSwitchArchiveType ISupportSwitchBuilder<ISupportSwitchArchiveType>.Command => command;
@@ -97,8 +95,5 @@ namespace Cake.SevenZip
 
         /// <inheritdoc />
         ISupportSwitchUpdateOptions ISupportSwitchBuilder<ISupportSwitchUpdateOptions>.Command => command;
-
-        /// <inheritdoc />
-        ISupportSwitchDeleteAfterCompression ISupportSwitchBuilder<ISupportSwitchDeleteAfterCompression>.Command => command;
     }
 }

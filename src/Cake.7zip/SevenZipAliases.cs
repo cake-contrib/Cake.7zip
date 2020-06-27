@@ -33,6 +33,17 @@ namespace Cake.SevenZip
     {
         /// <summary>
         /// Runs 7zip, using a fluent builder for configuration.
+        /// <para>
+        /// For more examples see the different builders for the <see cref="ICommand"/>.
+        /// <list type="bullet">
+        /// <item><description><see cref="AddCommandBuilder"/></description></item>
+        /// <item><description><see cref="DeleteCommandBuilder"/></description></item>
+        /// <item><description><see cref="ExtractCommandBuilder"/></description></item>
+        /// <item><description><see cref="UpdateCommandBuilder"/></description></item>
+        /// </list>
+        /// </para>
+        /// <seealso cref="ICommand"/>
+        /// <seealso cref="CommandBuilder"/>
         /// </summary>
         /// <param name="context">The <see cref="ICakeContext"/>.</param>
         /// <param name="action">The fluent <see cref="CommandBuilder"/>.</param>

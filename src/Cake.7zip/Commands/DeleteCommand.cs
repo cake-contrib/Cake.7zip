@@ -1,15 +1,13 @@
 namespace Cake.SevenZip
 {
-    using System;
-
-    using Cake.Core;
-    using Cake.Core.IO;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Deletes files from the archive.
     /// (Command: d).
     /// </summary>
-    public sealed class DeleteCommand : ICommand,
+    public sealed class DeleteCommand : BaseAddLikeSyntaxCommand,
+        ICommand,
         ISupportSwitchIncludeFilenames,
         ISupportSwitchExcludeFilenames,
         ISupportSwitchCompressionMethod,
@@ -19,19 +17,6 @@ namespace Cake.SevenZip
         ISupportSwitchUpdateOptions,
         ISupportSwitchWorkingDirectory
     {
-        /// <summary>
-        /// Gets or sets the archive to remove the files from.
-        /// </summary>
-        public FilePath Archive { get; set; }
-
-        /// <summary>
-        /// Gets or sets file-glob, which files are to be deleted.
-        /// <seealso cref="IncludeFilenames"/>
-        /// <seealso cref="ExcludeFilenames"/>
-        /// <seealso cref="RecurseSubdirectories"/>
-        /// </summary>
-        public string FileGlob { get; set; }
-
         /// <inheritdoc />
         public SwitchRecurseSubdirectories RecurseSubdirectories { get; set; }
 
@@ -56,42 +41,26 @@ namespace Cake.SevenZip
         /// <inheritdoc />
         public SwitchPassword Password { get; set; }
 
-        /// <inheritdoc />
-        public void BuildArguments(ref ProcessArgumentBuilder builder)
+        /// <inheritdoc/>
+        protected override string CommandName => "delete";
+
+        /// <inheritdoc/>
+        protected override string CommandChar => "d";
+
+        /// <inheritdoc/>
+        protected override IEnumerable<ISwitch> Switches => new ISwitch[]
         {
-            if (Archive == null)
-            {
-                throw new ArgumentException("Archive is required for delete.");
-            }
+            CompressionMethod,
+            Password,
+            NtfsAlternateStreams,
+            WorkingDirectory,
+            RecurseSubdirectories,
+            IncludeFilenames,
+            ExcludeFilenames,
+            UpdateOptions,
+        };
 
-            builder.Append("d");
-
-            builder.AppendQuoted(Archive.FullPath);
-
-            if (!string.IsNullOrEmpty(FileGlob))
-            {
-                builder.Append(FileGlob);
-            }
-
-            foreach (var sw in new ISwitch[]
-            {
-                CompressionMethod,
-                Password,
-                NtfsAlternateStreams,
-                WorkingDirectory,
-                RecurseSubdirectories,
-                IncludeFilenames,
-                ExcludeFilenames,
-                UpdateOptions,
-            })
-            {
-                if (sw == null)
-                {
-                    continue;
-                }
-
-                sw.BuildArguments(ref builder);
-            }
-        }
+        /// <inheritdoc/>
+        protected override bool ThrowOnMissingInputFiles => false;
     }
 }
