@@ -1,7 +1,5 @@
 namespace Cake.SevenZip
 {
-    using System;
-
     /// <summary>
     /// Extensions for all Builders that support <see cref="ISupportSwitchOverwriteMode"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}"/>

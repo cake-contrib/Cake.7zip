@@ -2,7 +2,7 @@ namespace Cake.SevenZip
 {
     /// <summary>
     /// Builder for all <see cref="ICommand"/>s.
-    /// Do NOT call WithCommand... multiple times.
+    /// Do NOT call In...Mode() multiple times.
     /// </summary>
     public sealed class CommandBuilder
     {
@@ -34,6 +34,28 @@ namespace Cake.SevenZip
             var command = new ExtractCommand();
             Command = command;
             return new ExtractCommandBuilder(ref command);
+        }
+
+        /// <summary>
+        /// Makes this Builder a DeleteCommand-Builder.
+        /// </summary>
+        /// <returns><see cref="ExtractCommandBuilder"/>.</returns>
+        public DeleteCommandBuilder InDeleteMode()
+        {
+            var command = new DeleteCommand();
+            Command = command;
+            return new DeleteCommandBuilder(ref command);
+        }
+
+        /// <summary>
+        /// Makes this Builder n UpdateCommand-Builder.
+        /// </summary>
+        /// <returns><see cref="ExtractCommandBuilder"/>.</returns>
+        public UpdateCommandBuilder InUpdateMode()
+        {
+            var command = new UpdateCommand();
+            Command = command;
+            return new UpdateCommandBuilder(ref command);
         }
     }
 }

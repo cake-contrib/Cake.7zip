@@ -1,53 +1,47 @@
 namespace Cake.SevenZip
 {
     /// <summary>
-    /// Builder for <see cref="AddCommand"/>.
+    /// Builder for <see cref="DeleteCommand"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}" />
     /// </summary>
     /// <example>
     /// <code>
     /// <![CDATA[
-    /// Task("ZipIt")
+    /// Task("RemoveFiles")
     ///     .Does(() =>
     /// {
     ///     SevenZip(m => m
-    ///         .InAddMode()
-    ///         .WithArchive(File("path/to/file.zip"))
-    ///         .WithFile(File("a.txt"))
-    ///         .WithFile(File("b.txt"))
-    ///         .WithVolume(1, VolumeUnit.Gigabyte));
+    ///       .InDeleteMode()
+    ///       .WithArchive(File("path/to/file.zip"))
+    ///       .WithIncludeFilenames(RecurseType.Enable, "*.pdf", "*.xps")
+    ///       .WithIncludeFilenames("*.txt", "*.ini")
+    ///       .WithPassword("secure!");
     /// });
     /// ]]>
     /// </code>
     /// </example>
-    public sealed class AddCommandBuilder :
+    public sealed class DeleteCommandBuilder :
         ISupportArgumentBuilder<IHaveArgumentArchive>,
         ISupportArgumentBuilder<IHaveArgumentFiles>,
         ISupportArgumentBuilder<IHaveArgumentDirectories>,
-        ISupportSwitchBuilder<ISupportSwitchVolume>,
-        ISupportSwitchBuilder<ISupportSwitchCompressionMethod>,
-        ISupportSwitchBuilder<ISupportSwitchArchiveType>,
-        ISupportSwitchBuilder<ISupportSwitchPassword>,
-        ISupportSwitchBuilder<ISupportSwitchNtSecurityInformation>,
-        ISupportSwitchBuilder<ISupportSwitchNtfsAlternateStreams>,
-        ISupportSwitchBuilder<ISupportSwitchCompressFilesOpenForWriting>,
-        ISupportSwitchBuilder<ISupportSwitchTimestampFromMostRecentFile>,
-        ISupportSwitchBuilder<ISupportSwitchWorkingDirectory>,
-        ISupportSwitchBuilder<ISupportSwitchRecurseSubdirectories>,
         ISupportSwitchBuilder<ISupportSwitchIncludeFilenames>,
         ISupportSwitchBuilder<ISupportSwitchExcludeFilenames>,
+        ISupportSwitchBuilder<ISupportSwitchCompressionMethod>,
+        ISupportSwitchBuilder<ISupportSwitchPassword>,
+        ISupportSwitchBuilder<ISupportSwitchRecurseSubdirectories>,
+        ISupportSwitchBuilder<ISupportSwitchNtfsAlternateStreams>,
         ISupportSwitchBuilder<ISupportSwitchUpdateOptions>,
-        ISupportSwitchBuilder<ISupportSwitchDeleteAfterCompression>,
+        ISupportSwitchBuilder<ISupportSwitchWorkingDirectory>,
         ISupportSwitchBuilder<ISupportSwitchSelfExtractingArchive>,
         ISupportSwitchBuilder<ISupportSwitchFullyQualifiedFilePaths>
     {
-        private readonly AddCommand command;
+        private readonly DeleteCommand command;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AddCommandBuilder"/> class.
+        /// Initializes a new instance of the <see cref="DeleteCommandBuilder"/> class.
         /// </summary>
         /// <param name="command">The command.</param>
-        internal AddCommandBuilder(ref AddCommand command)
+        internal DeleteCommandBuilder(ref DeleteCommand command)
         {
             this.command = command;
         }
@@ -61,12 +55,6 @@ namespace Cake.SevenZip
         /// <inheritdoc/>
         IHaveArgumentDirectories ISupportArgumentBuilder<IHaveArgumentDirectories>.Command => command;
 
-        /// <inheritdoc/>
-        ISupportSwitchVolume ISupportSwitchBuilder<ISupportSwitchVolume>.Command => command;
-
-        /// <inheritdoc/>
-        ISupportSwitchArchiveType ISupportSwitchBuilder<ISupportSwitchArchiveType>.Command => command;
-
         /// <inheritdoc />
         ISupportSwitchCompressionMethod ISupportSwitchBuilder<ISupportSwitchCompressionMethod>.Command => command;
 
@@ -74,16 +62,7 @@ namespace Cake.SevenZip
         ISupportSwitchPassword ISupportSwitchBuilder<ISupportSwitchPassword>.Command => command;
 
         /// <inheritdoc />
-        ISupportSwitchNtSecurityInformation ISupportSwitchBuilder<ISupportSwitchNtSecurityInformation>.Command => command;
-
-        /// <inheritdoc />
         ISupportSwitchNtfsAlternateStreams ISupportSwitchBuilder<ISupportSwitchNtfsAlternateStreams>.Command => command;
-
-        /// <inheritdoc />
-        ISupportSwitchCompressFilesOpenForWriting ISupportSwitchBuilder<ISupportSwitchCompressFilesOpenForWriting>.Command => command;
-
-        /// <inheritdoc />
-        ISupportSwitchTimestampFromMostRecentFile ISupportSwitchBuilder<ISupportSwitchTimestampFromMostRecentFile>.Command => command;
 
         /// <inheritdoc />
         ISupportSwitchWorkingDirectory ISupportSwitchBuilder<ISupportSwitchWorkingDirectory>.Command => command;
@@ -99,9 +78,6 @@ namespace Cake.SevenZip
 
         /// <inheritdoc />
         ISupportSwitchUpdateOptions ISupportSwitchBuilder<ISupportSwitchUpdateOptions>.Command => command;
-
-        /// <inheritdoc />
-        ISupportSwitchDeleteAfterCompression ISupportSwitchBuilder<ISupportSwitchDeleteAfterCompression>.Command => command;
 
         /// <inheritdoc />
         ISupportSwitchSelfExtractingArchive ISupportSwitchBuilder<ISupportSwitchSelfExtractingArchive>.Command => command;

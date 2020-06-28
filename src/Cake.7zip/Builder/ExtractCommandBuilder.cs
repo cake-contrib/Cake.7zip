@@ -6,7 +6,23 @@ namespace Cake.SevenZip
     /// Builder for <see cref="ExtractCommand"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}" />
     /// </summary>
+    /// <example>
+    /// <code>
+    /// <![CDATA[
+    /// Task("UnzipIt")
+    ///     .Does(() =>
+    /// {
+    ///     SevenZip(m => m
+    ///       .InExtractMode()
+    ///       .WithArchive(File("path/to/file.zip"))
+    ///       .WithArchiveType(SwitchArchiveType.Zip)
+    ///       .WithOutputDirectory("some/other/directory"));
+    /// });
+    /// ]]>
+    /// </code>
+    /// </example>
     public class ExtractCommandBuilder :
+        ISupportArgumentBuilder<IHaveArgumentArchive>,
         ISupportSwitchBuilder<ISupportSwitchArchiveType>,
         ISupportSwitchBuilder<ISupportSwitchCompressionMethod>,
         ISupportSwitchBuilder<ISupportSwitchPassword>,
@@ -19,7 +35,8 @@ namespace Cake.SevenZip
         ISupportSwitchBuilder<ISupportSwitchExcludeArchiveFilenames>,
         ISupportSwitchBuilder<ISupportSwitchDisableParsingOfArchiveName>,
         ISupportSwitchBuilder<ISupportSwitchOverwriteMode>,
-        ISupportSwitchBuilder<ISupportSwitchOutputDirectory>
+        ISupportSwitchBuilder<ISupportSwitchOutputDirectory>,
+        ISupportSwitchBuilder<ISupportSwitchFullyQualifiedFilePaths>
     {
         private readonly ExtractCommand command;
 
@@ -31,6 +48,9 @@ namespace Cake.SevenZip
         {
             this.command = command;
         }
+
+        /// <inheritdoc/>
+        IHaveArgumentArchive ISupportArgumentBuilder<IHaveArgumentArchive>.Command => command;
 
         /// <inheritdoc />
         ISupportSwitchArchiveType ISupportSwitchBuilder<ISupportSwitchArchiveType>.Command => command;
@@ -71,16 +91,8 @@ namespace Cake.SevenZip
         /// <inheritdoc />
         ISupportSwitchOutputDirectory ISupportSwitchBuilder<ISupportSwitchOutputDirectory>.Command => command;
 
-        /// <summary>
-        /// Sets the archive on the <see cref="AddCommand"/>.
-        /// </summary>
-        /// <param name="archive">The archive.</param>
-        /// <returns>The builder, for fluent use.</returns>
-        public ExtractCommandBuilder WithArchive(FilePath archive)
-        {
-            command.Archive = archive;
-            return this;
-        }
+        /// <inheritdoc />
+        ISupportSwitchFullyQualifiedFilePaths ISupportSwitchBuilder<ISupportSwitchFullyQualifiedFilePaths>.Command => command;
 
         /// <summary>
         /// Sets UseFullPaths to true on the <see cref="AddCommand"/>.
