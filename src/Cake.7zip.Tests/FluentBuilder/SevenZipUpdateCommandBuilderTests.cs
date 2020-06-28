@@ -426,5 +426,39 @@ namespace Cake.SevenZip.Tests.Builder
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Update_can_use_Sfx_without_module()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InUpdateMode()
+              .WithArchive(new FilePath("old.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithSelfExtractingArchive();
+
+            const string expected = @"u -sfx ""old.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Update_can_use_Sfx_with_module()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InUpdateMode()
+              .WithArchive(new FilePath("old.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithSelfExtractingArchive(new FilePath("7zS2.sfx "));
+
+            const string expected = @"u -sfx""7zS2.sfx"" ""old.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

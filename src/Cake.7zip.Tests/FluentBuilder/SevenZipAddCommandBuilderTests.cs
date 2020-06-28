@@ -3,6 +3,7 @@ namespace Cake.SevenZip.Tests.Builder
     using Cake.Core.IO;
 
     using System;
+    using System.IO;
 
     using Xunit;
 
@@ -473,6 +474,40 @@ namespace Cake.SevenZip.Tests.Builder
               .WithDeleteAfterCompression();
 
             const string expected = @"a -sdel ""out.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Add_can_use_Sfx_without_module()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithSelfExtractingArchive();
+
+            const string expected = @"a -sfx ""out.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Add_can_use_Sfx_with_module()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithSelfExtractingArchive(new FilePath("7zS2.sfx "));
+
+            const string expected = @"a -sfx""7zS2.sfx"" ""out.zip"" ""in.txt""";
 
             var actual = fixture.EvaluateArgs();
 

@@ -283,5 +283,37 @@ namespace Cake.SevenZip.Tests.Builder
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Delete_can_use_Sfx_without_module()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InDeleteMode()
+              .WithArchive(new FilePath("in.zip"))
+              .WithSelfExtractingArchive();
+
+            const string expected = @"d -sfx ""in.zip""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Delete_can_use_Sfx_with_module()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InDeleteMode()
+              .WithArchive(new FilePath("in.zip"))
+              .WithSelfExtractingArchive(new FilePath("7zS2.sfx "));
+
+            const string expected = @"d -sfx""7zS2.sfx"" ""in.zip""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

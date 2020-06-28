@@ -21,7 +21,8 @@ namespace Cake.SevenZip
         ISupportSwitchIncludeFilenames,
         ISupportSwitchExcludeFilenames,
         ISupportSwitchUpdateOptions,
-        ISupportSwitchDeleteAfterCompression
+        ISupportSwitchDeleteAfterCompression,
+        ISupportSwitchSelfExtractingArchive
     {
         /// <inheritdoc />
         public SwitchVolumeCollection Volumes { get; set; }
@@ -65,6 +66,9 @@ namespace Cake.SevenZip
         /// <inheritdoc />
         public SwitchDeleteAfterCompression DeleteAfterCompression { get; set; }
 
+        /// <inheritdoc />
+        public SwitchSelfExtractingArchive SelfExtractingArchive { get; set; }
+
         /// <inheritdoc/>
         protected override string CommandName => "add";
 
@@ -88,6 +92,7 @@ namespace Cake.SevenZip
             ExcludeFilenames,
             UpdateOptions,
             DeleteAfterCompression,
+            SelfExtractingArchive,
         };
     }
 }

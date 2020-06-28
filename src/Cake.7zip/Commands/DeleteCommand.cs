@@ -15,7 +15,8 @@ namespace Cake.SevenZip
         ISupportSwitchRecurseSubdirectories,
         ISupportSwitchNtfsAlternateStreams,
         ISupportSwitchUpdateOptions,
-        ISupportSwitchWorkingDirectory
+        ISupportSwitchWorkingDirectory,
+        ISupportSwitchSelfExtractingArchive
     {
         /// <inheritdoc />
         public SwitchRecurseSubdirectories RecurseSubdirectories { get; set; }
@@ -41,6 +42,9 @@ namespace Cake.SevenZip
         /// <inheritdoc />
         public SwitchPassword Password { get; set; }
 
+        /// <inheritdoc />
+        public SwitchSelfExtractingArchive SelfExtractingArchive { get; set; }
+
         /// <inheritdoc/>
         protected override string CommandName => "delete";
 
@@ -58,6 +62,7 @@ namespace Cake.SevenZip
             IncludeFilenames,
             ExcludeFilenames,
             UpdateOptions,
+            SelfExtractingArchive,
         };
 
         /// <inheritdoc/>
