@@ -15,8 +15,7 @@ namespace Cake.SevenZip
     /// that points to a directory containing 7z.exe or 7za.exe).
     /// </para>
     /// <para>
-    /// Currently the following formats are supported: 7z, xz, lzma, cab, zip, gzip, bzip2 and tar.
-    /// (Those are the formats supported by the standalone 7za.exe.)
+    /// Supported formats and capabilities depend on your 7z-version.
     /// </para>
     /// <para>
     /// To install add the following lines to your cake-file:

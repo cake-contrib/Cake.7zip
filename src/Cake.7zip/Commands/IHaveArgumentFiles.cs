@@ -1,4 +1,4 @@
-﻿namespace Cake.SevenZip
+namespace Cake.SevenZip
 {
     using Cake.Core.IO;
 
@@ -32,7 +32,6 @@
         /// without any directory structure.
         /// <seealso cref="IHaveArgumentDirectories.Directories"/>
         /// <seealso cref="IHaveArgumentDirectories.DirectoryContents"/>
-        /// </summary>
         /// </summary>
         /// <value>
         /// The archive.

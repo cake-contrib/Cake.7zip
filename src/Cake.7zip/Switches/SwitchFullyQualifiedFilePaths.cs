@@ -5,7 +5,7 @@ namespace Cake.SevenZip
 
     /// <summary>
     /// -spf (Use fully qualified file paths) switch.
-    /// (Also -spf2 - for full paths without drive letters)
+    /// (Also, -spf2 for full paths without drive letters.)
     /// <para>
     /// Enables the mode that allows to use fully qualified file paths in archives.
     /// If -spf switch is not specified, 7-Zip reduces file paths to relative paths when
