@@ -73,7 +73,6 @@
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Examples">Examples</a></p>
-<p><a href="#Methods">Methods</a></p>
 <p><a href="#ExtensionMethods">Extension Methods</a></p>
 <p><a href="#SeeAlso">See Also</a></p>
 <hr class="infobar-hidden">
@@ -140,6 +139,10 @@
 			<li class="header">Class Types</li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand">AddCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/AddCommandBuilder">AddCommandBuilder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/ArgumentArchiveBuilder">Argument<wbr>Archive<wbr>Builder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/ArgumentDirectoriesBuilder">Argument<wbr>Directories<wbr>Builder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/ArgumentFilesBuilder">ArgumentFilesBuilder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseAddLikeSyntaxCommand">Base<wbr>Add<wbr>Like<wbr>Syntax<wbr>Command</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseBoolSwitch">BaseBoolSwitch</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/BaseSwitchCollection_1">BaseSwitchCollection<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/CommandBuilder">CommandBuilder</a></li>
@@ -168,6 +171,8 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchExcludeFilename">Switch<wbr>Exclude<wbr>Filename</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchExcludeFilenameCollection">Switch<wbr>Exclude<wbr>Filename<wbr>Collection</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchExcludeFilenamesBuilder">Switch<wbr>Exclude<wbr>Filenames<wbr>Builder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchFullyQualifiedFilePaths">Switch<wbr>Fully<wbr>Qualified<wbr>File<wbr>Paths</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchFullyQualifiedFilePathsBuilder">Switch<wbr>Fully<wbr>Qualified<wbr>File<wbr>Paths<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchIncludeArchiveFilename">Switch<wbr>Include<wbr>Archive<wbr>Filename</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchIncludeArchiveFilenameCollection">Switch<wbr>Include<wbr>Archive<wbr>Filename<wbr>Collection</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchIncludeArchiveFilenamesBuilder">Switch<wbr>Include<wbr>Archive<wbr>Filenames<wbr>Builder</a></li>
@@ -186,6 +191,8 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchPasswordBuilder">Switch<wbr>Password<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchRecurseSubdirectories">Switch<wbr>Recurse<wbr>Subdirectories</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchRecurseSubdirectoriesBuilder">Switch<wbr>Recurse<wbr>Subdirectories<wbr>Builder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchSelfExtractingArchive">Switch<wbr>Self<wbr>Extracting<wbr>Archive</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchSelfExtractingArchiveBuilder">Switch<wbr>Self<wbr>Extracting<wbr>Archive<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchSetTimestampFromMostRecentFile">Switch<wbr>Set<wbr>Timestamp<wbr>From<wbr>Most<wbr>Recent<wbr>File</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchSetTimestampFromMostRecentFileBuilder">Switch<wbr>Set<wbr>Timestamp<wbr>From<wbr>Most<wbr>Recent<wbr>File<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchUpdateOptions">SwitchUpdateOptions</a></li>
@@ -196,9 +203,16 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchWorkingDirectory">Switch<wbr>Working<wbr>Directory</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/SwitchWorkingDirectoryBuilder">Switch<wbr>Working<wbr>Directory<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/UpdateAction">UpdateAction</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/UpdateCommand">UpdateCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/UpdateCommandBuilder">UpdateCommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/VolumeUnit">VolumeUnit</a></li>
 			<li class="header">Interface Types</li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ICommand">ICommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgument">IHaveArgument</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgumentArchive">IHaveArgumentArchive</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgumentDirectories">I<wbr>Have<wbr>Argument<wbr>Directories</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgumentFiles">IHaveArgumentFiles</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportArgumentBuilder_1">I<wbr>Support<wbr>Argument<wbr>Builder<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitch">ISupportSwitch</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchArchiveType">I<wbr>Support<wbr>Switch<wbr>Archive<wbr>Type</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchBuilder_1">I<wbr>Support<wbr>Switch<wbr>Builder<wbr>&lt;T&gt;<wbr></a></li>
@@ -208,6 +222,7 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchDisableParsingOfArchiveName">I<wbr>Support<wbr>Switch<wbr>Disable<wbr>Parsing<wbr>Of<wbr>Archive<wbr>Name</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchExcludeArchiveFilenames">I<wbr>Support<wbr>Switch<wbr>Exclude<wbr>Archive<wbr>Filenames</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchExcludeFilenames">I<wbr>Support<wbr>Switch<wbr>Exclude<wbr>Filenames</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchFullyQualifiedFilePaths">I<wbr>Support<wbr>Switch<wbr>Fully<wbr>Qualified<wbr>File<wbr>Paths</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchIncludeArchiveFilenames">I<wbr>Support<wbr>Switch<wbr>Include<wbr>Archive<wbr>Filenames</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchIncludeFilenames">I<wbr>Support<wbr>Switch<wbr>Include<wbr>Filenames</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchNtfsAlternateStreams">I<wbr>Support<wbr>Switch<wbr>Ntfs<wbr>Alternate<wbr>Streams</a></li>
@@ -216,6 +231,7 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchOverwriteMode">I<wbr>Support<wbr>Switch<wbr>Overwrite<wbr>Mode</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchPassword">I<wbr>Support<wbr>Switch<wbr>Password</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchRecurseSubdirectories">I<wbr>Support<wbr>Switch<wbr>Recurse<wbr>Subdirectories</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchSelfExtractingArchive">I<wbr>Support<wbr>Switch<wbr>Self<wbr>Extracting<wbr>Archive</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchTimestampFromMostRecentFile">I<wbr>Support<wbr>Switch<wbr>Timestamp<wbr>From<wbr>Most<wbr>Recent<wbr>File</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchUpdateOptions">I<wbr>Support<wbr>Switch<wbr>Update<wbr>Options</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchVolume">ISupportSwitchVolume</a></li>
@@ -258,6 +274,9 @@
 								<dt>Interfaces</dt>
 								<dd>
 									<ul class="list-unstyled">
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportArgumentBuilder_1">I<wbr>Support<wbr>Argument<wbr>Builder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgumentArchive">IHaveArgumentArchive</a>&gt;<wbr></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportArgumentBuilder_1">I<wbr>Support<wbr>Argument<wbr>Builder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgumentFiles">IHaveArgumentFiles</a>&gt;<wbr></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportArgumentBuilder_1">I<wbr>Support<wbr>Argument<wbr>Builder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgumentDirectories">I<wbr>Have<wbr>Argument<wbr>Directories</a>&gt;<wbr></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchBuilder_1">I<wbr>Support<wbr>Switch<wbr>Builder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchIncludeFilenames">I<wbr>Support<wbr>Switch<wbr>Include<wbr>Filenames</a>&gt;<wbr></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchBuilder_1">I<wbr>Support<wbr>Switch<wbr>Builder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchExcludeFilenames">I<wbr>Support<wbr>Switch<wbr>Exclude<wbr>Filenames</a>&gt;<wbr></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchBuilder_1">I<wbr>Support<wbr>Switch<wbr>Builder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchCompressionMethod">I<wbr>Support<wbr>Switch<wbr>Compression<wbr>Method</a>&gt;<wbr></li>								
@@ -266,6 +285,8 @@
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchBuilder_1">I<wbr>Support<wbr>Switch<wbr>Builder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchNtfsAlternateStreams">I<wbr>Support<wbr>Switch<wbr>Ntfs<wbr>Alternate<wbr>Streams</a>&gt;<wbr></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchBuilder_1">I<wbr>Support<wbr>Switch<wbr>Builder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchUpdateOptions">I<wbr>Support<wbr>Switch<wbr>Update<wbr>Options</a>&gt;<wbr></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchBuilder_1">I<wbr>Support<wbr>Switch<wbr>Builder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchWorkingDirectory">I<wbr>Support<wbr>Switch<wbr>Working<wbr>Directory</a>&gt;<wbr></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchBuilder_1">I<wbr>Support<wbr>Switch<wbr>Builder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchSelfExtractingArchive">I<wbr>Support<wbr>Switch<wbr>Self<wbr>Extracting<wbr>Archive</a>&gt;<wbr></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchBuilder_1">I<wbr>Support<wbr>Switch<wbr>Builder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchFullyQualifiedFilePaths">I<wbr>Support<wbr>Switch<wbr>Fully<wbr>Qualified<wbr>File<wbr>Paths</a>&gt;<wbr></li>								
 									</ul>
 								</dd>
 							
@@ -283,14 +304,19 @@
 						<div class="mermaid">
 							graph BT
 	Type--&gt;Base0["object"]
-	Type-.-&gt;Interface0["ISupportSwitchBuilder&lt;ISupportSwitchIncludeFilenames&gt;"]
-	Type-.-&gt;Interface1["ISupportSwitchBuilder&lt;ISupportSwitchExcludeFilenames&gt;"]
-	Type-.-&gt;Interface2["ISupportSwitchBuilder&lt;ISupportSwitchCompressionMethod&gt;"]
-	Type-.-&gt;Interface3["ISupportSwitchBuilder&lt;ISupportSwitchPassword&gt;"]
-	Type-.-&gt;Interface4["ISupportSwitchBuilder&lt;ISupportSwitchRecurseSubdirectories&gt;"]
-	Type-.-&gt;Interface5["ISupportSwitchBuilder&lt;ISupportSwitchNtfsAlternateStreams&gt;"]
-	Type-.-&gt;Interface6["ISupportSwitchBuilder&lt;ISupportSwitchUpdateOptions&gt;"]
-	Type-.-&gt;Interface7["ISupportSwitchBuilder&lt;ISupportSwitchWorkingDirectory&gt;"]
+	Type-.-&gt;Interface0["ISupportArgumentBuilder&lt;IHaveArgumentArchive&gt;"]
+	Type-.-&gt;Interface1["ISupportArgumentBuilder&lt;IHaveArgumentFiles&gt;"]
+	Type-.-&gt;Interface2["ISupportArgumentBuilder&lt;IHaveArgumentDirectories&gt;"]
+	Type-.-&gt;Interface3["ISupportSwitchBuilder&lt;ISupportSwitchIncludeFilenames&gt;"]
+	Type-.-&gt;Interface4["ISupportSwitchBuilder&lt;ISupportSwitchExcludeFilenames&gt;"]
+	Type-.-&gt;Interface5["ISupportSwitchBuilder&lt;ISupportSwitchCompressionMethod&gt;"]
+	Type-.-&gt;Interface6["ISupportSwitchBuilder&lt;ISupportSwitchPassword&gt;"]
+	Type-.-&gt;Interface7["ISupportSwitchBuilder&lt;ISupportSwitchRecurseSubdirectories&gt;"]
+	Type-.-&gt;Interface8["ISupportSwitchBuilder&lt;ISupportSwitchNtfsAlternateStreams&gt;"]
+	Type-.-&gt;Interface9["ISupportSwitchBuilder&lt;ISupportSwitchUpdateOptions&gt;"]
+	Type-.-&gt;Interface10["ISupportSwitchBuilder&lt;ISupportSwitchWorkingDirectory&gt;"]
+	Type-.-&gt;Interface11["ISupportSwitchBuilder&lt;ISupportSwitchSelfExtractingArchive&gt;"]
+	Type-.-&gt;Interface12["ISupportSwitchBuilder&lt;ISupportSwitchFullyQualifiedFilePaths&gt;"]
 	Type["DeleteCommandBuilder"]
 class Type type-node
 
@@ -301,14 +327,18 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public sealed class DeleteCommandBuilder : ISupportSwitchBuilder&lt;ISupportSwitchIncludeFilenames&gt;, 
+	<pre><code>public sealed class DeleteCommandBuilder : ISupportArgumentBuilder&lt;IHaveArgumentArchive&gt;, 
+    ISupportArgumentBuilder&lt;IHaveArgumentFiles&gt;, ISupportArgumentBuilder&lt;IHaveArgumentDirectories&gt;, 
+    ISupportSwitchBuilder&lt;ISupportSwitchIncludeFilenames&gt;, 
     ISupportSwitchBuilder&lt;ISupportSwitchExcludeFilenames&gt;, 
     ISupportSwitchBuilder&lt;ISupportSwitchCompressionMethod&gt;, 
     ISupportSwitchBuilder&lt;ISupportSwitchPassword&gt;, 
     ISupportSwitchBuilder&lt;ISupportSwitchRecurseSubdirectories&gt;, 
     ISupportSwitchBuilder&lt;ISupportSwitchNtfsAlternateStreams&gt;, 
     ISupportSwitchBuilder&lt;ISupportSwitchUpdateOptions&gt;, 
-    ISupportSwitchBuilder&lt;ISupportSwitchWorkingDirectory&gt;</code></pre>
+    ISupportSwitchBuilder&lt;ISupportSwitchWorkingDirectory&gt;, 
+    ISupportSwitchBuilder&lt;ISupportSwitchSelfExtractingArchive&gt;, 
+    ISupportSwitchBuilder&lt;ISupportSwitchFullyQualifiedFilePaths&gt;</code></pre>
 
 	<h1 id="Examples">Examples</h1>
 	<div>
@@ -333,39 +363,6 @@ class Type type-node
 
 
 
-			<h1 id="Methods">Methods</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover three-cols">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Value</th>
-								<th>Summary</th>
-							</tr>
-						</thead>
-							<tbody><tr>
-								<td><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder/99CF132C">WithArchive<wbr>(FilePath)<wbr></a></td>
-								<td><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder">DeleteCommandBuilder</a></td>
-								<td>
-									<div>
-    Sets the archive on the <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></code>.
-    </div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder/D0D1542B">WithFileGlob<wbr>(string)<wbr></a></td>
-								<td><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommandBuilder">DeleteCommandBuilder</a></td>
-								<td>
-									<div>
-    Sets the FileGlob on the <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/DeleteCommand">DeleteCommand</a></code>.
-    </div>
-								</td>
-							</tr>
-					</tbody></table>
-				</div>
-			</div>
-		
 
 
 			<h1 id="ExtensionMethods">Extension Methods</h1>
@@ -380,6 +377,16 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/ArgumentArchiveBuilder/A29BBE13">WithArchive<wbr>&lt;<wbr>Delete<wbr>Command<wbr>Builder&gt;<wbr><wbr>(FilePath)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    fluent setter for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgumentArchive/DC8C8EBC">Archive</a></code>.
+    </div>
+										<div><small><em>From <a href="/Cake.7zip/api/Cake.SevenZip/ArgumentArchiveBuilder">Argument<wbr>Archive<wbr>Builder</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip/SwitchCompressionMethodBuilder/524BA2CC">With<wbr>Compression<wbr>Method<wbr>&lt;<wbr>Delete<wbr>Command<wbr>Builder&gt;<wbr><wbr>(Action<wbr>&lt;<wbr>Switch<wbr>Compression<wbr>Method&gt;<wbr>)<wbr></a></td>
 								<td>T</td>
 								<td>
@@ -410,6 +417,56 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/ArgumentDirectoriesBuilder/EEC851BA">WithDirectories<wbr>&lt;<wbr>Delete<wbr>Command<wbr>Builder&gt;<wbr><wbr>(DirectoryPath[])<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    fluent setter for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgumentDirectories/D892E5FD">Directories</a></code>.
+    <p>
+    See the comments on <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/BaseAddLikeSyntaxCommand/85341F23">Files</a></code>,
+    <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/BaseAddLikeSyntaxCommand/85B1B81E">Directories</a></code> and <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/BaseAddLikeSyntaxCommand/336783DD">DirectoryContents</a></code>
+    regarding files and directory structures.
+    </p>
+    </div>
+										<div><small><em>From <a href="/Cake.7zip/api/Cake.SevenZip/ArgumentDirectoriesBuilder">Argument<wbr>Directories<wbr>Builder</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/ArgumentDirectoriesBuilder/6EC4881D">WithDirectories<wbr>&lt;<wbr>Delete<wbr>Command<wbr>Builder&gt;<wbr><wbr>(<wbr>Directory<wbr>Path<wbr>Collection)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    See <code class="cs">Cake.SevenZip.ArgumentDirectoriesBuilder.WithDirectories``1(``0,DirectoryPath[])</code>.
+    </div>
+										<div><small><em>From <a href="/Cake.7zip/api/Cake.SevenZip/ArgumentDirectoriesBuilder">Argument<wbr>Directories<wbr>Builder</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/ArgumentDirectoriesBuilder/AA6CB8FF">With<wbr>Directory<wbr>Contents<wbr>&lt;<wbr>Delete<wbr>Command<wbr>Builder&gt;<wbr><wbr>(DirectoryPath[])<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    fluent setter for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgumentDirectories/48903179">DirectoryContents</a></code>.
+    <p>
+    See the comments on <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/BaseAddLikeSyntaxCommand/85341F23">Files</a></code>,
+    <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/BaseAddLikeSyntaxCommand/85B1B81E">Directories</a></code> and <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/BaseAddLikeSyntaxCommand/336783DD">DirectoryContents</a></code>
+    regarding files and directory structures.
+    </p>
+    </div>
+										<div><small><em>From <a href="/Cake.7zip/api/Cake.SevenZip/ArgumentDirectoriesBuilder">Argument<wbr>Directories<wbr>Builder</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/ArgumentDirectoriesBuilder/7762E3A2">With<wbr>Directory<wbr>Contents<wbr>&lt;<wbr>Delete<wbr>Command<wbr>Builder&gt;<wbr><wbr>(<wbr>Directory<wbr>Path<wbr>Collection)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    See <code class="cs">Cake.SevenZip.ArgumentDirectoriesBuilder.WithDirectoryContents``1(``0,DirectoryPath[])</code>.
+    </div>
+										<div><small><em>From <a href="/Cake.7zip/api/Cake.SevenZip/ArgumentDirectoriesBuilder">Argument<wbr>Directories<wbr>Builder</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip/SwitchExcludeFilenamesBuilder/5EE923FA">WithExcludeFilenames<wbr>&lt;<wbr>Delete<wbr>Command<wbr>Builder&gt;<wbr><wbr>(RecurseType, <wbr>string, <wbr>string[])<wbr></a></td>
 								<td>T</td>
 								<td>
@@ -427,6 +484,41 @@ class Type type-node
     fluent setter for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchExcludeFilenames">ISupportSwitchExcludeFilenames</a></code>.
     </div>
 										<div><small><em>From <a href="/Cake.7zip/api/Cake.SevenZip/SwitchExcludeFilenamesBuilder">Switch<wbr>Exclude<wbr>Filenames<wbr>Builder</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/ArgumentFilesBuilder/872D54D8">WithFiles<wbr>&lt;<wbr>Delete<wbr>Command<wbr>Builder&gt;<wbr><wbr>(FilePath[])<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    fluent setter for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgumentFiles/CBD971E5">Files</a></code>.
+    <p>
+    See the comments on <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/BaseAddLikeSyntaxCommand/85341F23">Files</a></code>,
+    <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/BaseAddLikeSyntaxCommand/85B1B81E">Directories</a></code> and <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/BaseAddLikeSyntaxCommand/336783DD">DirectoryContents</a></code>
+    regarding files and directory structures.
+    </p>
+    </div>
+										<div><small><em>From <a href="/Cake.7zip/api/Cake.SevenZip/ArgumentFilesBuilder">ArgumentFilesBuilder</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/ArgumentFilesBuilder/D0438B30">WithFiles<wbr>&lt;<wbr>Delete<wbr>Command<wbr>Builder&gt;<wbr><wbr>(FilePathCollection)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    See <code class="cs">Cake.SevenZip.ArgumentFilesBuilder.WithFiles``1(``0,FilePath[])</code>.
+    </div>
+										<div><small><em>From <a href="/Cake.7zip/api/Cake.SevenZip/ArgumentFilesBuilder">ArgumentFilesBuilder</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/SwitchFullyQualifiedFilePathsBuilder/6F01598D">With<wbr>Fully<wbr>Qualified<wbr>File<wbr>Paths<wbr>&lt;<wbr>Delete<wbr>Command<wbr>Builder&gt;<wbr><wbr>(bool)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    fluent setter for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchFullyQualifiedFilePaths/79470934">FullyQualifiedFilePaths</a></code>.
+    </div>
+										<div><small><em>From <a href="/Cake.7zip/api/Cake.SevenZip/SwitchFullyQualifiedFilePathsBuilder">Switch<wbr>Fully<wbr>Qualified<wbr>File<wbr>Paths<wbr>Builder</a></em></small></div>
 								</td>
 							</tr>
 							<tr>
@@ -477,6 +569,26 @@ class Type type-node
     fluent setter for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchRecurseSubdirectories">ISupportSwitchRecurseSubdirectories</a></code>.
     </div>
 										<div><small><em>From <a href="/Cake.7zip/api/Cake.SevenZip/SwitchRecurseSubdirectoriesBuilder">Switch<wbr>Recurse<wbr>Subdirectories<wbr>Builder</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/SwitchSelfExtractingArchiveBuilder/90A2000E">With<wbr>Self<wbr>Extracting<wbr>Archive<wbr>&lt;<wbr>Delete<wbr>Command<wbr>Builder&gt;<wbr><wbr>()<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    <code class="cs">Cake.SevenZip.SwitchSelfExtractingArchiveBuilder.WithSelfExtractingArchive``1(``0,FilePath)</code>.
+    </div>
+										<div><small><em>From <a href="/Cake.7zip/api/Cake.SevenZip/SwitchSelfExtractingArchiveBuilder">Switch<wbr>Self<wbr>Extracting<wbr>Archive<wbr>Builder</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/SwitchSelfExtractingArchiveBuilder/D2833369">With<wbr>Self<wbr>Extracting<wbr>Archive<wbr>&lt;<wbr>Delete<wbr>Command<wbr>Builder&gt;<wbr><wbr>(FilePath)<wbr></a></td>
+								<td>T</td>
+								<td>
+									<div>
+    fluent setter for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchSelfExtractingArchive/491279B4">SelfExtractingArchive</a></code>.
+    </div>
+										<div><small><em>From <a href="/Cake.7zip/api/Cake.SevenZip/SwitchSelfExtractingArchiveBuilder">Switch<wbr>Self<wbr>Extracting<wbr>Archive<wbr>Builder</a></em></small></div>
 								</td>
 							</tr>
 							<tr>

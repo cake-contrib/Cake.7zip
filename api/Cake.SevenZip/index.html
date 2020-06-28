@@ -183,6 +183,33 @@
     </td>
 							</tr>
 							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/ArgumentArchiveBuilder">Argument<wbr>Archive<wbr>Builder</a></td>
+									<td>
+    Extensions for all Builders that support <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgumentArchive">IHaveArgumentArchive</a></code>.
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/ArgumentDirectoriesBuilder">Argument<wbr>Directories<wbr>Builder</a></td>
+									<td>
+    Extensions for all Builders that support <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgumentDirectories">IHaveArgumentDirectories</a></code>.
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/ArgumentFilesBuilder">ArgumentFilesBuilder</a></td>
+									<td>
+    Extensions for all Builders that support <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgumentFiles">IHaveArgumentFiles</a></code>.
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/BaseAddLikeSyntaxCommand">Base<wbr>Add<wbr>Like<wbr>Syntax<wbr>Command</a></td>
+									<td>
+    BaseClass for add,update,delete.
+    </td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip/BaseBoolSwitch">BaseBoolSwitch</a></td>
 									<td>
     BaseClass for simple boolean switches.
@@ -222,7 +249,7 @@
 							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip/ExtractCommand">ExtractCommand</a></td>
 									<td>
-    Extract-Command - With or without full path
+    Extract files from archive - with or without full path
     (Commands: e and x).
     <p>
     With UseFullPath set to false, this represents the e-command:
@@ -286,8 +313,7 @@
     that points to a directory containing 7z.exe or 7za.exe).
     </p>
     <p>
-    Currently the following formats are supported: 7z, xz, lzma, cab, zip, gzip, bzip2 and tar.
-    (Those are the formats supported by the standalone 7za.exe.)
+    Supported formats and capabilities depend on your 7z-version.
     </p>
     <p>
     To install add the following lines to your cake-file:
@@ -501,6 +527,33 @@
 								<td><a href="/Cake.7zip/api/Cake.SevenZip/SwitchExcludeFilenamesBuilder">Switch<wbr>Exclude<wbr>Filenames<wbr>Builder</a></td>
 									<td>
     Extensions for all Builders that support <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchExcludeFilenames">ISupportSwitchExcludeFilenames</a></code>.
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/SwitchFullyQualifiedFilePaths">Switch<wbr>Fully<wbr>Qualified<wbr>File<wbr>Paths</a></td>
+									<td>
+    -spf (Use fully qualified file paths) switch.
+    (Also, -spf2 for full paths without drive letters.)
+    <p>
+    Enables the mode that allows to use fully qualified file paths in archives.
+    If -spf switch is not specified, 7-Zip reduces file paths to relative paths when
+    it adds files to archive, and 7-Zip converts paths to relative paths when you extract archive.
+    If -spf switch is specified, 7-Zip doesn't try to process or convert paths.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchFullyQualifiedFilePaths">ISupportSwitchFullyQualifiedFilePaths</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/SwitchFullyQualifiedFilePathsBuilder">SwitchFullyQualifiedFilePathsBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/SwitchFullyQualifiedFilePathsBuilder">Switch<wbr>Fully<wbr>Qualified<wbr>File<wbr>Paths<wbr>Builder</a></td>
+									<td>
+    Extensions for all Builders that support <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchFullyQualifiedFilePaths">ISupportSwitchFullyQualifiedFilePaths</a></code>.
     
     </td>
 							</tr>
@@ -726,6 +779,33 @@
     </td>
 							</tr>
 							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/SwitchSelfExtractingArchive">Switch<wbr>Self<wbr>Extracting<wbr>Archive</a></td>
+									<td>
+    <p>
+    -sfx (Create SFX archive) switch.
+    </p>
+    <p>
+    Specifies the SFX module that will be combined with the archive.
+    This module must be placed in the same directory as the 7z.exe.
+    If {SFX_Module} is not assigned, 7-Zip will use standard console SFX module 7zCon.sfx.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchSelfExtractingArchive">ISupportSwitchSelfExtractingArchive</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/SwitchSelfExtractingArchiveBuilder">SwitchSelfExtractingArchiveBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/SwitchSelfExtractingArchiveBuilder">Switch<wbr>Self<wbr>Extracting<wbr>Archive<wbr>Builder</a></td>
+									<td>
+    Extensions for all Builders that support <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchSelfExtractingArchive">ISupportSwitchSelfExtractingArchive</a></code>.
+    
+    </td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip/SwitchSetTimestampFromMostRecentFile">Switch<wbr>Set<wbr>Timestamp<wbr>From<wbr>Most<wbr>Recent<wbr>File</a></td>
 									<td>
     <p>
@@ -850,6 +930,21 @@
     </td>
 							</tr>
 							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/UpdateCommand">UpdateCommand</a></td>
+									<td>
+    Update older files in the archive and add files that are not already in the archive.
+    (Command: u)
+    Note: the updating of solid .7z archives can be slow, since it can require some recompression.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/UpdateCommandBuilder">UpdateCommandBuilder</a></td>
+									<td>
+    Builder for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/UpdateCommand">UpdateCommand</a></code>.
+    
+    </td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip/VolumeUnit">VolumeUnit</a></td>
 									<td>
     Units for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/SwitchCompressionMethod">SwitchCompressionMethod</a></code>.
@@ -879,6 +974,36 @@
 								<td><a href="/Cake.7zip/api/Cake.SevenZip/ICommand">ICommand</a></td>
 									<td>
     Interface for all commands. (E.g. <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/AddCommand">AddCommand</a></code>).
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgument">IHaveArgument</a></td>
+									<td>
+    Base for all argument.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgumentArchive">IHaveArgumentArchive</a></td>
+									<td>
+    Interface for all commands supporting the Archive-Argument.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgumentDirectories">I<wbr>Have<wbr>Argument<wbr>Directories</a></td>
+									<td>
+    Interface for all commands supporting multiple directories as arguments.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/IHaveArgumentFiles">IHaveArgumentFiles</a></td>
+									<td>
+    Interface for all commands supporting multiple files as arguments.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/ISupportArgumentBuilder_1">I<wbr>Support<wbr>Argument<wbr>Builder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip/ISupportArgumentBuilder_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    Base for builders that support arguments.
     </td>
 							</tr>
 							<tr>
@@ -1001,6 +1126,21 @@
     </td>
 							</tr>
 							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchFullyQualifiedFilePaths">I<wbr>Support<wbr>Switch<wbr>Fully<wbr>Qualified<wbr>File<wbr>Paths</a></td>
+									<td>
+    <p>
+    Command supports switch -spf/-spf2 (Use fully qualified file paths).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/SwitchFullyQualifiedFilePaths">SwitchFullyQualifiedFilePaths</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/SwitchFullyQualifiedFilePathsBuilder">SwitchFullyQualifiedFilePathsBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchIncludeArchiveFilenames">I<wbr>Support<wbr>Switch<wbr>Include<wbr>Archive<wbr>Filenames</a></td>
 									<td>
     <p>
@@ -1116,6 +1256,21 @@
     </p>
     <p>
     The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/SwitchRecurseSubdirectoriesBuilder">SwitchRecurseSubdirectoriesBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip/ISupportSwitchSelfExtractingArchive">I<wbr>Support<wbr>Switch<wbr>Self<wbr>Extracting<wbr>Archive</a></td>
+									<td>
+    <p>
+    Command supports switch -sfx (Create SFX archive).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/SwitchSelfExtractingArchive">SwitchSelfExtractingArchive</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip/SwitchSelfExtractingArchiveBuilder">SwitchSelfExtractingArchiveBuilder</a></code>.
     </p>
     
     </td>
