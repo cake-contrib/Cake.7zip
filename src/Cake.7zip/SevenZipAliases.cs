@@ -15,8 +15,7 @@ namespace Cake.SevenZip
     /// that points to a directory containing 7z.exe or 7za.exe).
     /// </para>
     /// <para>
-    /// Currently the following formats are supported: 7z, xz, lzma, cab, zip, gzip, bzip2 and tar.
-    /// (Those are the formats supported by the standalone 7za.exe.)
+    /// Supported formats and capabilities depend on your 7z-version.
     /// </para>
     /// <para>
     /// To install add the following lines to your cake-file:
@@ -33,6 +32,17 @@ namespace Cake.SevenZip
     {
         /// <summary>
         /// Runs 7zip, using a fluent builder for configuration.
+        /// <para>
+        /// For more examples see the different builders for the <see cref="ICommand"/>.
+        /// <list type="bullet">
+        /// <item><description><see cref="AddCommandBuilder"/></description></item>
+        /// <item><description><see cref="DeleteCommandBuilder"/></description></item>
+        /// <item><description><see cref="ExtractCommandBuilder"/></description></item>
+        /// <item><description><see cref="UpdateCommandBuilder"/></description></item>
+        /// </list>
+        /// </para>
+        /// <seealso cref="ICommand"/>
+        /// <seealso cref="CommandBuilder"/>
         /// </summary>
         /// <param name="context">The <see cref="ICakeContext"/>.</param>
         /// <param name="action">The fluent <see cref="CommandBuilder"/>.</param>

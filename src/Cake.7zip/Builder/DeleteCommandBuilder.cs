@@ -1,7 +1,5 @@
 namespace Cake.SevenZip
 {
-    using Cake.Core.IO;
-
     /// <summary>
     /// Builder for <see cref="DeleteCommand"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}" />
@@ -23,6 +21,9 @@ namespace Cake.SevenZip
     /// </code>
     /// </example>
     public sealed class DeleteCommandBuilder :
+        ISupportArgumentBuilder<IHaveArgumentArchive>,
+        ISupportArgumentBuilder<IHaveArgumentFiles>,
+        ISupportArgumentBuilder<IHaveArgumentDirectories>,
         ISupportSwitchBuilder<ISupportSwitchIncludeFilenames>,
         ISupportSwitchBuilder<ISupportSwitchExcludeFilenames>,
         ISupportSwitchBuilder<ISupportSwitchCompressionMethod>,
@@ -30,7 +31,9 @@ namespace Cake.SevenZip
         ISupportSwitchBuilder<ISupportSwitchRecurseSubdirectories>,
         ISupportSwitchBuilder<ISupportSwitchNtfsAlternateStreams>,
         ISupportSwitchBuilder<ISupportSwitchUpdateOptions>,
-        ISupportSwitchBuilder<ISupportSwitchWorkingDirectory>
+        ISupportSwitchBuilder<ISupportSwitchWorkingDirectory>,
+        ISupportSwitchBuilder<ISupportSwitchSelfExtractingArchive>,
+        ISupportSwitchBuilder<ISupportSwitchFullyQualifiedFilePaths>
     {
         private readonly DeleteCommand command;
 
@@ -42,6 +45,15 @@ namespace Cake.SevenZip
         {
             this.command = command;
         }
+
+        /// <inheritdoc/>
+        IHaveArgumentArchive ISupportArgumentBuilder<IHaveArgumentArchive>.Command => command;
+
+        /// <inheritdoc/>
+        IHaveArgumentFiles ISupportArgumentBuilder<IHaveArgumentFiles>.Command => command;
+
+        /// <inheritdoc/>
+        IHaveArgumentDirectories ISupportArgumentBuilder<IHaveArgumentDirectories>.Command => command;
 
         /// <inheritdoc />
         ISupportSwitchCompressionMethod ISupportSwitchBuilder<ISupportSwitchCompressionMethod>.Command => command;
@@ -67,27 +79,10 @@ namespace Cake.SevenZip
         /// <inheritdoc />
         ISupportSwitchUpdateOptions ISupportSwitchBuilder<ISupportSwitchUpdateOptions>.Command => command;
 
-        /// <summary>
-        /// Sets the archive on the <see cref="DeleteCommand"/>.
-        /// </summary>
-        /// <param name="archive">The archive.</param>
-        /// <returns>The builder, for fluent use.</returns>
-        public DeleteCommandBuilder WithArchive(FilePath archive)
-        {
-            command.Archive = archive;
-            return this;
-        }
+        /// <inheritdoc />
+        ISupportSwitchSelfExtractingArchive ISupportSwitchBuilder<ISupportSwitchSelfExtractingArchive>.Command => command;
 
-        /// <summary>
-        /// Sets the FileGlob on the <see cref="DeleteCommand"/>.
-        /// </summary>
-        /// <param name="fileGlob">The fileGlob.</param>
-        /// <returns>The builder, for fluent use.</returns>
-        public DeleteCommandBuilder WithFileGlob(string fileGlob)
-        {
-            command.FileGlob = fileGlob;
-
-            return this;
-        }
+        /// <inheritdoc />
+        ISupportSwitchFullyQualifiedFilePaths ISupportSwitchBuilder<ISupportSwitchFullyQualifiedFilePaths>.Command => command;
     }
 }

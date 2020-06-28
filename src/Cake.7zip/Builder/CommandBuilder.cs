@@ -46,5 +46,16 @@ namespace Cake.SevenZip
             Command = command;
             return new DeleteCommandBuilder(ref command);
         }
+
+        /// <summary>
+        /// Makes this Builder n UpdateCommand-Builder.
+        /// </summary>
+        /// <returns><see cref="ExtractCommandBuilder"/>.</returns>
+        public UpdateCommandBuilder InUpdateMode()
+        {
+            var command = new UpdateCommand();
+            Command = command;
+            return new UpdateCommandBuilder(ref command);
+        }
     }
 }

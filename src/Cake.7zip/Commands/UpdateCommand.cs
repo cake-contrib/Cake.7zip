@@ -3,31 +3,27 @@ namespace Cake.SevenZip
     using System.Collections.Generic;
 
     /// <summary>
-    /// Adds files to archive.
-    /// (Command: a).
+    /// Update older files in the archive and add files that are not already in the archive.
+    /// (Command: u)
+    /// Note: the updating of solid .7z archives can be slow, since it can require some recompression.
     /// </summary>
-    public sealed class AddCommand : BaseAddLikeSyntaxCommand,
+    public sealed class UpdateCommand : BaseAddLikeSyntaxCommand,
         ICommand,
-        ISupportSwitchVolume,
+        ISupportSwitchIncludeFilenames,
         ISupportSwitchCompressionMethod,
-        ISupportSwitchArchiveType,
         ISupportSwitchPassword,
+        ISupportSwitchRecurseSubdirectories,
         ISupportSwitchNtSecurityInformation,
         ISupportSwitchNtfsAlternateStreams,
         ISupportSwitchCompressFilesOpenForWriting,
         ISupportSwitchTimestampFromMostRecentFile,
+        ISupportSwitchArchiveType,
         ISupportSwitchWorkingDirectory,
-        ISupportSwitchRecurseSubdirectories,
-        ISupportSwitchIncludeFilenames,
         ISupportSwitchExcludeFilenames,
         ISupportSwitchUpdateOptions,
-        ISupportSwitchDeleteAfterCompression,
         ISupportSwitchSelfExtractingArchive,
         ISupportSwitchFullyQualifiedFilePaths
     {
-        /// <inheritdoc />
-        public SwitchVolumeCollection Volumes { get; set; }
-
         /// <inheritdoc/>
         public SwitchCompressionMethod CompressionMethod { get; set; }
 
@@ -65,25 +61,21 @@ namespace Cake.SevenZip
         public SwitchUpdateOptions UpdateOptions { get; set; }
 
         /// <inheritdoc />
-        public SwitchDeleteAfterCompression DeleteAfterCompression { get; set; }
-
-        /// <inheritdoc />
         public SwitchSelfExtractingArchive SelfExtractingArchive { get; set; }
 
         /// <inheritdoc />
         public SwitchFullyQualifiedFilePaths FullyQualifiedFilePaths { get; set; }
 
         /// <inheritdoc/>
-        protected override string CommandName => "add";
+        protected override string CommandName => "update";
 
         /// <inheritdoc/>
-        protected override string CommandChar => "a";
+        protected override string CommandChar => "u";
 
         /// <inheritdoc/>
         protected override IEnumerable<ISwitch> Switches => new ISwitch[]
         {
             ArchiveType,
-            Volumes,
             CompressionMethod,
             Password,
             NtSecurityInformation,
@@ -95,7 +87,6 @@ namespace Cake.SevenZip
             IncludeFilenames,
             ExcludeFilenames,
             UpdateOptions,
-            DeleteAfterCompression,
             SelfExtractingArchive,
             FullyQualifiedFilePaths,
         };
