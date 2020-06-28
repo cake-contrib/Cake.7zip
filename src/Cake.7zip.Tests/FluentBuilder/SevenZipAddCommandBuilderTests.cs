@@ -3,7 +3,6 @@ namespace Cake.SevenZip.Tests.Builder
     using Cake.Core.IO;
 
     using System;
-    using System.IO;
 
     using Xunit;
 
@@ -508,6 +507,40 @@ namespace Cake.SevenZip.Tests.Builder
               .WithSelfExtractingArchive(new FilePath("7zS2.sfx "));
 
             const string expected = @"a -sfx""7zS2.sfx"" ""out.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Add_can_use_FullQualifiedPaths_with_driveletter()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithFullyQualifiedFilePaths(true);
+
+            const string expected = @"a -spf ""out.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Add_can_use_FullQualifiedPaths_without_driveletter()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InAddMode()
+              .WithArchive(new FilePath("out.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithFullyQualifiedFilePaths(false);
+
+            const string expected = @"a -spf2 ""out.zip"" ""in.txt""";
 
             var actual = fixture.EvaluateArgs();
 

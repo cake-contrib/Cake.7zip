@@ -21,7 +21,8 @@ namespace Cake.SevenZip
         ISupportSwitchWorkingDirectory,
         ISupportSwitchExcludeFilenames,
         ISupportSwitchUpdateOptions,
-        ISupportSwitchSelfExtractingArchive
+        ISupportSwitchSelfExtractingArchive,
+        ISupportSwitchFullyQualifiedFilePaths
     {
         /// <inheritdoc/>
         public SwitchCompressionMethod CompressionMethod { get; set; }
@@ -62,6 +63,9 @@ namespace Cake.SevenZip
         /// <inheritdoc />
         public SwitchSelfExtractingArchive SelfExtractingArchive { get; set; }
 
+        /// <inheritdoc />
+        public SwitchFullyQualifiedFilePaths FullyQualifiedFilePaths { get; set; }
+
         /// <inheritdoc/>
         protected override string CommandName => "update";
 
@@ -84,6 +88,7 @@ namespace Cake.SevenZip
             ExcludeFilenames,
             UpdateOptions,
             SelfExtractingArchive,
+            FullyQualifiedFilePaths,
         };
     }
 }

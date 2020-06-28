@@ -460,5 +460,39 @@ namespace Cake.SevenZip.Tests.Builder
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Update_can_use_FullQualifiedPaths_with_driveletter()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InUpdateMode()
+              .WithArchive(new FilePath("old.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithFullyQualifiedFilePaths(true);
+
+            const string expected = @"u -spf ""old.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Update_can_use_FullQualifiedPaths_without_driveletter()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InUpdateMode()
+              .WithArchive(new FilePath("old.zip"))
+              .WithFiles(new FilePath("in.txt"))
+              .WithFullyQualifiedFilePaths(false);
+
+            const string expected = @"u -spf2 ""old.zip"" ""in.txt""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

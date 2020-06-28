@@ -39,7 +39,8 @@ namespace Cake.SevenZip
         ISupportSwitchBuilder<ISupportSwitchIncludeFilenames>,
         ISupportSwitchBuilder<ISupportSwitchExcludeFilenames>,
         ISupportSwitchBuilder<ISupportSwitchUpdateOptions>,
-        ISupportSwitchBuilder<ISupportSwitchSelfExtractingArchive>
+        ISupportSwitchBuilder<ISupportSwitchSelfExtractingArchive>,
+        ISupportSwitchBuilder<ISupportSwitchFullyQualifiedFilePaths>
     {
         private readonly UpdateCommand command;
 
@@ -99,5 +100,8 @@ namespace Cake.SevenZip
 
         /// <inheritdoc />
         ISupportSwitchSelfExtractingArchive ISupportSwitchBuilder<ISupportSwitchSelfExtractingArchive>.Command => command;
+
+        /// <inheritdoc />
+        ISupportSwitchFullyQualifiedFilePaths ISupportSwitchBuilder<ISupportSwitchFullyQualifiedFilePaths>.Command => command;
     }
 }

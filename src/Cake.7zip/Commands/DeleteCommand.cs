@@ -16,7 +16,8 @@ namespace Cake.SevenZip
         ISupportSwitchNtfsAlternateStreams,
         ISupportSwitchUpdateOptions,
         ISupportSwitchWorkingDirectory,
-        ISupportSwitchSelfExtractingArchive
+        ISupportSwitchSelfExtractingArchive,
+        ISupportSwitchFullyQualifiedFilePaths
     {
         /// <inheritdoc />
         public SwitchRecurseSubdirectories RecurseSubdirectories { get; set; }
@@ -45,6 +46,9 @@ namespace Cake.SevenZip
         /// <inheritdoc />
         public SwitchSelfExtractingArchive SelfExtractingArchive { get; set; }
 
+        /// <inheritdoc />
+        public SwitchFullyQualifiedFilePaths FullyQualifiedFilePaths { get; set; }
+
         /// <inheritdoc/>
         protected override string CommandName => "delete";
 
@@ -63,6 +67,7 @@ namespace Cake.SevenZip
             ExcludeFilenames,
             UpdateOptions,
             SelfExtractingArchive,
+            FullyQualifiedFilePaths,
         };
 
         /// <inheritdoc/>

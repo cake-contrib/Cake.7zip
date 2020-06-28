@@ -32,7 +32,8 @@ namespace Cake.SevenZip
         ISupportSwitchBuilder<ISupportSwitchNtfsAlternateStreams>,
         ISupportSwitchBuilder<ISupportSwitchUpdateOptions>,
         ISupportSwitchBuilder<ISupportSwitchWorkingDirectory>,
-        ISupportSwitchBuilder<ISupportSwitchSelfExtractingArchive>
+        ISupportSwitchBuilder<ISupportSwitchSelfExtractingArchive>,
+        ISupportSwitchBuilder<ISupportSwitchFullyQualifiedFilePaths>
     {
         private readonly DeleteCommand command;
 
@@ -80,5 +81,8 @@ namespace Cake.SevenZip
 
         /// <inheritdoc />
         ISupportSwitchSelfExtractingArchive ISupportSwitchBuilder<ISupportSwitchSelfExtractingArchive>.Command => command;
+
+        /// <inheritdoc />
+        ISupportSwitchFullyQualifiedFilePaths ISupportSwitchBuilder<ISupportSwitchFullyQualifiedFilePaths>.Command => command;
     }
 }

@@ -34,7 +34,8 @@ namespace Cake.SevenZip
         ISupportSwitchExcludeArchiveFilenames,
         ISupportSwitchDisableParsingOfArchiveName,
         ISupportSwitchOverwriteMode,
-        ISupportSwitchOutputDirectory
+        ISupportSwitchOutputDirectory,
+        ISupportSwitchFullyQualifiedFilePaths
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ExtractCommand"/> class.
@@ -95,6 +96,9 @@ namespace Cake.SevenZip
         /// <inheritdoc />
         public SwitchOutputDirectory OutputDirectory { get; set; }
 
+        /// <inheritdoc />
+        public SwitchFullyQualifiedFilePaths FullyQualifiedFilePaths { get; set; }
+
         /// <inheritdoc/>
         public void BuildArguments(ref ProcessArgumentBuilder builder)
         {
@@ -123,6 +127,7 @@ namespace Cake.SevenZip
                 DisableParsingOfArchiveName,
                 OverwriteMode,
                 OutputDirectory,
+                FullyQualifiedFilePaths,
             })
             {
                 if (sw == null)

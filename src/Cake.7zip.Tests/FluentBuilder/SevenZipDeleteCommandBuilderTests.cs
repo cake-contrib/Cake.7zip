@@ -315,5 +315,37 @@ namespace Cake.SevenZip.Tests.Builder
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Delete_can_use_FullQualifiedPaths_with_driveletter()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InDeleteMode()
+              .WithArchive(new FilePath("in.zip"))
+              .WithFullyQualifiedFilePaths(true);
+
+            const string expected = @"d -spf ""in.zip""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Delete_can_use_FullQualifiedPaths_without_driveletter()
+        {
+            var fixture = new FluentBuilderFixture();
+            fixture.Context
+              .InDeleteMode()
+              .WithArchive(new FilePath("in.zip"))
+              .WithFullyQualifiedFilePaths(false);
+
+            const string expected = @"d -spf2 ""in.zip""";
+
+            var actual = fixture.EvaluateArgs();
+
+            Assert.Equal(expected, actual);
+        }
     }
 }
