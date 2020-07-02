@@ -39,7 +39,7 @@ namespace Cake.SevenZip
         /// <summary>
         /// Makes this Builder a DeleteCommand-Builder.
         /// </summary>
-        /// <returns><see cref="ExtractCommandBuilder"/>.</returns>
+        /// <returns><see cref="DeleteCommandBuilder"/>.</returns>
         public DeleteCommandBuilder InDeleteMode()
         {
             var command = new DeleteCommand();
@@ -48,14 +48,25 @@ namespace Cake.SevenZip
         }
 
         /// <summary>
-        /// Makes this Builder n UpdateCommand-Builder.
+        /// Makes this Builder an UpdateCommand-Builder.
         /// </summary>
-        /// <returns><see cref="ExtractCommandBuilder"/>.</returns>
+        /// <returns><see cref="UpdateCommandBuilder"/>.</returns>
         public UpdateCommandBuilder InUpdateMode()
         {
             var command = new UpdateCommand();
             Command = command;
             return new UpdateCommandBuilder(ref command);
+        }
+
+        /// <summary>
+        /// Makes this Builder an InformationCommand-Builder.
+        /// </summary>
+        /// <returns><see cref="InformationCommandBuilder"/>.</returns>
+        public InformationCommandBuilder InInformationMode()
+        {
+            var command = new InformationCommand();
+            Command = command;
+            return new InformationCommandBuilder(ref command);
         }
     }
 }

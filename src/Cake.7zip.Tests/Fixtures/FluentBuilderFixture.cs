@@ -1,6 +1,9 @@
 namespace Cake.SevenZip.Tests
 {
     using Cake.Core.IO;
+    using Cake.SevenZip;
+
+    using Moq;
 
     public class FluentBuilderFixture
     {
