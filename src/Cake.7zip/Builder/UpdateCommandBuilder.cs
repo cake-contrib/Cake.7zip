@@ -1,9 +1,5 @@
 namespace Cake.SevenZip
 {
-    using System.Linq;
-
-    using Cake.Core.IO;
-
     /// <summary>
     /// Builder for <see cref="UpdateCommand"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}" />

@@ -19,6 +19,7 @@ namespace Cake.SevenZip
         private readonly ICakeEnvironment cakeEnvironment;
         private readonly IRegistry registry;
         private readonly IFileSystem fileSystem;
+        private readonly IProcessRunner processRunner;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SevenZipRunner"/> class.
@@ -42,6 +43,7 @@ namespace Cake.SevenZip
             cakeEnvironment = environment;
             this.registry = registry;
             this.fileSystem = fileSystem;
+            this.processRunner = processRunner;
         }
 
         /// <summary>
@@ -56,7 +58,20 @@ namespace Cake.SevenZip
                 throw new ArgumentNullException(nameof(settings));
             }
 
-            Run(settings, GetArguments(settings));
+            var procSettings = new ProcessSettings
+            {
+                RedirectStandardOutput = true,
+            };
+
+            void AfterRun(IProcess p)
+            {
+                if (settings.Command is ICanParseOutput parseOutput)
+                {
+                    parseOutput.SetRawOutput(p.GetStandardOutput());
+                }
+            }
+
+            Run(settings, GetArguments(settings), procSettings, AfterRun);
         }
 
         /// <inheritdoc/>

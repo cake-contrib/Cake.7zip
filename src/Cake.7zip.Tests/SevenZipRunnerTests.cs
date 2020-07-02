@@ -1,6 +1,7 @@
 namespace Cake.SevenZip.Tests
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     using Cake.Core;
@@ -244,6 +245,47 @@ namespace Cake.SevenZip.Tests
 
             var ex = Assert.Throws<CakeException>(result);
             Assert.Equal(expectedMessage, ex.Message);
+        }
+
+        [Fact]
+        public void Should_Set_output_null_on_outputCommand_whithout_output()
+        {
+            var command = new Mock<OutputCommand<object>>();
+            var outputParseCommand = command.As<ICanParseOutput>();
+            var fixture = new SevenZipRunnerFixture
+            {
+                Settings = new SevenZipSettings
+                {
+                    Command = command.Object
+                }
+            };
+            fixture.GivenProcessReturnsStdOutputOf(null);
+
+            fixture.Run();
+
+            outputParseCommand.Verify(c => c.SetRawOutput(null), Times.Once);
+        }
+
+        [Fact]
+        public void Should_Set_output_on_outputCommand()
+        {
+            var command = new Mock<OutputCommand<object>>();
+            var outputParseCommand = command.As<ICanParseOutput>();
+            var parser = new Mock<IOutputParser<object>>();
+            command.Setup(c => c.OutputParser).Returns(parser.Object);
+            var fixture = new SevenZipRunnerFixture
+            {
+                Settings = new SevenZipSettings
+                {
+                    Command = command.Object
+                }
+            };
+            var expected = new[] { "this", "is", "the", "output" };
+            fixture.GivenProcessReturnsStdOutputOf(expected);
+
+            fixture.Run();
+
+            outputParseCommand.Verify(c => c.SetRawOutput(expected), Times.Once);
         }
     }
 

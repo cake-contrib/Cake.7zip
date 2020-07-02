@@ -1,7 +1,6 @@
 namespace Cake.SevenZip.Tests
 {
     using Cake.Core.IO;
-    using Cake.Core.Tooling;
     using Cake.Testing;
     using Cake.Testing.Fixtures;
 
@@ -17,6 +16,11 @@ namespace Cake.SevenZip.Tests
         {
             Log = new FakeLog();
             Registry = new Mock<IRegistry>();
+        }
+
+        public void GivenProcessReturnsStdOutputOf(string[] stdOutput)
+        {
+            ProcessRunner.Process.SetStandardOutput(stdOutput);
         }
 
         protected override void RunTool()

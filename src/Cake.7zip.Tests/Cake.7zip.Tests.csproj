@@ -23,8 +23,4 @@
   <ItemGroup>
     <ProjectReference Include="..\Cake.7zip\Cake.7zip.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Fixtures\" />
-  </ItemGroup>
 </Project>
