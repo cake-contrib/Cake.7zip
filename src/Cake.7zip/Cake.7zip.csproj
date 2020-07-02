@@ -1,44 +1,46 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    </PropertyGroup>
 
-  <PropertyGroup>
-    <StartYear>2020</StartYear>
-    <EndYear>$([System.DateTime]::Today.Year)</EndYear>
-    <FullYear Condition="'$(StartYear)'=='$(EndYear)'">$(StartYear)</FullYear>
-    <FullYear Condition="'$(StartYear)'!='$(EndYear)'">$(StartYear)-$(EndYear)</FullYear>
+    <PropertyGroup>
+        <StartYear>2020</StartYear>
+        <EndYear>$([System.DateTime]::Today.Year)</EndYear>
+        <FullYear Condition="'$(StartYear)'=='$(EndYear)'">$(StartYear)</FullYear>
+        <FullYear Condition="'$(StartYear)'!='$(EndYear)'">$(StartYear)-$(EndYear)</FullYear>
 
-    <!-- Properties related to packaging -->
-    <Authors>Nils Andresen</Authors>
-    <Copyright>Copyright © $(FullYear) — Nils Andresen</Copyright>
-    <Description>makes 7zip available as a tool in cake</Description>
-    <PackageIconUrl></PackageIconUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://cake-contrib.github.io/Cake.7zip</PackageProjectUrl>
-    <PackageTags>cake;addin;SevenZip</PackageTags>
-    <RepositoryUrl>https://github.com/cake-contrib/Cake.7zip.git</RepositoryUrl>
-    <PackageReleaseNotes>https://github.com/cake-contrib/Cake.7zip/releases</PackageReleaseNotes>
-    <RootNamespace>Cake.SevenZip</RootNamespace>
-    <Version>0.0.1</Version>
-    <PackageIcon>icon.png</PackageIcon>
-  </PropertyGroup>
+        <!-- Properties related to packaging -->
+        <Authors>Nils Andresen</Authors>
+        <Copyright>Copyright © $(FullYear) — Nils Andresen</Copyright>
+        <Description>makes 7zip available as a tool in cake</Description>
+        <PackageIconUrl></PackageIconUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://cake-contrib.github.io/Cake.7zip</PackageProjectUrl>
+        <PackageTags>cake;addin;SevenZip</PackageTags>
+        <RepositoryUrl>https://github.com/cake-contrib/Cake.7zip.git</RepositoryUrl>
+        <PackageReleaseNotes>https://github.com/cake-contrib/Cake.7zip/releases</PackageReleaseNotes>
+        <RootNamespace>Cake.SevenZip</RootNamespace>
+        <Version>0.0.1</Version>
+        <PackageIcon>icon.png</PackageIcon>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
-    <PackageReference Include="stylecop.analyzers" Version="1.1.118">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
+        <PackageReference Include="stylecop.analyzers" Version="1.1.118">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <None Include="icon.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+    <ItemGroup>
+        <None Include="icon.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
 </Project>
