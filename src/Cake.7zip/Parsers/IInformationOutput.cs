@@ -1,9 +1,9 @@
-﻿namespace Cake.SevenZip
+namespace Cake.SevenZip
 {
     using System.Collections.Generic;
 
     /// <summary>
-    /// The parsed Output of the <see cref="InformationCommand"/>
+    /// The parsed Output of the <see cref="InformationCommand"/>.
     /// </summary>
     public interface IInformationOutput
     {

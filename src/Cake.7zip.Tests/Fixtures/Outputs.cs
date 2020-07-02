@@ -101,7 +101,7 @@ Hashers:
  0   32        A SHA256
  0    8        4 CRC64
  0   32      202 BLAKE2sp";
-                return demoOutput.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                return demoOutput.ToArrayOfLines();
             }
         }
     }

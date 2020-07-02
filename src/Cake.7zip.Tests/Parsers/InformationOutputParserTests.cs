@@ -58,7 +58,7 @@ namespace Cake.SevenZip.Tests.Builder
  0   D    40303 Rar3
  0   D    40305 Rar5
  0  ED  6F10701 7zAES
- 0  ED  6F00181 AES256CBC".Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+ 0  ED  6F00181 AES256CBC".ToArrayOfLines();
 
             Assert.Equal(expected.Length, actual.Count);
             foreach (var codec in expected)
@@ -93,8 +93,7 @@ namespace Cake.SevenZip.Tests.Builder
  0   20      201 SHA1
  0   32        A SHA256
  0    8        4 CRC64
- 0   32      202 BLAKE2sp".Split(new[] { Environment.NewLine }, StringSplitOptions.None);
-
+ 0   32      202 BLAKE2sp".ToArrayOfLines();
             Assert.Equal(expected.Length, actual.Count);
             foreach (var hasher in expected)
             {
@@ -163,7 +162,7 @@ namespace Cake.SevenZip.Tests.Builder
  0        O      Udf      udf iso img   offset=32768 01 C D 0 0 1
  0 C SN       LH wim      wim swm esd ppkg M S W I M 00 00 00
  0 C   FMG       zip      zip z01 zipx jar xpi odt ods docx xlsx epub ipa apk appx P K 03 04  ||  P K 05 06  ||  P K 06 06  ||  P K 07 08 P K  ||  P K 0 0 P K"
-    .Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+    .ToArrayOfLines();
 
             Assert.Equal(expected.Length, actual.Count);
             foreach (var format in expected)

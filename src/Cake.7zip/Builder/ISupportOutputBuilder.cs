@@ -36,10 +36,16 @@ namespace Cake.SevenZip
         where TCommand : OutputCommand<TOutput>
     {
         /// <inheritdoc/>
-        public Action<TOutput> OutputAction { set { OutputCommand.OutputAction = value; } }
+        public Action<TOutput> OutputAction
+        {
+            set { OutputCommand.OutputAction = value; }
+        }
 
         /// <inheritdoc/>
-        public Action<string[]> RawOutputAction { set { OutputCommand.RawOutputAction = value; } }
+        public Action<string[]> RawOutputAction
+        {
+            set { OutputCommand.RawOutputAction = value; }
+        }
 
         /// <summary>
         /// Gets the output command.
