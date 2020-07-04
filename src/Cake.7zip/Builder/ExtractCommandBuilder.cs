@@ -1,7 +1,8 @@
-namespace Cake.SevenZip
-{
-    using Cake.Core.IO;
+using Cake.SevenZip.Commands;
+using Cake.SevenZip.Switches;
 
+namespace Cake.SevenZip.Builder
+{
     /// <summary>
     /// Builder for <see cref="ExtractCommand"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}" />

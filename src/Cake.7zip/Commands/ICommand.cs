@@ -1,7 +1,7 @@
-namespace Cake.SevenZip
-{
-    using Cake.Core.IO;
+using Cake.Core.IO;
 
+namespace Cake.SevenZip.Commands
+{
     /// <summary>
     /// Interface for all commands. (E.g. <see cref="AddCommand"/>).
     /// </summary>

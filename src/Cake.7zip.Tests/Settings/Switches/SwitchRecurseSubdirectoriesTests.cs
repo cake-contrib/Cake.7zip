@@ -1,7 +1,9 @@
+using Cake.SevenZip.Switches;
+
+using Xunit;
+
 namespace Cake.SevenZip.Tests.Settings.Switches
 {
-    using Xunit;
-
     public class SwitchRecurseSubdirectoriesTests
     {
         [Fact]

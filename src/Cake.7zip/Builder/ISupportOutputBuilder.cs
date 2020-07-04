@@ -1,7 +1,9 @@
-namespace Cake.SevenZip
-{
-    using System;
+using System;
 
+using Cake.SevenZip.Commands;
+
+namespace Cake.SevenZip.Builder
+{
     /// <summary>
     ///  Internal interface to make the extensions more type-able.
     /// </summary>
@@ -38,13 +40,13 @@ namespace Cake.SevenZip
         /// <inheritdoc/>
         public Action<TOutput> OutputAction
         {
-            set { OutputCommand.OutputAction = value; }
+            set => OutputCommand.OutputAction = value;
         }
 
         /// <inheritdoc/>
         public Action<string[]> RawOutputAction
         {
-            set { OutputCommand.RawOutputAction = value; }
+            set => OutputCommand.RawOutputAction = value;
         }
 
         /// <summary>

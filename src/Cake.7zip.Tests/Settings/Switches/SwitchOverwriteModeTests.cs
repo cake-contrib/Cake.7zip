@@ -1,9 +1,11 @@
+using System.Reflection;
+
+using Cake.SevenZip.Switches;
+
+using Xunit;
+
 namespace Cake.SevenZip.Tests.Settings.Switches
 {
-    using System.Reflection;
-
-    using Xunit;
-
     public class SwitchOverwriteModeTests
     {
         [Fact]

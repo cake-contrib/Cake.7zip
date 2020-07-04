@@ -1,11 +1,13 @@
+using Cake.Core.IO;
+using Cake.SevenZip.Builder;
+using Cake.SevenZip.Switches;
+
+using System;
+
+using Xunit;
+
 namespace Cake.SevenZip.Tests.Builder
 {
-    using Cake.Core.IO;
-
-    using System;
-
-    using Xunit;
-
     public class SevenZipDeleteCommandBuilderTests
     {
         [Fact]
@@ -47,7 +49,10 @@ namespace Cake.SevenZip.Tests.Builder
             fixture.Context
               .InDeleteMode();
 
-            void result() => fixture.EvaluateArgs();
+            void result()
+            {
+                fixture.EvaluateArgs();
+            }
 
             Assert.Throws<ArgumentException>(result);
         }

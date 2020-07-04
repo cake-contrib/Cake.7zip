@@ -1,4 +1,7 @@
-namespace Cake.SevenZip
+using Cake.SevenZip.Commands;
+using Cake.SevenZip.Parsers;
+
+namespace Cake.SevenZip.Builder
 {
     /// <summary>
     /// Builder for <see cref="InformationCommand"/>.

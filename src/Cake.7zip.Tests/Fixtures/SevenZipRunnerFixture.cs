@@ -1,11 +1,11 @@
+using Cake.Core.IO;
+using Cake.Testing;
+using Cake.Testing.Fixtures;
+
+using Moq;
+
 namespace Cake.SevenZip.Tests
 {
-    using Cake.Core.IO;
-    using Cake.Testing;
-    using Cake.Testing.Fixtures;
-
-    using Moq;
-
     public class SevenZipRunnerFixture : ToolFixture<SevenZipSettings>
     {
         internal Mock<IRegistry> Registry { get; set; }

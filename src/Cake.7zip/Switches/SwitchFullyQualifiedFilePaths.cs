@@ -1,8 +1,9 @@
-namespace Cake.SevenZip
-{
-    using Cake.Core;
-    using Cake.Core.IO;
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.SevenZip.Builder;
 
+namespace Cake.SevenZip.Switches
+{
     /// <summary>
     /// -spf (Use fully qualified file paths) switch.
     /// (Also, -spf2 for full paths without drive letters.)

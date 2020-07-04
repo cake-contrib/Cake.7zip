@@ -1,9 +1,10 @@
+using Cake.Core.IO;
+using Cake.SevenZip.Switches;
+
+using Xunit;
+
 namespace Cake.SevenZip.Tests.Settings.Switches
 {
-    using Cake.Core.IO;
-
-    using Xunit;
-
     public class SwitchWorkingDirectoryTests
     {
         [Fact]

@@ -1,4 +1,4 @@
-namespace Cake.SevenZip
+namespace Cake.SevenZip.Parsers
 {
     /// <summary>
     /// Interface for all commands supporting a parsed output.

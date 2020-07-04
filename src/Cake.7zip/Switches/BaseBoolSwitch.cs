@@ -1,8 +1,8 @@
-namespace Cake.SevenZip
-{
-    using Cake.Core;
-    using Cake.Core.IO;
+using Cake.Core;
+using Cake.Core.IO;
 
+namespace Cake.SevenZip.Switches
+{
     /// <summary>
     /// BaseClass for simple boolean switches.
     /// </summary>

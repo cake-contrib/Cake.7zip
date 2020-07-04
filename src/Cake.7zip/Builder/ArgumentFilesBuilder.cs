@@ -1,9 +1,10 @@
-namespace Cake.SevenZip
+using System.Linq;
+
+using Cake.Core.IO;
+using Cake.SevenZip.Commands;
+
+namespace Cake.SevenZip.Builder
 {
-    using System.Linq;
-
-    using Cake.Core.IO;
-
     /// <summary>
     /// Extensions for all Builders that support <see cref="IHaveArgumentFiles"/>.
     /// <seealso cref="ISupportArgumentBuilder{T}"/>
@@ -48,7 +49,7 @@ namespace Cake.SevenZip
         public static T WithFiles<T>(this T @this, FilePathCollection files)
             where T : ISupportArgumentBuilder<IHaveArgumentFiles>
         {
-            return WithFiles<T>(@this, files.ToArray());
+            return WithFiles(@this, files.ToArray());
         }
     }
 }

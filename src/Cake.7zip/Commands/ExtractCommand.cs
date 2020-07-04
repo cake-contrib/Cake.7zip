@@ -1,10 +1,11 @@
-namespace Cake.SevenZip
+using System;
+
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.SevenZip.Switches;
+
+namespace Cake.SevenZip.Commands
 {
-    using System;
-
-    using Cake.Core;
-    using Cake.Core.IO;
-
     /// <summary>
     /// Extract files from archive - with or without full path
     /// (Commands: e and x).

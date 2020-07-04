@@ -1,9 +1,11 @@
+using System;
+
+using Cake.SevenZip.Switches;
+
+using Xunit;
+
 namespace Cake.SevenZip.Tests.Settings.Switches
 {
-    using System;
-
-    using Xunit;
-
     public class SwitchVolumeTests
     {
         [Fact]
@@ -92,7 +94,10 @@ namespace Cake.SevenZip.Tests.Settings.Switches
             var sut = new SwitchVolume();
             const string expectedMessage = "Can not create volumes with size < 1";
 
-            void result() => fixture.Parse(b => sut.BuildArguments(ref b));
+            void result()
+            {
+                fixture.Parse(b => sut.BuildArguments(ref b));
+            }
 
             var ex = Assert.Throws<ArgumentException>(result);
             Assert.Equal(expectedMessage, ex.Message);
@@ -108,7 +113,10 @@ namespace Cake.SevenZip.Tests.Settings.Switches
             };
             const string expectedMessage = "Can not create volumes with size < 1";
 
-            void result() => fixture.Parse(b => sut.BuildArguments(ref b));
+            void result()
+            {
+                fixture.Parse(b => sut.BuildArguments(ref b));
+            }
 
             var ex = Assert.Throws<ArgumentException>(result);
             Assert.Equal(expectedMessage, ex.Message);

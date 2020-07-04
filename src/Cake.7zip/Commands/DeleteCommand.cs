@@ -1,7 +1,9 @@
-namespace Cake.SevenZip
-{
-    using System.Collections.Generic;
+using System.Collections.Generic;
 
+using Cake.SevenZip.Switches;
+
+namespace Cake.SevenZip.Commands
+{
     /// <summary>
     /// Deletes files from the archive.
     /// (Command: d).

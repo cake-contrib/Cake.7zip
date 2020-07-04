@@ -1,10 +1,11 @@
-namespace Cake.SevenZip
+using System;
+
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.SevenZip.Builder;
+
+namespace Cake.SevenZip.Switches
 {
-    using System;
-
-    using Cake.Core;
-    using Cake.Core.IO;
-
     /// <summary>
     /// <para>
     /// -v (Create Volumes) switch.

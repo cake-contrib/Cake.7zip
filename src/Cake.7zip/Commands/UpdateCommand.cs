@@ -1,7 +1,9 @@
-namespace Cake.SevenZip
-{
-    using System.Collections.Generic;
+using System.Collections.Generic;
 
+using Cake.SevenZip.Switches;
+
+namespace Cake.SevenZip.Commands
+{
     /// <summary>
     /// Update older files in the archive and add files that are not already in the archive.
     /// (Command: u)

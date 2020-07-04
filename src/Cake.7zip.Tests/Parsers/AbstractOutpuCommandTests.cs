@@ -1,9 +1,12 @@
+using Cake.SevenZip.Commands;
+using Cake.SevenZip.Parsers;
+
+using Moq;
+
+using Xunit;
+
 namespace Cake.SevenZip.Tests.Builder
 {
-    using Moq;
-
-    using Xunit;
-
     public class AbstractOutpuCommandTests
     {
         [Fact]

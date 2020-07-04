@@ -1,14 +1,15 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+using Cake.Core;
+using Cake.Core.Diagnostics;
+using Cake.Core.IO;
+using Cake.Core.Tooling;
+using Cake.SevenZip.Parsers;
+
 namespace Cake.SevenZip
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-
-    using Cake.Core;
-    using Cake.Core.Diagnostics;
-    using Cake.Core.IO;
-    using Cake.Core.Tooling;
-
     /// <summary>
     /// The Tool-Runner for 7zip.
     /// </summary>

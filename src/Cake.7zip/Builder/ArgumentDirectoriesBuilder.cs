@@ -1,9 +1,10 @@
-namespace Cake.SevenZip
+using System.Linq;
+
+using Cake.Core.IO;
+using Cake.SevenZip.Commands;
+
+namespace Cake.SevenZip.Builder
 {
-    using System.Linq;
-
-    using Cake.Core.IO;
-
     /// <summary>
     /// Extensions for all Builders that support <see cref="IHaveArgumentDirectories"/>.
     /// <seealso cref="ISupportArgumentBuilder{T}"/>
@@ -48,7 +49,7 @@ namespace Cake.SevenZip
         public static T WithDirectories<T>(this T @this, DirectoryPathCollection directories)
             where T : ISupportArgumentBuilder<IHaveArgumentDirectories>
         {
-            return WithDirectories<T>(@this, directories.ToArray());
+            return WithDirectories(@this, directories.ToArray());
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Cake.SevenZip
         public static T WithDirectoryContents<T>(this T @this, DirectoryPathCollection directories)
             where T : ISupportArgumentBuilder<IHaveArgumentDirectories>
         {
-            return WithDirectoryContents<T>(@this, directories.ToArray());
+            return WithDirectoryContents(@this, directories.ToArray());
         }
     }
 }

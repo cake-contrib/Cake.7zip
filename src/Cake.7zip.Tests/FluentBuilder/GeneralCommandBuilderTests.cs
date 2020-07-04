@@ -1,13 +1,16 @@
+using Cake.Core;
+using Cake.SevenZip.Builder;
+using Cake.SevenZip.Commands;
+using Cake.SevenZip.Switches;
+
+using System;
+using System.Linq;
+using System.Reflection;
+
+using Xunit;
+
 namespace Cake.SevenZip.Tests.Builder
 {
-    using Cake.Core;
-
-    using System;
-    using System.Linq;
-    using System.Reflection;
-
-    using Xunit;
-
     public class GeneralCommandBuilderTests
     {
         [Theory]

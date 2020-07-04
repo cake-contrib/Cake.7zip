@@ -1,4 +1,4 @@
-namespace Cake.SevenZip
+namespace Cake.SevenZip.Switches
 {
     /// <summary>
     /// Specifies the action for a given <see cref="SwitchUpdateOptions"/>-State.

@@ -1,11 +1,13 @@
+using Cake.Core.IO;
+using Cake.SevenZip.Builder;
+using Cake.SevenZip.Switches;
+
+using System;
+
+using Xunit;
+
 namespace Cake.SevenZip.Tests.Builder
 {
-    using Cake.Core.IO;
-
-    using System;
-
-    using Xunit;
-
     public class SevenZipAddCommandBuilderTests
     {
         [Fact]
@@ -48,7 +50,10 @@ namespace Cake.SevenZip.Tests.Builder
               .InAddMode()
               .WithFiles(new FilePath("in.txt"));
 
-            void result() => fixture.EvaluateArgs();
+            void result()
+            {
+                fixture.EvaluateArgs();
+            }
 
             Assert.Throws<ArgumentException>(result);
         }
@@ -61,7 +66,10 @@ namespace Cake.SevenZip.Tests.Builder
               .InAddMode()
               .WithArchive(new FilePath("out.zip"));
 
-            void result() => fixture.EvaluateArgs();
+            void result()
+            {
+                fixture.EvaluateArgs();
+            }
 
             Assert.Throws<ArgumentException>(result);
         }

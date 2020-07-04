@@ -1,4 +1,6 @@
-namespace Cake.SevenZip
+using Cake.SevenZip.Commands;
+
+namespace Cake.SevenZip.Builder
 {
     /// <summary>
     /// Base for builders that support arguments.

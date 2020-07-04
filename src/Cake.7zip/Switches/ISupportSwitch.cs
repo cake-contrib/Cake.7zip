@@ -1,4 +1,4 @@
-namespace Cake.SevenZip
+namespace Cake.SevenZip.Switches
 {
     /// <summary>
     /// Interfaces for all switches.

@@ -1,4 +1,4 @@
-namespace Cake.SevenZip
+namespace Cake.SevenZip.Switches
 {
     /// <summary>
     /// A Collection of <see cref="SwitchExcludeArchiveFilename"/>.

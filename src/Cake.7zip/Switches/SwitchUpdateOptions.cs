@@ -1,11 +1,12 @@
-namespace Cake.SevenZip
+using System.Collections.Generic;
+using System.Text;
+
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.SevenZip.Builder;
+
+namespace Cake.SevenZip.Switches
 {
-    using System.Collections.Generic;
-    using System.Text;
-
-    using Cake.Core;
-    using Cake.Core.IO;
-
     /// <summary>
     /// <para>
     /// -u (Update options) switch.

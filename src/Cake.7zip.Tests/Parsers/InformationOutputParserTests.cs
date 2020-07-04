@@ -1,10 +1,12 @@
+using System.Linq;
+
+using Cake.SevenZip.Commands;
+using Cake.SevenZip.Parsers;
+
+using Xunit;
+
 namespace Cake.SevenZip.Tests.Builder
 {
-    using System;
-    using System.Linq;
-
-    using Xunit;
-
     public class InformationOutputParserTests
     {
         [Fact]

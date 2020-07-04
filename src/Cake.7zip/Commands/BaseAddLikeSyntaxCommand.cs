@@ -1,11 +1,12 @@
-namespace Cake.SevenZip
+using System;
+using System.Collections.Generic;
+
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.SevenZip.Switches;
+
+namespace Cake.SevenZip.Commands
 {
-    using System;
-    using System.Collections.Generic;
-
-    using Cake.Core;
-    using Cake.Core.IO;
-
     /// <summary>
     /// BaseClass for add,update,delete.
     /// </summary>

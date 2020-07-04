@@ -1,7 +1,7 @@
+using Xunit;
+
 namespace Cake.SevenZip.Tests.Builder
 {
-    using Xunit;
-
     public class SevenZipInformationCommandBuilderTests
     {
         [Fact]

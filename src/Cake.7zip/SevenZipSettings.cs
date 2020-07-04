@@ -1,7 +1,8 @@
+using Cake.Core.Tooling;
+using Cake.SevenZip.Commands;
+
 namespace Cake.SevenZip
 {
-    using Cake.Core.Tooling;
-
     /// <summary>
     /// Settings for running 7zip.
     /// </summary>

@@ -1,15 +1,14 @@
 using Cake.Core.IO;
-using Cake.Testing;
+using Cake.SevenZip.Builder;
+using Cake.SevenZip.Commands;
 
 using Moq;
-
-using System.Text;
 
 using Xunit;
 
 namespace Cake.SevenZip.Tests
 {
-    public class SevenZipAliasesTests
+    public class SevenZipAliaxesTests
     {
         [Fact]
         public void Should_support_using_settings()

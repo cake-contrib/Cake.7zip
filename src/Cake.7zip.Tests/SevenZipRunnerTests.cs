@@ -1,17 +1,18 @@
+using System;
+
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.SevenZip.Commands;
+using Cake.SevenZip.Parsers;
+using Cake.SevenZip.Switches;
+using Cake.Testing;
+
+using Moq;
+
+using Xunit;
+
 namespace Cake.SevenZip.Tests
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-    using Cake.Core;
-    using Cake.Core.IO;
-    using Cake.Testing;
-
-    using Moq;
-
-    using Xunit;
-
     public class SevenZipRunnerTests
     {
         [Fact]
@@ -19,7 +20,10 @@ namespace Cake.SevenZip.Tests
         {
             var fixture = new SevenZipRunnerFixture { Settings = null };
 
-            void result() => fixture.Run();
+            void result()
+            {
+                fixture.Run();
+            }
 
             Assert.Throws<ArgumentNullException>(result);
         }
@@ -37,7 +41,10 @@ namespace Cake.SevenZip.Tests
             fixture.GivenDefaultToolDoNotExist();
             const string expectedMessage = "7-Zip: Could not locate executable.";
 
-            void result() => fixture.Run();
+            void result()
+            {
+                fixture.Run();
+            }
 
             var ex = Assert.Throws<CakeException>(result);
             Assert.Equal(expectedMessage, ex.Message);
@@ -55,7 +62,10 @@ namespace Cake.SevenZip.Tests
             };
             const string expectedMessage = "7-Zip: Command can not be null - a command is needed to run!";
 
-            void result() => fixture.Run();
+            void result()
+            {
+                fixture.Run();
+            }
 
             var ex = Assert.Throws<CakeException>(result);
             Assert.Equal(expectedMessage, ex.Message);
@@ -139,7 +149,7 @@ namespace Cake.SevenZip.Tests
 
             var sevenZipKey = new Mock<IRegistryKey>();
             sevenZipKey.Setup(k => k.GetValue("Path")).Returns(string.Empty);
-            sevenZipKey.Setup(k => k.GetValue("Path64")).Returns(String.Empty);
+            sevenZipKey.Setup(k => k.GetValue("Path64")).Returns(string.Empty);
             var softwareKey = new Mock<IRegistryKey>();
             softwareKey.Setup(k => k.OpenKey("7-Zip")).Returns(sevenZipKey.Object);
             var hklm = new Mock<IRegistryKey>();
@@ -168,7 +178,10 @@ namespace Cake.SevenZip.Tests
             hklm.Setup(k => k.OpenKey("Software")).Throws(new AccessViolationException("No!"));
             fixture.Registry.Setup(r => r.LocalMachine).Returns(hklm.Object);
 
-            void action() => fixture.Run();
+            void action()
+            {
+                fixture.Run();
+            }
 
             Assert.Throws<CakeException>(action);
         }
@@ -241,7 +254,10 @@ namespace Cake.SevenZip.Tests
             };
             const string expectedMessage = "7-Zip: Intentionally not implemented.";
 
-            void result() => fixture.Run();
+            void result()
+            {
+                fixture.Run();
+            }
 
             var ex = Assert.Throws<CakeException>(result);
             Assert.Equal(expectedMessage, ex.Message);

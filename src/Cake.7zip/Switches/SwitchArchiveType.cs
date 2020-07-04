@@ -1,8 +1,9 @@
-namespace Cake.SevenZip
-{
-    using Cake.Core;
-    using Cake.Core.IO;
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.SevenZip.Builder;
 
+namespace Cake.SevenZip.Switches
+{
     /// <summary>
     /// <para>
     /// -t (set Type of archive) switch.

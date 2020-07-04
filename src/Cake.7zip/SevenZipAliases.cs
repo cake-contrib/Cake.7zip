@@ -1,10 +1,12 @@
+using System;
+
+using Cake.Core;
+using Cake.Core.Annotations;
+using Cake.SevenZip.Builder;
+using Cake.SevenZip.Commands;
+
 namespace Cake.SevenZip
 {
-    using System;
-
-    using Cake.Core;
-    using Cake.Core.Annotations;
-
     /// <summary>
     /// <para>Functions to call <see href="https://7-zip.org/">7-Zip</see>.</para>
     /// <para>
@@ -87,7 +89,7 @@ namespace Cake.SevenZip
         /// <see cref="CommandBuilder"/> for fluent configuration of the Command.
         /// </para>
         /// <para>
-        /// Works exactly like <see cref="SevenZipAliases.SevenZip(ICakeContext, Action{CommandBuilder})"/>
+        /// Works exactly like <see cref="SevenZip(ICakeContext, Action{CommandBuilder})"/>
         /// However, the settings are supplied to set e.g. the <c>ToolPath</c> or something else.
         /// </para>
         /// <para>

@@ -1,7 +1,5 @@
 namespace Cake.SevenZip.Tests
 {
-    using System;
-
     public static class Outputs
     {
         public static string[] Information
