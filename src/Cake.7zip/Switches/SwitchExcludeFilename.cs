@@ -9,7 +9,7 @@ namespace Cake.SevenZip.Switches
     /// -x (Exclude filenames) switch.
     /// </para>
     /// <para>
-    /// Specifies which filenames or wildcarded names must be excluded from the operation.
+    /// Specifies which filenames or wildcard-names must be excluded from the operation.
     /// Multiple exclude switches are supported.
     /// </para>
     /// <para>

@@ -5,7 +5,7 @@ using Cake.Core.IO;
 namespace Cake.SevenZip.Switches
 {
     /// <summary>
-    /// Base for for switches that can be given multiple times.
+    /// Base for switches that can be given multiple times.
     /// An example is <see cref="ISupportSwitchExcludeFilenames"/> (-x!*.pdf -x!*.xml) which uses
     /// <see cref="SwitchExcludeFilenameCollection"/> (which implements this BaseCollection) to set
     /// multiple <see cref="SwitchExcludeFilename"/>.

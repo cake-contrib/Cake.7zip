@@ -37,7 +37,7 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// The method.
         /// </value>
-        // TODO: Enum or static Props?
+        // TODO: Better use Enum or static Props instead of the free string?
         public string Method { private get; set; }
 
         /// <inheritdoc/>

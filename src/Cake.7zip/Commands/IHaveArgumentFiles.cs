@@ -9,9 +9,9 @@ namespace Cake.SevenZip.Commands
     {
         /// <summary>
         /// Gets or sets the list of files this command operates on.
-        /// Theese are single files. (I.e. to add to, or to remove from the archive).
+        /// These are single files. (I.e. to add to, or to remove from the archive).
         /// <para>
-        /// For Add and update, single files from the filesystems will always be
+        /// For add and update, single files from the file-system will always be
         /// placed directly into the archive without any directory-structure.
         /// </para>
         /// Setting Files like this in add/update:

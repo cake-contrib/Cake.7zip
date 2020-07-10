@@ -88,7 +88,7 @@ namespace Cake.SevenZip.Switches
         public UpdateAction W { private get; set; }
 
         /// <summary>
-        /// Sets the new archivename.
+        /// Sets the new archive-name.
         /// </summary>
         /// <value>
         /// The new name of the archive.

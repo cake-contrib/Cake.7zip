@@ -8,7 +8,7 @@ using Xunit;
 
 namespace Cake.SevenZip.Tests.FluentBuilder
 {
-    public class ArgumentArchiveBuilderTest
+    public class ArgumentArchiveBuilderTests
     {
         [Fact]
         public void WithArchive_returns_the_builder()

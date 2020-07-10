@@ -40,7 +40,7 @@ namespace Cake.SevenZip.Switches
         /// Compress (compress file from disk to new archive).
         /// </summary>
         /// <value>
-        /// The copress-action.
+        /// The compress-action.
         /// </value>
         public static UpdateAction Compress => new UpdateAction("2");
 
