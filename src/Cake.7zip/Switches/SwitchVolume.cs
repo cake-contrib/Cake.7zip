@@ -25,20 +25,20 @@ namespace Cake.SevenZip.Switches
     public class SwitchVolume : ISwitch
     {
         /// <summary>
-        /// Gets or sets the size.
+        /// Sets the size.
         /// </summary>
         /// <value>
         /// The size. Must be greater than 0.
         /// </value>
-        public int Size { get; set; }
+        public int Size { private get; set; }
 
         /// <summary>
-        /// Gets or sets the unit.
+        /// Sets the unit.
         /// </summary>
         /// <value>
         /// The unit. Default is bytes.
         /// </value>
-        public VolumeUnit Unit { get; set; }
+        public VolumeUnit Unit { private get; set; }
 
         /// <inheritdoc/>
         public void BuildArguments(ref ProcessArgumentBuilder builder)

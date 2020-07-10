@@ -5,9 +5,9 @@ using Moq;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.Builder
+namespace Cake.SevenZip.Tests.Parsers
 {
-    public class AbstractOutpuCommandTests
+    public class AbstractOutputCommandTests
     {
         [Fact]
         public void AbstractOutputCommand_sets_raw_output()

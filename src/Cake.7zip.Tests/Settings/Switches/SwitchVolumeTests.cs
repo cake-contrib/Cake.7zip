@@ -1,11 +1,14 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 using Cake.SevenZip.Switches;
+using Cake.SevenZip.Tests.Fixtures;
 
 using Xunit;
 
 namespace Cake.SevenZip.Tests.Settings.Switches
 {
+    [SuppressMessage("ReSharper", "InconsistentNaming", Justification = "I like my 'local functions' camelCase.")]
     public class SwitchVolumeTests
     {
         [Fact]

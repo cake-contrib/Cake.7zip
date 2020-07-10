@@ -96,7 +96,7 @@ namespace Cake.SevenZip.Builder
         ISupportSwitchFullyQualifiedFilePaths ISupportSwitchBuilder<ISupportSwitchFullyQualifiedFilePaths>.Command => command;
 
         /// <summary>
-        /// Sets UseFullPaths to true on the <see cref="AddCommand"/>.
+        /// Sets UseFullPaths to true on the <see cref="ExtractCommand"/>.
         /// </summary>
         /// <returns>The builder, for fluent use.</returns>
         public ExtractCommandBuilder WithFullPathExtraction()
@@ -106,7 +106,7 @@ namespace Cake.SevenZip.Builder
         }
 
         /// <summary>
-        /// Sets UseFullPaths to false on the <see cref="AddCommand"/>.
+        /// Sets UseFullPaths to false on the <see cref="ExtractCommand"/>.
         /// (copies all extracted files to one directory).
         /// </summary>
         /// <returns>The builder, for fluent use.</returns>

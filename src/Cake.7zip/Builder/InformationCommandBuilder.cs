@@ -15,7 +15,7 @@ namespace Cake.SevenZip.Builder
     /// {
     ///     SevenZip(m => m
     ///         .InInformationMode()
-    ///         .WithCommandOutput((IInformationOutput o) =>
+    ///         .WithCommandOutput(o =>
     ///         {
     ///             Information("7Zip version is:" + o.Information);
     ///             Information("7Zip supports QCOW:" + (o.Formats.Any(x => x.IndexOf("QCOW") > -1)));
@@ -25,7 +25,7 @@ namespace Cake.SevenZip.Builder
     /// </code>
     /// </example>
     public sealed class InformationCommandBuilder :
-        BaseOutputBuilder<InformationCommandBuilder, InformationCommand, IInformationOutput>
+        BaseOutputBuilder<InformationCommandBuilder, IInformationOutput>
     {
         private readonly InformationCommand command;
 

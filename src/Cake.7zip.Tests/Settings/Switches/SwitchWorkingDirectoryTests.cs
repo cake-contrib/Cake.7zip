@@ -1,5 +1,6 @@
 using Cake.Core.IO;
 using Cake.SevenZip.Switches;
+using Cake.SevenZip.Tests.Fixtures;
 
 using Xunit;
 

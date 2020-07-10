@@ -25,7 +25,7 @@ namespace Cake.SevenZip.Commands
         public DirectoryPathCollection DirectoryContents { get; set; }
 
         /// <inheritdoc/>
-        public FilePath Archive { get; set; }
+        public FilePath Archive { private get; set; }
 
         /// <summary>
         /// Gets the name of the command. (i.e. "add", "update" or "extract".)
@@ -84,12 +84,7 @@ namespace Cake.SevenZip.Commands
 
             foreach (var sw in Switches)
             {
-                if (sw == null)
-                {
-                    continue;
-                }
-
-                sw.BuildArguments(ref builder);
+                sw?.BuildArguments(ref builder);
             }
 
             builder.AppendQuoted(Archive.FullPath);

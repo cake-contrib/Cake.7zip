@@ -29,7 +29,7 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// The switches.
         /// </value>
-        protected List<T> Switches { get; private set; }
+        protected List<T> Switches { get; }
 
         /// <summary>
         /// Adds the specified switch.

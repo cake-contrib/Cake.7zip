@@ -33,12 +33,12 @@ namespace Cake.SevenZip.Switches
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to include drive letter.
+        /// Sets a value indicating whether to include drive letter.
         /// </summary>
         /// <value>
         ///   <c>true</c> to include drive letter (switch -spf); otherwise, <c>false</c> (switch -spf2).
         /// </value>
-        public bool IncludeDriveLetter { get; set; }
+        public bool IncludeDriveLetter { private get; set; }
 
         /// <inheritdoc />
         public void BuildArguments(ref ProcessArgumentBuilder builder)

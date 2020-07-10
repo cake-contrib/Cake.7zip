@@ -14,7 +14,6 @@ namespace Cake.SevenZip.Switches
         public SwitchIncludeArchiveFilenameCollection(
             SwitchIncludeArchiveFilename initial,
             params SwitchIncludeArchiveFilename[] additional)
-          : base()
         {
             Switches.Add(initial);
             Switches.AddRange(additional);

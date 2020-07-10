@@ -1,4 +1,4 @@
-namespace Cake.SevenZip.Tests
+namespace Cake.SevenZip.Tests.Fixtures
 {
     public static class Outputs
     {

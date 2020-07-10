@@ -1,14 +1,15 @@
+using System;
+
 using Cake.Core.IO;
 using Cake.SevenZip.Builder;
 using Cake.SevenZip.Switches;
-
-using System;
+using Cake.SevenZip.Tests.Fixtures;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.Builder
+namespace Cake.SevenZip.Tests.FluentBuilder
 {
-    public class SevenZipDeleteCommandBuilderTests
+    public class DeleteCommandBuilderTests
     {
         [Fact]
         public void Delete_can_use_Archive_and_files()
@@ -49,12 +50,12 @@ namespace Cake.SevenZip.Tests.Builder
             fixture.Context
               .InDeleteMode();
 
-            void result()
+            void Result()
             {
                 fixture.EvaluateArgs();
             }
 
-            Assert.Throws<ArgumentException>(result);
+            Assert.Throws<ArgumentException>(Result);
         }
 
         [Fact]

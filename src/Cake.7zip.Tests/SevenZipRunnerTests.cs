@@ -1,10 +1,12 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 using Cake.Core;
 using Cake.Core.IO;
 using Cake.SevenZip.Commands;
 using Cake.SevenZip.Parsers;
 using Cake.SevenZip.Switches;
+using Cake.SevenZip.Tests.Fixtures;
 using Cake.Testing;
 
 using Moq;
@@ -13,6 +15,7 @@ using Xunit;
 
 namespace Cake.SevenZip.Tests
 {
+    [SuppressMessage("ReSharper", "InconsistentNaming", Justification = "I like my 'local functions' camelCase.")]
     public class SevenZipRunnerTests
     {
         [Fact]

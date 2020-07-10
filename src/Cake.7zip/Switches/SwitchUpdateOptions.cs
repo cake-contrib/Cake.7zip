@@ -25,75 +25,75 @@ namespace Cake.SevenZip.Switches
     public class SwitchUpdateOptions : ISwitch
     {
         /// <summary>
-        /// Gets or sets the <see cref="UpdateAction"/> for the p-state.
+        /// Sets the <see cref="UpdateAction"/> for the p-state.
         /// File exists in archive, but is not matched with wildcard.
         /// </summary>
         /// <value>
         /// The <see cref="UpdateAction"/>.
         /// </value>
-        public UpdateAction P { get; set; }
+        public UpdateAction P { private get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="UpdateAction"/> for the q-state.
+        /// Sets the <see cref="UpdateAction"/> for the q-state.
         /// File exists in archive, but doesn't exist on disk.
         /// </summary>
         /// <value>
         /// The <see cref="UpdateAction"/>.
         /// </value>
-        public UpdateAction Q { get; set; }
+        public UpdateAction Q { private get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="UpdateAction"/> for the r-state.
+        /// Sets the <see cref="UpdateAction"/> for the r-state.
         /// File doesn't exist in archive, but exists on disk.
         /// </summary>
         /// <value>
         /// The <see cref="UpdateAction"/>.
         /// </value>
-        public UpdateAction R { get; set; }
+        public UpdateAction R { private get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="UpdateAction"/> for the x-state.
+        /// Sets the <see cref="UpdateAction"/> for the x-state.
         /// File in archive is newer than the file on disk.
         /// </summary>
         /// <value>
         /// The <see cref="UpdateAction"/>.
         /// </value>
-        public UpdateAction X { get; set; }
+        public UpdateAction X { private get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="UpdateAction"/> for the y-state.
+        /// Sets the <see cref="UpdateAction"/> for the y-state.
         /// File in archive is older than the file on disk.
         /// </summary>
         /// <value>
         /// The <see cref="UpdateAction"/>.
         /// </value>
-        public UpdateAction Y { get; set; }
+        public UpdateAction Y { private get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="UpdateAction"/> for the z-state.
+        /// Sets the <see cref="UpdateAction"/> for the z-state.
         /// File in archive is same as the file on disk.
         /// </summary>
         /// <value>
         /// The <see cref="UpdateAction"/>.
         /// </value>
-        public UpdateAction Z { get; set; }
+        public UpdateAction Z { private get; set; }
 
         /// <summary>
-        /// Gets or sets the <see cref="UpdateAction"/> for the w-state.
+        /// Sets the <see cref="UpdateAction"/> for the w-state.
         /// Can not be detected what file is newer (times are the same, sizes are different).
         /// </summary>
         /// <value>
         /// The <see cref="UpdateAction"/>.
         /// </value>
-        public UpdateAction W { get; set; }
+        public UpdateAction W { private get; set; }
 
         /// <summary>
-        /// Gets or sets the new archivename.
+        /// Sets the new archivename.
         /// </summary>
         /// <value>
         /// The new name of the archive.
         /// </value>
-        public FilePath NewArchiveName { get; set; }
+        public FilePath NewArchiveName { private get; set; }
 
         /// <inheritdoc />
         public void BuildArguments(ref ProcessArgumentBuilder builder)

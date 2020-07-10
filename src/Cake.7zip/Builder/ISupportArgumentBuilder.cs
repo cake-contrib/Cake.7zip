@@ -6,7 +6,7 @@ namespace Cake.SevenZip.Builder
     /// Base for builders that support arguments.
     /// </summary>
     /// <typeparam name="T">the <see cref="IHaveArgument"/> suppored by this builder.</typeparam>
-    public interface ISupportArgumentBuilder<T>
+    public interface ISupportArgumentBuilder<out T>
         where T : IHaveArgument
     {
         /// <summary>

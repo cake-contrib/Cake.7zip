@@ -47,7 +47,7 @@ namespace Cake.SevenZip.Commands
         }
 
         /// <inheritdoc />
-        public FilePath Archive { get; set; }
+        public FilePath Archive { private get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to use full paths.
@@ -131,12 +131,7 @@ namespace Cake.SevenZip.Commands
                 FullyQualifiedFilePaths,
             })
             {
-                if (sw == null)
-                {
-                    continue;
-                }
-
-                sw.BuildArguments(ref builder);
+                sw?.BuildArguments(ref builder);
             }
         }
     }

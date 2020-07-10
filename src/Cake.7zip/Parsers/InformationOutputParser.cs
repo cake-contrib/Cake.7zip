@@ -26,7 +26,7 @@ namespace Cake.SevenZip.Parsers
             };
 
             var firstLine = true;
-            List<string> current = null;
+            var current = new List<string>();
             foreach (var line in rawOutput)
             {
                 if (string.IsNullOrWhiteSpace(line))
@@ -71,7 +71,7 @@ namespace Cake.SevenZip.Parsers
         /// <summary>
         /// Implements <see cref="IInformationOutput"/>.
         /// </summary>
-        protected class InformationOutput : IInformationOutput
+        private class InformationOutput : IInformationOutput
         {
             /// <inheritdoc />
             public string Information { get; internal set; }

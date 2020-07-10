@@ -31,19 +31,10 @@ namespace Cake.SevenZip.Switches
         /// </summary>
         /// <param name="wildcard">The wildcard.</param>
         /// <param name="recurseType">Type of the recurse.</param>
-        public SwitchIncludeArchiveFilename(string wildcard, RecurseType recurseType)
+        public SwitchIncludeArchiveFilename(string wildcard, RecurseType recurseType = null)
         {
             this.wildcard = wildcard;
             this.recurseType = recurseType;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SwitchIncludeArchiveFilename"/> class.
-        /// </summary>
-        /// <param name="wildcard">The wildcard.</param>
-        public SwitchIncludeArchiveFilename(string wildcard)
-            : this(wildcard, null)
-        {
         }
 
         /// <inheritdoc/>

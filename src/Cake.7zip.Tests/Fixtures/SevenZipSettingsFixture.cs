@@ -2,7 +2,7 @@ using System;
 
 using Cake.Core.IO;
 
-namespace Cake.SevenZip.Tests.Settings
+namespace Cake.SevenZip.Tests.Fixtures
 {
     public class SevenZipSettingsFixture
     {

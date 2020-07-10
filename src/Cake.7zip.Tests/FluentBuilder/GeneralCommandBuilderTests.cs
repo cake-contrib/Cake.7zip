@@ -9,7 +9,7 @@ using System.Reflection;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.Builder
+namespace Cake.SevenZip.Tests.FluentBuilder
 {
     public class GeneralCommandBuilderTests
     {

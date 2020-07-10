@@ -1,15 +1,60 @@
 using Cake.Core.IO;
 using Cake.SevenZip.Builder;
-using Cake.SevenZip.Switches;
-
-using System;
+using Cake.SevenZip.Commands;
+using Cake.SevenZip.Tests.Fixtures;
 
 using Xunit;
+using System;
+using Cake.SevenZip.Switches;
 
-namespace Cake.SevenZip.Tests.Builder
+namespace Cake.SevenZip.Tests.FluentBuilder
 {
-    public class SevenZipExtractCommandBuilderTests
+    public class ExtractCommandBuilderTests
     {
+        [Fact]
+        public void WithFullPathExtraction_returns_the_builder()
+        {
+            var command = new ExtractCommand();
+            var sut = new ExtractCommandBuilder(ref command);
+
+            var actual = sut.WithFullPathExtraction();
+
+            Assert.Equal(sut, actual);
+        }
+
+        [Fact]
+        public void WithoutFullPathExtraction_returns_the_builder()
+        {
+            var command = new ExtractCommand();
+            var sut = new ExtractCommandBuilder(ref command);
+
+            var actual = sut.WithoutFullPathExtraction();
+
+            Assert.Equal(sut, actual);
+        }
+
+        [Fact]
+        public void WithFullPathExtraction_sets_UseFullPaths_to_true_on_the_command()
+        {
+            var command = new ExtractCommand();
+            var sut = new ExtractCommandBuilder(ref command);
+
+            sut.WithFullPathExtraction();
+
+            Assert.True(command.UseFullPaths);
+        }
+
+        [Fact]
+        public void WithoutFullPathExtraction_sets_UseFullPaths_to_false_on_the_command()
+        {
+            var command = new ExtractCommand();
+            var sut = new ExtractCommandBuilder(ref command);
+
+            sut.WithoutFullPathExtraction();
+
+            Assert.False(command.UseFullPaths);
+        }
+
         [Fact]
         public void Extract_can_use_Archive()
         {
@@ -64,12 +109,12 @@ namespace Cake.SevenZip.Tests.Builder
             fixture.Context
               .InExtractMode();
 
-            void result()
+            void Result()
             {
                 fixture.EvaluateArgs();
             }
 
-            Assert.Throws<ArgumentException>(result);
+            Assert.Throws<ArgumentException>(Result);
         }
 
         [Fact]

@@ -6,7 +6,7 @@ namespace Cake.SevenZip.Builder
     /// Base for builders that support switches.
     /// </summary>
     /// <typeparam name="T">the <see cref="ISupportSwitch"/> suppored by this builder.</typeparam>
-    public interface ISupportSwitchBuilder<T>
+    public interface ISupportSwitchBuilder<out T>
         where T : ISupportSwitch
     {
         /// <summary>

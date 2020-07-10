@@ -122,7 +122,7 @@ namespace Cake.SevenZip
                 catch (Exception e)
                 {
                     log.Debug($"{e.GetType()}: {e.Message}");
-                    log.Debug($"7zip not found in registry.");
+                    log.Debug("7zip not found in registry.");
                 }
             }
 

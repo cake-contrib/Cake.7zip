@@ -2,10 +2,11 @@ using System.Linq;
 
 using Cake.SevenZip.Commands;
 using Cake.SevenZip.Parsers;
+using Cake.SevenZip.Tests.Fixtures;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.Builder
+namespace Cake.SevenZip.Tests.Parsers
 {
     public class InformationOutputParserTests
     {

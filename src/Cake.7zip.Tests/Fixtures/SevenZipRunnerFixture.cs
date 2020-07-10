@@ -4,12 +4,12 @@ using Cake.Testing.Fixtures;
 
 using Moq;
 
-namespace Cake.SevenZip.Tests
+namespace Cake.SevenZip.Tests.Fixtures
 {
     public class SevenZipRunnerFixture : ToolFixture<SevenZipSettings>
     {
-        internal Mock<IRegistry> Registry { get; set; }
-        internal FakeLog Log { get; }
+        internal Mock<IRegistry> Registry { get; }
+        private FakeLog Log { get; }
 
         public SevenZipRunnerFixture()
           : base("7za.exe")

@@ -24,14 +24,14 @@ namespace Cake.SevenZip.Switches
     public class SwitchSelfExtractingArchive : ISwitch
     {
         /// <summary>
-        /// Gets or sets the SFX module that will be combined with the archive.
+        /// Sets the SFX module that will be combined with the archive.
         /// This module must be placed in the same directory as the 7z.exe.
         /// If no module is assigned, 7-Zip will use standard console SFX module 7zCon.sfx.
         /// </summary>
         /// <value>
         /// The SFX module.
         /// </value>
-        public FilePath SfxModule { get; set; }
+        public FilePath SfxModule { private get; set; }
 
         /// <inheritdoc />
         public void BuildArguments(ref ProcessArgumentBuilder builder)

@@ -1,14 +1,15 @@
+using System;
+
 using Cake.Core.IO;
 using Cake.SevenZip.Builder;
 using Cake.SevenZip.Switches;
-
-using System;
+using Cake.SevenZip.Tests.Fixtures;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.Builder
+namespace Cake.SevenZip.Tests.FluentBuilder
 {
-    public class SevenZipAddCommandBuilderTests
+    public class AddCommandBuilderTests
     {
         [Fact]
         public void Add_can_use_Archive_and_file()
@@ -50,12 +51,12 @@ namespace Cake.SevenZip.Tests.Builder
               .InAddMode()
               .WithFiles(new FilePath("in.txt"));
 
-            void result()
+            void Result()
             {
                 fixture.EvaluateArgs();
             }
 
-            Assert.Throws<ArgumentException>(result);
+            Assert.Throws<ArgumentException>(Result);
         }
 
         [Fact]
@@ -66,12 +67,12 @@ namespace Cake.SevenZip.Tests.Builder
               .InAddMode()
               .WithArchive(new FilePath("out.zip"));
 
-            void result()
+            void Result()
             {
                 fixture.EvaluateArgs();
             }
 
-            Assert.Throws<ArgumentException>(result);
+            Assert.Throws<ArgumentException>(Result);
         }
 
         [Fact]

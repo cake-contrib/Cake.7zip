@@ -1,8 +1,10 @@
+using Cake.SevenZip.Tests.Fixtures;
+
 using Xunit;
 
-namespace Cake.SevenZip.Tests.Builder
+namespace Cake.SevenZip.Tests.FluentBuilder
 {
-    public class SevenZipInformationCommandBuilderTests
+    public class InformationCommandBuilderTests
     {
         [Fact]
         public void Information_can_be_used()

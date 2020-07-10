@@ -4,7 +4,7 @@ namespace Cake.SevenZip.Parsers
     /// Interface for all commands supporting a parsed output.
     /// </summary>
     /// <typeparam name="T">The output obkect.</typeparam>
-    internal interface IOutputParser<T>
+    internal interface IOutputParser<out T>
     {
         /// <summary>
         /// Parses the stream.
