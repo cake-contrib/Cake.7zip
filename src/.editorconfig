@@ -261,3 +261,9 @@ dotnet_diagnostic.CA1062.severity = none
 
 # CA1303: Do not pass literals as localized parameters
 dotnet_diagnostic.CA1303.severity = none
+
+# CA1040: Avoid empty interfaces
+dotnet_diagnostic.CA1040.severity = none
+
+# CA1044: collides with r# - rules.
+dotnet_diagnostic.CA1044.severity = none

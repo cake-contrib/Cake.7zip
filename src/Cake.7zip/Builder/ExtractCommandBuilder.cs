@@ -22,7 +22,7 @@ namespace Cake.SevenZip.Builder
     /// ]]>
     /// </code>
     /// </example>
-    public class ExtractCommandBuilder :
+    public sealed class ExtractCommandBuilder :
         ISupportArgumentBuilder<IHaveArgumentArchive>,
         ISupportSwitchBuilder<ISupportSwitchArchiveType>,
         ISupportSwitchBuilder<ISupportSwitchCompressionMethod>,
