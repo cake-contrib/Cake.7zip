@@ -3,6 +3,8 @@ using Cake.SevenZip.Builder;
 using Cake.SevenZip.Commands;
 using Cake.SevenZip.Switches;
 
+using FluentAssertions;
+
 using System;
 using System.Linq;
 using System.Reflection;
@@ -29,7 +31,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             {
                 var expectedInterface = supportBuilder.MakeGenericType(supportSwitch);
 
-                Assert.Contains(expectedInterface, builerInterfaces);
+                builerInterfaces.Should().Contain(expectedInterface);
             }
         }
 
@@ -49,7 +51,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             {
                 var expectedInterface = supportBuilder.MakeGenericType(hasArgument);
 
-                Assert.Contains(expectedInterface, builerInterfaces);
+                builerInterfaces.Should().Contain(expectedInterface);
             }
         }
 
@@ -72,7 +74,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             foreach (var @switch in allSwitches)
             {
-                Assert.Contains(@switch, allSwitchesUsedInSupportSwitches);
+                allSwitchesUsedInSupportSwitches.Should().Contain(@switch);
             }
         }
 
@@ -96,7 +98,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             {
                 var expectedType = supportBuilder.MakeGenericType(@switch);
 
-                Assert.Contains(expectedType, allSupportBuilderExtensionMethodTypes);
+                allSupportBuilderExtensionMethodTypes.Should().Contain(expectedType);
             }
         }
     }

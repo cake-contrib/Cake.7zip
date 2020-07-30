@@ -1,8 +1,10 @@
-using System.Collections.Generic;
+using System;
 using System.Diagnostics.CodeAnalysis;
 
 using Cake.SevenZip.Builder;
 using Cake.SevenZip.Commands;
+
+using FluentAssertions;
 
 using Moq;
 
@@ -22,7 +24,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.WithCommandOutput(null);
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -34,7 +36,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.WithCommandRawOutput(null);
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -43,11 +45,11 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             var builder = new MockOutputBuilder();
             var command = new Mock<OutputCommand<object>>();
             builder.MockCommand = command.Object;
-            void expected(object x) { }
+            Action<object> expected = x => { };
 
             builder.WithCommandOutput(expected);
 
-            Assert.Equal(expected, command.Object.OutputAction);
+            command.Object.OutputAction.Should().Be(expected);
         }
 
         [Fact]
@@ -56,11 +58,11 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             var builder = new MockOutputBuilder();
             var command = new Mock<OutputCommand<object>>();
             builder.MockCommand = command.Object;
-            void expected(IEnumerable<string> x) { }
+            Action<object> expected = x => { };
 
             builder.WithCommandRawOutput(expected);
 
-            Assert.Equal(expected, command.Object.RawOutputAction);
+            command.Object.RawOutputAction.Should().Be(expected);
         }
 
         private class MockOutputBuilder : BaseOutputBuilder<MockOutputBuilder, object>

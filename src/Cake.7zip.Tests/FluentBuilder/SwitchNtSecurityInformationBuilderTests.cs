@@ -1,5 +1,7 @@
-﻿using Cake.SevenZip.Builder;
+using Cake.SevenZip.Builder;
 using Cake.SevenZip.Switches;
+
+using FluentAssertions;
 
 using Moq;
 
@@ -19,7 +21,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.Object.WithNtSecurityInformation();
 
-            Assert.Equal(expected.Object, actual);
+            actual.Should().Be(expected.Object);
         }
     }
 }

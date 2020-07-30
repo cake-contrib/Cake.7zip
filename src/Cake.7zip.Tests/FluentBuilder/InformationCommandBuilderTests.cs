@@ -1,5 +1,7 @@
 using Cake.SevenZip.Tests.Fixtures;
 
+using FluentAssertions;
+
 using Xunit;
 
 namespace Cake.SevenZip.Tests.FluentBuilder
@@ -17,7 +19,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -34,7 +36,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
                   info = o.Information;
               }));
 
-            Assert.NotNull(info);
+            info.Should().NotBeNull();
         }
 
         [Fact]
@@ -51,7 +53,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
                   output = r;
               }));
 
-            Assert.Equal(Outputs.Information, output);
+            output.Should().BeEquivalentTo(Outputs.Information);
         }
     }
 }

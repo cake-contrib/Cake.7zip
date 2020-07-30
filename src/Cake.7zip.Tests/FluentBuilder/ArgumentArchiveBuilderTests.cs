@@ -2,6 +2,8 @@ using Cake.Core.IO;
 using Cake.SevenZip.Builder;
 using Cake.SevenZip.Commands;
 
+using FluentAssertions;
+
 using Moq;
 
 using Xunit;
@@ -18,7 +20,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.Object.WithArchive(new FilePath("foo"));
 
-            Assert.Equal(expected.Object, actual);
+            actual.Should().Be(expected.Object);
         }
 
         [Fact]

@@ -9,6 +9,8 @@ using Cake.SevenZip.Switches;
 using Cake.SevenZip.Tests.Fixtures;
 using Cake.Testing;
 
+using FluentAssertions;
+
 using Moq;
 
 using Xunit;
@@ -23,12 +25,12 @@ namespace Cake.SevenZip.Tests
         {
             var fixture = new SevenZipRunnerFixture { Settings = null };
 
-            void result()
+            Action result = () =>
             {
                 fixture.Run();
-            }
+            };
 
-            Assert.Throws<ArgumentNullException>(result);
+            result.Should().Throw<ArgumentNullException>();
         }
 
         [Fact]
@@ -44,13 +46,12 @@ namespace Cake.SevenZip.Tests
             fixture.GivenDefaultToolDoNotExist();
             const string expectedMessage = "7-Zip: Could not locate executable.";
 
-            void result()
+            Action result = () =>
             {
                 fixture.Run();
-            }
+            };
 
-            var ex = Assert.Throws<CakeException>(result);
-            Assert.Equal(expectedMessage, ex.Message);
+            result.Should().Throw<CakeException>().WithMessage(expectedMessage);
         }
 
         [Fact]
@@ -65,13 +66,12 @@ namespace Cake.SevenZip.Tests
             };
             const string expectedMessage = "7-Zip: Command can not be null - a command is needed to run!";
 
-            void result()
+            Action result = () =>
             {
                 fixture.Run();
-            }
+            };
 
-            var ex = Assert.Throws<CakeException>(result);
-            Assert.Equal(expectedMessage, ex.Message);
+            result.Should().Throw<CakeException>().WithMessage(expectedMessage);
         }
 
         [Fact]
@@ -103,7 +103,7 @@ namespace Cake.SevenZip.Tests
 
             sevenZipKey.Verify(k => k.GetValue("Path"), Times.Once);
             sevenZipKey.Verify(k => k.GetValue("Path64"), Times.Once);
-            Assert.Equal(file.Path.FullPath, result.Path.FullPath);
+            result.Path.FullPath.Should().Be(file.Path.FullPath);
         }
 
         [Fact]
@@ -134,7 +134,7 @@ namespace Cake.SevenZip.Tests
 
             var result = fixture.Run();
 
-            Assert.Equal(file.Path.FullPath, result.Path.FullPath);
+            result.Path.FullPath.Should().Be(file.Path.FullPath);
         }
 
         [Fact]
@@ -162,7 +162,7 @@ namespace Cake.SevenZip.Tests
             var result = fixture.Run();
 
             sevenZipKey.Verify(k => k.GetValue("Path"), Times.Never);
-            Assert.Equal(fixture.DefaultToolPath.FullPath, result.Path.FullPath);
+            result.Path.FullPath.Should().Be(fixture.DefaultToolPath.FullPath);
         }
 
         [Fact]
@@ -181,12 +181,12 @@ namespace Cake.SevenZip.Tests
             hklm.Setup(k => k.OpenKey("Software")).Throws(new AccessViolationException("No!"));
             fixture.Registry.Setup(r => r.LocalMachine).Returns(hklm.Object);
 
-            void action()
+            Action action = () =>
             {
                 fixture.Run();
-            }
+            };
 
-            Assert.Throws<CakeException>(action);
+            action.Should().Throw<CakeException>();
         }
 
         [Fact]
@@ -207,7 +207,7 @@ namespace Cake.SevenZip.Tests
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -239,7 +239,7 @@ namespace Cake.SevenZip.Tests
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -257,13 +257,12 @@ namespace Cake.SevenZip.Tests
             };
             const string expectedMessage = "7-Zip: Intentionally not implemented.";
 
-            void result()
+            Action result = () =>
             {
                 fixture.Run();
-            }
+            };
 
-            var ex = Assert.Throws<CakeException>(result);
-            Assert.Equal(expectedMessage, ex.Message);
+            result.Should().Throw<CakeException>().WithMessage(expectedMessage);
         }
 
         [Fact]

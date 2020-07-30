@@ -1,6 +1,8 @@
 using Cake.SevenZip.Builder;
 using Cake.SevenZip.Switches;
 
+using FluentAssertions;
+
 using Moq;
 
 using Xunit;
@@ -19,7 +21,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.Object.WithCompressionMethod(c => { });
 
-            Assert.Equal(expected.Object, actual);
+            actual.Should().Be(expected.Object);
         }
 
         [Fact]
@@ -32,7 +34,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.Object.WithCompressionMethodLevel(default);
 
-            Assert.Equal(expected.Object, actual);
+            actual.Should().Be(expected.Object);
         }
 
         [Fact]
@@ -45,7 +47,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.Object.WithCompressionMethodMethod(default);
 
-            Assert.Equal(expected.Object, actual);
+            actual.Should().Be(expected.Object);
         }
     }
 }

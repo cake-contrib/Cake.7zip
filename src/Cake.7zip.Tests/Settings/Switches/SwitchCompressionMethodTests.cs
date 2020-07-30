@@ -1,6 +1,8 @@
 using Cake.SevenZip.Switches;
 using Cake.SevenZip.Tests.Fixtures;
 
+using FluentAssertions;
+
 using Xunit;
 
 namespace Cake.SevenZip.Tests.Settings.Switches
@@ -19,7 +21,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
 
             var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -34,7 +36,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
 
             var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -50,7 +52,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
 
             var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
     }
 }

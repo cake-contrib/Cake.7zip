@@ -1,6 +1,8 @@
 using Cake.SevenZip.Builder;
 using Cake.SevenZip.Switches;
 
+using FluentAssertions;
+
 using Moq;
 
 using Xunit;
@@ -19,7 +21,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.Object.WithArchiveType(default);
 
-            Assert.Equal(expected.Object, actual);
+            actual.Should().Be(expected.Object);
         }
 
         [Fact]
@@ -33,7 +35,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             builder.Object.WithArchiveType(expected);
 
-            Assert.Equal(expected, command.Object.ArchiveType);
+            command.Object.ArchiveType.Should().Be(expected);
         }
     }
 }

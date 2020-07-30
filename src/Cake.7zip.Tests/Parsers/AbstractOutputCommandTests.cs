@@ -1,6 +1,8 @@
 using Cake.SevenZip.Commands;
 using Cake.SevenZip.Parsers;
 
+using FluentAssertions;
+
 using Moq;
 
 using Xunit;
@@ -22,7 +24,7 @@ namespace Cake.SevenZip.Tests.Parsers
 
             ((ICanParseOutput)partialMock).SetRawOutput(expected);
 
-            Assert.Equal(expected, actual);
+            actual.Should().BeEquivalentTo(expected);
         }
 
         [Fact]
@@ -37,7 +39,7 @@ namespace Cake.SevenZip.Tests.Parsers
 
             ((ICanParseOutput)partialMock).SetRawOutput(null);
 
-            Assert.Null(actual);
+            actual.Should().BeNull();
         }
 
         [Fact]
@@ -54,7 +56,7 @@ namespace Cake.SevenZip.Tests.Parsers
 
             ((ICanParseOutput)partialMock).SetRawOutput(new string[] { });
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
     }
 }

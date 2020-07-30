@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 using Cake.SevenZip.Builder;
 
+using FluentAssertions;
+
 using Xunit;
 
 namespace Cake.SevenZip.Tests.FluentBuilder
@@ -17,7 +19,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             var sut = new CommandBuilder();
             var actual = mode(sut);
 
-            Assert.Equal(expected, actual.GetType());
+            actual.Should().BeOfType(expected);
         }
 
         private class TestData : IEnumerable<object[]>

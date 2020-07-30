@@ -6,6 +6,7 @@ using Cake.SevenZip.Tests.Fixtures;
 using Xunit;
 using System;
 using Cake.SevenZip.Switches;
+using FluentAssertions;
 
 namespace Cake.SevenZip.Tests.FluentBuilder
 {
@@ -19,7 +20,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = sut.WithFullPathExtraction();
 
-            Assert.Equal(sut, actual);
+            actual.Should().Be(sut);
         }
 
         [Fact]
@@ -30,7 +31,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = sut.WithoutFullPathExtraction();
 
-            Assert.Equal(sut, actual);
+            actual.Should().Be(sut);
         }
 
         [Fact]
@@ -41,7 +42,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             sut.WithFullPathExtraction();
 
-            Assert.True(command.UseFullPaths);
+            command.UseFullPaths.Should().BeTrue();
         }
 
         [Fact]
@@ -52,7 +53,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             sut.WithoutFullPathExtraction();
 
-            Assert.False(command.UseFullPaths);
+            command.UseFullPaths.Should().BeFalse();
         }
 
         [Fact]
@@ -67,7 +68,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -83,7 +84,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -99,7 +100,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -109,12 +110,12 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             fixture.Context
               .InExtractMode();
 
-            void Result()
+            Action result = () =>
             {
                 fixture.EvaluateArgs();
-            }
+            };
 
-            Assert.Throws<ArgumentException>(Result);
+            result.Should().Throw<ArgumentException>();
         }
 
         [Fact]
@@ -130,7 +131,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -150,7 +151,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -166,7 +167,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -182,7 +183,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -198,7 +199,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -214,7 +215,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -230,7 +231,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -246,7 +247,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -262,7 +263,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -278,7 +279,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -295,7 +296,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -311,7 +312,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -327,7 +328,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -344,7 +345,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -360,7 +361,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -376,7 +377,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -392,7 +393,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -408,7 +409,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -424,7 +425,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
     }
 }

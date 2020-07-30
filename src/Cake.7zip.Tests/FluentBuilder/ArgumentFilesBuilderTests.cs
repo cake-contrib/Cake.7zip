@@ -4,6 +4,8 @@ using Cake.Core.IO;
 using Cake.SevenZip.Builder;
 using Cake.SevenZip.Commands;
 
+using FluentAssertions;
+
 using Moq;
 
 using Xunit;
@@ -22,7 +24,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.Object.WithFiles(new FilePath("foo"));
 
-            Assert.Equal(expected.Object, actual);
+            actual.Should().Be(expected.Object);
         }
 
         [Fact]
@@ -35,7 +37,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.Object.WithFiles(new FilePathCollection());
 
-            Assert.Equal(expected.Object, actual);
+            actual.Should().Be(expected.Object);
         }
 
         [Fact]
@@ -49,7 +51,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             builder.Object.WithFiles(expected);
 
-            Assert.Equal(expected, command.Object.Files.Single());
+            command.Object.Files.Single().Should().Be(expected);
         }
 
         [Fact]
@@ -63,7 +65,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             builder.Object.WithFiles(new FilePathCollection(new[] { expected }));
 
-            Assert.Equal(expected, command.Object.Files.Single());
+            command.Object.Files.Single().Should().Be(expected);
         }
     }
 }
