@@ -1,8 +1,9 @@
-namespace Cake.SevenZip
-{
-    using Cake.Core;
-    using Cake.Core.IO;
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.SevenZip.Builder;
 
+namespace Cake.SevenZip.Switches
+{
     /// <summary>
     /// <para>
     /// -t (set Type of archive) switch.
@@ -26,7 +27,7 @@ namespace Cake.SevenZip
         /// Initializes a new instance of the <see cref="SwitchArchiveType"/> class.
         /// </summary>
         /// <param name="type">The type.</param>
-        internal SwitchArchiveType(string type)
+        private SwitchArchiveType(string type)
         {
             this.type = type;
         }
@@ -36,42 +37,42 @@ namespace Cake.SevenZip
         /// <summary>
         /// Gets the type: 7-Zip.
         /// </summary>
-        public static SwitchArchiveType SevenZip => new SwitchArchiveType("7z");
+        public static SwitchArchiveType SevenZip { get; } = new SwitchArchiveType("7z");
 
         /// <summary>
         /// Gets the type: XZ.
         /// </summary>
-        public static SwitchArchiveType Xz => new SwitchArchiveType("xz");
+        public static SwitchArchiveType Xz { get; } = new SwitchArchiveType("xz");
 
         /// <summary>
         /// Gets the type: lzma.
         /// </summary>
-        public static SwitchArchiveType Lzma => new SwitchArchiveType("lzma");
+        public static SwitchArchiveType Lzma { get; } = new SwitchArchiveType("lzma");
 
         /// <summary>
         /// Gets the type: CAB.
         /// </summary>
-        public static SwitchArchiveType Cab => new SwitchArchiveType("cab");
+        public static SwitchArchiveType Cab { get; } = new SwitchArchiveType("cab");
 
         /// <summary>
         /// Gets the type: Zip.
         /// </summary>
-        public static SwitchArchiveType Zip => new SwitchArchiveType("zip");
+        public static SwitchArchiveType Zip { get; } = new SwitchArchiveType("zip");
 
         /// <summary>
         /// Gets the type: GZip.
         /// </summary>
-        public static SwitchArchiveType Gzip => new SwitchArchiveType("gzip");
+        public static SwitchArchiveType Gzip { get; } = new SwitchArchiveType("gzip");
 
         /// <summary>
         /// Gets the type: tar.
         /// </summary>
-        public static SwitchArchiveType Tar => new SwitchArchiveType("tar");
+        public static SwitchArchiveType Tar { get; } = new SwitchArchiveType("tar");
 
         /// <summary>
         /// Gets the type: BZip2.
         /// </summary>
-        public static SwitchArchiveType Bzip2 => new SwitchArchiveType("bzip2");
+        public static SwitchArchiveType Bzip2 { get; } = new SwitchArchiveType("bzip2");
 
         /// <inheritdoc />
         public void BuildArguments(ref ProcessArgumentBuilder builder)

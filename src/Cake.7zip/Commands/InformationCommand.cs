@@ -1,8 +1,9 @@
-namespace Cake.SevenZip
-{
-    using Cake.Core;
-    using Cake.Core.IO;
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.SevenZip.Parsers;
 
+namespace Cake.SevenZip.Commands
+{
     /// <summary>
     /// Show information about supported formats
     /// (Command: i).

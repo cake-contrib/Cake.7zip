@@ -1,14 +1,16 @@
+using System;
+
+using Cake.Core;
+using Cake.Core.Annotations;
+using Cake.SevenZip.Builder;
+using Cake.SevenZip.Commands;
+
 namespace Cake.SevenZip
 {
-    using System;
-
-    using Cake.Core;
-    using Cake.Core.Annotations;
-
     /// <summary>
     /// <para>Functions to call <see href="https://7-zip.org/">7-Zip</see>.</para>
     /// <para>
-    /// In order to use this addin, 7z.exe or 7za.exe has to be available.
+    /// In order to use this add-in, 7z.exe or 7za.exe has to be available.
     /// One option is using
     /// <see href="https://www.nuget.org/packages/7-Zip.CommandLine/">7-Zip.CommandLine from nuget</see>.
     /// The other option is to have 7z installed on your system (I.e. There is a registry-key HKLM/Software/7-Zip/Path
@@ -87,7 +89,7 @@ namespace Cake.SevenZip
         /// <see cref="CommandBuilder"/> for fluent configuration of the Command.
         /// </para>
         /// <para>
-        /// Works exactly like <see cref="SevenZipAliases.SevenZip(ICakeContext, Action{CommandBuilder})"/>
+        /// Works exactly like <see cref="SevenZip(ICakeContext, Action{CommandBuilder})"/>
         /// However, the settings are supplied to set e.g. the <c>ToolPath</c> or something else.
         /// </para>
         /// <para>

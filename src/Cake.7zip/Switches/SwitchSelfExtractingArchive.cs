@@ -1,8 +1,9 @@
-namespace Cake.SevenZip
-{
-    using Cake.Core;
-    using Cake.Core.IO;
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.SevenZip.Builder;
 
+namespace Cake.SevenZip.Switches
+{
     /// <summary>
     /// <para>
     /// -sfx (Create SFX archive) switch.
@@ -23,14 +24,14 @@ namespace Cake.SevenZip
     public class SwitchSelfExtractingArchive : ISwitch
     {
         /// <summary>
-        /// Gets or sets the SFX module that will be combined with the archive.
+        /// Sets the SFX module that will be combined with the archive.
         /// This module must be placed in the same directory as the 7z.exe.
         /// If no module is assigned, 7-Zip will use standard console SFX module 7zCon.sfx.
         /// </summary>
         /// <value>
         /// The SFX module.
         /// </value>
-        public FilePath SfxModule { get; set; }
+        public FilePath SfxModule { private get; set; }
 
         /// <inheritdoc />
         public void BuildArguments(ref ProcessArgumentBuilder builder)

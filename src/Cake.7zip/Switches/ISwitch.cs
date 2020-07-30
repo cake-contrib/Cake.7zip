@@ -1,7 +1,7 @@
-namespace Cake.SevenZip
-{
-    using Cake.Core.IO;
+using Cake.Core.IO;
 
+namespace Cake.SevenZip.Switches
+{
     /// <summary>
     /// Base for all Switches.
     /// </summary>

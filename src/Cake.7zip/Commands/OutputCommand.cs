@@ -1,11 +1,12 @@
-namespace Cake.SevenZip
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+using Cake.Core.IO;
+using Cake.SevenZip.Parsers;
+
+namespace Cake.SevenZip.Commands
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-
-    using Cake.Core.IO;
-
     /// <summary>
     /// base for all commands that have output. (E.g. <see cref="InformationCommand"/>).
     /// </summary>

@@ -1,7 +1,5 @@
-namespace Cake.SevenZip.Tests
+namespace Cake.SevenZip.Tests.Fixtures
 {
-    using System;
-
     public static class Outputs
     {
         public static string[] Information

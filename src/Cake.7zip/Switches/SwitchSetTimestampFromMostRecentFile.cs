@@ -1,12 +1,14 @@
-namespace Cake.SevenZip
+using Cake.SevenZip.Builder;
+
+namespace Cake.SevenZip.Switches
 {
     /// <summary>
     /// <para>
-    /// -stl (Set archive timestamp from the most recently modified file) switch.
+    /// -stl (Set archive time-stamp from the most recently modified file) switch.
     /// </para>
     /// <para>
-    /// If -stl switch is specified, 7-Zip sets timestamp for archive file as
-    /// timestamp from the most recently modified file in that archive.
+    /// If -stl switch is specified, 7-Zip sets time-stamp for archive file as
+    /// time-stamp from the most recently modified file in that archive.
     /// </para>
     /// <para>
     /// <list type="bullet">

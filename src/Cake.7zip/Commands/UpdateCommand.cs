@@ -1,11 +1,13 @@
-namespace Cake.SevenZip
-{
-    using System.Collections.Generic;
+using System.Collections.Generic;
 
+using Cake.SevenZip.Switches;
+
+namespace Cake.SevenZip.Commands
+{
     /// <summary>
     /// Update older files in the archive and add files that are not already in the archive.
     /// (Command: u)
-    /// Note: the updating of solid .7z archives can be slow, since it can require some recompression.
+    /// Note: the updating of solid .7z archives can be slow, since it can require some re-compression.
     /// </summary>
     public sealed class UpdateCommand : BaseAddLikeSyntaxCommand,
         ICommand,

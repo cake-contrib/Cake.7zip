@@ -1,10 +1,11 @@
-namespace Cake.SevenZip
+using System;
+
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.SevenZip.Switches;
+
+namespace Cake.SevenZip.Commands
 {
-    using System;
-
-    using Cake.Core;
-    using Cake.Core.IO;
-
     /// <summary>
     /// Extract files from archive - with or without full path
     /// (Commands: e and x).
@@ -46,7 +47,7 @@ namespace Cake.SevenZip
         }
 
         /// <inheritdoc />
-        public FilePath Archive { get; set; }
+        public FilePath Archive { private get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to use full paths.
@@ -130,12 +131,7 @@ namespace Cake.SevenZip
                 FullyQualifiedFilePaths,
             })
             {
-                if (sw == null)
-                {
-                    continue;
-                }
-
-                sw.BuildArguments(ref builder);
+                sw?.BuildArguments(ref builder);
             }
         }
     }

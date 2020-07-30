@@ -1,7 +1,9 @@
-namespace Cake.SevenZip
-{
-    using System.Collections.Generic;
+using System.Collections.Generic;
 
+using Cake.SevenZip.Commands;
+
+namespace Cake.SevenZip.Parsers
+{
     /// <summary>
     /// Parses outputs of the <see cref="InformationCommand"/>.
     /// </summary>
@@ -24,7 +26,7 @@ namespace Cake.SevenZip
             };
 
             var firstLine = true;
-            List<string> current = null;
+            var current = new List<string>();
             foreach (var line in rawOutput)
             {
                 if (string.IsNullOrWhiteSpace(line))
@@ -69,7 +71,7 @@ namespace Cake.SevenZip
         /// <summary>
         /// Implements <see cref="IInformationOutput"/>.
         /// </summary>
-        protected class InformationOutput : IInformationOutput
+        private class InformationOutput : IInformationOutput
         {
             /// <inheritdoc />
             public string Information { get; internal set; }

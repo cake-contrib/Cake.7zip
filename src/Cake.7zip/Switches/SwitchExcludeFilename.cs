@@ -1,14 +1,15 @@
-namespace Cake.SevenZip
-{
-    using Cake.Core;
-    using Cake.Core.IO;
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.SevenZip.Builder;
 
+namespace Cake.SevenZip.Switches
+{
     /// <summary>
     /// <para>
     /// -x (Exclude filenames) switch.
     /// </para>
     /// <para>
-    /// Specifies which filenames or wildcarded names must be excluded from the operation.
+    /// Specifies which filenames or wildcard-names must be excluded from the operation.
     /// Multiple exclude switches are supported.
     /// </para>
     /// <para>
@@ -30,19 +31,10 @@ namespace Cake.SevenZip
         /// </summary>
         /// <param name="wildcard">The wildcard.</param>
         /// <param name="recurseType">Type of the recurse.</param>
-        public SwitchExcludeFilename(string wildcard, RecurseType recurseType)
+        public SwitchExcludeFilename(string wildcard, RecurseType recurseType = null)
         {
             this.wildcard = wildcard;
             this.recurseType = recurseType;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SwitchExcludeFilename"/> class.
-        /// </summary>
-        /// <param name="wildcard">The wildcard.</param>
-        public SwitchExcludeFilename(string wildcard)
-            : this(wildcard, null)
-        {
         }
 
         /// <inheritdoc/>

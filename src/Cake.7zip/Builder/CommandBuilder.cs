@@ -1,4 +1,6 @@
-namespace Cake.SevenZip
+using Cake.SevenZip.Commands;
+
+namespace Cake.SevenZip.Builder
 {
     /// <summary>
     /// Builder for all <see cref="ICommand"/>s.
@@ -7,12 +9,12 @@ namespace Cake.SevenZip
     public sealed class CommandBuilder
     {
         /// <summary>
-        /// Gets or sets the Command.
+        /// Gets the Command.
         /// </summary>
         /// <value>
         /// The Command.
         /// </value>
-        internal ICommand Command { get; set; }
+        internal ICommand Command { get; private set; }
 
         /// <summary>
         /// Makes this Builder an AddCommand-Builder.
