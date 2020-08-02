@@ -70,5 +70,16 @@ namespace Cake.SevenZip.Builder
             Command = command;
             return new InformationCommandBuilder(ref command);
         }
+
+        /// <summary>
+        /// Makes this Builder a TestCommand-Builder.
+        /// </summary>
+        /// <returns><see cref="TestCommandBuilder"/>.</returns>
+        public TestCommandBuilder InTestMode()
+        {
+            var command = new TestCommand();
+            Command = command;
+            return new TestCommandBuilder(ref command);
+        }
     }
 }

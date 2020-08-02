@@ -45,7 +45,7 @@ namespace Cake.SevenZip.Builder
         /// Initializes a new instance of the <see cref="ExtractCommandBuilder"/> class.
         /// </summary>
         /// <param name="command">The command.</param>
-        public ExtractCommandBuilder(ref ExtractCommand command)
+        internal ExtractCommandBuilder(ref ExtractCommand command)
         {
             this.command = command;
         }

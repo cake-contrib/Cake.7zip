@@ -1,6 +1,5 @@
 using System.Linq;
 
-using Cake.SevenZip.Commands;
 using Cake.SevenZip.Parsers;
 using Cake.SevenZip.Tests.Fixtures;
 
@@ -12,17 +11,6 @@ namespace Cake.SevenZip.Tests.Parsers
 {
     public class InformationOutputParserTests
     {
-        [Fact]
-        public void InformactionCommand_uses_InformationParser()
-        {
-            var command = new InformationCommand();
-
-            var actual = command.OutputParser;
-
-            actual.Should().NotBeNull();
-            actual.Should().BeOfType<InformationOutputParser>();
-        }
-
         [Fact]
         public void InformationParser_parses_InfoLine()
         {

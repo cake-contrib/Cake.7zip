@@ -1,6 +1,7 @@
 using System;
 
 using Cake.SevenZip.Commands;
+using Cake.SevenZip.Parsers;
 
 namespace Cake.SevenZip.Builder
 {
@@ -11,6 +12,7 @@ namespace Cake.SevenZip.Builder
     /// <typeparam name="TOutput">the output of the <see cref="OutputCommand{T}"/> supported by this builder.</typeparam>
     public abstract class BaseOutputBuilder<TBuilder, TOutput>
         where TBuilder : BaseOutputBuilder<TBuilder, TOutput>
+        where TOutput : IOutput
     {
         /// <summary>
         /// Gets the output command.
