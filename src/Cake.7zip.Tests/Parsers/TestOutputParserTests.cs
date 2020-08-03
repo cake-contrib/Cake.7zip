@@ -26,33 +26,34 @@ namespace Cake.SevenZip.Tests.Parsers
         public void TestParser_parses_Archives_isOk()
         {
             var parser = new TestOutputParser();
-            const string expected = @"Path = .\nested.zip
+            string expected = @"Path = .\nested.zip
 Type = zip
 Physical Size = 2198368
 Everything is Ok
-";
+".UnifyLineEndings();
 
             var actual = parser.Parse(Outputs.Test).Archives.Single(x => x.IsOk);
 
             actual.FileName.Should().Be(".\\nested.zip");
-            actual.Output.Should().Be(expected);
+            actual.Output.UnifyLineEndings().Should().Be(expected);
         }
 
         [Fact]
         public void TestParser_parses_Archives_isNotOk()
         {
             var parser = new TestOutputParser();
-            const string expected = @"ERROR: foo.zip
+            string expected = @"ERROR: foo.zip
 foo.zip
 Open ERROR: Can not open the file as [zip] archive
 ERRORS:
 Is not archive
-";
+".UnifyLineEndings();
+            ;
 
             var actual = parser.Parse(Outputs.Test).Archives.Single(x => !x.IsOk);
 
             actual.FileName.Should().Be("foo.zip");
-            actual.Output.Should().Be(expected);
+            actual.Output.UnifyLineEndings().Should().Be(expected);
         }
     }
 }
