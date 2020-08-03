@@ -7,16 +7,8 @@ namespace Cake.SevenZip.Parsers
     /// <summary>
     /// The parsed Output of the <see cref="InformationCommand"/>.
     /// </summary>
-    public interface IInformationOutput
+    public interface IInformationOutput : IOutput
     {
-        /// <summary>
-        /// Gets the information (version etc.) from 7z.
-        /// </summary>
-        /// <value>
-        /// The information.
-        /// </value>
-        string Information { get; }
-
         /// <summary>
         /// Gets the codecs.
         /// </summary>

@@ -5,6 +5,7 @@ namespace Cake.SevenZip.Parsers
     /// </summary>
     /// <typeparam name="T">The output object.</typeparam>
     internal interface IOutputParser<out T>
+        where T : IOutput
     {
         /// <summary>
         /// Parses the stream.

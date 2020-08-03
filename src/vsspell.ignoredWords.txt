@@ -18,3 +18,4 @@ lzma
 gzip
 Enum
 usings
+foreach

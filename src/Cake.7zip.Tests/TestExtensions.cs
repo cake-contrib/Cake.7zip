@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 
 namespace Cake.SevenZip.Tests
 {
@@ -7,7 +6,12 @@ namespace Cake.SevenZip.Tests
     {
         internal static string[] ToArrayOfLines(this string @this)
         {
-            return @this.Split(new[] { "\n" }, StringSplitOptions.None).Select(x => x.TrimEnd('\r')).ToArray();
+            return @this.UnifyLineEndings().Split(new[] { "\n" }, StringSplitOptions.None);
+        }
+
+        internal static string UnifyLineEndings(this string @this)
+        {
+            return @this.Replace("\r\n", "\n");
         }
     }
 }
