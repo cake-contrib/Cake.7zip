@@ -1,6 +1,8 @@
 using System;
 
-namespace Cake.SevenZip.Tests
+using Cake.SevenZip.Builder;
+
+namespace Cake.SevenZip.Tests.Fixtures
 {
     public class SevenZipFluentRunnerFixture : SevenZipRunnerFixture
     {

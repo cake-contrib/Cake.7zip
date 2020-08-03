@@ -1,4 +1,6 @@
-namespace Cake.SevenZip
+using Cake.SevenZip.Switches;
+
+namespace Cake.SevenZip.Builder
 {
     /// <summary>
     /// Extensions for all Builders that support <see cref="ISupportSwitchArchiveType"/>.
@@ -13,10 +15,10 @@ namespace Cake.SevenZip
         /// <param name="this">The builder-instance.</param>
         /// <param name="type">The type to set.</param>
         /// <returns>The builder-instance for fluent re-use.</returns>
-        public static T WithArchiveType<T>(this T @this, SwitchArchiveType @type)
+        public static T WithArchiveType<T>(this T @this, SwitchArchiveType type)
             where T : ISupportSwitchBuilder<ISupportSwitchArchiveType>
         {
-            @this.Command.ArchiveType = @type;
+            @this.Command.ArchiveType = type;
             return @this;
         }
 

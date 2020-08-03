@@ -1,9 +1,16 @@
+using System;
+using System.Diagnostics.CodeAnalysis;
+
+using Cake.SevenZip.Switches;
+using Cake.SevenZip.Tests.Fixtures;
+
+using FluentAssertions;
+
+using Xunit;
+
 namespace Cake.SevenZip.Tests.Settings.Switches
 {
-    using System;
-
-    using Xunit;
-
+    [SuppressMessage("ReSharper", "InconsistentNaming", Justification = "I like my 'local functions' camelCase.")]
     public class SwitchVolumeTests
     {
         [Fact]
@@ -19,7 +26,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
 
             var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -35,7 +42,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
 
             var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -51,7 +58,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
 
             var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -67,7 +74,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
 
             var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -82,7 +89,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
 
             var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -92,10 +99,12 @@ namespace Cake.SevenZip.Tests.Settings.Switches
             var sut = new SwitchVolume();
             const string expectedMessage = "Can not create volumes with size < 1";
 
-            void result() => fixture.Parse(b => sut.BuildArguments(ref b));
+            Action result = () =>
+            {
+                fixture.Parse(b => sut.BuildArguments(ref b));
+            };
 
-            var ex = Assert.Throws<ArgumentException>(result);
-            Assert.Equal(expectedMessage, ex.Message);
+            result.Should().Throw<ArgumentException>().WithMessage(expectedMessage);
         }
 
         [Fact]
@@ -108,10 +117,12 @@ namespace Cake.SevenZip.Tests.Settings.Switches
             };
             const string expectedMessage = "Can not create volumes with size < 1";
 
-            void result() => fixture.Parse(b => sut.BuildArguments(ref b));
+            Action result = () =>
+            {
+                fixture.Parse(b => sut.BuildArguments(ref b));
+            };
 
-            var ex = Assert.Throws<ArgumentException>(result);
-            Assert.Equal(expectedMessage, ex.Message);
+            result.Should().Throw<ArgumentException>().WithMessage(expectedMessage);
         }
     }
 }

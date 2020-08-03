@@ -1,4 +1,6 @@
-﻿namespace Cake.SevenZip
+using Cake.SevenZip.Switches;
+
+namespace Cake.SevenZip.Builder
 {
     /// <summary>
     /// Extensions for all Builders that support <see cref="ISupportSwitchCompressFilesOpenForWriting"/>.

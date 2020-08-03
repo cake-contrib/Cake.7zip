@@ -1,11 +1,12 @@
-namespace Cake.SevenZip
+using System;
+using System.Collections.Generic;
+
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.SevenZip.Switches;
+
+namespace Cake.SevenZip.Commands
 {
-    using System;
-    using System.Collections.Generic;
-
-    using Cake.Core;
-    using Cake.Core.IO;
-
     /// <summary>
     /// BaseClass for add,update,delete.
     /// </summary>
@@ -24,7 +25,7 @@ namespace Cake.SevenZip
         public DirectoryPathCollection DirectoryContents { get; set; }
 
         /// <inheritdoc/>
-        public FilePath Archive { get; set; }
+        public FilePath Archive { private get; set; }
 
         /// <summary>
         /// Gets the name of the command. (i.e. "add", "update" or "extract".)
@@ -83,12 +84,7 @@ namespace Cake.SevenZip
 
             foreach (var sw in Switches)
             {
-                if (sw == null)
-                {
-                    continue;
-                }
-
-                sw.BuildArguments(ref builder);
+                sw?.BuildArguments(ref builder);
             }
 
             builder.AppendQuoted(Archive.FullPath);

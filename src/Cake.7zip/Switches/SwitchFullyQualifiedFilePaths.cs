@@ -1,8 +1,9 @@
-namespace Cake.SevenZip
-{
-    using Cake.Core;
-    using Cake.Core.IO;
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.SevenZip.Builder;
 
+namespace Cake.SevenZip.Switches
+{
     /// <summary>
     /// -spf (Use fully qualified file paths) switch.
     /// (Also, -spf2 for full paths without drive letters.)
@@ -32,12 +33,12 @@ namespace Cake.SevenZip
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether to include drive letter.
+        /// Sets a value indicating whether to include drive letter.
         /// </summary>
         /// <value>
         ///   <c>true</c> to include drive letter (switch -spf); otherwise, <c>false</c> (switch -spf2).
         /// </value>
-        public bool IncludeDriveLetter { get; set; }
+        public bool IncludeDriveLetter { private get; set; }
 
         /// <inheritdoc />
         public void BuildArguments(ref ProcessArgumentBuilder builder)

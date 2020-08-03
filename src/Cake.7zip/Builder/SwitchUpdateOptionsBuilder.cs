@@ -1,7 +1,9 @@
-namespace Cake.SevenZip
-{
-    using System;
+using System;
 
+using Cake.SevenZip.Switches;
+
+namespace Cake.SevenZip.Builder
+{
     /// <summary>
     /// Extensions for all Builders that support <see cref="ISupportSwitchUpdateOptions"/>.
     /// <seealso cref="ISupportSwitchBuilder{T}"/>

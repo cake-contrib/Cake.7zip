@@ -1,13 +1,18 @@
-namespace Cake.SevenZip.Tests.Builder
+using Cake.Core;
+using Cake.SevenZip.Builder;
+using Cake.SevenZip.Commands;
+using Cake.SevenZip.Switches;
+
+using FluentAssertions;
+
+using System;
+using System.Linq;
+using System.Reflection;
+
+using Xunit;
+
+namespace Cake.SevenZip.Tests.FluentBuilder
 {
-    using Cake.Core;
-
-    using System;
-    using System.Linq;
-    using System.Reflection;
-
-    using Xunit;
-
     public class GeneralCommandBuilderTests
     {
         [Theory]
@@ -26,7 +31,7 @@ namespace Cake.SevenZip.Tests.Builder
             {
                 var expectedInterface = supportBuilder.MakeGenericType(supportSwitch);
 
-                Assert.Contains(expectedInterface, builerInterfaces);
+                builerInterfaces.Should().Contain(expectedInterface);
             }
         }
 
@@ -46,7 +51,7 @@ namespace Cake.SevenZip.Tests.Builder
             {
                 var expectedInterface = supportBuilder.MakeGenericType(hasArgument);
 
-                Assert.Contains(expectedInterface, builerInterfaces);
+                builerInterfaces.Should().Contain(expectedInterface);
             }
         }
 
@@ -69,7 +74,7 @@ namespace Cake.SevenZip.Tests.Builder
 
             foreach (var @switch in allSwitches)
             {
-                Assert.Contains(@switch, allSwitchesUsedInSupportSwitches);
+                allSwitchesUsedInSupportSwitches.Should().Contain(@switch);
             }
         }
 
@@ -93,7 +98,7 @@ namespace Cake.SevenZip.Tests.Builder
             {
                 var expectedType = supportBuilder.MakeGenericType(@switch);
 
-                Assert.Contains(expectedType, allSupportBuilderExtensionMethodTypes);
+                allSupportBuilderExtensionMethodTypes.Should().Contain(expectedType);
             }
         }
     }

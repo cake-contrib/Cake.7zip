@@ -1,8 +1,10 @@
-namespace Cake.SevenZip
+using Cake.SevenZip.Builder;
+
+namespace Cake.SevenZip.Switches
 {
     /// <summary>
     /// <para>
-    /// Command supports switch -stl (Set archive timestamp from the most recently modified file).
+    /// Command supports switch -stl (Set archive time-stamp from the most recently modified file).
     /// </para>
     /// <para>
     /// The Switch is <see cref="SwitchSetTimestampFromMostRecentFile"/>.

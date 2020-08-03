@@ -1,7 +1,5 @@
-namespace Cake.SevenZip.Tests
+namespace Cake.SevenZip.Tests.Fixtures
 {
-    using System;
-
     public static class Outputs
     {
         public static string[] Information
@@ -102,6 +100,42 @@ Hashers:
  0    8        4 CRC64
  0   32      202 BLAKE2sp";
                 return demoOutput.ToArrayOfLines();
+            }
+        }
+
+        public static string[] Test
+        {
+            get
+            {
+                const string testOutput = @"
+7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
+
+Scanning the drive for archives:
+2 files, 2201618 bytes (2151 KiB)
+
+Testing archive: foo.zip
+ERROR: foo.zip
+foo.zip
+Open ERROR: Can not open the file as [zip] archive
+
+ERRORS:
+Is not archive
+
+Testing archive: .\nested.zip
+--
+Path = .\nested.zip
+Type = zip
+Physical Size = 2198368
+
+Everything is Ok
+
+Archives: 2
+OK archives: 1
+Can't open as archive: 1
+Files: 3
+Size:       2359279
+Compressed: 2198368";
+                return testOutput.ToArrayOfLines();
             }
         }
     }

@@ -1,4 +1,4 @@
-namespace Cake.SevenZip
+namespace Cake.SevenZip.Switches
 {
     /// <summary>
     /// A Collection of <see cref="SwitchExcludeArchiveFilename"/>.
@@ -14,7 +14,6 @@ namespace Cake.SevenZip
         public SwitchExcludeArchiveFilenameCollection(
             SwitchExcludeArchiveFilename initial,
             params SwitchExcludeArchiveFilename[] additional)
-          : base()
         {
             Switches.Add(initial);
             Switches.AddRange(additional);

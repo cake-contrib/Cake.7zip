@@ -1,4 +1,4 @@
-namespace Cake.SevenZip
+namespace Cake.SevenZip.Switches
 {
     /// <summary>
     /// Units for <see cref="SwitchCompressionMethod"/>.
@@ -33,7 +33,7 @@ namespace Cake.SevenZip
         public static VolumeUnit Megabytes => new VolumeUnit("m");
 
         /// <summary>
-        /// Gets Unit: Gigaytes (g).
+        /// Gets Unit: Gigabytes (g).
         /// </summary>
         public static VolumeUnit Gigabytes => new VolumeUnit("g");
 

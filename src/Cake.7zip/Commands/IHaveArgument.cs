@@ -1,4 +1,4 @@
-namespace Cake.SevenZip
+namespace Cake.SevenZip.Commands
 {
     /// <summary>
     /// Base for all argument.

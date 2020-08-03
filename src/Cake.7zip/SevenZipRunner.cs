@@ -1,14 +1,15 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+using Cake.Core;
+using Cake.Core.Diagnostics;
+using Cake.Core.IO;
+using Cake.Core.Tooling;
+using Cake.SevenZip.Parsers;
+
 namespace Cake.SevenZip
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-
-    using Cake.Core;
-    using Cake.Core.Diagnostics;
-    using Cake.Core.IO;
-    using Cake.Core.Tooling;
-
     /// <summary>
     /// The Tool-Runner for 7zip.
     /// </summary>
@@ -97,31 +98,35 @@ namespace Cake.SevenZip
                 log.Debug("Trying to detect 7zip from Registry");
                 try
                 {
-                    var software = registry.LocalMachine.OpenKey("Software");
-                    var sevenZip = software.OpenKey("7-Zip");
-                    var path32 = sevenZip.GetValue("Path")?.ToString() ?? string.Empty;
-                    log.Debug("7zip path in registry:" + path32);
-                    var path64 = sevenZip.GetValue("Path64")?.ToString() ?? string.Empty;
-                    log.Debug("7zip 64bit-path in registry:" + path64);
-                    var dirs = new List<DirectoryPath>(new[] { new DirectoryPath(path32) });
-                    if (cakeEnvironment.Platform.Is64Bit
-                        && path64 != path32)
+                    using (var software = registry.LocalMachine.OpenKey("Software"))
+                    using (var sevenZip = software.OpenKey("7-Zip"))
                     {
-                        dirs.Add(new DirectoryPath(path64));
+                        var path32 = sevenZip.GetValue("Path")?.ToString() ?? string.Empty;
+                        log.Debug("7zip path in registry:" + path32);
+                        var path64 = sevenZip.GetValue("Path64")?.ToString() ?? string.Empty;
+                        log.Debug("7zip 64bit-path in registry:" + path64);
+                        var dirs = new List<DirectoryPath>(new[] { new DirectoryPath(path32) });
+                        if (cakeEnvironment.Platform.Is64Bit
+                            && path64 != path32)
+                        {
+                            dirs.Add(new DirectoryPath(path64));
+                        }
+
+                        var names = GetToolExecutableNames().ToList();
+
+                        names
+                            .SelectMany(n => dirs
+                                .Select(d => d.CombineWithFilePath(n)))
+                            .Where(p => fileSystem.Exist(p))
+                            .ToList().ForEach(p => paths.Add(p.FullPath));
                     }
-
-                    var names = GetToolExecutableNames().ToList();
-
-                    names
-                        .SelectMany(n => dirs
-                            .Select(d => d.CombineWithFilePath(n)))
-                        .Where(p => fileSystem.Exist(p))
-                        .ToList().ForEach(p => paths.Add(p.FullPath));
                 }
+#pragma warning disable CA1031 // Do not catch general exception types
                 catch (Exception e)
+#pragma warning restore CA1031 // Do not catch general exception types
                 {
                     log.Debug($"{e.GetType()}: {e.Message}");
-                    log.Debug($"7zip not found in registry.");
+                    log.Debug("7zip not found in registry.");
                 }
             }
 

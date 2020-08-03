@@ -1,9 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
+
+using Cake.SevenZip.Switches;
+using Cake.SevenZip.Tests.Fixtures;
+
+using FluentAssertions;
+
+using Xunit;
+
 namespace Cake.SevenZip.Tests.Settings.Switches
 {
-    using System.Reflection;
-
-    using Xunit;
-
     public class SwitchOverwriteModeTests
     {
         [Fact]
@@ -15,21 +21,30 @@ namespace Cake.SevenZip.Tests.Settings.Switches
 
             var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Theory]
-        [InlineData("Overwrite", "a")]
-        [InlineData("RenameExisting", "t")]
-        [InlineData("RenameExtracting", "u")]
-        [InlineData("Skip", "s")]
-        public void OverwriteMode_work(string propertyName, string expected)
+        [ClassData(typeof(TestData))]
+        public void OverwriteMode_work(OverwriteMode mode, string expected)
         {
-            var overwriteModeProp = typeof(OverwriteMode).GetProperty(propertyName, BindingFlags.Public | BindingFlags.Static);
-            var overwriteMode = overwriteModeProp.GetValue(null);
-            Assert.NotNull(overwriteMode);
+            mode.ToString().Should().Be(expected);
+        }
 
-            Assert.Equal(expected, overwriteMode.ToString());
+        private class TestData : IEnumerable<object[]>
+        {
+            public IEnumerator<object[]> GetEnumerator()
+            {
+                yield return new object[] { OverwriteMode.Overwrite, "a" };
+                yield return new object[] { OverwriteMode.RenameExisting, "t" };
+                yield return new object[] { OverwriteMode.RenameExtracting, "u" };
+                yield return new object[] { OverwriteMode.Skip, "s" };
+            }
+
+            IEnumerator IEnumerable.GetEnumerator()
+            {
+                return GetEnumerator();
+            }
         }
     }
 }

@@ -1,17 +1,19 @@
-namespace Cake.SevenZip
+using Cake.SevenZip.Commands;
+
+namespace Cake.SevenZip.Builder
 {
     /// <summary>
     /// Base for builders that support arguments.
     /// </summary>
-    /// <typeparam name="T">the <see cref="IHaveArgument"/> suppored by this builder.</typeparam>
-    public interface ISupportArgumentBuilder<T>
+    /// <typeparam name="T">the <see cref="IHaveArgument"/> supported by this builder.</typeparam>
+    public interface ISupportArgumentBuilder<out T>
         where T : IHaveArgument
     {
         /// <summary>
         /// Gets the command that supports the given argument.
         /// </summary>
         /// <value>
-        /// The agument.
+        /// The argument.
         /// </value>
         T Command { get; }
     }

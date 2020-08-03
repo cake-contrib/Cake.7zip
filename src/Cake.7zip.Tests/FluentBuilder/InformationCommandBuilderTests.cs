@@ -1,8 +1,12 @@
-namespace Cake.SevenZip.Tests.Builder
-{
-    using Xunit;
+using Cake.SevenZip.Tests.Fixtures;
 
-    public class SevenZipInformationCommandBuilderTests
+using FluentAssertions;
+
+using Xunit;
+
+namespace Cake.SevenZip.Tests.FluentBuilder
+{
+    public class InformationCommandBuilderTests
     {
         [Fact]
         public void Information_can_be_used()
@@ -15,7 +19,7 @@ namespace Cake.SevenZip.Tests.Builder
 
             var actual = fixture.EvaluateArgs();
 
-            Assert.Equal(expected, actual);
+            actual.Should().Be(expected);
         }
 
         [Fact]
@@ -32,7 +36,7 @@ namespace Cake.SevenZip.Tests.Builder
                   info = o.Information;
               }));
 
-            Assert.NotNull(info);
+            info.Should().NotBeNull();
         }
 
         [Fact]
@@ -49,7 +53,7 @@ namespace Cake.SevenZip.Tests.Builder
                   output = r;
               }));
 
-            Assert.Equal(Outputs.Information, output);
+            output.Should().BeEquivalentTo(Outputs.Information);
         }
     }
 }

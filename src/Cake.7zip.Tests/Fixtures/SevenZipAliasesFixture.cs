@@ -1,14 +1,14 @@
-namespace Cake.SevenZip.Tests
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.Testing;
+
+using Moq;
+
+namespace Cake.SevenZip.Tests.Fixtures
 {
-    using Cake.Core;
-    using Cake.Core.IO;
-    using Cake.Testing;
-
-    using Moq;
-
     public class SevenZipAliasesFixture : SevenZipRunnerFixture
     {
-        internal ICakeContext Context { get; private set; }
+        internal ICakeContext Context { get; }
 
         public SevenZipAliasesFixture()
         {
@@ -29,7 +29,7 @@ namespace Cake.SevenZip.Tests
 
         protected override void RunTool()
         {
-            SevenZipAliases.SevenZip(Context, Settings);
+            Context.SevenZip(Settings);
         }
     }
 }

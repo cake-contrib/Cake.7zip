@@ -1,13 +1,11 @@
-namespace Cake.SevenZip.Tests
+using Cake.Core.IO;
+using Cake.SevenZip.Builder;
+
+namespace Cake.SevenZip.Tests.Fixtures
 {
-    using Cake.Core.IO;
-    using Cake.SevenZip;
-
-    using Moq;
-
     public class FluentBuilderFixture
     {
-        internal CommandBuilder Context { get; private set; }
+        internal CommandBuilder Context { get; }
 
         public FluentBuilderFixture()
         {

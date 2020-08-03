@@ -1,9 +1,9 @@
-namespace Cake.SevenZip.Tests.Settings
+using System;
+
+using Cake.Core.IO;
+
+namespace Cake.SevenZip.Tests.Fixtures
 {
-    using System;
-
-    using Cake.Core.IO;
-
     public class SevenZipSettingsFixture
     {
         public string Parse(Action<ProcessArgumentBuilder> action)

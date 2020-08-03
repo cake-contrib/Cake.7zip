@@ -1,23 +1,16 @@
-namespace Cake.SevenZip.Tests.Builder
+using System.Linq;
+
+using Cake.SevenZip.Parsers;
+using Cake.SevenZip.Tests.Fixtures;
+
+using FluentAssertions;
+
+using Xunit;
+
+namespace Cake.SevenZip.Tests.Parsers
 {
-    using System;
-    using System.Linq;
-
-    using Xunit;
-
     public class InformationOutputParserTests
     {
-        [Fact]
-        public void InformactionCommand_uses_InformationParser()
-        {
-            var command = new InformationCommand();
-
-            var actual = command.OutputParser;
-
-            Assert.NotNull(actual);
-            Assert.IsType<InformationOutputParser>(actual);
-        }
-
         [Fact]
         public void InformationParser_parses_InfoLine()
         {
@@ -26,7 +19,7 @@ namespace Cake.SevenZip.Tests.Builder
             var actual = parser.Parse(Outputs.Information);
             const string expected = "7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21";
 
-            Assert.Equal(expected, actual.Information);
+            actual.Information.Should().Be(expected);
         }
 
         [Fact]
@@ -60,11 +53,7 @@ namespace Cake.SevenZip.Tests.Builder
  0  ED  6F10701 7zAES
  0  ED  6F00181 AES256CBC".ToArrayOfLines();
 
-            Assert.Equal(expected.Length, actual.Count);
-            foreach (var codec in expected)
-            {
-                Assert.Contains(codec, actual);
-            }
+            actual.Should().BeEquivalentTo(expected);
         }
 
         [Fact]
@@ -75,11 +64,7 @@ namespace Cake.SevenZip.Tests.Builder
             var actual = parser.Parse(Outputs.Information).Libs.ToList();
             var expected = new[] { @" 0  C:\Program Files\7-Zip\7z.dll" };
 
-            Assert.Equal(expected.Length, actual.Count);
-            foreach (var lib in expected)
-            {
-                Assert.Contains(lib, actual);
-            }
+            actual.Should().BeEquivalentTo(expected);
         }
 
         [Fact]
@@ -94,11 +79,8 @@ namespace Cake.SevenZip.Tests.Builder
  0   32        A SHA256
  0    8        4 CRC64
  0   32      202 BLAKE2sp".ToArrayOfLines();
-            Assert.Equal(expected.Length, actual.Count);
-            foreach (var hasher in expected)
-            {
-                Assert.Contains(hasher, actual);
-            }
+
+            actual.Should().BeEquivalentTo(expected);
         }
 
         [Fact]
@@ -164,11 +146,7 @@ namespace Cake.SevenZip.Tests.Builder
  0 C   FMG       zip      zip z01 zipx jar xpi odt ods docx xlsx epub ipa apk appx P K 03 04  ||  P K 05 06  ||  P K 06 06  ||  P K 07 08 P K  ||  P K 0 0 P K"
     .ToArrayOfLines();
 
-            Assert.Equal(expected.Length, actual.Count);
-            foreach (var format in expected)
-            {
-                Assert.Contains(format, actual);
-            }
+            actual.Should().BeEquivalentTo(expected);
         }
     }
 }

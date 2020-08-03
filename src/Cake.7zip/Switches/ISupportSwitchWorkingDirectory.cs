@@ -1,4 +1,6 @@
-namespace Cake.SevenZip
+using Cake.SevenZip.Builder;
+
+namespace Cake.SevenZip.Switches
 {
     /// <summary>.
     /// <para>

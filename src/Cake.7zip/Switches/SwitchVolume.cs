@@ -1,10 +1,11 @@
-namespace Cake.SevenZip
+using System;
+
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.SevenZip.Builder;
+
+namespace Cake.SevenZip.Switches
 {
-    using System;
-
-    using Cake.Core;
-    using Cake.Core.IO;
-
     /// <summary>
     /// <para>
     /// -v (Create Volumes) switch.
@@ -24,20 +25,20 @@ namespace Cake.SevenZip
     public class SwitchVolume : ISwitch
     {
         /// <summary>
-        /// Gets or sets the size.
+        /// Sets the size.
         /// </summary>
         /// <value>
         /// The size. Must be greater than 0.
         /// </value>
-        public int Size { get; set; }
+        public int Size { private get; set; }
 
         /// <summary>
-        /// Gets or sets the unit.
+        /// Sets the unit.
         /// </summary>
         /// <value>
         /// The unit. Default is bytes.
         /// </value>
-        public VolumeUnit Unit { get; set; }
+        public VolumeUnit Unit { private get; set; }
 
         /// <inheritdoc/>
         public void BuildArguments(ref ProcessArgumentBuilder builder)
