@@ -234,36 +234,3 @@ dotnet_naming_style.camelcase.required_suffix =
 dotnet_naming_style.camelcase.word_separator = 
 dotnet_naming_style.camelcase.capitalization = camel_case
 
-## IDE
-
-# IDE0005: Using directive is unnecessary. (but ignore on auto-generated)
-dotnet_diagnostic.IDE0005.severity = warning
-dotnet_diagnostic.IDE0005_gen.severity = none
-
-# IDE0061: Misplaced using directive
-dotnet_diagnostic.IDE0061.severity = suggestion
-
-## SA... StyleCop
-
-# SA1200: Using directives should be placed correctly
-dotnet_diagnostic.SA1200.severity = none
-
-# SA1101: Prefix local calls with this
-dotnet_diagnostic.SA1101.severity = none
-
-# SA1633: File should have header
-dotnet_diagnostic.SA1633.severity = none
-
-## CA... FxCop
-
-# CA1062: Validate arguments of public methods
-dotnet_diagnostic.CA1062.severity = none
-
-# CA1303: Do not pass literals as localized parameters
-dotnet_diagnostic.CA1303.severity = none
-
-# CA1040: Avoid empty interfaces
-dotnet_diagnostic.CA1040.severity = none
-
-# CA1044: collides with r# - rules.
-dotnet_diagnostic.CA1044.severity = none
