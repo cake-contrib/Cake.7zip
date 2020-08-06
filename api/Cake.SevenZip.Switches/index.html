@@ -1,0 +1,1119 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/Cake.7zip/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/Cake.7zip/assets/img/favicon.ico" type="image/x-icon">
+        <title>Cake.7zip - API - Cake.SevenZip.Switches Namespace</title>
+        <link href="/Cake.7zip/assets/css/highlight.css" rel="stylesheet">
+        <link href="/Cake.7zip/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/Cake.7zip/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/Cake.7zip/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/Cake.7zip/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/Cake.7zip/assets/css/override.css" rel="stylesheet">
+        <script src="/Cake.7zip/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/Cake.7zip/assets/js/bootstrap.min.js"></script>        
+        <script src="/Cake.7zip/assets/js/app.min.js"></script>         
+        <script src="/Cake.7zip/assets/js/highlight.pack.js"></script>   
+        <script src="/Cake.7zip/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/Cake.7zip/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/Cake.7zip/assets/js/mermaid.min.js"></script>
+        <script src="/Cake.7zip/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/Cake.7zip/assets/js/html5shiv.min.js"></script>
+        <script src="/Cake.7zip/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/Cake.7zip/" class="logo">
+                            <span>Cake.7zip</span>
+                </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/Cake.7zip/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#InterfaceTypes">Interface Types</a></p>
+<p><a href="#ClassTypes">Class Types</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/Cake.7zip/assets/js/lunr.min.js"></script>
+    <script src="/Cake.7zip/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+	<li class="header">Namespaces</li>   
+
+				<li class="treeview active">
+				<a href="/Cake.7zip/api/Cake">Cake</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+			
+				<li class="treeview active">
+				<a href="/Cake.7zip/api/Cake.SevenZip">Cake<wbr>.SevenZip</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder">Cake<wbr>.SevenZip<wbr>.Builder</a></li>
+			<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands">Cake<wbr>.SevenZip<wbr>.Commands</a></li>
+			<li><a href="/Cake.7zip/api/Cake.SevenZip.Parsers">Cake<wbr>.SevenZip<wbr>.Parsers</a></li>
+			<li class=" selected"><a href="/Cake.7zip/api/Cake.SevenZip.Switches">Cake<wbr>.SevenZip<wbr>.Switches</a></li>
+</ul></li></ul></li>      
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>Cake<wbr>.SevenZip<wbr>.Switches <small>Namespace</small></h1>
+</section>
+<section class="content">
+	
+	
+	
+
+
+			<h1 id="InterfaceTypes">Interface Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Interface</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitch">ISupportSwitch</a></td>
+									<td>
+    Interfaces for all switches.
+    Commands "support" switches by implementing an ISupportSwitch
+    (e.g. <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchPassword">ISupportSwitchPassword</a></code> is implemented in all commands
+    that support setting a password (-p).
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchArchiveType">I<wbr>Support<wbr>Switch<wbr>Archive<wbr>Type</a></td>
+									<td>
+    <p>
+    Command supports switch -t (set Type of archive).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType">SwitchArchiveType</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchArchiveTypeBuilder">SwitchArchiveTypeBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchCompressFilesOpenForWriting">I<wbr>Support<wbr>Switch<wbr>Compress<wbr>Files<wbr>Open<wbr>For<wbr>Writing</a></td>
+									<td>
+    <p>
+    Command supports switch -ssw (Compress files open for writing).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchCompressFilesOpenForWriting">SwitchCompressFilesOpenForWriting</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchCompressFilesOpenForWritingBuilder">SwitchCompressFilesOpenForWritingBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchCompressionMethod">I<wbr>Support<wbr>Switch<wbr>Compression<wbr>Method</a></td>
+									<td>
+    <p>
+    Command supports switch -m (Set compression Method).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchCompressionMethod">SwitchCompressionMethod</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchCompressionMethodBuilder">SwitchCompressionMethodBuilder</a></code>.
+    </p>
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchDeleteAfterCompression">I<wbr>Support<wbr>Switch<wbr>Delete<wbr>After<wbr>Compression</a></td>
+									<td>
+    <p>
+    Command supports switch -sdel (Delete files after compression).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchDeleteAfterCompression">SwitchDeleteAfterCompression</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchDeleteAfterCompressionBuilder">SwitchDeleteAfterCompressionBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchDisableParsingOfArchiveName">I<wbr>Support<wbr>Switch<wbr>Disable<wbr>Parsing<wbr>Of<wbr>Archive<wbr>Name</a></td>
+									<td>
+    <p>
+    Command supports switch -an (Disable parsing of archive_name).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchDisableParsingOfArchiveName">SwitchDisableParsingOfArchiveName</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchDisableParsingOfArchiveNameBuilder">SwitchDisableParsingOfArchiveNameBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchExcludeArchiveFilenames">I<wbr>Support<wbr>Switch<wbr>Exclude<wbr>Archive<wbr>Filenames</a></td>
+									<td>
+    <p>
+    Command supports switch -ax (Exclude archive filenames).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeArchiveFilenameCollection">SwitchExcludeArchiveFilenameCollection</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchExcludeArchiveFilenamesBuilder">SwitchExcludeArchiveFilenamesBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchExcludeFilenames">I<wbr>Support<wbr>Switch<wbr>Exclude<wbr>Filenames</a></td>
+									<td>
+    <p>
+    Command supports switch -x (Exclude filenames).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilenameCollection">SwitchExcludeFilenameCollection</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchExcludeFilenamesBuilder">SwitchExcludeFilenamesBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchFullyQualifiedFilePaths">I<wbr>Support<wbr>Switch<wbr>Fully<wbr>Qualified<wbr>File<wbr>Paths</a></td>
+									<td>
+    <p>
+    Command supports switch -spf/-spf2 (Use fully qualified file paths).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchFullyQualifiedFilePaths">SwitchFullyQualifiedFilePaths</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchFullyQualifiedFilePathsBuilder">SwitchFullyQualifiedFilePathsBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchIncludeArchiveFilenames">I<wbr>Support<wbr>Switch<wbr>Include<wbr>Archive<wbr>Filenames</a></td>
+									<td>
+    <p>
+    Command supports switch -ai (Include archive filenames).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeArchiveFilenameCollection">SwitchIncludeArchiveFilenameCollection</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchIncludeArchiveFilenamesBuilder">SwitchIncludeArchiveFilenamesBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchIncludeFilenames">I<wbr>Support<wbr>Switch<wbr>Include<wbr>Filenames</a></td>
+									<td>
+    <p>
+    Command supports switch -i (Include filenames).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilenameCollection">SwitchIncludeFilenameCollection</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchIncludeFilenamesBuilder">SwitchIncludeFilenamesBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchNtfsAlternateStreams">I<wbr>Support<wbr>Switch<wbr>Ntfs<wbr>Alternate<wbr>Streams</a></td>
+									<td>
+    <p>
+    Command supports switch -sns (NTFS alternate Streams).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchNtfsAlternateStreams">SwitchNtfsAlternateStreams</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchNtfsAlternateStreamsBuilder">SwitchNtfsAlternateStreamsBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchNtSecurityInformation">I<wbr>Support<wbr>Switch<wbr>Nt<wbr>Security<wbr>Information</a></td>
+									<td>
+    <p>
+    Command supports switch -sni (NT security information).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchNtSecurityInformation">SwitchNtSecurityInformation</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchNtSecurityInformationBuilder">SwitchNtSecurityInformationBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchOutputDirectory">I<wbr>Support<wbr>Switch<wbr>Output<wbr>Directory</a></td>
+									<td>
+    <p>
+    Command supports switch -o (set Output directory).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchOutputDirectory">SwitchOutputDirectory</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchOutputDirectoryBuilder">SwitchOutputDirectoryBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchOverwriteMode">I<wbr>Support<wbr>Switch<wbr>Overwrite<wbr>Mode</a></td>
+									<td>
+    <p>
+    Command supports switch -ao (Overwrite mode).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchOverwriteMode">SwitchOverwriteMode</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchOverwriteModeBuilder">SwitchOverwriteModeBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchPassword">I<wbr>Support<wbr>Switch<wbr>Password</a></td>
+									<td>
+    <p>
+    Command supports switch -p (set Password) .
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchPassword">SwitchPassword</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchPasswordBuilder">SwitchPasswordBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchRecurseSubdirectories">I<wbr>Support<wbr>Switch<wbr>Recurse<wbr>Subdirectories</a></td>
+									<td>
+    <p>
+    Command supports switch -r (Recurse subdirectories).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchRecurseSubdirectories">SwitchRecurseSubdirectories</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchRecurseSubdirectoriesBuilder">SwitchRecurseSubdirectoriesBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchSelfExtractingArchive">I<wbr>Support<wbr>Switch<wbr>Self<wbr>Extracting<wbr>Archive</a></td>
+									<td>
+    <p>
+    Command supports switch -sfx (Create SFX archive).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSelfExtractingArchive">SwitchSelfExtractingArchive</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSelfExtractingArchiveBuilder">SwitchSelfExtractingArchiveBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchTimestampFromMostRecentFile">I<wbr>Support<wbr>Switch<wbr>Timestamp<wbr>From<wbr>Most<wbr>Recent<wbr>File</a></td>
+									<td>
+    <p>
+    Command supports switch -stl (Set archive time-stamp from the most recently modified file).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSetTimestampFromMostRecentFile">SwitchSetTimestampFromMostRecentFile</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSetTimestampFromMostRecentFileBuilder">SwitchSetTimestampFromMostRecentFileBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchUpdateOptions">I<wbr>Support<wbr>Switch<wbr>Update<wbr>Options</a></td>
+									<td>
+    <p>
+    Command supports switch -u (Update options).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchUpdateOptions">SwitchUpdateOptions</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchUpdateOptionsBuilder">SwitchUpdateOptionsBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchVolume">ISupportSwitchVolume</a></td>
+									<td>
+    <p>
+    Command supports switch -v (Create Volumes).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolumeCollection">SwitchVolumeCollection</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchVolumeBuilder">SwitchVolumeBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchWorkingDirectory">I<wbr>Support<wbr>Switch<wbr>Working<wbr>Directory</a></td>
+									<td>.
+    <p>
+    Command supports switch -w (Working directory).
+    </p>
+    <p>
+    The Switch is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchWorkingDirectory">SwitchWorkingDirectory</a></code>.
+    </p>
+    <p>
+    The Builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchWorkingDirectoryBuilder">SwitchWorkingDirectoryBuilder</a></code>.
+    </p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISwitch">ISwitch</a></td>
+									<td>
+    Base for all Switches.
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+			<h1 id="ClassTypes">Class Types</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Class</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/BaseBoolSwitch">BaseBoolSwitch</a></td>
+									<td>
+    BaseClass for simple boolean switches.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/BaseSwitchCollection_1">BaseSwitchCollection</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Switches/BaseSwitchCollection_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    Base for switches that can be given multiple times.
+    An example is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchExcludeFilenames">ISupportSwitchExcludeFilenames</a></code> (-x!*.pdf -x!*.xml) which uses
+    <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilenameCollection">SwitchExcludeFilenameCollection</a></code> (which implements this BaseCollection) to set
+    multiple <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilename">SwitchExcludeFilename</a></code>.
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/OverwriteMode">OverwriteMode</a></td>
+									<td>
+    <p>
+    Specifies the overwrite mode during extraction, to overwrite files already present on disk.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchOverwriteMode">SwitchOverwriteMode</a></code></span></li>
+    </ul>
+    <p></p>
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/RecurseType">RecurseType</a></td>
+									<td>
+    <p>
+    Specifies the method of treating wildcards and filenames on the command line.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilename">SwitchIncludeFilename</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilename">SwitchExcludeFilename</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeArchiveFilename">SwitchIncludeArchiveFilename</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeArchiveFilename">SwitchExcludeArchiveFilename</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchRecurseSubdirectories">SwitchRecurseSubdirectories</a></code></span></li>
+    </ul>
+    <p></p>
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType">SwitchArchiveType</a></td>
+									<td>
+    <p>
+    -t (set Type of archive) switch.
+    </p>
+    <p>
+    Specifies the type of archive.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchArchiveType">ISupportSwitchArchiveType</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchArchiveTypeBuilder">SwitchArchiveTypeBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchCompressFilesOpenForWriting">Switch<wbr>Compress<wbr>Files<wbr>Open<wbr>For<wbr>Writing</a></td>
+									<td>
+    <p>
+    -ssw (Compress files open for writing) switch.
+    </p>
+    <p>
+    Compresses files open for writing by another applications.
+    If this switch is not set, 7-zip doesn't include such files to archive.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchCompressFilesOpenForWriting">ISupportSwitchCompressFilesOpenForWriting</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchCompressFilesOpenForWritingBuilder">SwitchCompressFilesOpenForWritingBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchCompressionMethod">Switch<wbr>Compression<wbr>Method</a></td>
+									<td>
+    <p>
+    -m (Set compression Method) switch.
+    </p>
+    <p>
+    Specifies the compression method.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchCompressionMethod">ISupportSwitchCompressionMethod</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchCompressionMethodBuilder">SwitchCompressionMethodBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchDeleteAfterCompression">Switch<wbr>Delete<wbr>After<wbr>Compression</a></td>
+									<td>
+    <p>
+    -sdel (Delete files after compression) switch.
+    </p>
+    <p>
+    If -sdel switch is specified, 7-Zip deletes files after including to archive.
+    So it works like moving files to archive.
+    7-Zip deletes files at the end of operation and only if archive was successfully created.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchDeleteAfterCompression">ISupportSwitchDeleteAfterCompression</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchDeleteAfterCompressionBuilder">SwitchDeleteAfterCompressionBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchDisableParsingOfArchiveName">Switch<wbr>Disable<wbr>Parsing<wbr>Of<wbr>Archive<wbr>Name</a></td>
+									<td>
+    <p>
+    -an (Disable parsing of archive_name) switch.
+    </p>
+    <p>
+    Disables parsing of the archive_name field on the command line.
+    This switch must be used with the -ai (Include archives) switch.
+    If you use a file list for your archives, you specify it with the -ai switch,
+    so you need to disable parsing of archive_name field from command line.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchDisableParsingOfArchiveName">ISupportSwitchDisableParsingOfArchiveName</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchDisableParsingOfArchiveNameBuilder">SwitchDisableParsingOfArchiveNameBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeArchiveFilename">Switch<wbr>Exclude<wbr>Archive<wbr>Filename</a></td>
+									<td>
+    <p>
+    -ax (Exclude archive filenames) switch.
+    </p>
+    <p>
+    Specifies archives to be excluded from the operation.
+    Multiple exclude archive switches are supported.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchExcludeArchiveFilenames">ISupportSwitchExcludeArchiveFilenames</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchExcludeArchiveFilenamesBuilder">SwitchExcludeArchiveFilenamesBuilder</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeArchiveFilenameCollection">SwitchExcludeArchiveFilenameCollection</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeArchiveFilenameCollection">Switch<wbr>Exclude<wbr>Archive<wbr>Filename<wbr>Collection</a></td>
+									<td>
+    A Collection of <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeArchiveFilename">SwitchExcludeArchiveFilename</a></code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilename">Switch<wbr>Exclude<wbr>Filename</a></td>
+									<td>
+    <p>
+    -x (Exclude filenames) switch.
+    </p>
+    <p>
+    Specifies which filenames or wildcard-names must be excluded from the operation.
+    Multiple exclude switches are supported.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchExcludeFilenames">ISupportSwitchExcludeFilenames</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchExcludeFilenamesBuilder">SwitchExcludeFilenamesBuilder</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilenameCollection">SwitchExcludeFilenameCollection</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilenameCollection">Switch<wbr>Exclude<wbr>Filename<wbr>Collection</a></td>
+									<td>
+    A Collection of <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilename">SwitchExcludeFilename</a></code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchFullyQualifiedFilePaths">Switch<wbr>Fully<wbr>Qualified<wbr>File<wbr>Paths</a></td>
+									<td>
+    -spf (Use fully qualified file paths) switch.
+    (Also, -spf2 for full paths without drive letters.)
+    <p>
+    Enables the mode that allows to use fully qualified file paths in archives.
+    If -spf switch is not specified, 7-Zip reduces file paths to relative paths when
+    it adds files to archive, and 7-Zip converts paths to relative paths when you extract archive.
+    If -spf switch is specified, 7-Zip doesn't try to process or convert paths.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchFullyQualifiedFilePaths">ISupportSwitchFullyQualifiedFilePaths</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchFullyQualifiedFilePathsBuilder">SwitchFullyQualifiedFilePathsBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeArchiveFilename">Switch<wbr>Include<wbr>Archive<wbr>Filename</a></td>
+									<td>
+    <p>
+    -ai (Include archive filenames) switch.
+    </p>
+    <p>
+    Specifies additional include archive filenames and wildcards.
+    Multiple include switches are supported.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchExcludeFilenames">ISupportSwitchExcludeFilenames</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchExcludeFilenamesBuilder">SwitchExcludeFilenamesBuilder</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilenameCollection">SwitchExcludeFilenameCollection</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeArchiveFilenameCollection">Switch<wbr>Include<wbr>Archive<wbr>Filename<wbr>Collection</a></td>
+									<td>
+    A Collection of <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeArchiveFilename">SwitchIncludeArchiveFilename</a></code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilename">Switch<wbr>Include<wbr>Filename</a></td>
+									<td>
+    <p>
+    -i (Include filenames) switch.
+    </p>
+    <p>
+    Specifies additional include filenames and wildcards.
+    Multiple include switches are supported.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchIncludeFilenames">ISupportSwitchIncludeFilenames</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchIncludeFilenamesBuilder">SwitchIncludeFilenamesBuilder</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilenameCollection">SwitchIncludeFilenameCollection</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilenameCollection">Switch<wbr>Include<wbr>Filename<wbr>Collection</a></td>
+									<td>
+    A Collection of <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilename">SwitchIncludeFilename</a></code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchNtfsAlternateStreams">Switch<wbr>Ntfs<wbr>Alternate<wbr>Streams</a></td>
+									<td>
+    <p>
+    -sns (Store NTFS alternate Streams) switch.
+    </p>
+    <p>
+    If -sns mode is enabled, 7-Zip processes NTFS Alternate Data Streams for files and folders.
+    Current version of 7-Zip can store NTFS alternate streams only to WIM archives.
+    Note: 7-Zip can't include alternate streams to archives on 32-bit Windows XP and older systems.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchNtfsAlternateStreams">ISupportSwitchNtfsAlternateStreams</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchNtfsAlternateStreamsBuilder">SwitchNtfsAlternateStreamsBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchNtSecurityInformation">Switch<wbr>Nt<wbr>Security<wbr>Information</a></td>
+									<td>
+    <p>
+    -sni (Store NT security information) switch.
+    </p>
+    <p>
+    Use this switch to store and restore NT (NTFS) security information for files and directories.
+    Note that only NTFS file system supports that feature.
+    Current version of 7-Zip can store NT security information only to WIM archives.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchNtSecurityInformation">ISupportSwitchNtSecurityInformation</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchNtSecurityInformationBuilder">SwitchNtSecurityInformationBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchOutputDirectory">Switch<wbr>Output<wbr>Directory</a></td>
+									<td>
+    <p>
+    -o (set Output directory) switch.
+    </p>
+    <p>
+    Specifies a destination directory where files are to be extracted.
+    This switch can be used only with extraction commands.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchOutputDirectory">ISupportSwitchOutputDirectory</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchOutputDirectoryBuilder">SwitchOutputDirectoryBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchOverwriteMode">SwitchOverwriteMode</a></td>
+									<td>
+    <p>
+    -ao (Overwrite mode) switch.
+    </p>
+    <p>
+    Specifies the overwrite mode during extraction, to overwrite files already present on disk.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchOverwriteMode">ISupportSwitchOverwriteMode</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchOverwriteModeBuilder">SwitchOverwriteModeBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchPassword">SwitchPassword</a></td>
+									<td>
+    <p>
+    -p (set Password) switch.
+    </p>
+    <p>
+    Specifies password.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchPassword">ISupportSwitchPassword</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchPasswordBuilder">SwitchPasswordBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchRecurseSubdirectories">Switch<wbr>Recurse<wbr>Subdirectories</a></td>
+									<td>
+    <p>
+    -r (Recurse subdirectories) switch.
+    </p>
+    <p>
+    Specifies the method of treating wildcards and filenames on the command line.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchRecurseSubdirectories">ISupportSwitchRecurseSubdirectories</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchRecurseSubdirectoriesBuilder">SwitchRecurseSubdirectoriesBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSelfExtractingArchive">Switch<wbr>Self<wbr>Extracting<wbr>Archive</a></td>
+									<td>
+    <p>
+    -sfx (Create SFX archive) switch.
+    </p>
+    <p>
+    Specifies the SFX module that will be combined with the archive.
+    This module must be placed in the same directory as the 7z.exe.
+    If {SFX_Module} is not assigned, 7-Zip will use standard console SFX module 7zCon.sfx.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchSelfExtractingArchive">ISupportSwitchSelfExtractingArchive</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSelfExtractingArchiveBuilder">SwitchSelfExtractingArchiveBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSetTimestampFromMostRecentFile">Switch<wbr>Set<wbr>Timestamp<wbr>From<wbr>Most<wbr>Recent<wbr>File</a></td>
+									<td>
+    <p>
+    -stl (Set archive time-stamp from the most recently modified file) switch.
+    </p>
+    <p>
+    If -stl switch is specified, 7-Zip sets time-stamp for archive file as
+    time-stamp from the most recently modified file in that archive.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchTimestampFromMostRecentFile">ISupportSwitchTimestampFromMostRecentFile</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSetTimestampFromMostRecentFileBuilder">SwitchSetTimestampFromMostRecentFileBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchUpdateOptions">SwitchUpdateOptions</a></td>
+									<td>
+    <p>
+    -u (Update options) switch.
+    </p>
+    <p>
+    Specifies how to update files in an archive and (or) how to create new archives.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchUpdateOptions">ISupportSwitchUpdateOptions</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchUpdateOptionsBuilder">SwitchUpdateOptionsBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolume">SwitchVolume</a></td>
+									<td>
+    <p>
+    -v (Create Volumes) switch.
+    </p>
+    <p>
+    Specifies volume sizes.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchVolume">ISupportSwitchVolume</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchVolumeBuilder">SwitchVolumeBuilder</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolumeCollection">SwitchVolumeCollection</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolumeCollection">Switch<wbr>Volume<wbr>Collection</a></td>
+									<td>
+    A Collection of <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolume">SwitchVolume</a></code>.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchWorkingDirectory">Switch<wbr>Working<wbr>Directory</a></td>
+									<td>
+    <p>
+    -w (set Working directory) switch.
+    </p>
+    <p>
+    Sets the working directory for the temporary base archive.
+    By default, 7-Zip builds a new base archive file in the same
+    directory as the old base archive file. By specifying this switch,
+    you can set the working directory where the temporary base archive file will be built.
+    After the temporary base archive file is built, it is copied over the original archive;
+    then, the temporary file is deleted.
+    </p>
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchWorkingDirectory">ISupportSwitchWorkingDirectory</a></code></span></li>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchWorkingDirectoryBuilder">SwitchWorkingDirectoryBuilder</a></code></span></li>
+    </ul>
+    <p></p>
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/UpdateAction">UpdateAction</a></td>
+									<td>
+    Specifies the action for a given <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchUpdateOptions">SwitchUpdateOptions</a></code>-State.
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchUpdateOptions">SwitchUpdateOptions</a></code></span></li>
+    </ul>
+    <p></p>
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/VolumeUnit">VolumeUnit</a></td>
+									<td>
+    Units for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchCompressionMethod">SwitchCompressionMethod</a></code>.
+    <p>
+    </p><ul>
+    <li><span class="description"><code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchUpdateOptions">SwitchUpdateOptions</a></code></span></li>
+    </ul>
+    <p></p>
+    </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Generated by <a href="https://wyam.io">Wyam</a>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>
