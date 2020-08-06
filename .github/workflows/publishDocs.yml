@@ -1,0 +1,25 @@
+name: Publish Documentation
+
+on:
+  workflow_dispatch
+
+env:
+  WYAM_ACCESS_TOKEN: ${{ secrets.API_TOKEN }}
+  # secrets.GITHUB_TOKEN has no permissions to push, sadly.
+  WYAM_DEPLOY_BRANCH: 'gh-pages'
+  #WYAM_DEPLOY_REMOTE: does not exist in any context, will be dynamically set - see below
+
+jobs:
+  cake:
+    runs-on: windows-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2 #https://github.com/actions/checkout
+      with:
+        fetch-depth: 0 # GitVersion is somewhat irritated when fetch-depth is "1"....
+    
+    - name: call cake
+      run: |
+        $env:WYAM_DEPLOY_REMOTE = $( git remote get-url --push origin )
+        .\build.ps1 -Target PublishDocs -Verbosity Diagnostic
