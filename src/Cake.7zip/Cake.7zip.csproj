@@ -18,7 +18,6 @@
         <Authors>Nils Andresen</Authors>
         <Copyright>Copyright © $(FullYear) — Nils Andresen</Copyright>
         <Description>makes 7zip available as a tool in cake</Description>
-        <PackageIconUrl></PackageIconUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://cake-contrib.github.io/Cake.7zip</PackageProjectUrl>
         <PackageTags>cake;addin;SevenZip</PackageTags>
