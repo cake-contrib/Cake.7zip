@@ -5,6 +5,7 @@
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <CodeAnalysisRuleSet>..\cake.7zip.ruleset</CodeAnalysisRuleSet>
     </PropertyGroup>
 
     <PropertyGroup>

@@ -3,6 +3,7 @@
     <PropertyGroup>
         <TargetFrameworks>netcoreapp2.1</TargetFrameworks>
         <TargetFrameworks Condition="'$(OS)'!='Unix'">$(TargetFrameworks);net461</TargetFrameworks>
+        <CodeAnalysisRuleSet>..\cake.7zip.ruleset</CodeAnalysisRuleSet>
 
         <IsPackable>false</IsPackable>
 
