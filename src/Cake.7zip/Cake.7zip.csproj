@@ -5,6 +5,7 @@
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <CodeAnalysisRuleSet>..\cake.7zip.ruleset</CodeAnalysisRuleSet>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -17,7 +18,6 @@
         <Authors>Nils Andresen</Authors>
         <Copyright>Copyright © $(FullYear) — Nils Andresen</Copyright>
         <Description>makes 7zip available as a tool in cake</Description>
-        <PackageIconUrl></PackageIconUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://cake-contrib.github.io/Cake.7zip</PackageProjectUrl>
         <PackageTags>cake;addin;SevenZip</PackageTags>
@@ -26,6 +26,7 @@
         <RootNamespace>Cake.SevenZip</RootNamespace>
         <Version>0.0.1</Version>
         <PackageIcon>icon.png</PackageIcon>
+        <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics/png/cake-contrib-medium.png</PackageIconUrl>
     </PropertyGroup>
 
     <ItemGroup>
