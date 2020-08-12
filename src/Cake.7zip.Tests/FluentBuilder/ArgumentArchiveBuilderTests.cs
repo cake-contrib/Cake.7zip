@@ -1,6 +1,6 @@
 using Cake.Core.IO;
+using Cake.SevenZip.Arguments;
 using Cake.SevenZip.Builder;
-using Cake.SevenZip.Commands;
 
 using FluentAssertions;
 

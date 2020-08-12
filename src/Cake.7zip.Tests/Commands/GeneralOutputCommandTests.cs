@@ -15,7 +15,7 @@ namespace Cake.SevenZip.Tests.Commands
     {
         [Theory]
         [ClassData(typeof(TestData))]
-        public void OutputCommand_uses_its_own_parser<T>(OutputCommand<T> command, Type expectedParserType)
+        public void OutputCommand_uses_its_own_parser<T>(BaseOutputCommand<T> command, Type expectedParserType)
             where T : IOutput
         {
             var actual = command.OutputParser;
@@ -29,6 +29,7 @@ namespace Cake.SevenZip.Tests.Commands
             {
                 yield return new object[] { new InformationCommand(), typeof(InformationOutputParser) };
                 yield return new object[] { new TestCommand(), typeof(TestOutputParser) };
+                yield return new object[] { new HashCommand(), typeof(HashOutputParser) };
             }
 
             IEnumerator IEnumerable.GetEnumerator()

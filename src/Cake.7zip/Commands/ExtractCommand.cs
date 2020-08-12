@@ -2,6 +2,8 @@ using System;
 
 using Cake.Core;
 using Cake.Core.IO;
+using Cake.SevenZip.Arguments;
+using Cake.SevenZip.Builder;
 using Cake.SevenZip.Switches;
 
 namespace Cake.SevenZip.Commands
@@ -19,6 +21,9 @@ namespace Cake.SevenZip.Commands
     /// With UseFullPath set to true, this represents the x-command:
     /// Extracts files from an archive with their full paths in the current directory,
     /// or in an output directory if specified.
+    /// </para>
+    /// <para>
+    /// The builder is <see cref="ExtractCommandBuilder"/>.
     /// </para>
     /// </summary>
     public sealed class ExtractCommand : ICommand,

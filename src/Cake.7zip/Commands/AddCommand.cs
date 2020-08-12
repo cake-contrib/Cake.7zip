@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+using Cake.SevenZip.Builder;
 using Cake.SevenZip.Switches;
 
 namespace Cake.SevenZip.Commands
@@ -7,6 +8,9 @@ namespace Cake.SevenZip.Commands
     /// <summary>
     /// Adds files to archive.
     /// (Command: a).
+    /// <para>
+    /// The builder is <see cref="AddCommandBuilder"/>.
+    /// </para>
     /// </summary>
     public sealed class AddCommand : BaseAddLikeSyntaxCommand,
         ICommand,

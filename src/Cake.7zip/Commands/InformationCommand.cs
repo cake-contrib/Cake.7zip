@@ -1,5 +1,6 @@
 using Cake.Core;
 using Cake.Core.IO;
+using Cake.SevenZip.Builder;
 using Cake.SevenZip.Parsers;
 
 namespace Cake.SevenZip.Commands
@@ -7,9 +8,12 @@ namespace Cake.SevenZip.Commands
     /// <summary>
     /// Show information about supported formats
     /// (Command: i).
+    /// <para>
+    /// The builder is <see cref="InformationCommandBuilder"/>.
+    /// </para>
     /// </summary>
     public sealed class InformationCommand :
-        OutputCommand<IInformationOutput>
+        BaseOutputCommand<IInformationOutput>
     {
         private readonly InformationOutputParser outputParser;
 

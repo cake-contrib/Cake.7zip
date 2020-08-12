@@ -11,7 +11,7 @@ namespace Cake.SevenZip.Commands
     /// base for all commands that have output. (E.g. <see cref="InformationCommand"/>).
     /// </summary>
     /// <typeparam name="T">The type on the output.</typeparam>
-    public abstract class OutputCommand<T> :
+    public abstract class BaseOutputCommand<T> :
         ICommand,
         ICanParseOutput
         where T : IOutput

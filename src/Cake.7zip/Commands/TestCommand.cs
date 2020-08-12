@@ -2,6 +2,8 @@ using System;
 
 using Cake.Core;
 using Cake.Core.IO;
+using Cake.SevenZip.Arguments;
+using Cake.SevenZip.Builder;
 using Cake.SevenZip.Parsers;
 using Cake.SevenZip.Switches;
 
@@ -10,9 +12,12 @@ namespace Cake.SevenZip.Commands
     /// <summary>
     /// Test one or more archives
     /// (Command: t).
+    /// <para>
+    /// The builder is <see cref="TestCommandBuilder"/>.
+    /// </para>
     /// </summary>
     public sealed class TestCommand :
-        OutputCommand<ITestOutput>,
+        BaseOutputCommand<ITestOutput>,
         IHaveArgumentArchive,
         IHaveArgumentFiles,
         ISupportSwitchIncludeArchiveFilenames,

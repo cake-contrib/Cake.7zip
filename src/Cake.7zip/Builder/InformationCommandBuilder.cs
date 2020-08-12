@@ -39,6 +39,6 @@ namespace Cake.SevenZip.Builder
         }
 
         /// <inheritdoc/>
-        protected override OutputCommand<IInformationOutput> OutputCommand => command;
+        protected override BaseOutputCommand<IInformationOutput> OutputCommand => command;
     }
 }

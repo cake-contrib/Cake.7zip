@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using Cake.Core;
 using Cake.Core.IO;
+using Cake.SevenZip.Arguments;
 using Cake.SevenZip.Switches;
 
 namespace Cake.SevenZip.Commands
