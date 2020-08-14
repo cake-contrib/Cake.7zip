@@ -1,4 +1,4 @@
-using Cake.SevenZip.Commands;
+using Cake.SevenZip.Arguments;
 
 namespace Cake.SevenZip.Builder
 {

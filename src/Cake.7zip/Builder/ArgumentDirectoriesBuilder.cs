@@ -1,6 +1,7 @@
 using System.Linq;
 
 using Cake.Core.IO;
+using Cake.SevenZip.Arguments;
 using Cake.SevenZip.Commands;
 
 namespace Cake.SevenZip.Builder

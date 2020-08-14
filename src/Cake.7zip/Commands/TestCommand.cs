@@ -1,7 +1,9 @@
-using System;
+using System.Collections.Generic;
 
 using Cake.Core;
 using Cake.Core.IO;
+using Cake.SevenZip.Arguments;
+using Cake.SevenZip.Builder;
 using Cake.SevenZip.Parsers;
 using Cake.SevenZip.Switches;
 
@@ -10,9 +12,12 @@ namespace Cake.SevenZip.Commands
     /// <summary>
     /// Test one or more archives
     /// (Command: t).
+    /// <para>
+    /// The builder is <see cref="TestCommandBuilder"/>.
+    /// </para>
     /// </summary>
     public sealed class TestCommand :
-        OutputCommand<ITestOutput>,
+        BaseOutputCommand<ITestOutput>,
         IHaveArgumentArchive,
         IHaveArgumentFiles,
         ISupportSwitchIncludeArchiveFilenames,
@@ -67,39 +72,29 @@ namespace Cake.SevenZip.Commands
         /// <inheritdoc/>
         internal override IOutputParser<ITestOutput> OutputParser => outputParser;
 
-        /// <inheritdoc/>
-        public override void BuildArguments(ref ProcessArgumentBuilder builder)
+        /// <inheritdoc />
+        protected override string CommandChar { get; } = "t";
+
+        /// <inheritdoc />
+        protected override IEnumerable<ISwitch> Switches => new ISwitch[]
         {
-            if (Archive == null)
-            {
-                throw new ArgumentException("Archive is required for extract.");
-            }
+            IncludeArchiveFilenames,
+            ExcludeArchiveFilenames,
+            DisableParsingOfArchiveName,
+            IncludeFilenames,
+            ExcludeFilenames,
+            Password,
+            NtfsAlternateStreams,
+            RecurseSubdirectories,
+        };
 
-            builder.Append("t");
+        /// <inheritdoc/>
+        protected override void BuildArgumentParams(ref ProcessArgumentBuilder builder)
+        {
+            Archive.RequireNotNull("Archive is required for extract.");
+
             builder.AppendQuoted(Archive.FullPath);
-
-            if (Files != null)
-            {
-                foreach (var file in Files)
-                {
-                    builder.AppendQuoted(file.FullPath);
-                }
-            }
-
-            foreach (var sw in new ISwitch[]
-            {
-                IncludeArchiveFilenames,
-                ExcludeArchiveFilenames,
-                DisableParsingOfArchiveName,
-                IncludeFilenames,
-                ExcludeFilenames,
-                Password,
-                NtfsAlternateStreams,
-                RecurseSubdirectories,
-            })
-            {
-                sw?.BuildArguments(ref builder);
-            }
+            builder.AppendPathsNullSafe(Files);
         }
     }
 }

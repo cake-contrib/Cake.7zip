@@ -1,3 +1,4 @@
+using Cake.SevenZip.Arguments;
 using Cake.SevenZip.Commands;
 using Cake.SevenZip.Parsers;
 using Cake.SevenZip.Switches;
@@ -84,6 +85,6 @@ namespace Cake.SevenZip.Builder
         ISupportSwitchRecurseSubdirectories ISupportSwitchBuilder<ISupportSwitchRecurseSubdirectories>.Command => command;
 
         /// <inheritdoc/>
-        protected override OutputCommand<ITestOutput> OutputCommand => command;
+        protected override BaseOutputCommand<ITestOutput> OutputCommand => command;
     }
 }

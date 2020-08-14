@@ -1,3 +1,4 @@
+using Cake.SevenZip.Arguments;
 using Cake.SevenZip.Commands;
 using Cake.SevenZip.Switches;
 

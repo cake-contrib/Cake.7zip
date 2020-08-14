@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
+using Cake.SevenZip.Arguments;
 using Cake.SevenZip.Builder;
 using Cake.SevenZip.Commands;
 using Cake.SevenZip.Switches;

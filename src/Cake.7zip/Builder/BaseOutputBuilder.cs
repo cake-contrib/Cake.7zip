@@ -6,10 +6,10 @@ using Cake.SevenZip.Parsers;
 namespace Cake.SevenZip.Builder
 {
     /// <summary>
-    /// Base for builders that support <see cref="OutputCommand{T}"/>.
+    /// Base for builders that support <see cref="BaseOutputCommand{T}"/>.
     /// </summary>
     /// <typeparam name="TBuilder">the command-builder that extends this base-class. Only needed for "nice" fluid-tying.</typeparam>
-    /// <typeparam name="TOutput">the output of the <see cref="OutputCommand{T}"/> supported by this builder.</typeparam>
+    /// <typeparam name="TOutput">the output of the <see cref="BaseOutputCommand{T}"/> supported by this builder.</typeparam>
     public abstract class BaseOutputBuilder<TBuilder, TOutput>
         where TBuilder : BaseOutputBuilder<TBuilder, TOutput>
         where TOutput : IOutput
@@ -20,13 +20,13 @@ namespace Cake.SevenZip.Builder
         /// <value>
         /// The output command.
         /// </value>
-        protected abstract OutputCommand<TOutput> OutputCommand { get; }
+        protected abstract BaseOutputCommand<TOutput> OutputCommand { get; }
 
         // the following are no extensions (and this is no interface), because all those crazy generics can't be
         // automatically resolved in an extension. That would lead to bad non-fluid-typing in the DSL...
 
         /// <summary>
-        /// fluent action to set the output-action of <see cref="OutputCommand{T}"/>.
+        /// fluent action to set the output-action of <see cref="BaseOutputCommand{T}"/>.
         /// </summary>
         /// <param name="outputAction">the action to perform on the output.</param>
         /// <returns>The builder-instance for fluent re-use.</returns>
@@ -37,7 +37,7 @@ namespace Cake.SevenZip.Builder
         }
 
         /// <summary>
-        /// fluent action to set the raw-output of <see cref="OutputCommand{T}"/>.
+        /// fluent action to set the raw-output of <see cref="BaseOutputCommand{T}"/>.
         /// </summary>
         /// <param name="rawOutputAction">the action to perform on the output.</param>
         /// <returns>The builder-instance for fluent re-use.</returns>

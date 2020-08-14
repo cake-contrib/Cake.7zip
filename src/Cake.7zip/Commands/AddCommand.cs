@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+using Cake.SevenZip.Builder;
 using Cake.SevenZip.Switches;
 
 namespace Cake.SevenZip.Commands
@@ -7,6 +8,9 @@ namespace Cake.SevenZip.Commands
     /// <summary>
     /// Adds files to archive.
     /// (Command: a).
+    /// <para>
+    /// The builder is <see cref="AddCommandBuilder"/>.
+    /// </para>
     /// </summary>
     public sealed class AddCommand : BaseAddLikeSyntaxCommand,
         ICommand,
@@ -76,30 +80,30 @@ namespace Cake.SevenZip.Commands
         public SwitchFullyQualifiedFilePaths FullyQualifiedFilePaths { get; set; }
 
         /// <inheritdoc/>
-        protected override string CommandName => "add";
+        protected override string CommandName { get; } = "add";
 
         /// <inheritdoc/>
-        protected override string CommandChar => "a";
+        protected override string CommandChar { get; } = "a";
 
         /// <inheritdoc/>
         protected override IEnumerable<ISwitch> Switches => new ISwitch[]
-        {
-            ArchiveType,
-            Volumes,
-            CompressionMethod,
-            Password,
-            NtSecurityInformation,
-            NtfsAlternateStreams,
-            CompressFilesOpenForWriting,
-            TimestampFromMostRecentFile,
-            WorkingDirectory,
-            RecurseSubdirectories,
-            IncludeFilenames,
-            ExcludeFilenames,
-            UpdateOptions,
-            DeleteAfterCompression,
-            SelfExtractingArchive,
-            FullyQualifiedFilePaths,
-        };
+            {
+                ArchiveType,
+                Volumes,
+                CompressionMethod,
+                Password,
+                NtSecurityInformation,
+                NtfsAlternateStreams,
+                CompressFilesOpenForWriting,
+                TimestampFromMostRecentFile,
+                WorkingDirectory,
+                RecurseSubdirectories,
+                IncludeFilenames,
+                ExcludeFilenames,
+                UpdateOptions,
+                DeleteAfterCompression,
+                SelfExtractingArchive,
+                FullyQualifiedFilePaths,
+            };
     }
 }

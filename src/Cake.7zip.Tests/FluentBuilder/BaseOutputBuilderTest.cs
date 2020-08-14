@@ -20,7 +20,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
         public void WithCommandOutput_returns_the_builder()
         {
             var expected = new MockOutputBuilder();
-            var command = new Mock<OutputCommand<IOutput>>();
+            var command = new Mock<BaseOutputCommand<IOutput>>();
             expected.MockCommand = command.Object;
 
             var actual = expected.WithCommandOutput(null);
@@ -32,7 +32,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
         public void WithCommandRawOutput_returns_the_builder()
         {
             var expected = new MockOutputBuilder();
-            var command = new Mock<OutputCommand<IOutput>>();
+            var command = new Mock<BaseOutputCommand<IOutput>>();
             expected.MockCommand = command.Object;
 
             var actual = expected.WithCommandRawOutput(null);
@@ -44,8 +44,9 @@ namespace Cake.SevenZip.Tests.FluentBuilder
         public void WithCommandOutput_sets_the_outputAction_on_the_command()
         {
             var builder = new MockOutputBuilder();
-            var command = new Mock<OutputCommand<IOutput>>();
+            var command = new Mock<BaseOutputCommand<IOutput>>();
             builder.MockCommand = command.Object;
+            // ReSharper disable once ConvertToLocalFunction -- not possible
             Action<object> expected = x => { };
 
             builder.WithCommandOutput(expected);
@@ -57,8 +58,9 @@ namespace Cake.SevenZip.Tests.FluentBuilder
         public void WithCommandRawOutput_sets_the_rawOutputAction_on_the_command()
         {
             var builder = new MockOutputBuilder();
-            var command = new Mock<OutputCommand<IOutput>>();
+            var command = new Mock<BaseOutputCommand<IOutput>>();
             builder.MockCommand = command.Object;
+            // ReSharper disable once ConvertToLocalFunction -- not possible
             Action<object> expected = x => { };
 
             builder.WithCommandRawOutput(expected);
@@ -69,7 +71,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
         [Fact]
         public void All_outputBuilders_are_implementing_the_interface()
         {
-            var baseOutputCommandType = typeof(OutputCommand<>);
+            var baseOutputCommandType = typeof(BaseOutputCommand<>);
             var outputCommandTypes = baseOutputCommandType.Assembly.GetTypes().Where(t =>
             {
                 if (t.BaseType == null) // isn't this "object" as a "minimum" and never null?
@@ -108,8 +110,8 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
         private class MockOutputBuilder : BaseOutputBuilder<MockOutputBuilder, IOutput>
         {
-            public OutputCommand<IOutput> MockCommand { private get; set; }
-            protected override OutputCommand<IOutput> OutputCommand => MockCommand;
+            public BaseOutputCommand<IOutput> MockCommand { private get; set; }
+            protected override BaseOutputCommand<IOutput> OutputCommand => MockCommand;
         }
     }
 }

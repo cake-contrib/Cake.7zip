@@ -1,7 +1,7 @@
 using Cake.Core.IO;
 using Cake.SevenZip.Switches;
 
-namespace Cake.SevenZip.Commands
+namespace Cake.SevenZip.Arguments
 {
     /// <summary>
     /// Interface for all commands supporting multiple directories as arguments.

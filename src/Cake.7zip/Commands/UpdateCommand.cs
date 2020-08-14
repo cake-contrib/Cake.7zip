@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+using Cake.SevenZip.Builder;
 using Cake.SevenZip.Switches;
 
 namespace Cake.SevenZip.Commands
@@ -8,6 +9,9 @@ namespace Cake.SevenZip.Commands
     /// Update older files in the archive and add files that are not already in the archive.
     /// (Command: u)
     /// Note: the updating of solid .7z archives can be slow, since it can require some re-compression.
+    /// <para>
+    /// The builder is <see cref="UpdateCommandBuilder"/>.
+    /// </para>
     /// </summary>
     public sealed class UpdateCommand : BaseAddLikeSyntaxCommand,
         ICommand,
@@ -69,10 +73,10 @@ namespace Cake.SevenZip.Commands
         public SwitchFullyQualifiedFilePaths FullyQualifiedFilePaths { get; set; }
 
         /// <inheritdoc/>
-        protected override string CommandName => "update";
+        protected override string CommandName { get; } = "update";
 
         /// <inheritdoc/>
-        protected override string CommandChar => "u";
+        protected override string CommandChar { get; } = "u";
 
         /// <inheritdoc/>
         protected override IEnumerable<ISwitch> Switches => new ISwitch[]

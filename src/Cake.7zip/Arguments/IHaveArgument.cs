@@ -1,7 +1,7 @@
-namespace Cake.SevenZip.Commands
+namespace Cake.SevenZip.Arguments
 {
     /// <summary>
-    /// Base for all argument.
+    /// Base for all arguments.
     /// </summary>
     public interface IHaveArgument
     {
