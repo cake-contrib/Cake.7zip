@@ -139,7 +139,8 @@
 				<li class="treeview active">
 				<a href="/Cake.7zip/api/Cake.SevenZip">Cake<wbr>.SevenZip</a> <a href="#" class="expand"></a>
 				<ul class="treeview-menu">
-						<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder">Cake<wbr>.SevenZip<wbr>.Builder</a></li>
+						<li><a href="/Cake.7zip/api/Cake.SevenZip.Arguments">Cake<wbr>.SevenZip<wbr>.Arguments</a></li>
+			<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder">Cake<wbr>.SevenZip<wbr>.Builder</a></li>
 			<li class=" selected"><a href="/Cake.7zip/api/Cake.SevenZip.Commands">Cake<wbr>.SevenZip<wbr>.Commands</a></li>
 			<li><a href="/Cake.7zip/api/Cake.SevenZip.Parsers">Cake<wbr>.SevenZip<wbr>.Parsers</a></li>
 			<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches">Cake<wbr>.SevenZip<wbr>.Switches</a></li>
@@ -180,6 +181,9 @@
 									<td>
     Adds files to archive.
     (Command: a).
+    <p>
+    The builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/AddCommandBuilder">AddCommandBuilder</a></code>.
+    </p>
     </td>
 							</tr>
 							<tr>
@@ -189,10 +193,25 @@
     </td>
 							</tr>
 							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseCommand">BaseCommand</a></td>
+									<td>
+    BaseClass for Commands.
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1">BaseOutputCommand</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1#typeparam-T">T</a>&gt;<wbr></td>
+									<td>
+    base for all commands that have output. (E.g. <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand">InformationCommand</a></code>).
+    </td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand">DeleteCommand</a></td>
 									<td>
     Deletes files from the archive.
     (Command: d).
+    <p>
+    The builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/DeleteCommandBuilder">DeleteCommandBuilder</a></code>.
+    </p>
     </td>
 							</tr>
 							<tr>
@@ -211,6 +230,19 @@
     Extracts files from an archive with their full paths in the current directory,
     or in an output directory if specified.
     </p>
+    <p>
+    The builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/ExtractCommandBuilder">ExtractCommandBuilder</a></code>.
+    </p>
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></td>
+									<td>
+    Calculates the hash for one or more files
+    (Command: h).
+    <p>
+    The builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/HashCommandBuilder">HashCommandBuilder</a></code>.
+    </p>
     </td>
 							</tr>
 							<tr>
@@ -218,12 +250,9 @@
 									<td>
     Show information about supported formats
     (Command: i).
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/OutputCommand_1">OutputCommand</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Commands/OutputCommand_1#typeparam-T">T</a>&gt;<wbr></td>
-									<td>
-    base for all commands that have output. (E.g. <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand">InformationCommand</a></code>).
+    <p>
+    The builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/InformationCommandBuilder">InformationCommandBuilder</a></code>.
+    </p>
     </td>
 							</tr>
 							<tr>
@@ -231,6 +260,9 @@
 									<td>
     Test one or more archives
     (Command: t).
+    <p>
+    The builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/TestCommandBuilder">TestCommandBuilder</a></code>.
+    </p>
     </td>
 							</tr>
 							<tr>
@@ -239,6 +271,9 @@
     Update older files in the archive and add files that are not already in the archive.
     (Command: u)
     Note: the updating of solid .7z archives can be slow, since it can require some re-compression.
+    <p>
+    The builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/UpdateCommandBuilder">UpdateCommandBuilder</a></code>.
+    </p>
     </td>
 							</tr>
 					</tbody></table>
@@ -260,30 +295,6 @@
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ICommand">ICommand</a></td>
 									<td>
     Interface for all commands. (E.g. <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></code>).
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgument">IHaveArgument</a></td>
-									<td>
-    Base for all argument.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentArchive">IHaveArgumentArchive</a></td>
-									<td>
-    Interface for all commands supporting the Archive-Argument.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentDirectories">I<wbr>Have<wbr>Argument<wbr>Directories</a></td>
-									<td>
-    Interface for all commands supporting multiple directories as arguments.
-    </td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentFiles">IHaveArgumentFiles</a></td>
-									<td>
-    Interface for all commands supporting multiple files as arguments.
     </td>
 							</tr>
 					</tbody></table>

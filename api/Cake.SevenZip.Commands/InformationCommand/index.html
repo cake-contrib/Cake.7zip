@@ -73,6 +73,7 @@
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Constructors">Constructors</a></p>
+<p><a href="#Properties">Properties</a></p>
 <p><a href="#Methods">Methods</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -138,18 +139,16 @@
 			<li class="header">Class Types</li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand">Base<wbr>Add<wbr>Like<wbr>Syntax<wbr>Command</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseCommand">BaseCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1">BaseOutputCommand<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand">DeleteCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand">ExtractCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></li>
 				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand">InformationCommand</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/OutputCommand_1">OutputCommand<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand">UpdateCommand</a></li>
 			<li class="header">Interface Types</li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ICommand">ICommand</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgument">IHaveArgument</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentArchive">IHaveArgumentArchive</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentDirectories">I<wbr>Have<wbr>Argument<wbr>Directories</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentFiles">IHaveArgumentFiles</a></li>
 
 
                     </ul>
@@ -173,6 +172,9 @@
 	<div class="lead">
     Show information about supported formats
     (Command: i).
+    <p>
+    The builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/InformationCommandBuilder">InformationCommandBuilder</a></code>.
+    </p>
     </div>
 
 		<div class="panel panel-default">
@@ -196,7 +198,8 @@
 								<dd>
 									<ul class="list-unstyled">										
 											<li>object</li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/OutputCommand_1">OutputCommand</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Parsers/IInformationOutput">IInformationOutput</a>&gt;<wbr></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseCommand">BaseCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1">BaseOutputCommand</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Parsers/IInformationOutput">IInformationOutput</a>&gt;<wbr></li>								
 									</ul>
 								</dd>				
 							
@@ -206,8 +209,10 @@
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph BT
-	Type--&gt;Base0["OutputCommand&lt;IInformationOutput&gt;"]
-	Base0--&gt;Base1["object"]
+	Type--&gt;Base0["BaseOutputCommand&lt;IInformationOutput&gt;"]
+	Base0--&gt;Base1["BaseCommand"]
+	click Base1 "/Cake.7zip/api/Cake.SevenZip.Commands/BaseCommand"
+	Base1--&gt;Base2["object"]
 	Type-.-&gt;Interface0["ICommand"]
 	click Interface0 "/Cake.7zip/api/Cake.SevenZip.Commands/ICommand"
 	Type-.-&gt;Interface1["ICanParseOutput"]
@@ -221,7 +226,7 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public sealed class InformationCommand : OutputCommand&lt;IInformationOutput&gt;, ICommand, 
+	<pre><code>public sealed class InformationCommand : BaseOutputCommand&lt;IInformationOutput&gt;, ICommand, 
     ICanParseOutput</code></pre>
 
 
@@ -253,6 +258,39 @@ class Type type-node
 
 
 
+			<h1 id="Properties">Properties</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand/80D9DD4A">CommandChar</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Gets the command character. (e.g. "a", "u" or "e"...)
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand/7EC66B40">Switches</a></td>
+								<td>IEnumerable<wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISwitch">ISwitch</a>&gt;<wbr></td>
+								<td>
+									<div>
+    Gets all supported switches.
+    </div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
 
 			<h1 id="Methods">Methods</h1>
 			<div class="box">
@@ -266,13 +304,22 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand/2EDCD4C6">BuildArguments<wbr>(<wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></td>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand/15CA75C9">BuildArgumentParams<wbr>(<wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    adds only the arguments to the builder. (i.e. Archive, files, directories).
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseCommand/99BA4A76">BuildArguments<wbr>(<wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>
     Builds the arguments.
-    Used internally.
     </div>
+											<div><small><em>Inherited from <a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseCommand">BaseCommand</a></em></small></div>
 								</td>
 							</tr>
 					</tbody></table>

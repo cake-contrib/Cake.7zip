@@ -139,18 +139,16 @@
 			<li class="header">Class Types</li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand">Base<wbr>Add<wbr>Like<wbr>Syntax<wbr>Command</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseCommand">BaseCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1">BaseOutputCommand<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand">DeleteCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand">ExtractCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand">InformationCommand</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/OutputCommand_1">OutputCommand<wbr>&lt;T&gt;<wbr></a></li>
 				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand">UpdateCommand</a></li>
 			<li class="header">Interface Types</li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ICommand">ICommand</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgument">IHaveArgument</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentArchive">IHaveArgumentArchive</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentDirectories">I<wbr>Have<wbr>Argument<wbr>Directories</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentFiles">IHaveArgumentFiles</a></li>
 
 
                     </ul>
@@ -174,6 +172,9 @@
 	<div class="lead">
     Test one or more archives
     (Command: t).
+    <p>
+    The builder is <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/TestCommandBuilder">TestCommandBuilder</a></code>.
+    </p>
     </div>
 
 		<div class="panel panel-default">
@@ -190,9 +191,9 @@
 									<ul class="list-unstyled">
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ICommand">ICommand</a></li>								
 											<li>ICanParseOutput</li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentArchive">IHaveArgumentArchive</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentFiles">IHaveArgumentFiles</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgument">IHaveArgument</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentArchive">IHaveArgumentArchive</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentFiles">IHaveArgumentFiles</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgument">IHaveArgument</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchIncludeArchiveFilenames">I<wbr>Support<wbr>Switch<wbr>Include<wbr>Archive<wbr>Filenames</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchExcludeArchiveFilenames">I<wbr>Support<wbr>Switch<wbr>Exclude<wbr>Archive<wbr>Filenames</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchDisableParsingOfArchiveName">I<wbr>Support<wbr>Switch<wbr>Disable<wbr>Parsing<wbr>Of<wbr>Archive<wbr>Name</a></li>								
@@ -209,7 +210,8 @@
 								<dd>
 									<ul class="list-unstyled">										
 											<li>object</li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/OutputCommand_1">OutputCommand</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Parsers/ITestOutput">ITestOutput</a>&gt;<wbr></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseCommand">BaseCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1">BaseOutputCommand</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Parsers/ITestOutput">ITestOutput</a>&gt;<wbr></li>								
 									</ul>
 								</dd>				
 							
@@ -219,17 +221,19 @@
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph BT
-	Type--&gt;Base0["OutputCommand&lt;ITestOutput&gt;"]
-	Base0--&gt;Base1["object"]
+	Type--&gt;Base0["BaseOutputCommand&lt;ITestOutput&gt;"]
+	Base0--&gt;Base1["BaseCommand"]
+	click Base1 "/Cake.7zip/api/Cake.SevenZip.Commands/BaseCommand"
+	Base1--&gt;Base2["object"]
 	Type-.-&gt;Interface0["ICommand"]
 	click Interface0 "/Cake.7zip/api/Cake.SevenZip.Commands/ICommand"
 	Type-.-&gt;Interface1["ICanParseOutput"]
 	Type-.-&gt;Interface2["IHaveArgumentArchive"]
-	click Interface2 "/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentArchive"
+	click Interface2 "/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentArchive"
 	Type-.-&gt;Interface3["IHaveArgumentFiles"]
-	click Interface3 "/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentFiles"
+	click Interface3 "/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentFiles"
 	Type-.-&gt;Interface4["IHaveArgument"]
-	click Interface4 "/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgument"
+	click Interface4 "/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgument"
 	Type-.-&gt;Interface5["ISupportSwitchIncludeArchiveFilenames"]
 	click Interface5 "/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchIncludeArchiveFilenames"
 	Type-.-&gt;Interface6["ISupportSwitchExcludeArchiveFilenames"]
@@ -258,7 +262,7 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public sealed class TestCommand : OutputCommand&lt;ITestOutput&gt;, ICommand, ICanParseOutput, 
+	<pre><code>public sealed class TestCommand : BaseOutputCommand&lt;ITestOutput&gt;, ICommand, ICanParseOutput, 
     IHaveArgumentArchive, IHaveArgumentFiles, IHaveArgument, ISupportSwitchIncludeArchiveFilenames, 
     ISupportSwitchExcludeArchiveFilenames, ISupportSwitchDisableParsingOfArchiveName, 
     ISupportSwitchIncludeFilenames, ISupportSwitchExcludeFilenames, ISupportSwitchPassword, 
@@ -310,6 +314,15 @@ class Type type-node
 								<td>
 									<div>
     Sets the archive the command operates on.
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand/66281775">CommandChar</a></td>
+								<td>string</td>
+								<td>
+									<div>
+    Gets the command character. (e.g. "a", "u" or "e"...)
     </div>
 								</td>
 							</tr>
@@ -413,6 +426,15 @@ class Type type-node
     </div>
 								</td>
 							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand/FB2501A4">Switches</a></td>
+								<td>IEnumerable<wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISwitch">ISwitch</a>&gt;<wbr></td>
+								<td>
+									<div>
+    Gets all supported switches.
+    </div>
+								</td>
+							</tr>
 					</tbody></table>
 				</div>
 			</div>
@@ -430,13 +452,22 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand/52D8B19F">BuildArguments<wbr>(<wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></td>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand/5ABF505F">BuildArgumentParams<wbr>(<wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    adds only the arguments to the builder. (i.e. Archive, files, directories).
+    </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseCommand/99BA4A76">BuildArguments<wbr>(<wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>
     Builds the arguments.
-    Used internally.
     </div>
+											<div><small><em>Inherited from <a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseCommand">BaseCommand</a></em></small></div>
 								</td>
 							</tr>
 					</tbody></table>

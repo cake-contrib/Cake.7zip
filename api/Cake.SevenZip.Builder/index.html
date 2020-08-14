@@ -139,7 +139,8 @@
 				<li class="treeview active">
 				<a href="/Cake.7zip/api/Cake.SevenZip">Cake<wbr>.SevenZip</a> <a href="#" class="expand"></a>
 				<ul class="treeview-menu">
-						<li class=" selected"><a href="/Cake.7zip/api/Cake.SevenZip.Builder">Cake<wbr>.SevenZip<wbr>.Builder</a></li>
+						<li><a href="/Cake.7zip/api/Cake.SevenZip.Arguments">Cake<wbr>.SevenZip<wbr>.Arguments</a></li>
+			<li class=" selected"><a href="/Cake.7zip/api/Cake.SevenZip.Builder">Cake<wbr>.SevenZip<wbr>.Builder</a></li>
 			<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands">Cake<wbr>.SevenZip<wbr>.Commands</a></li>
 			<li><a href="/Cake.7zip/api/Cake.SevenZip.Parsers">Cake<wbr>.SevenZip<wbr>.Parsers</a></li>
 			<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches">Cake<wbr>.SevenZip<wbr>.Switches</a></li>
@@ -185,28 +186,28 @@
 							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Builder/ArgumentArchiveBuilder">Argument<wbr>Archive<wbr>Builder</a></td>
 									<td>
-    Extensions for all Builders that support <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentArchive">IHaveArgumentArchive</a></code>.
+    Extensions for all Builders that support <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentArchive">IHaveArgumentArchive</a></code>.
     
     </td>
 							</tr>
 							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Builder/ArgumentDirectoriesBuilder">Argument<wbr>Directories<wbr>Builder</a></td>
 									<td>
-    Extensions for all Builders that support <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentDirectories">IHaveArgumentDirectories</a></code>.
+    Extensions for all Builders that support <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentDirectories">IHaveArgumentDirectories</a></code>.
     
     </td>
 							</tr>
 							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Builder/ArgumentFilesBuilder">ArgumentFilesBuilder</a></td>
 									<td>
-    Extensions for all Builders that support <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentFiles">IHaveArgumentFiles</a></code>.
+    Extensions for all Builders that support <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentFiles">IHaveArgumentFiles</a></code>.
     
     </td>
 							</tr>
 							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2">BaseOutputBuilder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2#typeparam-TBuilder">TBuilder</a>, <wbr><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2#typeparam-TOutput">TOutput</a>&gt;<wbr></td>
 									<td>
-    Base for builders that support <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/OutputCommand_1">OutputCommand&lt;T&gt;</a></code>.
+    Base for builders that support <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1">BaseOutputCommand&lt;T&gt;</a></code>.
     </td>
 							</tr>
 							<tr>
@@ -227,6 +228,13 @@
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Builder/ExtractCommandBuilder">Extract<wbr>Command<wbr>Builder</a></td>
 									<td>
     Builder for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand">ExtractCommand</a></code>.
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Builder/HashCommandBuilder">HashCommandBuilder</a></td>
+									<td>
+    Builder for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></code>.
     
     </td>
 							</tr>
@@ -353,6 +361,13 @@
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSelfExtractingArchiveBuilder">Switch<wbr>Self<wbr>Extracting<wbr>Archive<wbr>Builder</a></td>
 									<td>
     Extensions for all Builders that support <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchSelfExtractingArchive">ISupportSwitchSelfExtractingArchive</a></code>.
+    
+    </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSetHashFunctionBuilder">Switch<wbr>Set<wbr>Hash<wbr>Function<wbr>Builder</a></td>
+									<td>
+    Extensions for all Builders that support <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchSetHashFunction">ISupportSwitchSetHashFunction</a></code>.
     
     </td>
 							</tr>

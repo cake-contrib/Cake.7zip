@@ -137,18 +137,16 @@
 			<li class="header">Class Types</li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand">Base<wbr>Add<wbr>Like<wbr>Syntax<wbr>Command</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseCommand">BaseCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1">BaseOutputCommand<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand">DeleteCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand">ExtractCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand">InformationCommand</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/OutputCommand_1">OutputCommand<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand">UpdateCommand</a></li>
 			<li class="header">Interface Types</li>
 				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ICommand">ICommand</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgument">IHaveArgument</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentArchive">IHaveArgumentArchive</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentDirectories">I<wbr>Have<wbr>Argument<wbr>Directories</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/IHaveArgumentFiles">IHaveArgumentFiles</a></li>
 
 
                     </ul>
@@ -188,13 +186,14 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand">InformationCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1">BaseOutputCommand</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1#typeparam-T">T</a>&gt;<wbr></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand">ExtractCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/OutputCommand_1">OutputCommand</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Commands/OutputCommand_1#typeparam-T">T</a>&gt;<wbr></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand">DeleteCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand">UpdateCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand">InformationCommand</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -204,20 +203,22 @@
 							graph BT
 	Type["ICommand"]
 class Type type-node
-	Implementing0["TestCommand"]-.-&gt;Type
-	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand"
-	Implementing1["AddCommand"]-.-&gt;Type
-	click Implementing1 "/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand"
-	Implementing2["InformationCommand"]-.-&gt;Type
-	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand"
-	Implementing3["ExtractCommand"]-.-&gt;Type
-	click Implementing3 "/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand"
-	Implementing4["OutputCommand&lt;T&gt;"]-.-&gt;Type
-	click Implementing4 "/Cake.7zip/api/Cake.SevenZip.Commands/OutputCommand_1"
-	Implementing5["DeleteCommand"]-.-&gt;Type
-	click Implementing5 "/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand"
+	Implementing0["HashCommand"]-.-&gt;Type
+	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand"
+	Implementing1["BaseOutputCommand&lt;T&gt;"]-.-&gt;Type
+	click Implementing1 "/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1"
+	Implementing2["ExtractCommand"]-.-&gt;Type
+	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand"
+	Implementing3["TestCommand"]-.-&gt;Type
+	click Implementing3 "/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand"
+	Implementing4["DeleteCommand"]-.-&gt;Type
+	click Implementing4 "/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand"
+	Implementing5["AddCommand"]-.-&gt;Type
+	click Implementing5 "/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand"
 	Implementing6["UpdateCommand"]-.-&gt;Type
 	click Implementing6 "/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand"
+	Implementing7["InformationCommand"]-.-&gt;Type
+	click Implementing7 "/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand"
 
 						</div>
 					</div>

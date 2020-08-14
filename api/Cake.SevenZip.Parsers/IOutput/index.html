@@ -136,6 +136,9 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Interface Types</li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Parsers/IArchiveTestOutput">IArchiveTestOutput</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Parsers/IFileHash">IFileHash</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Parsers/IHash">IHash</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Parsers/IHashOutput">IHashOutput</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Parsers/IInformationOutput">IInformationOutput</a></li>
 				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip.Parsers/IOutput">IOutput</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Parsers/ITestOutput">ITestOutput</a></li>
@@ -178,8 +181,9 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Parsers/IInformationOutput">IInformationOutput</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Parsers/ITestOutput">ITestOutput</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Parsers/IHashOutput">IHashOutput</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Parsers/IInformationOutput">IInformationOutput</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -189,10 +193,12 @@
 							graph BT
 	Type["IOutput"]
 class Type type-node
-	Implementing0["IInformationOutput"]-.-&gt;Type
-	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Parsers/IInformationOutput"
-	Implementing1["ITestOutput"]-.-&gt;Type
-	click Implementing1 "/Cake.7zip/api/Cake.SevenZip.Parsers/ITestOutput"
+	Implementing0["ITestOutput"]-.-&gt;Type
+	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Parsers/ITestOutput"
+	Implementing1["IHashOutput"]-.-&gt;Type
+	click Implementing1 "/Cake.7zip/api/Cake.SevenZip.Parsers/IHashOutput"
+	Implementing2["IInformationOutput"]-.-&gt;Type
+	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Parsers/IInformationOutput"
 
 						</div>
 					</div>
