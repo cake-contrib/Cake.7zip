@@ -80,30 +80,30 @@ namespace Cake.SevenZip.Commands
         public SwitchFullyQualifiedFilePaths FullyQualifiedFilePaths { get; set; }
 
         /// <inheritdoc/>
-        protected override string CommandName => "add";
+        protected override string CommandName { get; } = "add";
 
         /// <inheritdoc/>
-        protected override string CommandChar => "a";
+        protected override string CommandChar { get; } = "a";
 
         /// <inheritdoc/>
         protected override IEnumerable<ISwitch> Switches => new ISwitch[]
-        {
-            ArchiveType,
-            Volumes,
-            CompressionMethod,
-            Password,
-            NtSecurityInformation,
-            NtfsAlternateStreams,
-            CompressFilesOpenForWriting,
-            TimestampFromMostRecentFile,
-            WorkingDirectory,
-            RecurseSubdirectories,
-            IncludeFilenames,
-            ExcludeFilenames,
-            UpdateOptions,
-            DeleteAfterCompression,
-            SelfExtractingArchive,
-            FullyQualifiedFilePaths,
-        };
+            {
+                ArchiveType,
+                Volumes,
+                CompressionMethod,
+                Password,
+                NtSecurityInformation,
+                NtfsAlternateStreams,
+                CompressFilesOpenForWriting,
+                TimestampFromMostRecentFile,
+                WorkingDirectory,
+                RecurseSubdirectories,
+                IncludeFilenames,
+                ExcludeFilenames,
+                UpdateOptions,
+                DeleteAfterCompression,
+                SelfExtractingArchive,
+                FullyQualifiedFilePaths,
+            };
     }
 }

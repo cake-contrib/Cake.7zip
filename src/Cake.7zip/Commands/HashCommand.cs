@@ -1,6 +1,5 @@
-using System;
+using System.Collections.Generic;
 
-using Cake.Core;
 using Cake.Core.IO;
 using Cake.SevenZip.Arguments;
 using Cake.SevenZip.Builder;
@@ -72,55 +71,31 @@ namespace Cake.SevenZip.Commands
         internal override IOutputParser<IHashOutput> OutputParser => outputParser;
 
         /// <inheritdoc/>
-        public override void BuildArguments(ref ProcessArgumentBuilder builder)
+        protected override string CommandChar { get; } = "h";
+
+        /// <inheritdoc/>
+        protected override IEnumerable<ISwitch> Switches => new ISwitch[]
         {
+            IncludeFilenames,
+            ExcludeFilenames,
+            RecurseSubdirectories,
+            CompressionMethod,
+            CompressFilesOpenForWriting,
+            NtfsAlternateStreams,
+            HashFunctions,
+        };
 
-            if (((Files?.Count).GetValueOrDefault(0)
-                + (Directories?.Count).GetValueOrDefault(0)
-                + (DirectoryContents?.Count).GetValueOrDefault(0)) == 0)
-            {
-                throw new ArgumentException("One file or directory is required for hash.");
-            }
+        /// <inheritdoc/>
+        protected override void BuildArgumentParams(ref ProcessArgumentBuilder builder)
+        {
+            Files.RequireNotEmpty(
+                $"some input ({nameof(Files)} or {nameof(Directories)}) are required for hash.",
+                Directories,
+                DirectoryContents);
 
-            builder.Append("h");
-
-            if (Files != null)
-            {
-                foreach (var f in Files)
-                {
-                    builder.AppendQuoted(f.FullPath);
-                }
-            }
-
-            if (Directories != null)
-            {
-                foreach (var d in Directories)
-                {
-                    builder.AppendQuoted(d.FullPath);
-                }
-            }
-
-            if (DirectoryContents != null)
-            {
-                foreach (var d in DirectoryContents)
-                {
-                    builder.AppendQuoted(d.FullPath);
-                }
-            }
-
-            foreach (var sw in new ISwitch[]
-            {
-                IncludeFilenames,
-                ExcludeFilenames,
-                RecurseSubdirectories,
-                CompressionMethod,
-                CompressFilesOpenForWriting,
-                NtfsAlternateStreams,
-                HashFunctions,
-            })
-            {
-                sw?.BuildArguments(ref builder);
-            }
+            builder.AppendPathsNullSafe(Files);
+            builder.AppendPathsNullSafe(Directories);
+            builder.AppendPathsNullSafe(DirectoryContents); // Directory and DirectoryContents produce the same output for "hash"
         }
     }
 }

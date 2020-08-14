@@ -18,7 +18,7 @@ namespace Cake.SevenZip.Parsers
         /// <value>
         /// The hash.
         /// </value>
-        IEnumerable<IHash> Hash { get; }
+        IEnumerable<IHash> Hashes { get; }
 
         /// <summary>
         /// Gets the path of the file.

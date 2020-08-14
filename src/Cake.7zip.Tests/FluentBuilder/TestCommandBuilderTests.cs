@@ -63,7 +63,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithArchive(new FilePath("in.zip"))
               .WithDisableParsingOfArchiveName();
 
-            const string expected = @"t ""in.zip"" -an";
+            const string expected = @"t -an ""in.zip""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -79,7 +79,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithArchive(new FilePath("in.zip"))
               .WithExcludeArchiveFilenames("*.docx");
 
-            const string expected = @"t ""in.zip"" -ax!*.docx";
+            const string expected = @"t -ax!*.docx ""in.zip""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -96,7 +96,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithExcludeArchiveFilenames(RecurseType.Enable, "*.pdf", "*.xps")
               .WithExcludeArchiveFilenames("*.txt", "*.ini");
 
-            const string expected = @"t ""in.zip"" -axr!*.pdf -axr!*.xps -ax!*.txt -ax!*.ini";
+            const string expected = @"t -axr!*.pdf -axr!*.xps -ax!*.txt -ax!*.ini ""in.zip""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -112,7 +112,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithArchive(new FilePath("in.zip"))
               .WithExcludeFilenames("*.docx");
 
-            const string expected = @"t ""in.zip"" -x!*.docx";
+            const string expected = @"t -x!*.docx ""in.zip""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -129,7 +129,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithExcludeFilenames(RecurseType.Enable, "*.pdf", "*.xps")
               .WithExcludeFilenames("*.txt", "*.ini");
 
-            const string expected = @"t ""in.zip"" -xr!*.pdf -xr!*.xps -x!*.txt -x!*.ini";
+            const string expected = @"t -xr!*.pdf -xr!*.xps -x!*.txt -x!*.ini ""in.zip""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -145,7 +145,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithArchive(new FilePath("in.zip"))
               .WithIncludeArchiveFilenames("*.docx");
 
-            const string expected = @"t ""in.zip"" -ai!*.docx";
+            const string expected = @"t -ai!*.docx ""in.zip""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -162,7 +162,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithIncludeArchiveFilenames(RecurseType.Enable, "*.pdf", "*.xps")
               .WithIncludeArchiveFilenames("*.txt", "*.ini");
 
-            const string expected = @"t ""in.zip"" -air!*.pdf -air!*.xps -ai!*.txt -ai!*.ini";
+            const string expected = @"t -air!*.pdf -air!*.xps -ai!*.txt -ai!*.ini ""in.zip""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -178,7 +178,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithArchive(new FilePath("in.zip"))
               .WithIncludeFilenames("*.docx");
 
-            const string expected = @"t ""in.zip"" -i!*.docx";
+            const string expected = @"t -i!*.docx ""in.zip""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -195,7 +195,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithIncludeFilenames(RecurseType.Enable, "*.pdf", "*.xps")
               .WithIncludeFilenames("*.txt", "*.ini");
 
-            const string expected = @"t ""in.zip"" -ir!*.pdf -ir!*.xps -i!*.txt -i!*.ini";
+            const string expected = @"t -ir!*.pdf -ir!*.xps -i!*.txt -i!*.ini ""in.zip""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -211,7 +211,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithArchive(new FilePath("in.zip"))
               .WithNtfsAlternateStreams();
 
-            const string expected = @"t ""in.zip"" -sns";
+            const string expected = @"t -sns ""in.zip""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -227,7 +227,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithArchive(new FilePath("in.zip"))
               .WithPassword("password");
 
-            const string expected = @"t ""in.zip"" -p""password""";
+            const string expected = @"t -p""password"" ""in.zip""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -243,7 +243,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithArchive(new FilePath("in.zip"))
               .WithRecurseSubdirectories(RecurseType.Enable);
 
-            const string expected = @"t ""in.zip"" -r";
+            const string expected = @"t -r ""in.zip""";
 
             var actual = fixture.EvaluateArgs();
 

@@ -1,5 +1,3 @@
-using Cake.Core;
-using Cake.Core.IO;
 using Cake.SevenZip.Builder;
 
 namespace Cake.SevenZip.Switches

@@ -48,7 +48,6 @@ Open ERROR: Can not open the file as [zip] archive
 ERRORS:
 Is not archive
 ".UnifyLineEndings();
-            ;
 
             var actual = parser.Parse(Outputs.Test).Archives.Single(x => !x.IsOk);
 

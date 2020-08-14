@@ -56,7 +56,7 @@ namespace Cake.SevenZip.Switches
         /// <summary>
         /// Gets the "*" hash-functions. (I.e. uses all possible hash-functions.)
         /// </summary>
-        public static SwitchSetHashFunction ALL { get; } = new SwitchSetHashFunction("*");
+        public static SwitchSetHashFunction All { get; } = new SwitchSetHashFunction("*");
 
         /// <inheritdoc/>
         public void BuildArguments(ref ProcessArgumentBuilder builder)

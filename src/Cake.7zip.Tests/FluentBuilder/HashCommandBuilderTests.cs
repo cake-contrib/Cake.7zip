@@ -13,7 +13,6 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 {
     public class HashCommandBuilderTests
     {
-
         [Fact]
         public void Hash_parses_and_sets_the_output()
         {
@@ -61,7 +60,6 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             action.Should().Throw<ArgumentException>();
         }
-
 
         [Fact]
         public void Hash_with_files_works()
@@ -117,7 +115,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithFiles(new FilePath("in.txt"))
               .WithHashFunction(SwitchSetHashFunction.Crc32);
 
-            const string expected = @"h ""in.txt"" -scrccrc32";
+            const string expected = @"h -scrccrc32 ""in.txt""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -134,7 +132,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithHashFunction(SwitchSetHashFunction.Crc32)
               .WithHashFunction(SwitchSetHashFunction.Sha1, SwitchSetHashFunction.Sha256);
 
-            const string expected = @"h ""in.txt"" -scrccrc32 -scrcsha1 -scrcsha256";
+            const string expected = @"h -scrccrc32 -scrcsha1 -scrcsha256 ""in.txt""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -150,7 +148,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithFiles(new FilePath("in.txt"))
               .WithIncludeFilenames("*.txt");
 
-            const string expected = @"h ""in.txt"" -i!*.txt";
+            const string expected = @"h -i!*.txt ""in.txt""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -166,7 +164,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithFiles(new FilePath("in.txt"))
               .WithExcludeFilenames("*.txt");
 
-            const string expected = @"h ""in.txt"" -x!*.txt";
+            const string expected = @"h -x!*.txt ""in.txt""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -182,7 +180,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithFiles(new FilePath("in.txt"))
               .WithCompressFilesOpenForWriting();
 
-            const string expected = @"h ""in.txt"" -ssw";
+            const string expected = @"h -ssw ""in.txt""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -198,7 +196,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithFiles(new FilePath("in.txt"))
               .WithCompressionMethod(m => m.Level = 9);
 
-            const string expected = @"h ""in.txt"" -mx=9";
+            const string expected = @"h -mx=9 ""in.txt""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -214,7 +212,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithFiles(new FilePath("in.txt"))
               .WithNtfsAlternateStreams();
 
-            const string expected = @"h ""in.txt"" -sns";
+            const string expected = @"h -sns ""in.txt""";
 
             var actual = fixture.EvaluateArgs();
 
@@ -230,12 +228,11 @@ namespace Cake.SevenZip.Tests.FluentBuilder
               .WithFiles(new FilePath("in.txt"))
               .WithRecurseSubdirectories(RecurseType.Enable);
 
-            const string expected = @"h ""in.txt"" -r";
+            const string expected = @"h -r ""in.txt""";
 
             var actual = fixture.EvaluateArgs();
 
             actual.Should().Be(expected);
         }
     }
-
 }

@@ -39,7 +39,7 @@ namespace Cake.SevenZip.Parsers
         /// <value>
         /// The hash of data.
         /// </value>
-        IEnumerable<IHash> HashOfData { get; }
+        IEnumerable<IHash> HashesOfData { get; }
 
         /// <summary>
         /// Gets the hash of data and names.

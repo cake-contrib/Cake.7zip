@@ -73,10 +73,10 @@ namespace Cake.SevenZip.Commands
         public SwitchFullyQualifiedFilePaths FullyQualifiedFilePaths { get; set; }
 
         /// <inheritdoc/>
-        protected override string CommandName => "update";
+        protected override string CommandName { get; } = "update";
 
         /// <inheritdoc/>
-        protected override string CommandChar => "u";
+        protected override string CommandChar { get; } = "u";
 
         /// <inheritdoc/>
         protected override IEnumerable<ISwitch> Switches => new ISwitch[]

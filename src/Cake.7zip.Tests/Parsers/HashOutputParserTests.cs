@@ -32,7 +32,7 @@ namespace Cake.SevenZip.Tests.Parsers
             actual.Size.Should().Be(1450);
 
             // hashes
-            var hashes = actual.Hash;
+            var hashes = actual.Hashes.ToList();
             hashes.Single(x => x.HashFunction == "CRC32").Hash.Should().Be("65F628E7");
             hashes.Single(x => x.HashFunction == "CRC64").Hash.Should().Be("0C263A6A38541BE2");
             hashes.Single(x => x.HashFunction == "SHA1").Hash.Should().Be("30A96827A2BD56E1139FFA1988E53C6BDB400D5D");
@@ -44,7 +44,7 @@ namespace Cake.SevenZip.Tests.Parsers
         public void HashParser_parses_SumOfHashes_Ok()
         {
             var parser = new HashOutputParser();
-            var actual = parser.Parse(Outputs.Hash).SumOfHashes;
+            var actual = parser.Parse(Outputs.Hash).SumOfHashes.ToList();
 
             actual.Single(x => x.HashFunction == "CRC32").Hash.Should().Be("65F628E7");
             actual.Single(x => x.HashFunction == "CRC64").Hash.Should().Be("0C263A6A38541BE2");
@@ -57,7 +57,7 @@ namespace Cake.SevenZip.Tests.Parsers
         public void HashParser_parses_HashOfData_Ok()
         {
             var parser = new HashOutputParser();
-            var actual = parser.Parse(Outputs.Hash).HashOfData;
+            var actual = parser.Parse(Outputs.Hash).HashesOfData.ToList();
 
             actual.Single(x => x.HashFunction == "CRC32").Hash.Should().Be("65F628E7");
             actual.Single(x => x.HashFunction == "CRC64").Hash.Should().Be("0C263A6A38541BE2");
@@ -70,7 +70,7 @@ namespace Cake.SevenZip.Tests.Parsers
         public void HashParser_parses_HashOfDataAndNames_Ok()
         {
             var parser = new HashOutputParser();
-            var actual = parser.Parse(Outputs.Hash).HashOfDataAndNames;
+            var actual = parser.Parse(Outputs.Hash).HashOfDataAndNames.ToList();
 
             actual.Single(x => x.HashFunction == "CRC32").Hash.Should().Be("DDEFD8B7");
             actual.Single(x => x.HashFunction == "CRC64").Hash.Should().Be("7914AFBA69DF8351");
@@ -78,7 +78,6 @@ namespace Cake.SevenZip.Tests.Parsers
             actual.Single(x => x.HashFunction == "SHA256").Hash.Should().Be("22B8DE058E187C59B75D3E385864B8713E1A1D8315E137526E6BD069936B342A");
             actual.Single(x => x.HashFunction == "BLAKE2sp").Hash.Should().Be("222855D590C06DE9B42BF15335DBC6EF14798938E202808A5C7DFE9BC38F8F25");
         }
-
 
         [Fact]
         public void HashParser_parses_SumOfSizes_Ok()

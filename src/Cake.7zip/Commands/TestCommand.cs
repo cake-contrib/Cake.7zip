@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 
 using Cake.Core;
 using Cake.Core.IO;
@@ -72,39 +72,29 @@ namespace Cake.SevenZip.Commands
         /// <inheritdoc/>
         internal override IOutputParser<ITestOutput> OutputParser => outputParser;
 
-        /// <inheritdoc/>
-        public override void BuildArguments(ref ProcessArgumentBuilder builder)
+        /// <inheritdoc />
+        protected override string CommandChar { get; } = "t";
+
+        /// <inheritdoc />
+        protected override IEnumerable<ISwitch> Switches => new ISwitch[]
         {
-            if (Archive == null)
-            {
-                throw new ArgumentException("Archive is required for extract.");
-            }
+            IncludeArchiveFilenames,
+            ExcludeArchiveFilenames,
+            DisableParsingOfArchiveName,
+            IncludeFilenames,
+            ExcludeFilenames,
+            Password,
+            NtfsAlternateStreams,
+            RecurseSubdirectories,
+        };
 
-            builder.Append("t");
+        /// <inheritdoc/>
+        protected override void BuildArgumentParams(ref ProcessArgumentBuilder builder)
+        {
+            Archive.RequireNotNull("Archive is required for extract.");
+
             builder.AppendQuoted(Archive.FullPath);
-
-            if (Files != null)
-            {
-                foreach (var file in Files)
-                {
-                    builder.AppendQuoted(file.FullPath);
-                }
-            }
-
-            foreach (var sw in new ISwitch[]
-            {
-                IncludeArchiveFilenames,
-                ExcludeArchiveFilenames,
-                DisableParsingOfArchiveName,
-                IncludeFilenames,
-                ExcludeFilenames,
-                Password,
-                NtfsAlternateStreams,
-                RecurseSubdirectories,
-            })
-            {
-                sw?.BuildArguments(ref builder);
-            }
+            builder.AppendPathsNullSafe(Files);
         }
     }
 }

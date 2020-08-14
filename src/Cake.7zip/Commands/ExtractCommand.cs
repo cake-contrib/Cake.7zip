@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 
 using Cake.Core;
 using Cake.Core.IO;
@@ -26,7 +26,8 @@ namespace Cake.SevenZip.Commands
     /// The builder is <see cref="ExtractCommandBuilder"/>.
     /// </para>
     /// </summary>
-    public sealed class ExtractCommand : ICommand,
+    public sealed class ExtractCommand : BaseCommand,
+        ICommand,
         IHaveArgumentArchive,
         ISupportSwitchIncludeFilenames,
         ISupportSwitchCompressionMethod,
@@ -106,38 +107,34 @@ namespace Cake.SevenZip.Commands
         public SwitchFullyQualifiedFilePaths FullyQualifiedFilePaths { get; set; }
 
         /// <inheritdoc/>
-        public void BuildArguments(ref ProcessArgumentBuilder builder)
+        protected override string CommandChar => UseFullPaths ? "x" : "e";
+
+        /// <inheritdoc/>
+        protected override IEnumerable<ISwitch> Switches => new ISwitch[]
         {
-            if (Archive == null)
-            {
-                throw new ArgumentException("Archive is required for extract.");
-            }
+            ArchiveType,
+            CompressionMethod,
+            Password,
+            NtSecurityInformation,
+            NtfsAlternateStreams,
+            RecurseSubdirectories,
+            IncludeFilenames,
+            ExcludeFilenames,
+            IncludeArchiveFilenames,
+            ExcludeArchiveFilenames,
+            DisableParsingOfArchiveName,
+            OverwriteMode,
+            OutputDirectory,
+            FullyQualifiedFilePaths,
+        };
 
-            var extractMode = UseFullPaths ? "x" : "e";
-            builder.Append(extractMode);
-            builder.AppendQuoted(Archive.FullPath);
+        /// <inheritdoc/>
+        protected override void BuildArgumentParams(ref ProcessArgumentBuilder builder)
+        {
+            Archive.RequireNotNull("Archive is required for extract.");
+
             builder.Append("-y"); // assume yes - can't have 7zip prompt the user.
-
-            foreach (var sw in new ISwitch[]
-            {
-                ArchiveType,
-                CompressionMethod,
-                Password,
-                NtSecurityInformation,
-                NtfsAlternateStreams,
-                RecurseSubdirectories,
-                IncludeFilenames,
-                ExcludeFilenames,
-                IncludeArchiveFilenames,
-                ExcludeArchiveFilenames,
-                DisableParsingOfArchiveName,
-                OverwriteMode,
-                OutputDirectory,
-                FullyQualifiedFilePaths,
-            })
-            {
-                sw?.BuildArguments(ref builder);
-            }
+            builder.AppendQuoted(Archive.FullPath);
         }
     }
 }

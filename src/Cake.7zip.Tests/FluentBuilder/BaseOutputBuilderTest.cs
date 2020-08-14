@@ -46,6 +46,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             var builder = new MockOutputBuilder();
             var command = new Mock<BaseOutputCommand<IOutput>>();
             builder.MockCommand = command.Object;
+            // ReSharper disable once ConvertToLocalFunction -- not possible
             Action<object> expected = x => { };
 
             builder.WithCommandOutput(expected);
@@ -59,6 +60,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             var builder = new MockOutputBuilder();
             var command = new Mock<BaseOutputCommand<IOutput>>();
             builder.MockCommand = command.Object;
+            // ReSharper disable once ConvertToLocalFunction -- not possible
             Action<object> expected = x => { };
 
             builder.WithCommandRawOutput(expected);

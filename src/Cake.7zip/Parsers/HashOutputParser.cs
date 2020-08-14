@@ -79,7 +79,7 @@ namespace Cake.SevenZip.Parsers
                     {
                         FilePath = parts.Last(),
                         Size = long.Parse(parts.Reverse().Skip(1).First(), CultureInfo.InvariantCulture),
-                        Hash = filehashes,
+                        Hashes = filehashes,
                     };
 
                     for (var i = 0; i < hashHeader.Length; i++)
@@ -108,7 +108,7 @@ namespace Cake.SevenZip.Parsers
                         });
                     }
 
-                    sumOfSizes = long.Parse(parts.Last());
+                    sumOfSizes = long.Parse(parts.Last(), CultureInfo.InvariantCulture);
                 }
 
                 if (hashHeader.Contains(parts[0]))
@@ -128,18 +128,14 @@ namespace Cake.SevenZip.Parsers
                     {
                         hashOfData.Add(hash);
                     }
-
-                    continue;
                 }
-
-
             }
 
             return new HashOutput
             {
                 Information = information,
                 Files = files,
-                HashOfData = hashOfData,
+                HashesOfData = hashOfData,
                 HashOfDataAndNames = hashOfDataAndNames,
                 SumOfHashes = sumOfHashes,
                 SumOfSizes = sumOfSizes,
@@ -156,14 +152,14 @@ namespace Cake.SevenZip.Parsers
 
             public long SumOfSizes { get; set; }
 
-            public IEnumerable<IHash> HashOfData { get; set; }
+            public IEnumerable<IHash> HashesOfData { get; set; }
 
             public IEnumerable<IHash> HashOfDataAndNames { get; set; }
         }
 
         private class FileHash : IFileHash
         {
-            public IEnumerable<IHash> Hash { get; set; }
+            public IEnumerable<IHash> Hashes { get; set; }
 
             public string FilePath { get; set; }
 
@@ -174,9 +170,9 @@ namespace Cake.SevenZip.Parsers
         {
             public string HashFunction { get; set; }
 
-            public string HashValue { get; set; }
+            public string HashValue { private get; set; }
 
-            string IHash.Hash { get => HashValue; }
+            string IHash.Hash => HashValue;
         }
     }
 }

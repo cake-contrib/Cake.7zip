@@ -1,7 +1,10 @@
-using Cake.Core;
+using System;
+using System.Collections.Generic;
+
 using Cake.Core.IO;
 using Cake.SevenZip.Builder;
 using Cake.SevenZip.Parsers;
+using Cake.SevenZip.Switches;
 
 namespace Cake.SevenZip.Commands
 {
@@ -29,9 +32,14 @@ namespace Cake.SevenZip.Commands
         internal override IOutputParser<IInformationOutput> OutputParser => outputParser;
 
         /// <inheritdoc/>
-        public override void BuildArguments(ref ProcessArgumentBuilder builder)
+        protected override string CommandChar { get; } = "i";
+
+        /// <inheritdoc/>
+        protected override IEnumerable<ISwitch> Switches => Array.Empty<ISwitch>();
+
+        /// <inheritdoc/>
+        protected override void BuildArgumentParams(ref ProcessArgumentBuilder builder)
         {
-            builder.Append("i");
         }
     }
 }
