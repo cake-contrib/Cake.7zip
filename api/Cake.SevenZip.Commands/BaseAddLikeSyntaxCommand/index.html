@@ -202,8 +202,8 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand">DeleteCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand">DeleteCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand">UpdateCommand</a></li>								
 									</ul>
 								</dd>			
@@ -226,10 +226,10 @@
 	click Interface3 "/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgument"
 	Type["BaseAddLikeSyntaxCommand"]
 class Type type-node
-	Derived0["DeleteCommand"]--&gt;Type
-	click Derived0 "/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand"
-	Derived1["AddCommand"]--&gt;Type
-	click Derived1 "/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand"
+	Derived0["AddCommand"]--&gt;Type
+	click Derived0 "/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand"
+	Derived1["DeleteCommand"]--&gt;Type
+	click Derived1 "/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand"
 	Derived2["UpdateCommand"]--&gt;Type
 	click Derived2 "/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand"
 
