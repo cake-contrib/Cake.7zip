@@ -81,5 +81,16 @@ namespace Cake.SevenZip.Builder
             Command = command;
             return new TestCommandBuilder(ref command);
         }
+
+        /// <summary>
+        /// Makes this Builder a HashCommand-Builder.
+        /// </summary>
+        /// <returns><see cref="HashCommandBuilder"/>.</returns>
+        public HashCommandBuilder InHashMode()
+        {
+            var command = new HashCommand();
+            Command = command;
+            return new HashCommandBuilder(ref command);
+        }
     }
 }

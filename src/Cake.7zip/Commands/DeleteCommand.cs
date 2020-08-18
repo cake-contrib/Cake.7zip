@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 
+using Cake.SevenZip.Builder;
 using Cake.SevenZip.Switches;
 
 namespace Cake.SevenZip.Commands
@@ -7,6 +8,9 @@ namespace Cake.SevenZip.Commands
     /// <summary>
     /// Deletes files from the archive.
     /// (Command: d).
+    /// <para>
+    /// The builder is <see cref="DeleteCommandBuilder"/>.
+    /// </para>
     /// </summary>
     public sealed class DeleteCommand : BaseAddLikeSyntaxCommand,
         ICommand,
@@ -52,10 +56,10 @@ namespace Cake.SevenZip.Commands
         public SwitchFullyQualifiedFilePaths FullyQualifiedFilePaths { get; set; }
 
         /// <inheritdoc/>
-        protected override string CommandName => "delete";
+        protected override string CommandName { get; } = "delete";
 
         /// <inheritdoc/>
-        protected override string CommandChar => "d";
+        protected override string CommandChar { get; } = "d";
 
         /// <inheritdoc/>
         protected override IEnumerable<ISwitch> Switches => new ISwitch[]

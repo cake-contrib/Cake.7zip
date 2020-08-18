@@ -1,6 +1,6 @@
 using Cake.Core.IO;
 
-namespace Cake.SevenZip.Commands
+namespace Cake.SevenZip.Arguments
 {
     /// <summary>
     /// Interface for all commands supporting multiple files as arguments.

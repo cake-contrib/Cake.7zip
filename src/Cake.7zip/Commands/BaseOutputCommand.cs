@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-using Cake.Core.IO;
 using Cake.SevenZip.Parsers;
 
 namespace Cake.SevenZip.Commands
@@ -11,7 +10,8 @@ namespace Cake.SevenZip.Commands
     /// base for all commands that have output. (E.g. <see cref="InformationCommand"/>).
     /// </summary>
     /// <typeparam name="T">The type on the output.</typeparam>
-    public abstract class OutputCommand<T> :
+    public abstract class BaseOutputCommand<T> :
+        BaseCommand,
         ICommand,
         ICanParseOutput
         where T : IOutput
@@ -39,9 +39,6 @@ namespace Cake.SevenZip.Commands
         /// The output parser.
         /// </value>
         internal abstract IOutputParser<T> OutputParser { get; }
-
-        /// <inheritdoc />
-        public abstract void BuildArguments(ref ProcessArgumentBuilder builder);
 
         /// <summary>
         /// Sets the raw output.

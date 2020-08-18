@@ -56,4 +56,5 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             output.Should().BeEquivalentTo(Outputs.Information);
         }
     }
+
 }

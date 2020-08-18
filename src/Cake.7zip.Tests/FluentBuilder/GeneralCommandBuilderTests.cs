@@ -1,4 +1,5 @@
 using Cake.Core;
+using Cake.SevenZip.Arguments;
 using Cake.SevenZip.Builder;
 using Cake.SevenZip.Commands;
 using Cake.SevenZip.Switches;
@@ -19,6 +20,9 @@ namespace Cake.SevenZip.Tests.FluentBuilder
         [InlineData(typeof(AddCommand), typeof(AddCommandBuilder))]
         [InlineData(typeof(DeleteCommand), typeof(DeleteCommandBuilder))]
         [InlineData(typeof(ExtractCommand), typeof(ExtractCommandBuilder))]
+        [InlineData(typeof(HashCommand), typeof(HashCommandBuilder))]
+        [InlineData(typeof(InformationCommand), typeof(InformationCommandBuilder))]
+        [InlineData(typeof(TestCommand), typeof(TestCommandBuilder))]
         [InlineData(typeof(UpdateCommand), typeof(UpdateCommandBuilder))]
         public void Builders_support_needed_switches(Type commandType, Type builderType)
         {
@@ -39,6 +43,9 @@ namespace Cake.SevenZip.Tests.FluentBuilder
         [InlineData(typeof(AddCommand), typeof(AddCommandBuilder))]
         [InlineData(typeof(DeleteCommand), typeof(DeleteCommandBuilder))]
         [InlineData(typeof(ExtractCommand), typeof(ExtractCommandBuilder))]
+        [InlineData(typeof(HashCommand), typeof(HashCommandBuilder))]
+        [InlineData(typeof(InformationCommand), typeof(InformationCommandBuilder))]
+        [InlineData(typeof(TestCommand), typeof(TestCommandBuilder))]
         [InlineData(typeof(UpdateCommand), typeof(UpdateCommandBuilder))]
         public void Builders_support_needed_arguments(Type commandType, Type builderType)
         {

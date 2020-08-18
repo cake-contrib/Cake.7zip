@@ -138,5 +138,48 @@ Compressed: 2198368";
                 return testOutput.ToArrayOfLines();
             }
         }
+
+        public static string[] Hash
+        {
+            get
+            {
+                const string hash = @"
+7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
+
+Scanning
+2 folders, 1 file, 1450 bytes (2 KiB)
+
+CRC32    CRC64            SHA256                                                           SHA1            BLAKE2sp                                                                  Size  Name
+-------- ---------------- ---------------------------------------------------------------- ---------------------------------------- ---------------------------------------------------------------- -------------  ------------
+                                                                                            docs
+                                                                                            docs\input
+65F628E7 0C263A6A38541BE2 735E9C514689F10220846742C8871A665F5888D5C36F71F949C70D9B5FBBFBD6 30A96827A2BD56E1139FFA1988E53C6BDB400D5D 46569382381890A5F29264F0B7EA8EE3628C714911AE43839CC444490033BABD          1450  docs\input\index.cshtml
+-------- ---------------- ---------------------------------------------------------------- ---------------------------------------- ---------------------------------------------------------------- -------------  ------------
+65F628E7 0C263A6A38541BE2 735E9C514689F10220846742C8871A665F5888D5C36F71F949C70D9B5FBBFBD6 30A96827A2BD56E1139FFA1988E53C6BDB400D5D 46569382381890A5F29264F0B7EA8EE3628C714911AE43839CC444490033BABD          1450
+
+Folders: 2
+Files: 1
+Size: 1450
+
+CRC32  for data:              65F628E7
+CRC32  for data and names:    DDEFD8B7
+
+CRC64  for data:              0C263A6A38541BE2
+CRC64  for data and names:    7914AFBA69DF8351
+
+SHA256 for data:              735E9C514689F10220846742C8871A665F5888D5C36F71F949C70D9B5FBBFBD6
+SHA256 for data and names:    22B8DE058E187C59B75D3E385864B8713E1A1D8315E137526E6BD069936B342A
+
+SHA1   for data:              30A96827A2BD56E1139FFA1988E53C6BDB400D5D
+SHA1   for data and names:    4B179021A00AE3AD7ACD2044212EF055CD31C6D8
+
+BLAKE2sp for data:              46569382381890A5F29264F0B7EA8EE3628C714911AE43839CC444490033BABD
+BLAKE2sp for data and names:    222855D590C06DE9B42BF15335DBC6EF14798938E202808A5C7DFE9BC38F8F25
+
+Everything is Ok";
+
+                return hash.ToArrayOfLines();
+            }
+        }
     }
 }

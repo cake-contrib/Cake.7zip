@@ -268,7 +268,7 @@ namespace Cake.SevenZip.Tests
         [Fact]
         public void Should_Set_output_null_on_outputCommand_whithout_output()
         {
-            var command = new Mock<OutputCommand<IOutput>>();
+            var command = new Mock<BaseOutputCommand<IOutput>>();
             var outputParseCommand = command.As<ICanParseOutput>();
             var fixture = new SevenZipRunnerFixture
             {
@@ -287,7 +287,7 @@ namespace Cake.SevenZip.Tests
         [Fact]
         public void Should_Set_output_on_outputCommand()
         {
-            var command = new Mock<OutputCommand<IOutput>>();
+            var command = new Mock<BaseOutputCommand<IOutput>>();
             var outputParseCommand = command.As<ICanParseOutput>();
             var parser = new Mock<IOutputParser<IOutput>>();
             command.Setup(c => c.OutputParser).Returns(parser.Object);
