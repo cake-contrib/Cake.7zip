@@ -24,11 +24,6 @@ namespace Cake.SevenZip.Tests.Parsers
         public void BenchmarkParser_parses_TheBenchmark()
         {
             var parser = new BenchmarkOutputParser();
-            string expected = @"Path = .\nested.zip
-Type = zip
-Physical Size = 2198368
-Everything is Ok
-".UnifyLineEndings();
 
             var actual = parser.Parse(Outputs.Benchmark).Benchmark;
 

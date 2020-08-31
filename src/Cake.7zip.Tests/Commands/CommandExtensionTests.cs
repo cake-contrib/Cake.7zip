@@ -34,7 +34,7 @@ namespace Cake.SevenZip.Tests.Commands
             object o = null;
 
             // ReSharper disable once ExpressionIsAlwaysNull
-            o.RequireNotNull("boom", new object[] { "" });
+            o.RequireNotNull("boom", "");
 
             // ok, no throw.
         }
