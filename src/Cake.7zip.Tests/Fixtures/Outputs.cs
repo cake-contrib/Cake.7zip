@@ -181,5 +181,38 @@ Everything is Ok";
                 return hash.ToArrayOfLines();
             }
         }
+
+        public static string[] Benchmark
+        {
+            get
+            {
+                const string hash = @"
+7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
+
+Windows 10.0 20201
+x64 6.5E03 cpus:8 128T
+CMPXCHG MMX SSE RDTSC PAE SSE2 NX SSE3 CMPXCHG16B XSAVE RDWRFSGSBASE FASTFAIL RDRAND RDTSCP 36 37 38 39 40 42
+Intel(R) Core(TM) i7-6820HQ CPU @ 2.70GHz (506E3)
+CPU Freq:  2064  4266  2000  4266  2723  2723  2522  2115  2976
+
+RAM size:   65430 MB,  # CPU hardware threads:   8
+RAM usage:   1765 MB,  # Benchmark threads:      8
+
+                       Compressing  |                  Decompressing
+Dict     Speed Usage    R/U Rating  |      Speed Usage    R/U Rating
+         KiB/s     %   MIPS   MIPS  |      KiB/s     %   MIPS   MIPS
+
+22:      19541   625   3043  19010  |     306942   757   3456  26174
+23:      15100   537   2864  15385  |     290241   729   3443  25106
+24:      17690   622   3059  19021  |     290392   728   3498  25479
+25:      17082   622   3137  19504  |     289827   746   3458  25788
+----------------------------------  | ------------------------------
+Avr:             601   3026  18230  |              740   3464  25637
+Tot:             671   3245  21934
+";
+
+                return hash.ToArrayOfLines();
+            }
+        }
     }
 }
