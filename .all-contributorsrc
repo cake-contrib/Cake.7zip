@@ -4,10 +4,22 @@
   ],
   "imageSize": 100,
   "commit": false,
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "nils-a",
+      "name": "Nils Andresen",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/349188?v=4",
+      "profile": "http://www.nils-andresen.de/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ],
   "contributorsPerLine": 7,
   "projectName": "Cake.7zip",
   "projectOwner": "cake-contrib",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "commitConvention": "none"
 }
