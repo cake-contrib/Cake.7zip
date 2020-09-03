@@ -10,6 +10,7 @@ BuildParameters.SetParameters(
   masterBranchName: "main",
   repositoryOwner: "cake-contrib",
   repositoryName: "Cake.7zip",
+  shouldPublishMyGet: false, // currently broken
   shouldRunGitVersion: true,
   shouldExecuteGitLink: false,
   shouldRunCodecov: true,
