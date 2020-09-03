@@ -4,9 +4,8 @@
 [![Contributor Covenant][contrib-covenantimg]][contrib-covenant]
 [![Appveyor build][appveyorimage]][appveyor]
 [![Codecov Report][codecovimage]][codecov]
-[![NuGet package][nugetimage]][nuget] <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END --> 
+[![NuGet package][nugetimage]][nuget]
+[![All Contributors][all-contributors-badge]](#contributors)
 
 makes [7zip](https://7-zip.org/) available as a tool in [cake](https://cakebuild.net/)
 
@@ -94,6 +93,7 @@ Thanks goes to these wonderful people ([emoji key][emoji-key]):
 [MIT License © Nils Andresen][license]
 
 [all-contributors]: https://github.com/all-contributors/all-contributors
+[all-contributors-badge]: https://img.shields.io/github/all-contributors/cake-contrib/cake.7zip/develop?&style=flat-square
 [appveyor]: https://ci.appveyor.com/project/cakecontrib/cake-7zip
 [appveyorimage]: https://img.shields.io/appveyor/ci/cakecontrib/cake-7zip.svg?logo=appveyor&style=flat-square
 [codecov]: https://codecov.io/gh/cake-contrib/Cake.7zip
