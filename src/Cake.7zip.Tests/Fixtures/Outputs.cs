@@ -214,5 +214,117 @@ Tot:             671   3245  21934
                 return hash.ToArrayOfLines();
             }
         }
+
+        public static class List
+        {
+            public static string[] SingleArchive
+            {
+                get
+                {
+                    const string list = @"
+
+7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
+
+Scanning the drive for archives:
+1 file, 788 bytes (1 KiB)
+
+Listing archive: ..\Cake.7Zip.Test\fluent.zip
+
+--
+Path = ..\Cake.7Zip.Test\fluent.zip
+Type = zip
+Physical Size = 788
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2020-06-16 22:07:43 ....A         6078          644  a.txt
+------------------- ----- ------------ ------------  ------------------------
+2020-06-16 22:07:43               6078          644  1 files
+";
+
+                    return list.ToArrayOfLines();
+                }
+            }
+
+            public static string[] MultipleArchives
+            {
+                get
+                {
+                    const string list = @"
+7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
+
+Scanning the drive for archives:
+2 files, 2356029 bytes (2301 KiB)
+
+Listing archive: ..\Cake.7Zip.Test\fluent.zip
+
+--
+Path = ..\Cake.7Zip.Test\fluent.zip
+Type = zip
+Physical Size = 788
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2020-06-16 22:07:43 ....A         6078          644  a.txt
+2020-06-16 22:07:44 ....A         6079          645  b.txt
+------------------- ----- ------------ ------------  ------------------------
+2020-06-16 22:07:43              12156         1288  2 files
+
+Listing archive: ..\Cake.7Zip.Test\fluent1.zip
+
+--
+Path = ..\Cake.7Zip.Test\fluent1.zip
+Type = zip
+Physical Size = 2355241
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2020-06-25 23:25:08 D....            0            0  BuildArtifacts
+2020-06-25 23:25:14 D....            0            0  BuildArtifacts\Documentation
+2020-06-25 23:25:14 D....            0            0  BuildArtifacts\Documentation\api
+2020-06-25 23:25:14 D....            0            0  BuildArtifacts\Documentation\api\Cake
+2020-06-25 23:25:14 D....            0            0  BuildArtifacts\Documentation\api\Cake.SevenZip
+2020-06-25 23:25:14 D....            0            0  BuildArtifacts\Documentation\api\Cake.SevenZip\AddCommand
+2020-06-25 23:25:14 D....            0            0  BuildArtifacts\Documentation\api\Cake.SevenZip\AddCommandBuilder
+2020-06-25 23:25:13 ....A        12651         3454  BuildArtifacts\Documentation\api\Cake.SevenZip\AddCommandBuilder\14F93D99.html
+2020-06-25 23:25:14 ....A        13107         3568  BuildArtifacts\Documentation\api\Cake.SevenZip\AddCommandBuilder\4852B7DB.html
+2020-06-25 23:25:14 ....A        12740         3464  BuildArtifacts\Documentation\api\Cake.SevenZip\AddCommandBuilder\75A55D5E.html
+2020-06-25 23:25:14 D....            0            0  BuildArtifacts\Documentation\assets\img
+2019-01-27 17:19:36 ....A         7406         1733  BuildArtifacts\Documentation\assets\img\favicon.ico
+2019-01-27 17:20:00 ....A         1959         1926  BuildArtifacts\Documentation\assets\img\logo.png
+2020-06-25 23:25:14 D....            0            0  BuildArtifacts\Documentation\assets\js
+2019-01-29 18:49:46 ....A        22938         5985  BuildArtifacts\Documentation\assets\js\app.js
+2019-01-29 18:49:46 ....A         9774         2927  BuildArtifacts\Documentation\assets\js\app.min.js
+2019-01-29 18:49:46 ....A        69707        13874  BuildArtifacts\Documentation\assets\js\bootstrap.js
+2019-01-29 18:49:46 ....A        37045         9596  BuildArtifacts\Documentation\assets\js\bootstrap.min.js
+2019-01-29 18:49:46 ....A        64795        24263  BuildArtifacts\Documentation\assets\js\highlight.pack.js
+2019-01-29 18:49:46 ....A         2636         1280  BuildArtifacts\Documentation\assets\js\html5shiv.min.js
+2019-01-29 18:49:48 ....A        85659        29054  BuildArtifacts\Documentation\assets\js\jquery-2.2.3.min.js
+2019-01-29 18:49:48 ....A         4724         1847  BuildArtifacts\Documentation\assets\js\jquery.slimscroll.min.js
+2019-01-29 18:49:48 ....A         2798         1267  BuildArtifacts\Documentation\assets\js\jquery.sticky-kit.min.js
+2019-01-29 18:50:20 ....A        25583         7323  BuildArtifacts\Documentation\assets\js\lunr.min.js
+2019-01-29 18:49:48 ....A      1108921       327035  BuildArtifacts\Documentation\assets\js\mermaid.min.js
+2019-01-29 18:49:48 ....A         4377         2114  BuildArtifacts\Documentation\assets\js\respond.min.js
+2020-06-25 23:25:14 ....A        33111         2699  BuildArtifacts\Documentation\assets\js\searchIndex.js
+2019-01-29 18:49:48 ....A        29888         8087  BuildArtifacts\Documentation\assets\js\svg-pan-zoom.min.js
+2019-01-29 18:49:48 ....A        34717         7733  BuildArtifacts\Documentation\assets\js\turbolinks.js
+2020-06-25 23:25:08 ....A          307          209  BuildArtifacts\Documentation\feed.atom
+2020-06-25 23:25:08 ....A          345          218  BuildArtifacts\Documentation\feed.rss
+2020-06-25 23:25:09 ....A         8729         2629  BuildArtifacts\Documentation\index.html
+------------------- ----- ------------ ------------  ------------------------
+2020-06-25 23:25:14            7530474      2244479  323 files, 95 folders
+
+------------------- ----- ------------ ------------  ------------------------
+2020-06-25 23:25:14            7536552      2245123  324 files, 95 folders
+
+Archives: 2
+Volumes: 2
+Total archives size: 2356029
+";
+
+                    return list.ToArrayOfLines();
+                }
+            }
+        }
     }
 }
