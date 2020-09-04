@@ -17,9 +17,9 @@ namespace Cake.SevenZip.Builder
     ///     SevenZip(m => m
     ///         .InAddMode()
     ///         .WithArchive(File("path/to/file.zip"))
-    ///         .WithFile(File("a.txt"))
-    ///         .WithFile(File("b.txt"))
-    ///         .WithVolume(1, VolumeUnit.Gigabyte));
+    ///         .WithFiles(File("a.txt"))
+    ///         .WithFiles(File("b.txt"))
+    ///         .WithVolume(1, VolumeUnit.Gigabytes));
     /// });
     /// ]]>
     /// </code>
