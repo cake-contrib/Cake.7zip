@@ -24,6 +24,8 @@ namespace Cake.SevenZip.Tests.FluentBuilder
         [InlineData(typeof(InformationCommand), typeof(InformationCommandBuilder))]
         [InlineData(typeof(TestCommand), typeof(TestCommandBuilder))]
         [InlineData(typeof(UpdateCommand), typeof(UpdateCommandBuilder))]
+        [InlineData(typeof(BenchmarkCommand), typeof(BenchmarkCommandBuilder))]
+        [InlineData(typeof(ListCommand), typeof(ListCommandBuilder))]
         public void Builders_support_needed_switches(Type commandType, Type builderType)
         {
             var commandInterfaces = commandType.GetInterfaces();
@@ -47,6 +49,8 @@ namespace Cake.SevenZip.Tests.FluentBuilder
         [InlineData(typeof(InformationCommand), typeof(InformationCommandBuilder))]
         [InlineData(typeof(TestCommand), typeof(TestCommandBuilder))]
         [InlineData(typeof(UpdateCommand), typeof(UpdateCommandBuilder))]
+        [InlineData(typeof(BenchmarkCommand), typeof(BenchmarkCommandBuilder))]
+        [InlineData(typeof(ListCommand), typeof(ListCommandBuilder))]
         public void Builders_support_needed_arguments(Type commandType, Type builderType)
         {
             var commandInterfaces = commandType.GetInterfaces();

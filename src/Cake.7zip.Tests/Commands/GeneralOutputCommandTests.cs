@@ -30,6 +30,8 @@ namespace Cake.SevenZip.Tests.Commands
                 yield return new object[] { new InformationCommand(), typeof(InformationOutputParser) };
                 yield return new object[] { new TestCommand(), typeof(TestOutputParser) };
                 yield return new object[] { new HashCommand(), typeof(HashOutputParser) };
+                yield return new object[] { new BenchmarkCommand(), typeof(BenchmarkOutputParser) };
+                yield return new object[] { new ListCommand(), typeof(ListOutputParser) };
             }
 
             IEnumerator IEnumerable.GetEnumerator()
