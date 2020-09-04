@@ -17,12 +17,15 @@ namespace Cake.SevenZip.Builder
     /// {
     ///     SevenZip(m => m
     ///         .InHashMode()
-    ///         .WithFile(File("foo.txt")
+    ///         .WithFiles(File("foo.txt"))
+    ///         .WithHashFunction(SwitchSetHashFunction.Sha1)
     ///         .WithCommandOutput(o =>
     ///         {
     ///             Information("7Zip version is:" + o.Information);
-    ///             Information("Crc32 is:" + o.Files.Single().Hash);
-    ///         });
+    ///             var file = o.Files.Single(); // only one file was given above
+    ///             var hash = file.Hashes.Single(); // only one hash-function was given above
+    ///             Information($"{hash.HashFunction} of {file.FilePath} is: {hash.Hash}");
+    ///         }));
     /// });
     /// ]]>
     /// </code>

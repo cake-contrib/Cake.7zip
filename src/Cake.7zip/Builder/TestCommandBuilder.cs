@@ -27,6 +27,7 @@ namespace Cake.SevenZip.Builder
     ///                Information($" - {archiveTestResult.FileName} test is { isOk }");
     ///            }
     ///        }));
+    ///  });
     /// ]]>
     /// </code>
     /// </example>

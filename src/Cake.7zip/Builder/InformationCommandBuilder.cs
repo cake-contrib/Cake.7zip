@@ -19,7 +19,7 @@ namespace Cake.SevenZip.Builder
     ///         {
     ///             Information("7Zip version is:" + o.Information);
     ///             Information("7Zip supports QCOW:" + (o.Formats.Any(x => x.IndexOf("QCOW") > -1)));
-    ///         });
+    ///         }));
     /// });
     /// ]]>
     /// </code>
