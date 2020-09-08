@@ -92,5 +92,38 @@ namespace Cake.SevenZip.Builder
             Command = command;
             return new HashCommandBuilder(ref command);
         }
+
+        /// <summary>
+        /// Makes this Builder a BenchmarkCommand-Builder.
+        /// </summary>
+        /// <returns><see cref="BenchmarkCommandBuilder"/>.</returns>
+        public BenchmarkCommandBuilder InBenchmarkMode()
+        {
+            var command = new BenchmarkCommand();
+            Command = command;
+            return new BenchmarkCommandBuilder(ref command);
+        }
+
+        /// <summary>
+        /// Makes this Builder a ListCommand-Builder.
+        /// </summary>
+        /// <returns><see cref="ListCommandBuilder"/>.</returns>
+        public ListCommandBuilder InListMode()
+        {
+            var command = new ListCommand();
+            Command = command;
+            return new ListCommandBuilder(ref command);
+        }
+
+        /// <summary>
+        /// Makes this Builder a RenameCommand-Builder.
+        /// </summary>
+        /// <returns><see cref="RenameCommandBuilder"/>.</returns>
+        public RenameCommandBuilder InRenameMode()
+        {
+            var command = new RenameCommand();
+            Command = command;
+            return new RenameCommandBuilder(ref command);
+        }
     }
 }

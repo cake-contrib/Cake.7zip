@@ -32,6 +32,7 @@ namespace Cake.SevenZip.Tests.Commands
         public void Extension_RequireNotNull_does_not_throw_for_alternatives()
         {
             object o = null;
+
             // ReSharper disable once ExpressionIsAlwaysNull
             o.RequireNotNull("boom", "");
 

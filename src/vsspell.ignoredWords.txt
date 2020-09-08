@@ -19,3 +19,6 @@ gzip
 Enum
 usings
 foreach
+datetime
+attr
+rn

@@ -17,9 +17,8 @@ namespace Cake.SevenZip.Builder
     ///     SevenZip(m => m
     ///       .InDeleteMode()
     ///       .WithArchive(File("path/to/file.zip"))
-    ///       .WithIncludeFilenames(RecurseType.Enable, "*.pdf", "*.xps")
-    ///       .WithIncludeFilenames("*.txt", "*.ini")
-    ///       .WithPassword("secure!");
+    ///       .WithFiles("*.pdf", "*.xps")
+    ///       .WithPassword("secure!"));
     /// });
     /// ]]>
     /// </code>
