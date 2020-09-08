@@ -114,5 +114,16 @@ namespace Cake.SevenZip.Builder
             Command = command;
             return new ListCommandBuilder(ref command);
         }
+
+        /// <summary>
+        /// Makes this Builder a RenameCommand-Builder.
+        /// </summary>
+        /// <returns><see cref="RenameCommandBuilder"/>.</returns>
+        public RenameCommandBuilder InRenameMode()
+        {
+            var command = new RenameCommand();
+            Command = command;
+            return new RenameCommandBuilder(ref command);
+        }
     }
 }
