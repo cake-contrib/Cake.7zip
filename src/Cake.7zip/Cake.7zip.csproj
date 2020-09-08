@@ -20,7 +20,7 @@
         <Description>makes 7zip available as a tool in cake</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://cake-contrib.github.io/Cake.7zip</PackageProjectUrl>
-        <PackageTags>cake;addin;SevenZip</PackageTags>
+        <PackageTags>cake;addin;SevenZip;7zip</PackageTags>
         <RepositoryUrl>https://github.com/cake-contrib/Cake.7zip.git</RepositoryUrl>
         <PackageReleaseNotes>https://github.com/cake-contrib/Cake.7zip/releases</PackageReleaseNotes>
         <RootNamespace>Cake.SevenZip</RootNamespace>
@@ -30,18 +30,23 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Cake.Addin.Analyzer" Version="0.1.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
+        <PackageReference Include="CakeContrib.Guidelines" Version="0.1.2" />
         <PackageReference Include="IDisposableAnalyzers" Version="3.4.1">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.NetFramework.Analyzers" Version="3.0.0">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="stylecop.analyzers" Version="1.1.118">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
@@ -52,12 +57,5 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-    </ItemGroup>
-
-    <ItemGroup>
-        <None Include="icon.png">
-            <Pack>True</Pack>
-            <PackagePath></PackagePath>
-        </None>
     </ItemGroup>
 </Project>
