@@ -81,14 +81,7 @@ namespace Cake.SevenZip.Commands
         protected override string CommandChar { get; } = "l";
 
         /// <inheritdoc/>
-        protected override IEnumerable<ISwitch> Switches => Array.Empty<ISwitch>();
-
-        /// <inheritdoc/>
-        protected override void BuildArgumentParams(ref ProcessArgumentBuilder builder)
-        {
-            Archive.RequireNotNull($"{nameof(Archive)} is required for list.");
-
-            foreach (var sw in new ISwitch[]
+        protected override IEnumerable<ISwitch> Switches => new ISwitch[]
             {
                 IncludeArchiveFilenames,
                 DisableParsingOfArchiveName,
@@ -100,11 +93,12 @@ namespace Cake.SevenZip.Commands
                 ArchiveType,
                 ExcludeFilenames,
                 ShowTechnicalInformation,
-            })
-            {
-                sw?.BuildArguments(ref builder);
-            }
+            };
 
+        /// <inheritdoc/>
+        protected override void BuildArgumentParams(ref ProcessArgumentBuilder builder)
+        {
+            Archive.RequireNotNull($"{nameof(Archive)} is required for list.");
             builder.AppendQuoted(Archive.FullPath);
         }
     }
