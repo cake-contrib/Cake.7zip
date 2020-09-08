@@ -164,6 +164,7 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSetHashFunction">Switch<wbr>Set<wbr>Hash<wbr>Function</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSetHashFunctionCollection">Switch<wbr>Set<wbr>Hash<wbr>Function<wbr>Collection</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSetTimestampFromMostRecentFile">Switch<wbr>Set<wbr>Timestamp<wbr>From<wbr>Most<wbr>Recent<wbr>File</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchShowTechnicalInformation">Switch<wbr>Show<wbr>Technical<wbr>Information</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchUpdateOptions">SwitchUpdateOptions</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolume">SwitchVolume</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolumeCollection">Switch<wbr>Volume<wbr>Collection</a></li>
@@ -190,6 +191,7 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchRecurseSubdirectories">I<wbr>Support<wbr>Switch<wbr>Recurse<wbr>Subdirectories</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchSelfExtractingArchive">I<wbr>Support<wbr>Switch<wbr>Self<wbr>Extracting<wbr>Archive</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchSetHashFunction">I<wbr>Support<wbr>Switch<wbr>Set<wbr>Hash<wbr>Function</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchShowTechnicalInformation">I<wbr>Support<wbr>Switch<wbr>Show<wbr>Technical<wbr>Information</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchTimestampFromMostRecentFile">I<wbr>Support<wbr>Switch<wbr>Timestamp<wbr>From<wbr>Most<wbr>Recent<wbr>File</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchUpdateOptions">I<wbr>Support<wbr>Switch<wbr>Update<wbr>Options</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchVolume">ISupportSwitchVolume</a></li>
@@ -249,9 +251,9 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand">UpdateCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand">UpdateCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -263,12 +265,12 @@
 	click Interface0 "/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitch"
 	Type["ISupportSwitchCompressFilesOpenForWriting"]
 class Type type-node
-	Implementing0["AddCommand"]-.-&gt;Type
-	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand"
+	Implementing0["HashCommand"]-.-&gt;Type
+	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand"
 	Implementing1["UpdateCommand"]-.-&gt;Type
 	click Implementing1 "/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand"
-	Implementing2["HashCommand"]-.-&gt;Type
-	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand"
+	Implementing2["AddCommand"]-.-&gt;Type
+	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand"
 
 						</div>
 					</div>

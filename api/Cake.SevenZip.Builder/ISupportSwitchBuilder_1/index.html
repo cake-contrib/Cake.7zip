@@ -141,11 +141,13 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/ArgumentDirectoriesBuilder">Argument<wbr>Directories<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/ArgumentFilesBuilder">ArgumentFilesBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2">BaseOutputBuilder<wbr>&lt;TBuilder, <wbr>TOutput&gt;<wbr></a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BenchmarkCommandBuilder">Benchmark<wbr>Command<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/CommandBuilder">CommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/DeleteCommandBuilder">DeleteCommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/ExtractCommandBuilder">Extract<wbr>Command<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/HashCommandBuilder">HashCommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/InformationCommandBuilder">Information<wbr>Command<wbr>Builder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/ListCommandBuilder">ListCommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchArchiveTypeBuilder">Switch<wbr>Archive<wbr>Type<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchCompressFilesOpenForWritingBuilder">Switch<wbr>Compress<wbr>Files<wbr>Open<wbr>For<wbr>Writing<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchCompressionMethodBuilder">Switch<wbr>Compression<wbr>Method<wbr>Builder</a></li>
@@ -165,6 +167,7 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSelfExtractingArchiveBuilder">Switch<wbr>Self<wbr>Extracting<wbr>Archive<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSetHashFunctionBuilder">Switch<wbr>Set<wbr>Hash<wbr>Function<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSetTimestampFromMostRecentFileBuilder">Switch<wbr>Set<wbr>Timestamp<wbr>From<wbr>Most<wbr>Recent<wbr>File<wbr>Builder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchShowTechnicalInformationBuilder">Switch<wbr>Show<wbr>Technical<wbr>Information<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchUpdateOptionsBuilder">Switch<wbr>Update<wbr>Options<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchVolumeBuilder">SwitchVolumeBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchWorkingDirectoryBuilder">Switch<wbr>Working<wbr>Directory<wbr>Builder</a></li>
@@ -212,12 +215,13 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/TestCommandBuilder">TestCommandBuilder</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/DeleteCommandBuilder">DeleteCommandBuilder</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/AddCommandBuilder">AddCommandBuilder</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/ExtractCommandBuilder">Extract<wbr>Command<wbr>Builder</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/TestCommandBuilder">TestCommandBuilder</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/UpdateCommandBuilder">UpdateCommandBuilder</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/HashCommandBuilder">HashCommandBuilder</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/ListCommandBuilder">ListCommandBuilder</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/ExtractCommandBuilder">Extract<wbr>Command<wbr>Builder</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/AddCommandBuilder">AddCommandBuilder</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -227,18 +231,20 @@
 							graph BT
 	Type["ISupportSwitchBuilder&lt;T&gt;"]
 class Type type-node
-	Implementing0["TestCommandBuilder"]-.-&gt;Type
-	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Builder/TestCommandBuilder"
-	Implementing1["DeleteCommandBuilder"]-.-&gt;Type
-	click Implementing1 "/Cake.7zip/api/Cake.SevenZip.Builder/DeleteCommandBuilder"
-	Implementing2["AddCommandBuilder"]-.-&gt;Type
-	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Builder/AddCommandBuilder"
-	Implementing3["ExtractCommandBuilder"]-.-&gt;Type
-	click Implementing3 "/Cake.7zip/api/Cake.SevenZip.Builder/ExtractCommandBuilder"
-	Implementing4["UpdateCommandBuilder"]-.-&gt;Type
-	click Implementing4 "/Cake.7zip/api/Cake.SevenZip.Builder/UpdateCommandBuilder"
-	Implementing5["HashCommandBuilder"]-.-&gt;Type
-	click Implementing5 "/Cake.7zip/api/Cake.SevenZip.Builder/HashCommandBuilder"
+	Implementing0["DeleteCommandBuilder"]-.-&gt;Type
+	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Builder/DeleteCommandBuilder"
+	Implementing1["TestCommandBuilder"]-.-&gt;Type
+	click Implementing1 "/Cake.7zip/api/Cake.SevenZip.Builder/TestCommandBuilder"
+	Implementing2["UpdateCommandBuilder"]-.-&gt;Type
+	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Builder/UpdateCommandBuilder"
+	Implementing3["HashCommandBuilder"]-.-&gt;Type
+	click Implementing3 "/Cake.7zip/api/Cake.SevenZip.Builder/HashCommandBuilder"
+	Implementing4["ListCommandBuilder"]-.-&gt;Type
+	click Implementing4 "/Cake.7zip/api/Cake.SevenZip.Builder/ListCommandBuilder"
+	Implementing5["ExtractCommandBuilder"]-.-&gt;Type
+	click Implementing5 "/Cake.7zip/api/Cake.SevenZip.Builder/ExtractCommandBuilder"
+	Implementing6["AddCommandBuilder"]-.-&gt;Type
+	click Implementing6 "/Cake.7zip/api/Cake.SevenZip.Builder/AddCommandBuilder"
 
 						</div>
 					</div>

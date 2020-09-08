@@ -142,11 +142,13 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/ArgumentDirectoriesBuilder">Argument<wbr>Directories<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/ArgumentFilesBuilder">ArgumentFilesBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2">BaseOutputBuilder<wbr>&lt;TBuilder, <wbr>TOutput&gt;<wbr></a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BenchmarkCommandBuilder">Benchmark<wbr>Command<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/CommandBuilder">CommandBuilder</a></li>
 				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/DeleteCommandBuilder">DeleteCommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/ExtractCommandBuilder">Extract<wbr>Command<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/HashCommandBuilder">HashCommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/InformationCommandBuilder">Information<wbr>Command<wbr>Builder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/ListCommandBuilder">ListCommandBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchArchiveTypeBuilder">Switch<wbr>Archive<wbr>Type<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchCompressFilesOpenForWritingBuilder">Switch<wbr>Compress<wbr>Files<wbr>Open<wbr>For<wbr>Writing<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchCompressionMethodBuilder">Switch<wbr>Compression<wbr>Method<wbr>Builder</a></li>
@@ -166,6 +168,7 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSelfExtractingArchiveBuilder">Switch<wbr>Self<wbr>Extracting<wbr>Archive<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSetHashFunctionBuilder">Switch<wbr>Set<wbr>Hash<wbr>Function<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSetTimestampFromMostRecentFileBuilder">Switch<wbr>Set<wbr>Timestamp<wbr>From<wbr>Most<wbr>Recent<wbr>File<wbr>Builder</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchShowTechnicalInformationBuilder">Switch<wbr>Show<wbr>Technical<wbr>Information<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchUpdateOptionsBuilder">Switch<wbr>Update<wbr>Options<wbr>Builder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchVolumeBuilder">SwitchVolumeBuilder</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchWorkingDirectoryBuilder">Switch<wbr>Working<wbr>Directory<wbr>Builder</a></li>
@@ -285,9 +288,8 @@ class Type type-node
     SevenZip(m =&gt; m
       .InDeleteMode()
       .WithArchive(File("path/to/file.zip"))
-      .WithIncludeFilenames(RecurseType.Enable, "*.pdf", "*.xps")
-      .WithIncludeFilenames("*.txt", "*.ini")
-      .WithPassword("secure!");
+      .WithFiles("*.pdf", "*.xps")
+      .WithPassword("secure!"));
 });</code></pre>
     </div>
 

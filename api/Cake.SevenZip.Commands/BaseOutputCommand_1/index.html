@@ -141,10 +141,12 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand">Base<wbr>Add<wbr>Like<wbr>Syntax<wbr>Command</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseCommand">BaseCommand</a></li>
 				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1">BaseOutputCommand<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BenchmarkCommand">BenchmarkCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand">DeleteCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand">ExtractCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand">InformationCommand</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand">ListCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand">UpdateCommand</a></li>
 			<li class="header">Interface Types</li>
@@ -201,9 +203,11 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand">InformationCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand">InformationCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BenchmarkCommand">BenchmarkCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand">ListCommand</a></li>								
 									</ul>
 								</dd>			
 							
@@ -220,12 +224,16 @@
 	Type-.-&gt;Interface1["ICanParseOutput"]
 	Type["BaseOutputCommand&lt;T&gt;"]
 class Type type-node
-	Derived0["TestCommand"]--&gt;Type
-	click Derived0 "/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand"
+	Derived0["HashCommand"]--&gt;Type
+	click Derived0 "/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand"
 	Derived1["InformationCommand"]--&gt;Type
 	click Derived1 "/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand"
-	Derived2["HashCommand"]--&gt;Type
-	click Derived2 "/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand"
+	Derived2["BenchmarkCommand"]--&gt;Type
+	click Derived2 "/Cake.7zip/api/Cake.SevenZip.Commands/BenchmarkCommand"
+	Derived3["TestCommand"]--&gt;Type
+	click Derived3 "/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand"
+	Derived4["ListCommand"]--&gt;Type
+	click Derived4 "/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand"
 
 						</div>
 					</div>

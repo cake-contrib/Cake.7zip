@@ -167,6 +167,7 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSetHashFunction">Switch<wbr>Set<wbr>Hash<wbr>Function</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSetHashFunctionCollection">Switch<wbr>Set<wbr>Hash<wbr>Function<wbr>Collection</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSetTimestampFromMostRecentFile">Switch<wbr>Set<wbr>Timestamp<wbr>From<wbr>Most<wbr>Recent<wbr>File</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchShowTechnicalInformation">Switch<wbr>Show<wbr>Technical<wbr>Information</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchUpdateOptions">SwitchUpdateOptions</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolume">SwitchVolume</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolumeCollection">Switch<wbr>Volume<wbr>Collection</a></li>
@@ -193,6 +194,7 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchRecurseSubdirectories">I<wbr>Support<wbr>Switch<wbr>Recurse<wbr>Subdirectories</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchSelfExtractingArchive">I<wbr>Support<wbr>Switch<wbr>Self<wbr>Extracting<wbr>Archive</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchSetHashFunction">I<wbr>Support<wbr>Switch<wbr>Set<wbr>Hash<wbr>Function</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchShowTechnicalInformation">I<wbr>Support<wbr>Switch<wbr>Show<wbr>Technical<wbr>Information</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchTimestampFromMostRecentFile">I<wbr>Support<wbr>Switch<wbr>Timestamp<wbr>From<wbr>Most<wbr>Recent<wbr>File</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchUpdateOptions">I<wbr>Support<wbr>Switch<wbr>Update<wbr>Options</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchVolume">ISupportSwitchVolume</a></li>
@@ -252,12 +254,12 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilenameCollection">Switch<wbr>Exclude<wbr>Filename<wbr>Collection</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeArchiveFilenameCollection">Switch<wbr>Exclude<wbr>Archive<wbr>Filename<wbr>Collection</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSetHashFunctionCollection">Switch<wbr>Set<wbr>Hash<wbr>Function<wbr>Collection</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolumeCollection">Switch<wbr>Volume<wbr>Collection</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilenameCollection">Switch<wbr>Include<wbr>Filename<wbr>Collection</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilenameCollection">Switch<wbr>Exclude<wbr>Filename<wbr>Collection</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolumeCollection">Switch<wbr>Volume<wbr>Collection</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeArchiveFilenameCollection">Switch<wbr>Exclude<wbr>Archive<wbr>Filename<wbr>Collection</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeArchiveFilenameCollection">Switch<wbr>Include<wbr>Archive<wbr>Filename<wbr>Collection</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSetHashFunctionCollection">Switch<wbr>Set<wbr>Hash<wbr>Function<wbr>Collection</a></li>								
 									</ul>
 								</dd>			
 							
@@ -271,18 +273,18 @@
 	click Interface0 "/Cake.7zip/api/Cake.SevenZip.Switches/ISwitch"
 	Type["BaseSwitchCollection&lt;T&gt;"]
 class Type type-node
-	Derived0["SwitchExcludeFilenameCollection"]--&gt;Type
-	click Derived0 "/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilenameCollection"
-	Derived1["SwitchExcludeArchiveFilenameCollection"]--&gt;Type
-	click Derived1 "/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeArchiveFilenameCollection"
-	Derived2["SwitchSetHashFunctionCollection"]--&gt;Type
-	click Derived2 "/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSetHashFunctionCollection"
-	Derived3["SwitchVolumeCollection"]--&gt;Type
-	click Derived3 "/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolumeCollection"
-	Derived4["SwitchIncludeFilenameCollection"]--&gt;Type
-	click Derived4 "/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilenameCollection"
-	Derived5["SwitchIncludeArchiveFilenameCollection"]--&gt;Type
-	click Derived5 "/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeArchiveFilenameCollection"
+	Derived0["SwitchIncludeFilenameCollection"]--&gt;Type
+	click Derived0 "/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilenameCollection"
+	Derived1["SwitchExcludeFilenameCollection"]--&gt;Type
+	click Derived1 "/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilenameCollection"
+	Derived2["SwitchVolumeCollection"]--&gt;Type
+	click Derived2 "/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolumeCollection"
+	Derived3["SwitchExcludeArchiveFilenameCollection"]--&gt;Type
+	click Derived3 "/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeArchiveFilenameCollection"
+	Derived4["SwitchIncludeArchiveFilenameCollection"]--&gt;Type
+	click Derived4 "/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeArchiveFilenameCollection"
+	Derived5["SwitchSetHashFunctionCollection"]--&gt;Type
+	click Derived5 "/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSetHashFunctionCollection"
 
 						</div>
 					</div>
