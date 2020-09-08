@@ -3,7 +3,7 @@ name: Publish Documentation
 on:
   push:
     branches: [ develop ]
-  workflow_dispatch
+  workflow_dispatch:
 
 env:
   WYAM_ACCESS_TOKEN: ${{ secrets.API_TOKEN }}
