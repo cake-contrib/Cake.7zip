@@ -1,0 +1,71 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - "release/**"
+      - "hotfix/**"
+      - "feature/**"
+    tags-ignore:
+      - "*"
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    #https://github.community/t/duplicate-checks-on-push-and-pull-request-simultaneous-event/18012/4
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository 
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+
+    steps:
+      - uses: actions/checkout@v2.2.0
+        with:
+          fetch-depth: 0
+      - name: Cache Tools
+        uses: actions/cache@v2
+        with:
+          path: tools
+          key: ${{ runner.os }}-tools-${{ hashFiles('.config/dotnet-tools.json') }}
+      - name: Setup .NET Core 2.1
+        uses: actions/setup-dotnet@v1.5.0
+        with:
+          dotnet-version: 2.1.809
+      - name: Setup .NET Core 3.1
+        uses: actions/setup-dotnet@v1.5.0
+        with:
+          dotnet-version: 3.1.107
+      - name: .net SxS Unix
+        if: matrix.os != 'windows-latest'
+        run: rsync -a ${DOTNET_ROOT/3.1.107/2.1.809}/* $DOTNET_ROOT/
+      - name: .net Sxs Windows
+        if: matrix.os == 'windows-latest'
+        run: |
+          SET DOTNET_31_ROOT=%DOTNET_ROOT:3.1.107=2.1.809%
+          xcopy /s /y /d %DOTNET_31_ROOT% %DOTNET_ROOT%
+        shell: cmd
+      - name: Build project
+        uses: cake-build/cake-action@v1
+        with:
+          script-path: recipe.cake
+          target: CI
+          verbosity: Diagnostic
+          cake-version: 0.38.4
+          cake-bootstrap: true
+      # currently, Cake.Recipe does not upload artifacts when run on gh-actions
+      - name: Upload Issues
+        uses: actions/upload-artifact@v2
+        with:
+          if-no-files-found: warn
+          name: ${{ matrix.os }} Issues
+          path: BuildArtifacts/report.html
+      - name: Upload Packages
+        uses: actions/upload-artifact@v2
+        if: matrix.os == 'windows-latest'
+        with:
+          if-no-files-found: warn
+          name: package
+          path: BuildArtifacts/Packages/**/*

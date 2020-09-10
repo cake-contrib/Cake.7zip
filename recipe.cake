@@ -1,4 +1,4 @@
-#load nuget:?package=Cake.Recipe&version=1.1.2
+#load nuget:https://pkgs.dev.azure.com/cake-contrib/Home/_packaging/addins%40Local/nuget/v3/index.json?package=Cake.Recipe&prerelease
 
 Environment.SetVariableNames();
 
@@ -10,12 +10,8 @@ BuildParameters.SetParameters(
   masterBranchName: "main",
   repositoryOwner: "cake-contrib",
   repositoryName: "Cake.7zip",
-  shouldPublishMyGet: false, // currently broken
-  shouldRunGitVersion: true,
-  shouldExecuteGitLink: false,
-  shouldRunCodecov: true,
-  shouldDeployGraphDocumentation: false,
-  shouldRunDotNetCorePack: true);
+  shouldRunDotNetCorePack: true,
+  shouldUseDeterministicBuilds: true);
 
 BuildParameters.PrintParameters(Context);
 
