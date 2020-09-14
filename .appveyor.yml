@@ -17,7 +17,7 @@ test: off
 build: off
 
 build_script:
-  - ps: .\build.ps1 -Target AppVeyor
+  - ps: .\build.ps1 --target=CI
 
 cache:
-  - "tools -> recipe.cake,tools/packages.config"
+  - "tools -> recipe.cake,.config/dotnet-tools.json"
