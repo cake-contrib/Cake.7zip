@@ -4,8 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      ignore:
-        - "Cake.Core"
+    ignore:
+      - dependency-name: "Cake.Core"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
