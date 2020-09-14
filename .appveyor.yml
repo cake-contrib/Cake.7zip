@@ -20,4 +20,4 @@ build_script:
   - ps: .\build.ps1 --target=CI
 
 cache:
-  - "tools -> recipe.cake,.config/dotnet-tools.json"
+  - "tools -> recipe.cake"

@@ -15,7 +15,7 @@ pool:
 steps:
 - task: Cache@2
   inputs:
-    key: '"$(Agent.OS)" | recipe.cake | .config/dotnet-tools.json'
+    key: '"$(Agent.OS)" | recipe.cake'
     path: 'tools'
 - task: Cake@2
   inputs:
