@@ -92,12 +92,14 @@ namespace Cake.SevenZip.Tests.FluentBuilder
                 var builderTypeName = commandType.Name + "Builder";
                 var builderType = baseOutputCommandType.Assembly.GetTypes().Single(t => t.Name == builderTypeName);
                 var expected = Activator.CreateInstance(commandType);
+                // ReSharper disable once PossibleNullReferenceException - not possible
                 var builder = builderType.GetConstructor(
                     BindingFlags.Instance | BindingFlags.NonPublic,
                     null,
                     new[] { commandType.MakeByRefType() },
                     null).Invoke(new[] { expected });
 
+                // ReSharper disable once PossibleNullReferenceException - not possible
                 var commandProperty = builderType.BaseType
                     .GetProperties(BindingFlags.Instance | BindingFlags.NonPublic)
                     .Single();

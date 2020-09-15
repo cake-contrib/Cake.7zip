@@ -161,6 +161,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
         public void UpdateActions_work(string propertyName, string expected)
         {
             var updateActionProp = typeof(UpdateAction).GetProperty(propertyName, BindingFlags.Public | BindingFlags.Static);
+            // ReSharper disable once PossibleNullReferenceException - not really
             var updateAction = updateActionProp.GetValue(null);
 
             updateAction.Should().NotBeNull();
