@@ -1,8 +1,6 @@
 name: Publish Documentation
 
 on:
-  push:
-    branches: [ develop ]
   workflow_dispatch:
 
 env:
@@ -13,7 +11,7 @@ env:
 
 jobs:
   cake:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: checkout
@@ -32,7 +30,7 @@ jobs:
       uses: cake-build/cake-action@v1
       with:
         script-path: recipe.cake
-        target: PublishDocs
+        target: Force-Publish-Documentation
         verbosity: Diagnostic
         cake-version: 0.38.4
         cake-bootstrap: true
