@@ -7,6 +7,11 @@
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <CodeAnalysisRuleSet>..\cake.7zip.ruleset</CodeAnalysisRuleSet>
     </PropertyGroup>
+    
+    <ItemGroup>
+        <AdditionalFiles Include="$(SolutionDir)/stylecop.json" Link="stylecop.json" />
+        <None Include="$(SolutionDir)/.editorconfig" Link=".editorconfig" />
+    </ItemGroup>
 
     <PropertyGroup>
         <StartYear>2020</StartYear>
@@ -35,7 +40,7 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Cake.Core" Version="0.33.0" PrivateAssets="All" />
-        <PackageReference Include="CakeContrib.Guidelines" Version="0.3.0" PrivateAssets="All"  />
+        <PackageReference Include="CakeContrib.Guidelines" Version="0.4.0" PrivateAssets="All"  />
         <PackageReference Include="IDisposableAnalyzers" Version="3.4.2">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
