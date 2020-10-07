@@ -200,9 +200,9 @@
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-    Builder for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand">ExtractCommand</a></code>.
-    
-    </div>
+     Builder for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand">ExtractCommand</a></code>.
+     
+     </div>
 
 		<div class="panel panel-default">
   			<div class="panel-body">
@@ -291,16 +291,26 @@ class Type type-node
 
 	<h1 id="Examples">Examples</h1>
 	<div>
-    <pre><code class="cs">Task("UnzipIt")
-    .Does(() =&gt;
-{
-    SevenZip(m =&gt; m
-      .InExtractMode()
-      .WithArchive(File("path/to/file.zip"))
-      .WithArchiveType(SwitchArchiveType.Zip)
-      .WithOutputDirectory("some/other/directory"));
-});</code></pre>
-    </div>
+     <pre><code class="cs"> Task("UnzipIt")
+     .Does(() =&gt;
+ {
+     SevenZip(m =&gt; m
+       .InExtractMode()
+       .WithArchive(File("path/to/file.zip"))
+       .WithArchiveType(SwitchArchiveType.Zip)
+       .WithOutputDirectory("some/other/directory"));
+ });
+
+ Task("UnzipVolumes")
+     .Does(() =&gt;
+ {
+     SevenZip(m =&gt; m
+       .InExtractMode()
+       .WithArchive(File("path/to/file.7z.001"))
+       .WithArchiveType(SwitchArchiveType.SevenZip.Volumes())
+       .WithOutputDirectory("some/other/directory"));
+ });</code></pre>
+     </div>
 
 
 

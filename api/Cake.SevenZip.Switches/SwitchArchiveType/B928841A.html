@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.7zip/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.7zip/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.7zip - API - IHaveArgumentFiles Interface</title>
+        <title>Cake.7zip - API - SwitchArchiveType.Volumes() Method</title>
         <link href="/Cake.7zip/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.7zip/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/Cake.7zip/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -72,7 +72,7 @@
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
-<p><a href="#Properties">Properties</a></p>
+<p><a href="#ReturnValue">Return Value</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -132,15 +132,22 @@
                     <ul class="sidebar-menu">
                         
 			<li class="header">Namespace</li>
-		<li><a href="/Cake.7zip/api/Cake.SevenZip.Arguments">Cake<wbr>.SevenZip<wbr>.Arguments</a></li>
+		<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches">Cake<wbr>.SevenZip<wbr>.Switches</a></li>
+		<li class="header">Type</li>
+		<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType">SwitchArchiveType</a></li>
 		<li role="separator" class="divider"></li>
-			<li class="header">Interface Types</li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgument">IHaveArgument</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentArchive">IHaveArgumentArchive</a></li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentDirectories">I<wbr>Have<wbr>Argument<wbr>Directories</a></li>
-				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentFiles">IHaveArgumentFiles</a></li>
-			<li class="header">Class Types</li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/RenamePair">RenamePair</a></li>
+			<li class="header">Property Members</li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType/191965A5">Bzip2</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType/ECEEC046">Cab</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType/01F21857">Gzip</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType/F690C58E">Lzma</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType/07B2A335">SevenZip</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType/7D4B1E42">Tar</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType/9DE76985">Xz</a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType/538D576E">Zip</a></li>
+			<li class="header">Method Members</li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType/6BE6BEC0">BuildArguments<wbr>(<wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></li>
+				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType/B928841A">Volumes<wbr>()<wbr></a></li>
 
 
                     </ul>
@@ -155,130 +162,57 @@
 
 
 <section class="content-header">
-	<h1>IHaveArgumentFiles <small>Interface</small></h1>
+			<h3><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType">SwitchArchiveType</a>.</h3>
+	<h1>Volumes<wbr>()<wbr> <small>Method</small></h1>
 </section>
 <section class="content">
 	
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-    Interface for all commands supporting multiple files as arguments.
+    Append ".split" to the type.
+    This is needed when extracting/testing multi-volume archives.
     </div>
 
 		<div class="panel panel-default">
-  			<div class="panel-body">
-				<div class="row">
-					<div class="col-md-6">
-						<dl class="dl-horizontal">		
-
-								<dt>Namespace</dt>
-								<dd><a href="/Cake.7zip/api/Cake.SevenZip.Arguments">Cake<wbr>.SevenZip<wbr>.Arguments</a></dd>
-											
-								<dt>Interfaces</dt>
-								<dd>
-									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgument">IHaveArgument</a></li>								
-									</ul>
-								</dd>
-							
-							
-							
-								<dt>Implementing Types</dt>
-								<dd>
-									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand">Base<wbr>Add<wbr>Like<wbr>Syntax<wbr>Command</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand">DeleteCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand">UpdateCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></li>								
-									</ul>
-								</dd>				
-						</dl>
-					</div>		
-					<div class="col-md-6">
-						<div class="mermaid">
-							graph BT
-	Type-.-&gt;Interface0["IHaveArgument"]
-	click Interface0 "/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgument"
-	Type["IHaveArgumentFiles"]
-class Type type-node
-	Implementing0["BaseAddLikeSyntaxCommand"]-.-&gt;Type
-	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand"
-	Implementing1["HashCommand"]-.-&gt;Type
-	click Implementing1 "/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand"
-	Implementing2["DeleteCommand"]-.-&gt;Type
-	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand"
-	Implementing3["TestCommand"]-.-&gt;Type
-	click Implementing3 "/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand"
-	Implementing4["UpdateCommand"]-.-&gt;Type
-	click Implementing4 "/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand"
-	Implementing5["AddCommand"]-.-&gt;Type
-	click Implementing5 "/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand"
-
-						</div>
-					</div>
-				</div>
+  			<div class="panel-body">	
+				<dl class="dl-horizontal">	
+						
+						<dt>Namespace</dt>
+						<dd><a href="/Cake.7zip/api/Cake.SevenZip.Switches">Cake<wbr>.SevenZip<wbr>.Switches</a></dd>
+					
+						<dt>Containing Type</dt>
+						<dd><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType">SwitchArchiveType</a></dd>		
+					
+				</dl>
   			</div>
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public interface IHaveArgumentFiles : IHaveArgument</code></pre>
+	<pre><code>public SwitchArchiveType Volumes()</code></pre>
 
 
 
 
 
 
-
-
-
-
-			<h1 id="Properties">Properties</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover three-cols">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Value</th>
-								<th>Summary</th>
-							</tr>
-						</thead>
-							<tbody><tr>
-								<td><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentFiles/06ED3359">Files</a></td>
-								<td>FilePathCollection</td>
-								<td>
-									<div>
-    Gets or sets the list of files this command operates on.
-    These are single files. (I.e. to add to, or to remove from the archive).
-    <p>
-    For add and update, single files from the file-system will always be
-    placed directly into the archive without any directory-structure.
-    </p>
-    Setting Files like this in add/update:
-    <pre><code class="cs">Files = new[] {
-  new FilePath("C:\\some\\place\\a.txt"),
-  new FilePath("C:\\some\\other\\place\\b.txt"),
-  new FilePath("C:\\a\\totally\\different\\place\\c.txt")
-};</code></pre>
-    Will result in an archive:
-    <pre><code class="cs">Archive.zip
-- a.txt
-- b.txt
-- c.txt</code></pre>
-    without any directory structure.
-    
-    
-    </div>
-								</td>
-							</tr>
-					</tbody></table>
-				</div>
-			</div>
-		
-
-
+	<h1 id="ReturnValue">Return Value</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+					<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType">SwitchArchiveType</a></td>
+					<td>A <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType">SwitchArchiveType</a></code> with <code class="cs">.split</code> appended.</td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>	
 
 
 	
