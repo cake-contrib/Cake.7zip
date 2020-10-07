@@ -74,6 +74,16 @@ namespace Cake.SevenZip.Switches
         /// </summary>
         public static SwitchArchiveType Bzip2 { get; } = new SwitchArchiveType("bzip2");
 
+        /// <summary>
+        /// Append ".split" to the type.
+        /// This is needed when extracting/testing multi-volume archives.
+        /// </summary>
+        /// <returns>A <see cref="SwitchArchiveType"/> with <c>.split</c> appended.</returns>
+        public SwitchArchiveType Volumes()
+        {
+            return new SwitchArchiveType(type + ".split");
+        }
+
         /// <inheritdoc />
         public void BuildArguments(ref ProcessArgumentBuilder builder)
         {

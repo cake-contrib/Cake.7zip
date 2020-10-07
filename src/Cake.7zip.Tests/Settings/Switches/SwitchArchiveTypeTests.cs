@@ -24,6 +24,18 @@ namespace Cake.SevenZip.Tests.Settings.Switches
             actual.Should().Be(expected);
         }
 
+        [Theory]
+        [ClassData(typeof(TestData))]
+        public void ArchiveType_StaticPropsSplit_works(SwitchArchiveType type, string expectedType)
+        {
+            var fixture = new SevenZipSettingsFixture();
+            var expected = "-t" + expectedType + ".split";
+
+            var actual = fixture.Parse(b => type.Volumes().BuildArguments(ref b));
+
+            actual.Should().Be(expected);
+        }
+
         private class TestData : IEnumerable<object[]>
         {
             public IEnumerator<object[]> GetEnumerator()

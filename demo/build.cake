@@ -167,6 +167,18 @@ Task("RenameFile")
         .WithRenameFile(File("CODE_OF_CONDUCT.md"), File("CODE_OF_CONDUCT.txt")));
 });
 
+Task("GH78")
+   .IsDependentOn("Clean")
+   .IsDependentOn("ZipVolumes")
+   .Does(() =>
+{
+    SevenZip(m => m
+    .InExtractMode()
+    .WithArchive(output + File("volume.7z.001"))
+    .WithArchiveType(SwitchArchiveType.SevenZip.Volumes())
+    .WithOutputDirectory(output + Directory("Test01")));
+});
+
 Task("Default")
    .IsDependentOn("Clean")
    .IsDependentOn("ZipIt")
@@ -179,6 +191,7 @@ Task("Default")
    .IsDependentOn("GetHash")
    .IsDependentOn("DoBenchmark")
    .IsDependentOn("ListArchiveContent")
-   .IsDependentOn("RenameFile");
+   .IsDependentOn("RenameFile")
+   .IsDependentOn("GH78");
 
 RunTarget(target);
