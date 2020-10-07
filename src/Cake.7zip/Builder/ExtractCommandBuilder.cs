@@ -20,6 +20,16 @@ namespace Cake.SevenZip.Builder
     ///       .WithArchiveType(SwitchArchiveType.Zip)
     ///       .WithOutputDirectory("some/other/directory"));
     /// });
+    ///
+    /// Task("UnzipVolumes")
+    ///     .Does(() =>
+    /// {
+    ///     SevenZip(m => m
+    ///       .InExtractMode()
+    ///       .WithArchive(File("path/to/file.7z.001"))
+    ///       .WithArchiveType(SwitchArchiveType.SevenZip.Volumes())
+    ///       .WithOutputDirectory("some/other/directory"));
+    /// });
     /// ]]>
     /// </code>
     /// </example>
