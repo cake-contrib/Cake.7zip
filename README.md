@@ -7,7 +7,7 @@
 [![NuGet package][nugetimage]][nuget]
 [![All Contributors][all-contributors-badge]](#contributors)
 
-makes [7zip](https://7-zip.org/) available as a tool in [cake](https://cakebuild.net/)
+Makes [7zip](https://7-zip.org/) available as a tool in [cake](https://cakebuild.net/)
 
 ## Table of Contents
 
