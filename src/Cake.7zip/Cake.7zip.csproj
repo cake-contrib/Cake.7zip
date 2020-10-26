@@ -7,7 +7,7 @@
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <CodeAnalysisRuleSet>..\cake.7zip.ruleset</CodeAnalysisRuleSet>
     </PropertyGroup>
-    
+
     <ItemGroup>
         <AdditionalFiles Include="$(SolutionDir)/stylecop.json" Link="stylecop.json" />
         <None Include="$(SolutionDir)/.editorconfig" Link=".editorconfig" />
@@ -22,7 +22,7 @@
         <!-- Properties related to packaging -->
         <Authors>Nils Andresen</Authors>
         <Copyright>Copyright © $(FullYear) — Nils Andresen</Copyright>
-        <Description>makes 7zip available as a tool in cake</Description>
+        <Description>Makes 7zip available as a tool in Cake</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://cake-contrib.github.io/Cake.7zip</PackageProjectUrl>
         <PackageTags>cake;addin;SevenZip;7zip</PackageTags>
