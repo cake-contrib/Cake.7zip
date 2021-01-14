@@ -13,6 +13,7 @@ Makes [7zip](https://7-zip.org/) available as a tool in [cake](https://cakebuild
 
 - [Install](#install)
 - [Usage](#usage)
+- [Discussion](#discussion)
 - [Maintainer](#maintainer)
 - [Contributing](#contributing)
   - [Contributors](#contributors)
@@ -56,6 +57,12 @@ SevenZip(s => s
   .WithArchiveType(SwitchArchiveType.Zip)
   .WithOutputDirectory("some/other/directory"));
 ```
+
+## Discussion
+
+If you have questions, search for an existing one, or create a new discussion on the Cake GitHub repository, using the `extension-q-a` category.
+
+[![Join in the discussion on the Cake repository](https://img.shields.io/badge/GitHub-Discussions-green?logo=github)](https://github.com/cake-build/cake/discussions)
 
 ## Maintainer
 
