@@ -1,0 +1,7 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Bootstrap" type="CAKE_CONFIGURATION" factoryName="Cake configuration factory">
+    <option name="additionalArguments" value="--bootstrap" />
+    <option name="scriptPath" value="../recipe.cake" />
+    <method v="2" />
+  </configuration>
+</component>
