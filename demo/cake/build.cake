@@ -1,5 +1,5 @@
 #tool "nuget:?package=7-Zip.CommandLine&version=18.1.0"
-#r "..\src\Cake.7zip\bin\Debug\netstandard2.0\Cake.7zip.dll"
+#r "..\..\src\Cake.7zip\bin\Debug\netstandard2.0\Cake.7zip.dll"
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
@@ -12,6 +12,7 @@ var target = Argument("target", "Default");
 ///////////////////////////////////////////////////////////////////////////////
 
 var output = Directory("output");
+var root = Directory("../..");
 
 ///////////////////////////////////////////////////////////////////////////////
 // TASKS
@@ -29,8 +30,8 @@ Task("ZipIt")
    SevenZip(m => m
       .InAddMode()
       .WithArchive(output + File("archive.zip"))
-      .WithFiles(File("../README.md"))
-      .WithFiles(File("../CODE_OF_CONDUCT.md")));
+      .WithFiles(root + File("README.md"))
+      .WithFiles(root + File("CODE_OF_CONDUCT.md")));
 });
 
 Task("ZipVolumes")
@@ -40,7 +41,7 @@ Task("ZipVolumes")
       .InAddMode()
       .WithArchive(output + File("volume.7z"))
       .WithArchiveType(SwitchArchiveType.SevenZip)
-      .WithDirectoryContents(Directory(".."))
+      .WithDirectoryContents(root + Directory("src"))
       .WithCompressFilesOpenForWriting()
       .WithVolume(20, VolumeUnit.Megabytes));
 });
@@ -75,7 +76,7 @@ Task("UpdateIt")
     SevenZip(m => m
         .InUpdateMode()
         .WithArchive(output + File("archive.zip"))
-        .WithFiles(File("../LICENSE.txt")));
+        .WithFiles(root + File("LICENSE.txt")));
 });
 
 Task("GetInfos")
