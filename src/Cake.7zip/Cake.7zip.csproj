@@ -25,7 +25,7 @@
         <Description>Makes 7zip available as a tool in Cake</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://cake-contrib.github.io/Cake.7zip</PackageProjectUrl>
-        <PackageTags>cake;addin;SevenZip;7zip</PackageTags>
+        <PackageTags>cake, build, cake-build, script, cake-addin, SevenZip, 7zip</PackageTags>
         <RepositoryUrl>https://github.com/cake-contrib/Cake.7zip.git</RepositoryUrl>
         <PackageReleaseNotes>https://github.com/cake-contrib/Cake.7zip/releases</PackageReleaseNotes>
         <RootNamespace>Cake.SevenZip</RootNamespace>
