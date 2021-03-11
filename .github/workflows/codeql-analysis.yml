@@ -30,7 +30,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2.3.4
+      uses: actions/checkout@v2
       with:
         fetch-depth: 0
 
@@ -49,7 +49,7 @@ jobs:
         # Prefix the list here with "+" to use these queries and those in the config file.
         # queries: ./path/to/local/query, your-org/your-repo/queries@main
 
-    - run: ./build.ps1
+    - run: ./build.ps1 --target=DotNetCore-Build
       shell: pwsh
 
     - name: Perform CodeQL Analysis
