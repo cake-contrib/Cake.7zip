@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Cake.SevenZip.Commands;
 using Cake.SevenZip.Parsers;
 
-using FluentAssertions;
+using Shouldly;
 
 using Xunit;
 
@@ -19,8 +19,8 @@ namespace Cake.SevenZip.Tests.Commands
             where T : IOutput
         {
             var actual = command.OutputParser;
-            actual.Should().NotBeNull();
-            actual.Should().BeOfType(expectedParserType);
+            actual.ShouldNotBeNull();
+            actual.ShouldBeOfType(expectedParserType);
         }
 
         private class TestData : IEnumerable<object[]>

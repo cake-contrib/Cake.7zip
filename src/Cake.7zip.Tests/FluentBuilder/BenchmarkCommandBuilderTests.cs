@@ -1,7 +1,7 @@
 using Cake.SevenZip.Tests.Fixtures;
 
 using Xunit;
-using FluentAssertions;
+using Shouldly;
 using System.Collections.Generic;
 using System.Collections;
 using System;
@@ -24,7 +24,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Fact]
@@ -39,7 +39,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Fact]
@@ -54,7 +54,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Fact]
@@ -69,7 +69,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Fact]
@@ -84,7 +84,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Fact]
@@ -102,7 +102,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Fact]
@@ -120,7 +120,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = fixture.EvaluateArgs();
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Fact]
@@ -137,7 +137,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
                   info = o.Information;
               }));
 
-            info.Should().NotBeNull();
+            info.ShouldNotBeNull();
         }
 
         [Theory]
@@ -154,7 +154,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = getter(command);
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         private class TestData : IEnumerable<object[]>

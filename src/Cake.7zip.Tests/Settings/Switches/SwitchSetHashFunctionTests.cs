@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Cake.SevenZip.Switches;
 using Cake.SevenZip.Tests.Fixtures;
 
-using FluentAssertions;
+using Shouldly;
 
 using Xunit;
 
@@ -21,7 +21,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
 
             var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         private class SwitchTestData : IEnumerable<object[]>

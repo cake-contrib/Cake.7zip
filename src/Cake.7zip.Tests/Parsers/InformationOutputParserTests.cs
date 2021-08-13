@@ -3,7 +3,7 @@ using System.Linq;
 using Cake.SevenZip.Parsers;
 using Cake.SevenZip.Tests.Fixtures;
 
-using FluentAssertions;
+using Shouldly;
 
 using Xunit;
 
@@ -19,7 +19,7 @@ namespace Cake.SevenZip.Tests.Parsers
             var actual = parser.Parse(Outputs.Information);
             const string expected = "7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21";
 
-            actual.Information.Should().Be(expected);
+            actual.Information.ShouldBe(expected);
         }
 
         [Fact]
@@ -53,7 +53,7 @@ namespace Cake.SevenZip.Tests.Parsers
  0  ED  6F10701 7zAES
  0  ED  6F00181 AES256CBC".ToArrayOfLines();
 
-            actual.Should().BeEquivalentTo(expected);
+            actual.ShouldBe(expected, true);
         }
 
         [Fact]
@@ -64,7 +64,7 @@ namespace Cake.SevenZip.Tests.Parsers
             var actual = parser.Parse(Outputs.Information).Libs.ToList();
             var expected = new[] { @" 0  C:\Program Files\7-Zip\7z.dll" };
 
-            actual.Should().BeEquivalentTo(expected);
+            actual.ShouldBe(expected, true);
         }
 
         [Fact]
@@ -80,7 +80,7 @@ namespace Cake.SevenZip.Tests.Parsers
  0    8        4 CRC64
  0   32      202 BLAKE2sp".ToArrayOfLines();
 
-            actual.Should().BeEquivalentTo(expected);
+            actual.ShouldBe(expected, true);
         }
 
         [Fact]
@@ -146,7 +146,7 @@ namespace Cake.SevenZip.Tests.Parsers
  0 C   FMG       zip      zip z01 zipx jar xpi odt ods docx xlsx epub ipa apk appx P K 03 04  ||  P K 05 06  ||  P K 06 06  ||  P K 07 08 P K  ||  P K 0 0 P K"
     .ToArrayOfLines();
 
-            actual.Should().BeEquivalentTo(expected);
+            actual.ShouldBe(expected, true);
         }
     }
 }
