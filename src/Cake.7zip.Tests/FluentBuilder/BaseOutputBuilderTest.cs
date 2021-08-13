@@ -6,7 +6,7 @@ using Cake.SevenZip.Builder;
 using Cake.SevenZip.Commands;
 using Cake.SevenZip.Parsers;
 
-using FluentAssertions;
+using Shouldly;
 
 using Moq;
 
@@ -25,7 +25,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.WithCommandOutput(null);
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Fact]
@@ -37,7 +37,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.WithCommandRawOutput(null);
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Fact]
@@ -51,7 +51,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             builder.WithCommandOutput(expected);
 
-            command.Object.OutputAction.Should().Be(expected);
+            command.Object.OutputAction.ShouldBe(expected);
         }
 
         [Fact]
@@ -65,7 +65,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             builder.WithCommandRawOutput(expected);
 
-            command.Object.RawOutputAction.Should().Be(expected);
+            command.Object.RawOutputAction.ShouldBe(expected);
         }
 
         [Fact]
@@ -106,7 +106,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
                 var commandPropertyGetter = commandProperty.GetMethod;
                 var actual = commandPropertyGetter.Invoke(builder, new object[0]);
 
-                actual.Should().Be(expected);
+                actual.ShouldBe(expected);
             }
         }
 

@@ -2,7 +2,7 @@ using System;
 
 using Cake.SevenZip.Commands;
 
-using FluentAssertions;
+using Shouldly;
 
 using Xunit;
 
@@ -25,7 +25,7 @@ namespace Cake.SevenZip.Tests.Commands
             // ReSharper disable once ExpressionIsAlwaysNull
             Action action = () => o.RequireNotNull("boom");
 
-            action.Should().Throw<ArgumentException>().WithMessage("boom");
+            action.ShouldThrow<ArgumentException>().Message.ShouldBe("boom");
         }
 
         [Fact]
@@ -52,11 +52,11 @@ namespace Cake.SevenZip.Tests.Commands
         {
             Action action = () => (new object[] { }).RequireNotEmpty("boom");
 
-            action.Should().Throw<ArgumentException>().WithMessage("boom");
+            action.ShouldThrow<ArgumentException>().Message.ShouldBe("boom");
         }
 
         [Fact]
-        public void Extension_RequireNotEmpty_does_not_throw_for_enumerble_alternatives()
+        public void Extension_RequireNotEmpty_does_not_throw_for_enumerable_alternatives()
         {
             // ReSharper disable once CoVariantArrayConversion
             (new object[] { }).RequireNotEmpty("boom", new[] { new[] { "" } }); // two arrays, because of the "params-array"

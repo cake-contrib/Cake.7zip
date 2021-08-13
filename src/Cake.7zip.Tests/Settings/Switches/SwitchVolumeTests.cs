@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using Cake.SevenZip.Switches;
 using Cake.SevenZip.Tests.Fixtures;
 
-using FluentAssertions;
+using Shouldly;
 
 using Xunit;
 
@@ -26,7 +26,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
 
             var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Fact]
@@ -42,7 +42,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
 
             var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Fact]
@@ -58,7 +58,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
 
             var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Fact]
@@ -74,7 +74,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
 
             var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Fact]
@@ -89,7 +89,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
 
             var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Fact]
@@ -104,7 +104,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
                 fixture.Parse(b => sut.BuildArguments(ref b));
             };
 
-            result.Should().Throw<ArgumentException>().WithMessage(expectedMessage);
+            result.ShouldThrow<ArgumentException>().Message.ShouldBe(expectedMessage);
         }
 
         [Fact]
@@ -122,7 +122,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
                 fixture.Parse(b => sut.BuildArguments(ref b));
             };
 
-            result.Should().Throw<ArgumentException>().WithMessage(expectedMessage);
+            result.ShouldThrow<ArgumentException>().Message.ShouldBe(expectedMessage);
         }
     }
 }

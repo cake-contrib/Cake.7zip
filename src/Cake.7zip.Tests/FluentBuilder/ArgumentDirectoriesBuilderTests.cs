@@ -4,7 +4,7 @@ using Cake.Core.IO;
 using Cake.SevenZip.Arguments;
 using Cake.SevenZip.Builder;
 
-using FluentAssertions;
+using Shouldly;
 
 using Moq;
 
@@ -24,7 +24,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.Object.WithDirectories(new DirectoryPath("foo"));
 
-            actual.Should().Be(expected.Object);
+            actual.ShouldBe(expected.Object);
         }
 
         [Fact]
@@ -37,7 +37,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.Object.WithDirectories(new DirectoryPathCollection());
 
-            actual.Should().Be(expected.Object);
+            actual.ShouldBe(expected.Object);
         }
 
         [Fact]
@@ -50,7 +50,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.Object.WithDirectoryContents(new DirectoryPath("foo"));
 
-            actual.Should().Be(expected.Object);
+            actual.ShouldBe(expected.Object);
         }
 
         [Fact]
@@ -63,7 +63,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.Object.WithDirectoryContents(new DirectoryPathCollection());
 
-            actual.Should().Be(expected.Object);
+            actual.ShouldBe(expected.Object);
         }
 
         [Fact]
@@ -76,7 +76,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             var expected = new DirectoryPath("foo");
 
             builder.Object.WithDirectoryContents(expected);
-            command.Object.DirectoryContents.Single().Should().Be(expected);
+            command.Object.DirectoryContents.Single().ShouldBe(expected);
         }
 
         [Fact]
@@ -90,7 +90,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             builder.Object.WithDirectoryContents(new DirectoryPathCollection(new[] { expected }));
 
-            command.Object.DirectoryContents.Single().Should().Be(expected);
+            command.Object.DirectoryContents.Single().ShouldBe(expected);
         }
 
         [Fact]
@@ -104,7 +104,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             builder.Object.WithDirectories(expected);
 
-            command.Object.Directories.Single().Should().Be(expected);
+            command.Object.Directories.Single().ShouldBe(expected);
         }
 
         [Fact]
@@ -118,7 +118,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             builder.Object.WithDirectories(new DirectoryPathCollection(new[] { expected }));
 
-            command.Object.Directories.Single().Should().Be(expected);
+            command.Object.Directories.Single().ShouldBe(expected);
         }
     }
 }

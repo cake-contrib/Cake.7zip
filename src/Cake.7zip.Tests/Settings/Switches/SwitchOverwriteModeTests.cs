@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Cake.SevenZip.Switches;
 using Cake.SevenZip.Tests.Fixtures;
 
-using FluentAssertions;
+using Shouldly;
 
 using Xunit;
 
@@ -21,14 +21,14 @@ namespace Cake.SevenZip.Tests.Settings.Switches
 
             var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Theory]
         [ClassData(typeof(TestData))]
         public void OverwriteMode_work(OverwriteMode mode, string expected)
         {
-            mode.ToString().Should().Be(expected);
+            mode.ToString().ShouldBe(expected);
         }
 
         private class TestData : IEnumerable<object[]>

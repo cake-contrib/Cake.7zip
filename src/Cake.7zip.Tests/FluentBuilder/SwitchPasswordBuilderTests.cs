@@ -1,7 +1,7 @@
 using Cake.SevenZip.Builder;
 using Cake.SevenZip.Switches;
 
-using FluentAssertions;
+using Shouldly;
 
 using Moq;
 
@@ -21,7 +21,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.Object.WithPassword("x");
 
-            actual.Should().Be(expected.Object);
+            actual.ShouldBe(expected.Object);
         }
     }
 }

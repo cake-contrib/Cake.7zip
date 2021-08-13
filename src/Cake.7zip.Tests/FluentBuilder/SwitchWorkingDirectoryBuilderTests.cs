@@ -2,7 +2,7 @@ using Cake.Core.IO;
 using Cake.SevenZip.Builder;
 using Cake.SevenZip.Switches;
 
-using FluentAssertions;
+using Shouldly;
 
 using Moq;
 
@@ -22,7 +22,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.Object.WithWorkingDirectory(new DirectoryPath("foo"));
 
-            actual.Should().Be(expected.Object);
+            actual.ShouldBe(expected.Object);
         }
     }
 }
