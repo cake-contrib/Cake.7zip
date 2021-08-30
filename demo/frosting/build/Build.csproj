@@ -5,7 +5,7 @@
     <RunWorkingDirectory>$(MSBuildProjectDirectory)..</RunWorkingDirectory>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Cake.Frosting" Version="1.0.0" />
+    <PackageReference Include="Cake.Frosting" Version="1.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Cake.7zip, Version=0.8.0.0, Culture=neutral, PublicKeyToken=null">
