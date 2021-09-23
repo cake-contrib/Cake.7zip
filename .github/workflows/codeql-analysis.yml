@@ -13,6 +13,7 @@ on:
     branches: [develop]
   schedule:
     - cron: '0 15 * * 6'
+  workflow_dispatch:
 
 jobs:
   analyze:
@@ -57,6 +58,18 @@ jobs:
         target: DotNetCore-Build
         cake-version: 0.38.5
         cake-bootstrap: true
+      env:
+        COMPlus_DbgEnableMiniDump: 1
+        COMPlus_DbgMiniDumpType: 1
+        COMPlus_DbgMiniDumpName: BuildArtifacts/coredump.dmp
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
+
+    - name: Upload CoreDump
+      uses: actions/upload-artifact@v2
+      if: failure()
+      with:
+        if-no-files-found: warn
+        name: CoreDump
+        path: BuildArtifacts/coredump.dmp
