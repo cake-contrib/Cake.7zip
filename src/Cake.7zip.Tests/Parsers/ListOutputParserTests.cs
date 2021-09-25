@@ -3,7 +3,7 @@ using System.Linq;
 using Cake.SevenZip.Parsers;
 using Cake.SevenZip.Tests.Fixtures;
 
-using FluentAssertions;
+using Shouldly;
 
 using Xunit;
 
@@ -19,7 +19,7 @@ namespace Cake.SevenZip.Tests.Parsers
             var actual = parser.Parse(Outputs.List.SingleArchive);
             const string expected = "7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21";
 
-            actual.Information.Should().Be(expected);
+            actual.Information.ShouldBe(expected);
         }
 
         [Fact]
@@ -29,8 +29,8 @@ namespace Cake.SevenZip.Tests.Parsers
 
             var actual = parser.Parse(Outputs.List.MultipleArchives);
 
-            actual.CompressedSize.Should().Be(2245123);
-            actual.Size.Should().Be(7536552);
+            actual.CompressedSize.ShouldBe(2245123);
+            actual.Size.ShouldBe(7536552);
         }
 
         [Fact]
@@ -40,8 +40,8 @@ namespace Cake.SevenZip.Tests.Parsers
 
             var actual = parser.Parse(Outputs.List.SingleArchive);
 
-            actual.CompressedSize.Should().Be(644);
-            actual.Size.Should().Be(6078);
+            actual.CompressedSize.ShouldBe(644);
+            actual.Size.ShouldBe(6078);
         }
 
         [Fact]
@@ -51,7 +51,7 @@ namespace Cake.SevenZip.Tests.Parsers
 
             var actual = parser.Parse(Outputs.List.MultipleArchives).Archives;
 
-            actual.Should().HaveCount(2);
+            actual.Count().ShouldBe(2);
         }
 
         [Fact]
@@ -61,12 +61,14 @@ namespace Cake.SevenZip.Tests.Parsers
 
             var actual = parser.Parse(Outputs.List.MultipleArchives).Archives.Single(x => x.Path == @"..\Cake.7Zip.Test\fluent.zip");
 
-            actual.Files.Select(x => x.Name).Should().BeEquivalentTo("a.txt", "b.txt");
-            actual.ArchiveDate.Should().BeCloseTo(new System.DateTime(2020, 06, 16, 22, 07, 43, 0));
-            actual.CompressedSize.Should().Be(1288);
-            actual.Size.Should().Be(12156);
-            actual.PhysicalSize.Should().Be(788);
-            actual.Type.Should().Be("zip");
+            actual.Files.Select(x => x.Name).ShouldBe(new[]{"a.txt", "b.txt"}, true);
+            actual.ArchiveDate.ShouldBeInRange(
+                new System.DateTime(2020, 06, 16, 22, 07, 43, 0),
+                new System.DateTime(2020, 06, 16, 22, 07, 43, 999));
+            actual.CompressedSize.ShouldBe(1288);
+            actual.Size.ShouldBe(12156);
+            actual.PhysicalSize.ShouldBe(788);
+            actual.Type.ShouldBe("zip");
         }
 
         [Fact]
@@ -79,10 +81,12 @@ namespace Cake.SevenZip.Tests.Parsers
                 .Files
                 .Single(x => x.Name == @"b.txt");
 
-            actual.FileDate.Should().BeCloseTo(new System.DateTime(2020, 06, 16, 22, 07, 44, 0));
-            actual.CompressedSize.Should().Be(645);
-            actual.Size.Should().Be(6079);
-            actual.Attributes.Should().Be("....A");
+            actual.FileDate.ShouldBeInRange(
+                new System.DateTime(2020, 06, 16, 22, 07, 44, 0),
+                new System.DateTime(2020, 06, 16, 22, 07, 44, 999));
+            actual.CompressedSize.ShouldBe(645);
+            actual.Size.ShouldBe(6079);
+            actual.Attributes.ShouldBe("....A");
         }
     }
 }

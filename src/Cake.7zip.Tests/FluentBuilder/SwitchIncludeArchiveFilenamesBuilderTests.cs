@@ -1,7 +1,7 @@
 using Cake.SevenZip.Builder;
 using Cake.SevenZip.Switches;
 
-using FluentAssertions;
+using Shouldly;
 
 using Moq;
 
@@ -21,7 +21,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.Object.WithIncludeArchiveFilenames(default);
 
-            actual.Should().Be(expected.Object);
+            actual.ShouldBe(expected.Object);
         }
 
         [Fact]
@@ -34,7 +34,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var actual = expected.Object.WithIncludeArchiveFilenames((RecurseType)default, default);
 
-            actual.Should().Be(expected.Object);
+            actual.ShouldBe(expected.Object);
         }
     }
 }

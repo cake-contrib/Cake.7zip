@@ -9,7 +9,7 @@ using Cake.SevenZip.Switches;
 using Cake.SevenZip.Tests.Fixtures;
 using Cake.Testing;
 
-using FluentAssertions;
+using Shouldly;
 
 using Moq;
 
@@ -30,7 +30,7 @@ namespace Cake.SevenZip.Tests
                 fixture.Run();
             };
 
-            result.Should().Throw<ArgumentNullException>();
+            result.ShouldThrow<ArgumentNullException>();
         }
 
         [Fact]
@@ -51,7 +51,7 @@ namespace Cake.SevenZip.Tests
                 fixture.Run();
             };
 
-            result.Should().Throw<CakeException>().WithMessage(expectedMessage);
+            result.ShouldThrow<CakeException>().Message.ShouldBe(expectedMessage);
         }
 
         [Fact]
@@ -71,7 +71,7 @@ namespace Cake.SevenZip.Tests
                 fixture.Run();
             };
 
-            result.Should().Throw<CakeException>().WithMessage(expectedMessage);
+            result.ShouldThrow<CakeException>().Message.ShouldBe(expectedMessage);
         }
 
         [Fact]
@@ -103,7 +103,7 @@ namespace Cake.SevenZip.Tests
 
             sevenZipKey.Verify(k => k.GetValue("Path"), Times.Once);
             sevenZipKey.Verify(k => k.GetValue("Path64"), Times.Once);
-            result.Path.FullPath.Should().Be(file.Path.FullPath);
+            result.Path.FullPath.ShouldBe(file.Path.FullPath);
         }
 
         [Fact]
@@ -134,7 +134,7 @@ namespace Cake.SevenZip.Tests
 
             var result = fixture.Run();
 
-            result.Path.FullPath.Should().Be(file.Path.FullPath);
+            result.Path.FullPath.ShouldBe(file.Path.FullPath);
         }
 
         [Fact]
@@ -162,7 +162,7 @@ namespace Cake.SevenZip.Tests
             var result = fixture.Run();
 
             sevenZipKey.Verify(k => k.GetValue("Path"), Times.Never);
-            result.Path.FullPath.Should().Be(fixture.DefaultToolPath.FullPath);
+            result.Path.FullPath.ShouldBe(fixture.DefaultToolPath.FullPath);
         }
 
         [Fact]
@@ -186,7 +186,7 @@ namespace Cake.SevenZip.Tests
                 fixture.Run();
             };
 
-            action.Should().Throw<CakeException>();
+            action.ShouldThrow<CakeException>();
         }
 
         [Fact]
@@ -207,7 +207,7 @@ namespace Cake.SevenZip.Tests
 
             var actual = fixture.EvaluateArgs();
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Fact]
@@ -239,7 +239,7 @@ namespace Cake.SevenZip.Tests
 
             var actual = fixture.EvaluateArgs();
 
-            actual.Should().Be(expected);
+            actual.ShouldBe(expected);
         }
 
         [Fact]
@@ -262,7 +262,7 @@ namespace Cake.SevenZip.Tests
                 fixture.Run();
             };
 
-            result.Should().Throw<CakeException>().WithMessage(expectedMessage);
+            result.ShouldThrow<CakeException>().Message.ShouldBe(expectedMessage);
         }
 
         [Fact]

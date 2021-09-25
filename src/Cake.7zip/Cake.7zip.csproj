@@ -11,6 +11,7 @@
     <ItemGroup>
         <AdditionalFiles Include="$(SolutionDir)/stylecop.json" Link="stylecop.json" />
         <None Include="$(SolutionDir)/.editorconfig" Link=".editorconfig" />
+        <None Include="$(ProjectDir)../../README.md" Link="README.md" PackagePath="" Pack="true" />
     </ItemGroup>
 
     <PropertyGroup>
@@ -30,6 +31,7 @@
         <PackageReleaseNotes>https://github.com/cake-contrib/Cake.7zip/releases</PackageReleaseNotes>
         <RootNamespace>Cake.SevenZip</RootNamespace>
         <Version>0.0.1</Version>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
@@ -38,8 +40,8 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Cake.Core" Version="1.0.0" PrivateAssets="All" />
-        <PackageReference Include="CakeContrib.Guidelines" Version="1.1.0" PrivateAssets="All" />
-        <PackageReference Include="IDisposableAnalyzers" Version="3.4.13">
+        <PackageReference Include="CakeContrib.Guidelines" Version="1.1.2" PrivateAssets="All" />
+        <PackageReference Include="IDisposableAnalyzers" Version="3.4.15">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
@@ -47,18 +49,10 @@
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Microsoft.NetFramework.Analyzers" Version="3.3.2">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
         <PackageReference Include="stylecop.analyzers" Version="1.1.118">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
-        <PackageReference Include="Text.Analyzers" Version="2.6.4">
-            <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
     </ItemGroup>
 </Project>

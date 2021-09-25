@@ -9,8 +9,7 @@ using Cake.SevenZip.Builder;
 using Cake.SevenZip.Commands;
 using Cake.SevenZip.Switches;
 
-using FluentAssertions;
-using FluentAssertions.Common;
+using Shouldly;
 
 using Xunit;
 
@@ -26,7 +25,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             var builderTypeName = command.Name + "Builder";
             var builderType = assembly.GetTypes().FirstOrDefault(t => t.Name == builderTypeName);
 
-            builderType.Should().NotBeNull($"the command {command.Name} needs a builder named {builderTypeName}");
+            builderType.ShouldNotBeNull($"the command {command.Name} needs a builder named {builderTypeName}");
 
             // commandBuilder supports the command as a mode.
             var commandBuilderType = typeof(CommandBuilder);
@@ -35,9 +34,9 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             var modeMethod = commandBuilderType
                 .GetMethods(BindingFlags.Public | BindingFlags.Instance)
                 .FirstOrDefault(m => m.Name == modeName);
-            modeMethod.Should().NotBeNull($"the CommandBuilder should have a method named {modeName} for the {command.Name}");
+            modeMethod.ShouldNotBeNull($"the CommandBuilder should have a method named {modeName} for the {command.Name}");
             // ReSharper disable PossibleNullReferenceException
-            modeMethod.ReturnType.Should().Be(builderType, $"the {modeName} of CommandBuilder should");
+            modeMethod.ReturnType.ShouldBe(builderType, $"the {modeName} of CommandBuilder should");
             // ReSharper enable PossibleNullReferenceException
         }
 
@@ -52,7 +51,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var switchBuilder = genericSwitchBuilder.MakeGenericType(@switch);
 
-            builderType.Should().Implement(switchBuilder, because: $"the command {command.Name} implements {@switch.Name}, so {builderTypeName} should implement {switchBuilder}");
+            switchBuilder.IsAssignableFrom(builderType).ShouldBe(true, $"the command {command.Name} implements {@switch.Name}, so {builderTypeName} should implement {switchBuilder}");
 
             // test the interface was really implemented...
             var expected = Activator.CreateInstance(command);
@@ -61,9 +60,9 @@ namespace Cake.SevenZip.Tests.FluentBuilder
                 null,
                 new[] { command.MakeByRefType() },
                 null).Invoke(new[] { expected });
-            var property = switchBuilder.Properties().Single();
-            var actual = property.GetGetMethod().Invoke(builder, new object[0]);
-            actual.Should().Be(expected);
+            var property = switchBuilder.GetProperties().Single();
+            var actual = property.GetGetMethod().Invoke(builder, Array.Empty<object>());
+            actual.ShouldBe(expected);
         }
 
         [Theory]
@@ -77,7 +76,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             var argumentBuilder = genericArgumentBuilder.MakeGenericType(arg);
 
-            builderType.Should().Implement(argumentBuilder, because: $"the command {command.Name} implements {arg.Name}, so {builderTypeName} should implement {argumentBuilder}");
+            argumentBuilder.IsAssignableFrom(builderType).ShouldBe(true, $"the command {command.Name} implements {arg.Name}, so {builderTypeName} should implement {argumentBuilder}");
 
             // test the interface was really implemented...
             var expected = Activator.CreateInstance(command);
@@ -86,9 +85,9 @@ namespace Cake.SevenZip.Tests.FluentBuilder
                 null,
                 new[] { command.MakeByRefType() },
                 null).Invoke(new[] { expected });
-            var property = argumentBuilder.Properties().Single();
-            var actual = property.GetGetMethod().Invoke(builder, new object[0]);
-            actual.Should().Be(expected);
+            var property = argumentBuilder.GetProperties().Single();
+            var actual = property.GetGetMethod().Invoke(builder, Array.Empty<object>());
+            actual.ShouldBe(expected);
         }
 
         private static Assembly GetAssembly()
@@ -103,7 +102,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
                 var commands = new CommandData().Select(x => (Type)x[0]);
                 foreach (var c in commands)
                 {
-                    var supportedArguments = c.GetInterfaces().Where(i => i.Implements(typeof(IHaveArgument)));
+                    var supportedArguments = c.GetInterfaces().Where(i => typeof(IHaveArgument).IsAssignableFrom(i));
                     foreach (var arg in supportedArguments)
                     {
                         yield return new object[] { c, arg };
@@ -124,7 +123,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
                 var commands = new CommandData().Select(x => (Type)x[0]);
                 foreach (var c in commands)
                 {
-                    var supportedSwitches = c.GetInterfaces().Where(i => i.Implements(typeof(ISupportSwitch)));
+                    var supportedSwitches = c.GetInterfaces().Where(i => typeof(ISupportSwitch).IsAssignableFrom(i));
                     foreach (var @switch in supportedSwitches)
                     {
                         yield return new object[] { c, @switch };
@@ -144,7 +143,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             {
                 var assembly = GetAssembly();
                 var commands = assembly.GetTypes()
-                    .Where(t => t.Implements(typeof(ICommand)))
+                    .Where(t => typeof(ICommand).IsAssignableFrom(t))
                     .Where(t => !t.IsAbstract);
 
                 return commands.Select(c => new object[] { c }).GetEnumerator();
