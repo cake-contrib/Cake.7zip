@@ -204,9 +204,9 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand">ListCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand">InformationCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand">ListCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BenchmarkCommand">BenchmarkCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></li>								
 									</ul>
@@ -225,12 +225,12 @@
 	Type-.-&gt;Interface1["ICanParseOutput"]
 	Type["BaseOutputCommand&lt;T&gt;"]
 class Type type-node
-	Derived0["TestCommand"]--&gt;Type
-	click Derived0 "/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand"
+	Derived0["InformationCommand"]--&gt;Type
+	click Derived0 "/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand"
 	Derived1["ListCommand"]--&gt;Type
 	click Derived1 "/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand"
-	Derived2["InformationCommand"]--&gt;Type
-	click Derived2 "/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand"
+	Derived2["TestCommand"]--&gt;Type
+	click Derived2 "/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand"
 	Derived3["BenchmarkCommand"]--&gt;Type
 	click Derived3 "/Cake.7zip/api/Cake.SevenZip.Commands/BenchmarkCommand"
 	Derived4["HashCommand"]--&gt;Type
@@ -380,7 +380,15 @@ class Type type-node
             </footer>
         </div>
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
-        
+        <a class="github-button" href="https://github.com/cake-contrib/Cake.7zip" target="_blank">
+    <i class="fa fa-github"></i>
+    GitHub
+</a>
+<a class="discussion-button" href="https://github.com/cake-build/cake/discussions" target="_blank">
+    <i class="fa fa-github"></i>
+    Discussion
+</a>
+
         <script>           
             // Close the sidebar if we select an anchor link
             $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
