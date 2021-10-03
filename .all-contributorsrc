@@ -14,6 +14,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "DiDoHH",
+      "name": "DiDoHH",
+      "avatar_url": "https://avatars.githubusercontent.com/u/45682415?v=4",
+      "profile": "https://github.com/DiDoHH",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
@@ -21,5 +30,6 @@
   "projectOwner": "cake-contrib",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "commitConvention": "none"
+  "commitConvention": "none",
+  "skipCi": true
 }
