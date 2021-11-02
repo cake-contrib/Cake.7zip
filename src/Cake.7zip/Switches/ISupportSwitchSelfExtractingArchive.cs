@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchSelfExtractingArchive.
         /// </value>
-        SwitchSelfExtractingArchive SelfExtractingArchive { get; set; }
+        SwitchSelfExtractingArchive? SelfExtractingArchive { get; set; }
     }
 }

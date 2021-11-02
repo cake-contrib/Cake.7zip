@@ -14,7 +14,7 @@ namespace Cake.SevenZip.Arguments
         /// <value>
         /// The old name.
         /// </value>
-        public FilePath OldFile { get; set; }
+        public FilePath? OldFile { get; set; }
 
         /// <summary>
         /// Gets or sets the new name.
@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Arguments
         /// <value>
         /// The new name.
         /// </value>
-        public FilePath NewFile { get; set; }
+        public FilePath? NewFile { get; set; }
     }
 }

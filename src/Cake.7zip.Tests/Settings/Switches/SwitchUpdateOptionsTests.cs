@@ -160,7 +160,7 @@ namespace Cake.SevenZip.Tests.Settings.Switches
         [InlineData("Anti", "3")]
         public void UpdateActions_work(string propertyName, string expected)
         {
-            var updateActionProp = typeof(UpdateAction).GetProperty(propertyName, BindingFlags.Public | BindingFlags.Static);
+            var updateActionProp = typeof(UpdateAction).GetProperty(propertyName, BindingFlags.Public | BindingFlags.Static)!;
             // ReSharper disable once PossibleNullReferenceException - not really
             var updateAction = updateActionProp.GetValue(null);
 

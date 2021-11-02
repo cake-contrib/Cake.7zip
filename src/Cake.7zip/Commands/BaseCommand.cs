@@ -25,7 +25,7 @@ namespace Cake.SevenZip.Commands
         /// <value>
         /// The switches.
         /// </value>
-        protected abstract IEnumerable<ISwitch> Switches { get; }
+        protected abstract IEnumerable<ISwitch?> Switches { get; }
 
         /// <summary>
         /// Builds the arguments.

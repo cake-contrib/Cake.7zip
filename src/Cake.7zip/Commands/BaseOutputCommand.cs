@@ -22,7 +22,7 @@ namespace Cake.SevenZip.Commands
         /// <value>
         /// The output-action.
         /// </value>
-        public Action<T> OutputAction { get; set; }
+        public Action<T>? OutputAction { get; set; }
 
         /// <summary>
         /// Gets or sets the raw output-action, to be called when output is available.
@@ -30,7 +30,7 @@ namespace Cake.SevenZip.Commands
         /// <value>
         /// The raw output-action.
         /// </value>
-        public Action<string[]> RawOutputAction { get; set; }
+        public Action<string[]>? RawOutputAction { get; set; }
 
         /// <summary>
         /// Gets the output parser.
@@ -45,10 +45,10 @@ namespace Cake.SevenZip.Commands
         /// Used internally.
         /// </summary>
         /// <param name="rawOutput">The raw output.</param>
-        void ICanParseOutput.SetRawOutput(IEnumerable<string> rawOutput)
+        void ICanParseOutput.SetRawOutput(IEnumerable<string>? rawOutput)
         {
-            string[] outputlines = null;
-            T parsed = default;
+            string[] outputlines = Array.Empty<string>();
+            T? parsed = default;
 
             if (rawOutput != null)
             {
@@ -57,7 +57,10 @@ namespace Cake.SevenZip.Commands
             }
 
             RawOutputAction?.Invoke(outputlines);
-            OutputAction?.Invoke(parsed);
+            if (parsed != null)
+            {
+                OutputAction?.Invoke(parsed);
+            }
         }
     }
 }

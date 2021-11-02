@@ -59,9 +59,9 @@ namespace Cake.SevenZip.Tests.FluentBuilder
                 BindingFlags.Instance | BindingFlags.NonPublic,
                 null,
                 new[] { command.MakeByRefType() },
-                null).Invoke(new[] { expected });
+                null)!.Invoke(new[] { expected });
             var property = switchBuilder.GetProperties().Single();
-            var actual = property.GetGetMethod().Invoke(builder, Array.Empty<object>());
+            var actual = property.GetGetMethod()!.Invoke(builder, Array.Empty<object>());
             actual.ShouldBe(expected);
         }
 
@@ -84,9 +84,9 @@ namespace Cake.SevenZip.Tests.FluentBuilder
                 BindingFlags.Instance | BindingFlags.NonPublic,
                 null,
                 new[] { command.MakeByRefType() },
-                null).Invoke(new[] { expected });
+                null)!.Invoke(new[] { expected });
             var property = argumentBuilder.GetProperties().Single();
-            var actual = property.GetGetMethod().Invoke(builder, Array.Empty<object>());
+            var actual = property.GetGetMethod()!.Invoke(builder, Array.Empty<object>());
             actual.ShouldBe(expected);
         }
 

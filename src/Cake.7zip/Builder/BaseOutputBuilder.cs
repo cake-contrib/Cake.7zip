@@ -30,7 +30,7 @@ namespace Cake.SevenZip.Builder
         /// </summary>
         /// <param name="outputAction">the action to perform on the output.</param>
         /// <returns>The builder-instance for fluent re-use.</returns>
-        public TBuilder WithCommandOutput(Action<TOutput> outputAction)
+        public TBuilder WithCommandOutput(Action<TOutput>? outputAction)
         {
             OutputCommand.OutputAction = outputAction;
             return (TBuilder)this;
@@ -41,7 +41,7 @@ namespace Cake.SevenZip.Builder
         /// </summary>
         /// <param name="rawOutputAction">the action to perform on the output.</param>
         /// <returns>The builder-instance for fluent re-use.</returns>
-        public TBuilder WithCommandRawOutput(Action<string[]> rawOutputAction)
+        public TBuilder WithCommandRawOutput(Action<string[]>? rawOutputAction)
         {
             OutputCommand.RawOutputAction = rawOutputAction;
             return (TBuilder)this;

@@ -19,7 +19,7 @@ namespace Cake.SevenZip.Commands
         /// <param name="argument">The argument.</param>
         /// <param name="message">The message.</param>
         /// <param name="alternativeArguments">The alternative arguments.</param>
-        internal static void RequireNotNull(this object argument, string message, params object[] alternativeArguments)
+        internal static void RequireNotNull(this object? argument, string message, params object?[] alternativeArguments)
         {
             if (argument != null)
             {
@@ -44,9 +44,9 @@ namespace Cake.SevenZip.Commands
         /// <param name="argument">The argument.</param>
         /// <param name="message">The message.</param>
         /// <param name="alternativeArguments">The alternative arguments.</param>
-        internal static void RequireNotEmpty(this IEnumerable argument, string message, params IEnumerable[] alternativeArguments)
+        internal static void RequireNotEmpty(this IEnumerable? argument, string message, params IEnumerable?[] alternativeArguments)
         {
-            bool NotEmpty(IEnumerable x)
+            bool NotEmpty(IEnumerable? x)
             {
                 if (x == null)
                 {
@@ -81,7 +81,7 @@ namespace Cake.SevenZip.Commands
         /// <param name="builder">The builder.</param>
         /// <param name="paths">The paths.</param>
         /// <param name="projection">The path-projection. Default is <c>Path.FullPath</c>.</param>
-        internal static void AppendPathsNullSafe<T>(this ProcessArgumentBuilder builder, IEnumerable<T> paths, Func<T, string> projection = null)
+        internal static void AppendPathsNullSafe<T>(this ProcessArgumentBuilder builder, IEnumerable<T>? paths, Func<T, string>? projection = null)
             where T : Path
         {
             if (paths == null)

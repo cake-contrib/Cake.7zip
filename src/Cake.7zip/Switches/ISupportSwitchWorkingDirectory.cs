@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchWorkingDirectory.
         /// </value>
-        SwitchWorkingDirectory WorkingDirectory { get; set; }
+        SwitchWorkingDirectory? WorkingDirectory { get; set; }
     }
 }

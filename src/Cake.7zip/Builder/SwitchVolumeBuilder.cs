@@ -16,7 +16,7 @@ namespace Cake.SevenZip.Builder
         /// <param name="size">The size.</param>
         /// <param name="unit">The unit.</param>
         /// <returns>The builder-instance for fluent re-use.</returns>
-        public static T WithVolume<T>(this T @this, int size, VolumeUnit unit = null)
+        public static T WithVolume<T>(this T @this, int size, VolumeUnit? unit = null)
             where T : ISupportSwitchBuilder<ISupportSwitchVolume>
         {
             var volume = new SwitchVolume { Size = size };

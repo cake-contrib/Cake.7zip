@@ -31,7 +31,7 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// The SFX module.
         /// </value>
-        public FilePath SfxModule { private get; set; }
+        public FilePath? SfxModule { private get; set; }
 
         /// <inheritdoc />
         public void BuildArguments(ref ProcessArgumentBuilder builder)

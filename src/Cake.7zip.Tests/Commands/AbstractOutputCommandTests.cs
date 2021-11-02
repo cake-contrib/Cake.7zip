@@ -19,7 +19,7 @@ namespace Cake.SevenZip.Tests.Commands
             command.Setup(c => c.OutputParser).Returns(parser.Object);
             var expected = new[] { "this", "was", "the", "output" };
             var partialMock = command.Object;
-            string[] actual = null;
+            string[]? actual = null;
             partialMock.RawOutputAction = o => actual = o;
 
             ((ICanParseOutput)partialMock).SetRawOutput(expected);
@@ -34,12 +34,12 @@ namespace Cake.SevenZip.Tests.Commands
             var parser = new Mock<IOutputParser<IOutput>>();
             command.Setup(c => c.OutputParser).Returns(parser.Object);
             var partialMock = command.Object;
-            string[] actual = null;
+            string[]? actual = null;
             partialMock.RawOutputAction = o => actual = o;
 
-            ((ICanParseOutput)partialMock).SetRawOutput(null);
+            ((ICanParseOutput)partialMock).SetRawOutput(null!);
 
-            actual.ShouldBeNull();
+        	actual.ShouldBeEmpty();
         }
 
         [Fact]
@@ -51,7 +51,7 @@ namespace Cake.SevenZip.Tests.Commands
             parser.Setup(p => p.Parse(It.IsAny<string[]>())).Returns(expected.Object);
             command.Setup(c => c.OutputParser).Returns(parser.Object);
             var partialMock = command.Object;
-            object actual = null;
+            object? actual = null;
             partialMock.OutputAction = o => actual = o;
 
             ((ICanParseOutput)partialMock).SetRawOutput(new string[] { });

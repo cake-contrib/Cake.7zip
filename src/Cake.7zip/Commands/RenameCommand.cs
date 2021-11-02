@@ -36,7 +36,7 @@ namespace Cake.SevenZip.Commands
         }
 
         /// <inheritdoc/>
-        public FilePath Archive { private get; set; }
+        public FilePath? Archive { private get; set; }
 
         /// <summary>
         /// Gets the files to be renamed.
@@ -47,28 +47,28 @@ namespace Cake.SevenZip.Commands
         public ICollection<RenamePair> RenamePairs { get; }
 
         /// <inheritdoc/>
-        public SwitchIncludeFilenameCollection IncludeFilenames { get; set; }
+        public SwitchIncludeFilenameCollection? IncludeFilenames { get; set; }
 
         /// <inheritdoc/>
-        public SwitchCompressionMethod CompressionMethod { get; set; }
+        public SwitchCompressionMethod? CompressionMethod { get; set; }
 
         /// <inheritdoc/>
-        public SwitchPassword Password { get; set; }
+        public SwitchPassword? Password { get; set; }
 
         /// <inheritdoc/>
-        public SwitchRecurseSubdirectories RecurseSubdirectories { get; set; }
+        public SwitchRecurseSubdirectories? RecurseSubdirectories { get; set; }
 
         /// <inheritdoc/>
-        public SwitchSetTimestampFromMostRecentFile TimestampFromMostRecentFile { get; set; }
+        public SwitchSetTimestampFromMostRecentFile? TimestampFromMostRecentFile { get; set; }
 
         /// <inheritdoc/>
-        public SwitchUpdateOptions UpdateOptions { get; set; }
+        public SwitchUpdateOptions? UpdateOptions { get; set; }
 
         /// <inheritdoc/>
-        public SwitchWorkingDirectory WorkingDirectory { get; set; }
+        public SwitchWorkingDirectory? WorkingDirectory { get; set; }
 
         /// <inheritdoc/>
-        public SwitchExcludeFilenameCollection ExcludeFilenames { get; set; }
+        public SwitchExcludeFilenameCollection? ExcludeFilenames { get; set; }
 
         /// <inheritdoc/>
         public void BuildArguments(ref ProcessArgumentBuilder builder)
@@ -78,7 +78,7 @@ namespace Cake.SevenZip.Commands
 
             builder.Append("rn");
 
-            foreach (var sw in new ISwitch[]
+            foreach (var sw in new ISwitch?[]
             {
                 IncludeFilenames,
                 CompressionMethod,
@@ -93,12 +93,14 @@ namespace Cake.SevenZip.Commands
                 sw?.BuildArguments(ref builder);
             }
 
-            builder.AppendQuoted(Archive.FullPath);
+            builder.AppendQuoted(Archive!.FullPath);
 
             foreach (var pair in RenamePairs)
             {
-                builder.AppendQuoted(pair.OldFile.FullPath);
-                builder.AppendQuoted(pair.NewFile.FullPath);
+                pair.NewFile.RequireNotNull("The 'new file' of a rename can not be null.");
+                pair.OldFile.RequireNotNull("The 'old file' of a rename can not be null.");
+                builder.AppendQuoted(pair.OldFile!.FullPath);
+                builder.AppendQuoted(pair.NewFile!.FullPath);
             }
         }
     }

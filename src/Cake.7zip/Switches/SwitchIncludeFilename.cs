@@ -24,14 +24,14 @@ namespace Cake.SevenZip.Switches
     public class SwitchIncludeFilename : ISwitch
     {
         private readonly string wildcard;
-        private readonly RecurseType recurseType;
+        private readonly RecurseType? recurseType;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SwitchIncludeFilename"/> class.
         /// </summary>
         /// <param name="wildcard">The wildcard.</param>
         /// <param name="recurseType">Type of the recurse.</param>
-        public SwitchIncludeFilename(string wildcard, RecurseType recurseType = null)
+        public SwitchIncludeFilename(string wildcard, RecurseType? recurseType = null)
         {
             this.wildcard = wildcard;
             this.recurseType = recurseType;

@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchNtfsAlternateStreams.
         /// </value>
-        SwitchSetHashFunctionCollection HashFunctions { get; set; }
+        SwitchSetHashFunctionCollection? HashFunctions { get; set; }
     }
 }

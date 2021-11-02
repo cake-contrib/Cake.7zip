@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchRecurseSubdirectories.
         /// </value>
-        SwitchRecurseSubdirectories RecurseSubdirectories { get; set; }
+        SwitchRecurseSubdirectories? RecurseSubdirectories { get; set; }
     }
 }

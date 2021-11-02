@@ -15,6 +15,6 @@ namespace Cake.SevenZip
         /// <value>
         /// The command.
         /// </value>
-        public ICommand Command { get; set; }
+        public ICommand? Command { get; set; }
     }
 }

@@ -23,6 +23,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// The method.
         /// </value>
-        SwitchCompressionMethod CompressionMethod { get; set; }
+        SwitchCompressionMethod? CompressionMethod { get; set; }
     }
 }

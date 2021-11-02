@@ -13,7 +13,7 @@ namespace Cake.SevenZip.Parsers
         /// <inheritdoc />
         public IBenchmarkOutput Parse(string[] rawOutput)
         {
-            string information = null;
+            string? information = null;
             var benchmark = new StringBuilder();
             foreach (var line in rawOutput)
             {
@@ -33,16 +33,16 @@ namespace Cake.SevenZip.Parsers
 
             return new BenchmarkOutput
             {
-                Information = information,
+                Information = information ?? string.Empty,
                 Benchmark = benchmark.ToString().Trim(),
             };
         }
 
         private class BenchmarkOutput : IBenchmarkOutput
         {
-            public string Information { get; set; }
+            public string Information { get; set; } = string.Empty;
 
-            public string Benchmark { get; set; }
+            public string Benchmark { get; set; } = string.Empty;
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 using Cake.SevenZip.Commands;
 
@@ -74,19 +75,19 @@ namespace Cake.SevenZip.Parsers
         private class InformationOutput : IInformationOutput
         {
             /// <inheritdoc />
-            public string Information { get; internal set; }
+            public string Information { get; internal set; } = string.Empty;
 
             /// <inheritdoc />
-            public IEnumerable<string> Libs { get; internal set; }
+            public IEnumerable<string> Libs { get; internal set; } = Enumerable.Empty<string>();
 
             /// <inheritdoc />
-            public IEnumerable<string> Formats { get; internal set; }
+            public IEnumerable<string> Formats { get; internal set; } = Enumerable.Empty<string>();
 
             /// <inheritdoc />
-            public IEnumerable<string> Codecs { get; internal set; }
+            public IEnumerable<string> Codecs { get; internal set; } = Enumerable.Empty<string>();
 
             /// <inheritdoc />
-            public IEnumerable<string> Hashers { get; internal set; }
+            public IEnumerable<string> Hashers { get; internal set; } = Enumerable.Empty<string>();
         }
     }
 }

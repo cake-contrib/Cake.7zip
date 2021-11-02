@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchNtfsAlternateStreams.
         /// </value>
-        SwitchNtfsAlternateStreams NtfsAlternateStreams { get; set; }
+        SwitchNtfsAlternateStreams? NtfsAlternateStreams { get; set; }
     }
 }

@@ -13,6 +13,6 @@ namespace Cake.SevenZip.Arguments
         /// <value>
         /// The archive.
         /// </value>
-        FilePath Archive { set; }
+        FilePath? Archive { set; }
     }
 }

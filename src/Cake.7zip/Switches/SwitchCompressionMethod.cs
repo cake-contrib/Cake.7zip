@@ -38,7 +38,7 @@ namespace Cake.SevenZip.Switches
         /// The method.
         /// </value>
         // TODO: Better use Enum or static Props instead of the free string?
-        public string Method { private get; set; }
+        public string? Method { private get; set; }
 
         /// <inheritdoc/>
         public void BuildArguments(ref ProcessArgumentBuilder builder)

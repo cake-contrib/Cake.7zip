@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchVolumeCollection.
         /// </value>
-        SwitchVolumeCollection Volumes { get; set; }
+        SwitchVolumeCollection? Volumes { get; set; }
     }
 }

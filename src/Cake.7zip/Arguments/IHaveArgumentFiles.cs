@@ -36,6 +36,6 @@ namespace Cake.SevenZip.Arguments
         /// <value>
         /// The archive.
         /// </value>
-        FilePathCollection Files { get; set; }
+        FilePathCollection? Files { get; set; }
     }
 }

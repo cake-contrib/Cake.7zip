@@ -126,7 +126,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
         [Fact]
         public void Benchmark_parses_and_sets_the_output()
         {
-            string info = null;
+            string? info = null;
             var fixture = new SevenZipFluentRunnerFixture();
             fixture.GivenProcessReturnsStdOutputOf(Outputs.Benchmark);
 
@@ -163,25 +163,25 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             {
                 yield return new Tuple<Action<BenchmarkCommandBuilder, object>, Func<BenchmarkCommand, object>, object>(
                     (b, v) => b.WithMethod((string)v),
-                    y => y.Method,
+                    y => y.Method!,
                     "*"
                 );
 
                 yield return new Tuple<Action<BenchmarkCommandBuilder, object>, Func<BenchmarkCommand, object>, object>(
                     (b, v) => b.WithNumberOfIterations((int)v),
-                    y => y.NumberOfIterations,
+                    y => y.NumberOfIterations!,
                     150
                 );
 
                 yield return new Tuple<Action<BenchmarkCommandBuilder, object>, Func<BenchmarkCommand, object>, object>(
                     (b, v) => b.WithNumberOfThreads((int)v),
-                    y => y.NumberOfThreads,
+                    y => y.NumberOfThreads!,
                     200
                 );
 
                 yield return new Tuple<Action<BenchmarkCommandBuilder, object>, Func<BenchmarkCommand, object>, object>(
                     (b, v) => b.WithDictionarySize((int)v),
-                    y => y.DictionarySize,
+                    y => y.DictionarySize!,
                     26
                 );
             }

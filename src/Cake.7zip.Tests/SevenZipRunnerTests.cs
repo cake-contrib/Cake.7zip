@@ -23,7 +23,7 @@ namespace Cake.SevenZip.Tests
         [Fact]
         public void Should_Throw_If_Settings_Are_Null()
         {
-            var fixture = new SevenZipRunnerFixture { Settings = null };
+            var fixture = new SevenZipRunnerFixture { Settings = null! };
 
             Action result = () =>
             {
@@ -281,7 +281,7 @@ namespace Cake.SevenZip.Tests
 
             fixture.Run();
 
-            outputParseCommand.Verify(c => c.SetRawOutput(null), Times.Once);
+            outputParseCommand.Verify(c => c.SetRawOutput(null!), Times.Once);
         }
 
         [Fact]

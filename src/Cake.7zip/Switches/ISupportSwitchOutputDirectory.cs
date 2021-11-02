@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchOutputDirectory.
         /// </value>
-        SwitchOutputDirectory OutputDirectory { get; set; }
+        SwitchOutputDirectory? OutputDirectory { get; set; }
     }
 }

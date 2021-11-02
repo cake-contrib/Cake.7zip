@@ -38,7 +38,7 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// The unit. Default is bytes.
         /// </value>
-        public VolumeUnit Unit { private get; set; }
+        public VolumeUnit? Unit { private get; set; }
 
         /// <inheritdoc/>
         public void BuildArguments(ref ProcessArgumentBuilder builder)

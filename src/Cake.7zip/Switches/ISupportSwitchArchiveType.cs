@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchArchiveType.
         /// </value>
-        SwitchArchiveType ArchiveType { get; set; }
+        SwitchArchiveType? ArchiveType { get; set; }
     }
 }

@@ -53,7 +53,7 @@ namespace Cake.SevenZip.Commands
         }
 
         /// <inheritdoc />
-        public FilePath Archive { private get; set; }
+        public FilePath? Archive { private get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to use full paths.
@@ -65,52 +65,52 @@ namespace Cake.SevenZip.Commands
         public bool UseFullPaths { get; set; }
 
         /// <inheritdoc/>
-        public SwitchArchiveType ArchiveType { get; set; }
+        public SwitchArchiveType? ArchiveType { get; set; }
 
         /// <inheritdoc/>
-        public SwitchCompressionMethod CompressionMethod { get; set; }
+        public SwitchCompressionMethod? CompressionMethod { get; set; }
 
         /// <inheritdoc />
-        public SwitchPassword Password { get; set; }
+        public SwitchPassword? Password { get; set; }
 
         /// <inheritdoc />
-        public SwitchNtSecurityInformation NtSecurityInformation { get; set; }
+        public SwitchNtSecurityInformation? NtSecurityInformation { get; set; }
 
         /// <inheritdoc />
-        public SwitchNtfsAlternateStreams NtfsAlternateStreams { get; set; }
+        public SwitchNtfsAlternateStreams? NtfsAlternateStreams { get; set; }
 
         /// <inheritdoc />
-        public SwitchRecurseSubdirectories RecurseSubdirectories { get; set; }
+        public SwitchRecurseSubdirectories? RecurseSubdirectories { get; set; }
 
         /// <inheritdoc />
-        public SwitchIncludeFilenameCollection IncludeFilenames { get; set; }
+        public SwitchIncludeFilenameCollection? IncludeFilenames { get; set; }
 
         /// <inheritdoc />
-        public SwitchExcludeFilenameCollection ExcludeFilenames { get; set; }
+        public SwitchExcludeFilenameCollection? ExcludeFilenames { get; set; }
 
         /// <inheritdoc />
-        public SwitchIncludeArchiveFilenameCollection IncludeArchiveFilenames { get; set; }
+        public SwitchIncludeArchiveFilenameCollection? IncludeArchiveFilenames { get; set; }
 
         /// <inheritdoc />
-        public SwitchExcludeArchiveFilenameCollection ExcludeArchiveFilenames { get; set; }
+        public SwitchExcludeArchiveFilenameCollection? ExcludeArchiveFilenames { get; set; }
 
         /// <inheritdoc />
-        public SwitchDisableParsingOfArchiveName DisableParsingOfArchiveName { get; set; }
+        public SwitchDisableParsingOfArchiveName? DisableParsingOfArchiveName { get; set; }
 
         /// <inheritdoc />
-        public SwitchOverwriteMode OverwriteMode { get; set; }
+        public SwitchOverwriteMode? OverwriteMode { get; set; }
 
         /// <inheritdoc />
-        public SwitchOutputDirectory OutputDirectory { get; set; }
+        public SwitchOutputDirectory? OutputDirectory { get; set; }
 
         /// <inheritdoc />
-        public SwitchFullyQualifiedFilePaths FullyQualifiedFilePaths { get; set; }
+        public SwitchFullyQualifiedFilePaths? FullyQualifiedFilePaths { get; set; }
 
         /// <inheritdoc/>
         protected override string CommandChar => UseFullPaths ? "x" : "e";
 
         /// <inheritdoc/>
-        protected override IEnumerable<ISwitch> Switches => new ISwitch[]
+        protected override IEnumerable<ISwitch?> Switches => new ISwitch?[]
         {
             ArchiveType,
             CompressionMethod,
@@ -134,7 +134,7 @@ namespace Cake.SevenZip.Commands
             Archive.RequireNotNull("Archive is required for extract.");
 
             builder.Append("-y"); // assume yes - can't have 7zip prompt the user.
-            builder.AppendQuoted(Archive.FullPath);
+            builder.AppendQuoted(Archive!.FullPath);
         }
     }
 }

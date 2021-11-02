@@ -18,7 +18,7 @@ namespace Cake.SevenZip.Tests.Fixtures
             Registry = new Mock<IRegistry>();
         }
 
-        public void GivenProcessReturnsStdOutputOf(string[] stdOutput)
+        public void GivenProcessReturnsStdOutputOf(string[]? stdOutput)
         {
             ProcessRunner.Process.SetStandardOutput(stdOutput);
         }
@@ -31,14 +31,14 @@ namespace Cake.SevenZip.Tests.Fixtures
                 ProcessRunner,
                 Tools,
                 Log,
-                Registry?.Object);
+                Registry.Object);
             tool.Run(Settings);
         }
 
         public string EvaluateArgs()
         {
             var args = new ProcessArgumentBuilder();
-            Settings.Command.BuildArguments(ref args);
+            Settings.Command?.BuildArguments(ref args);
             return args.Render();
         }
     }

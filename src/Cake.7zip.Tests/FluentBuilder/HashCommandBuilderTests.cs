@@ -16,7 +16,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
         [Fact]
         public void Hash_parses_and_sets_the_output()
         {
-            string info = null;
+            string? info = null;
             var fixture = new SevenZipFluentRunnerFixture();
             fixture.GivenProcessReturnsStdOutputOf(Outputs.Hash);
 
@@ -34,7 +34,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
         [Fact]
         public void Hash_sets_rawoutput()
         {
-            string[] output = null;
+            string[]? output = null;
             var fixture = new SevenZipFluentRunnerFixture();
             fixture.GivenProcessReturnsStdOutputOf(Outputs.Hash);
 

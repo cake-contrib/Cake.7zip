@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchOverwriteMode.
         /// </value>
-        SwitchOverwriteMode OverwriteMode { get; set; }
+        SwitchOverwriteMode? OverwriteMode { get; set; }
     }
 }

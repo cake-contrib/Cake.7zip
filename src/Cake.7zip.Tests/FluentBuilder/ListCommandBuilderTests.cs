@@ -46,7 +46,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
         [Fact]
         public void List_parses_and_sets_the_output()
         {
-            string info = null;
+            string? info = null;
             var fixture = new SevenZipFluentRunnerFixture();
             fixture.GivenProcessReturnsStdOutputOf(Outputs.List.MultipleArchives);
 
@@ -64,7 +64,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
         [Fact]
         public void List_sets_rawoutput()
         {
-            string[] output = null;
+            string[]? output = null;
             var fixture = new SevenZipFluentRunnerFixture();
             fixture.GivenProcessReturnsStdOutputOf(Outputs.List.MultipleArchives);
 

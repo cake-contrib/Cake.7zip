@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchNtSecurityInformation.
         /// </value>
-        SwitchNtSecurityInformation NtSecurityInformation { get; set; }
+        SwitchNtSecurityInformation? NtSecurityInformation { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             command.SetupProperty(c => c.ExcludeFilenames);
             expected.Setup(x => x.Command).Returns(command.Object);
 
-            var actual = expected.Object.WithExcludeFilenames(default);
+            var actual = expected.Object.WithExcludeFilenames(default!);
 
             actual.ShouldBe(expected.Object);
         }
@@ -32,7 +32,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             command.SetupProperty(c => c.ExcludeFilenames);
             expected.Setup(x => x.Command).Returns(command.Object);
 
-            var actual = expected.Object.WithExcludeFilenames((RecurseType)default, default);
+            var actual = expected.Object.WithExcludeFilenames((RecurseType)default!, default!);
 
             actual.ShouldBe(expected.Object);
         }

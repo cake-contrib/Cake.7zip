@@ -19,7 +19,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             command.SetupProperty(c => c.OverwriteMode);
             expected.Setup(x => x.Command).Returns(command.Object);
 
-            var actual = expected.Object.WithOverwriteMode(default);
+            var actual = expected.Object.WithOverwriteMode(default!);
 
             actual.ShouldBe(expected.Object);
         }

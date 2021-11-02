@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -16,7 +17,7 @@ namespace Cake.SevenZip.Parsers
         /// <inheritdoc />
         public ITestOutput Parse(string[] rawOutput)
         {
-            string information = null;
+            string? information = null;
             var archives = new List<IArchiveTestOutput>();
             var currentArchive = new ArchiveOutput();
             var currentOutput = new StringBuilder();
@@ -66,25 +67,25 @@ namespace Cake.SevenZip.Parsers
 
             return new TestOutput
             {
-                Information = information,
+                Information = information ?? string.Empty,
                 Archives = archives,
             };
         }
 
         private class TestOutput : ITestOutput
         {
-            public IEnumerable<IArchiveTestOutput> Archives { get; set; }
+            public IEnumerable<IArchiveTestOutput> Archives { get; set; } = Enumerable.Empty<IArchiveTestOutput>();
 
-            public string Information { get; set; }
+            public string Information { get; set; } = string.Empty;
         }
 
         private class ArchiveOutput : IArchiveTestOutput
         {
-            public string FileName { get; set; }
+            public string FileName { get; set; } = string.Empty;
 
             public bool IsOk { get; set; }
 
-            public string Output { get; set; }
+            public string Output { get; set; } = string.Empty;
         }
     }
 }

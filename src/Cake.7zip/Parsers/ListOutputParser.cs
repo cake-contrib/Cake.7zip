@@ -17,7 +17,7 @@ namespace Cake.SevenZip.Parsers
         public IListOutput Parse(string[] rawOutput)
         {
             var output = new ListOutput();
-            ArchiveListOutput currentArchive = null;
+            ArchiveListOutput? currentArchive = null;
             bool inParsingFilesMode = false;
 
             var fileMatcher = new Regex(@"(?<datetime>[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2})\s(?<attr>.{5})\s+(?<size>[0-9]+)\s+(?<compressed>[0-9]+)\s+(?<name>.*)", RegexOptions.Compiled | RegexOptions.Singleline);
@@ -29,7 +29,7 @@ namespace Cake.SevenZip.Parsers
                     continue;
                 }
 
-                if (output.Information == null)
+                if (string.IsNullOrEmpty(output.Information))
                 {
                     output.Information = line;
                     continue;
@@ -75,7 +75,7 @@ namespace Cake.SevenZip.Parsers
 
                     if (inParsingFilesMode)
                     {
-                        currentArchive.Files.Add(new ArchivedFileListOutput
+                        currentArchive!.Files.Add(new ArchivedFileListOutput
                         {
                             FileDate = fileDate,
                             CompressedSize = compressedSize,
@@ -124,7 +124,7 @@ namespace Cake.SevenZip.Parsers
 
             public long CompressedSize { get; set; }
 
-            public string Information { get; set; }
+            public string Information { get; set; } = string.Empty;
 
             public List<IArchiveListOutput> Archives { get; }
 
@@ -138,9 +138,9 @@ namespace Cake.SevenZip.Parsers
                 Files = new List<IArchivedFileListOutput>();
             }
 
-            public string Path { get; set; }
+            public string Path { get; set; } = string.Empty;
 
-            public string Type { get; set; }
+            public string Type { get; set; } = string.Empty;
 
             public long PhysicalSize { get; set; }
 
@@ -159,13 +159,13 @@ namespace Cake.SevenZip.Parsers
         {
             public DateTime FileDate { get; set; }
 
-            public string Attributes { get; set; }
+            public string Attributes { get; set; } = string.Empty;
 
             public long Size { get; set; }
 
             public long CompressedSize { get; set; }
 
-            public string Name { get; set; }
+            public string Name { get; set; } = string.Empty;
         }
     }
 }

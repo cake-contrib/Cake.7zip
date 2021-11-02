@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchFullyQualifiedFilePaths.
         /// </value>
-        SwitchFullyQualifiedFilePaths FullyQualifiedFilePaths { get; set; }
+        SwitchFullyQualifiedFilePaths? FullyQualifiedFilePaths { get; set; }
     }
 }

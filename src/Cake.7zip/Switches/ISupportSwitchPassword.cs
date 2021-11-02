@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchPassword.
         /// </value>
-        SwitchPassword Password { get; set; }
+        SwitchPassword? Password { get; set; }
     }
 }

@@ -38,43 +38,43 @@ namespace Cake.SevenZip.Commands
         }
 
         /// <inheritdoc />
-        public FilePathCollection Files { get; set; }
+        public FilePathCollection? Files { get; set; }
 
         /// <inheritdoc />
-        public DirectoryPathCollection Directories { get; set; }
+        public DirectoryPathCollection? Directories { get; set; }
 
         /// <inheritdoc />
-        public DirectoryPathCollection DirectoryContents { get; set; }
+        public DirectoryPathCollection? DirectoryContents { get; set; }
 
         /// <inheritdoc />
-        public SwitchIncludeFilenameCollection IncludeFilenames { get; set; }
+        public SwitchIncludeFilenameCollection? IncludeFilenames { get; set; }
 
         /// <inheritdoc />
-        public SwitchExcludeFilenameCollection ExcludeFilenames { get; set; }
+        public SwitchExcludeFilenameCollection? ExcludeFilenames { get; set; }
 
         /// <inheritdoc />
-        public SwitchRecurseSubdirectories RecurseSubdirectories { get; set; }
+        public SwitchRecurseSubdirectories? RecurseSubdirectories { get; set; }
 
         /// <inheritdoc />
-        public SwitchCompressionMethod CompressionMethod { get; set; }
+        public SwitchCompressionMethod? CompressionMethod { get; set; }
 
         /// <inheritdoc />
-        public SwitchCompressFilesOpenForWriting CompressFilesOpenForWriting { get; set; }
+        public SwitchCompressFilesOpenForWriting? CompressFilesOpenForWriting { get; set; }
 
         /// <inheritdoc />
-        public SwitchNtfsAlternateStreams NtfsAlternateStreams { get; set; }
+        public SwitchNtfsAlternateStreams? NtfsAlternateStreams { get; set; }
 
         /// <inheritdoc />
-        public SwitchSetHashFunctionCollection HashFunctions { get; set; }
+        public SwitchSetHashFunctionCollection? HashFunctions { get; set; }
 
         /// <inheritdoc/>
         internal override IOutputParser<IHashOutput> OutputParser => outputParser;
 
         /// <inheritdoc/>
-        protected override string CommandChar { get; } = "h";
+        protected override string CommandChar => "h";
 
         /// <inheritdoc/>
-        protected override IEnumerable<ISwitch> Switches => new ISwitch[]
+        protected override IEnumerable<ISwitch?> Switches => new ISwitch?[]
         {
             IncludeFilenames,
             ExcludeFilenames,

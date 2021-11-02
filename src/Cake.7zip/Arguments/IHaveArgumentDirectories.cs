@@ -19,7 +19,7 @@ namespace Cake.SevenZip.Arguments
         /// <seealso cref="SwitchIncludeFilename"/>
         /// <seealso cref="SwitchExcludeFilename"/>
         /// </summary>
-        DirectoryPathCollection Directories { get; set; }
+        DirectoryPathCollection? Directories { get; set; }
 
         /// <summary>
         /// Gets or sets the list of Directory-contents the command operates on.
@@ -32,6 +32,6 @@ namespace Cake.SevenZip.Arguments
         /// <seealso cref="SwitchIncludeFilename"/>
         /// <seealso cref="SwitchExcludeFilename"/>
         /// </summary>
-        DirectoryPathCollection DirectoryContents { get; set; }
+        DirectoryPathCollection? DirectoryContents { get; set; }
     }
 }

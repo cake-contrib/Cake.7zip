@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchDisableParsingOfArchiveName.
         /// </value>
-        SwitchDisableParsingOfArchiveName DisableParsingOfArchiveName { get; set; }
+        SwitchDisableParsingOfArchiveName? DisableParsingOfArchiveName { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace Cake.SevenZip.Tests.Fixtures
         public string EvaluateArgs()
         {
             var args = new ProcessArgumentBuilder();
-            Context.Command.BuildArguments(ref args);
+            Context.Command?.BuildArguments(ref args);
             return args.Render();
         }
     }

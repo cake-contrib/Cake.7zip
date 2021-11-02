@@ -41,37 +41,37 @@ namespace Cake.SevenZip.Commands
         }
 
         /// <inheritdoc/>
-        public FilePath Archive { private get; set; }
+        public FilePath? Archive { private get; set; }
 
         /// <inheritdoc/>
-        public SwitchExcludeFilenameCollection ExcludeFilenames { get; set; }
+        public SwitchExcludeFilenameCollection? ExcludeFilenames { get; set; }
 
         /// <inheritdoc/>
-        public SwitchShowTechnicalInformation ShowTechnicalInformation { get; set; }
+        public SwitchShowTechnicalInformation? ShowTechnicalInformation { get; set; }
 
         /// <inheritdoc/>
-        public SwitchIncludeArchiveFilenameCollection IncludeArchiveFilenames { get; set; }
+        public SwitchIncludeArchiveFilenameCollection? IncludeArchiveFilenames { get; set; }
 
         /// <inheritdoc/>
-        public SwitchDisableParsingOfArchiveName DisableParsingOfArchiveName { get; set; }
+        public SwitchDisableParsingOfArchiveName? DisableParsingOfArchiveName { get; set; }
 
         /// <inheritdoc/>
-        public SwitchExcludeArchiveFilenameCollection ExcludeArchiveFilenames { get; set; }
+        public SwitchExcludeArchiveFilenameCollection? ExcludeArchiveFilenames { get; set; }
 
         /// <inheritdoc/>
-        public SwitchIncludeFilenameCollection IncludeFilenames { get; set; }
+        public SwitchIncludeFilenameCollection? IncludeFilenames { get; set; }
 
         /// <inheritdoc/>
-        public SwitchNtfsAlternateStreams NtfsAlternateStreams { get; set; }
+        public SwitchNtfsAlternateStreams? NtfsAlternateStreams { get; set; }
 
         /// <inheritdoc/>
-        public SwitchPassword Password { get; set; }
+        public SwitchPassword? Password { get; set; }
 
         /// <inheritdoc/>
-        public SwitchRecurseSubdirectories RecurseSubdirectories { get; set; }
+        public SwitchRecurseSubdirectories? RecurseSubdirectories { get; set; }
 
         /// <inheritdoc/>
-        public SwitchArchiveType ArchiveType { get; set; }
+        public SwitchArchiveType? ArchiveType { get; set; }
 
         /// <inheritdoc/>
         internal override IOutputParser<IListOutput> OutputParser => outputParser;
@@ -80,7 +80,7 @@ namespace Cake.SevenZip.Commands
         protected override string CommandChar { get; } = "l";
 
         /// <inheritdoc/>
-        protected override IEnumerable<ISwitch> Switches => new ISwitch[]
+        protected override IEnumerable<ISwitch?> Switches => new ISwitch?[]
             {
                 IncludeArchiveFilenames,
                 DisableParsingOfArchiveName,
@@ -98,7 +98,7 @@ namespace Cake.SevenZip.Commands
         protected override void BuildArgumentParams(ref ProcessArgumentBuilder builder)
         {
             Archive.RequireNotNull($"{nameof(Archive)} is required for list.");
-            builder.AppendQuoted(Archive.FullPath);
+            builder.AppendQuoted(Archive!.FullPath);
         }
     }
 }

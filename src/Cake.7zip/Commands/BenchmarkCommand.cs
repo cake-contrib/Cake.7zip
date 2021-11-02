@@ -61,7 +61,7 @@ namespace Cake.SevenZip.Commands
         /// <value>
         /// The method.
         /// </value>
-        public string Method { get; set; }
+        public string? Method { get; set; }
 
         /// <inheritdoc/>
         internal override IOutputParser<IBenchmarkOutput> OutputParser => outputParser;

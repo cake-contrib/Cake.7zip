@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchDeleteAfterCompression.
         /// </value>
-        SwitchShowTechnicalInformation ShowTechnicalInformation { get; set; }
+        SwitchShowTechnicalInformation? ShowTechnicalInformation { get; set; }
     }
 }

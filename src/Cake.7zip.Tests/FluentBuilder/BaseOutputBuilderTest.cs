@@ -97,14 +97,14 @@ namespace Cake.SevenZip.Tests.FluentBuilder
                     BindingFlags.Instance | BindingFlags.NonPublic,
                     null,
                     new[] { commandType.MakeByRefType() },
-                    null).Invoke(new[] { expected });
+                    null)!.Invoke(new[] { expected });
 
                 // ReSharper disable once PossibleNullReferenceException - not possible
-                var commandProperty = builderType.BaseType
+                var commandProperty = builderType.BaseType!
                     .GetProperties(BindingFlags.Instance | BindingFlags.NonPublic)
                     .Single();
-                var commandPropertyGetter = commandProperty.GetMethod;
-                var actual = commandPropertyGetter.Invoke(builder, new object[0]);
+                var commandPropertyGetter = commandProperty.GetMethod!;
+                var actual = commandPropertyGetter.Invoke(builder, Array.Empty<object>());
 
                 actual.ShouldBe(expected);
             }
@@ -112,7 +112,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
         private class MockOutputBuilder : BaseOutputBuilder<MockOutputBuilder, IOutput>
         {
-            public BaseOutputCommand<IOutput> MockCommand { private get; set; }
+            public BaseOutputCommand<IOutput> MockCommand { private get; set; } = null!;
             protected override BaseOutputCommand<IOutput> OutputCommand => MockCommand;
         }
     }

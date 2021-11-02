@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchSetTimestampFromMostRecentFile.
         /// </value>
-        SwitchSetTimestampFromMostRecentFile TimestampFromMostRecentFile { get; set; }
+        SwitchSetTimestampFromMostRecentFile? TimestampFromMostRecentFile { get; set; }
     }
 }

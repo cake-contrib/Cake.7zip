@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchUpdateOptions.
         /// </value>
-        SwitchUpdateOptions UpdateOptions { get; set; }
+        SwitchUpdateOptions? UpdateOptions { get; set; }
     }
 }

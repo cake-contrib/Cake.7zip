@@ -16,7 +16,7 @@ namespace Cake.SevenZip.Builder
         /// <param name="this">The builder-instance.</param>
         /// <param name="module">The sfx-module to set. If omitted, the default is used.</param>
         /// <returns>The builder-instance for fluent re-use.</returns>
-        public static T WithSelfExtractingArchive<T>(this T @this, FilePath module = null)
+        public static T WithSelfExtractingArchive<T>(this T @this, FilePath? module = null)
             where T : ISupportSwitchBuilder<ISupportSwitchSelfExtractingArchive>
         {
             if (@this.Command.SelfExtractingArchive == null)

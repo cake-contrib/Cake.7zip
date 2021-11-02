@@ -14,7 +14,7 @@ namespace Cake.SevenZip.Builder
         /// <value>
         /// The Command.
         /// </value>
-        internal ICommand Command { get; private set; }
+        internal ICommand? Command { get; private set; }
 
         /// <summary>
         /// Makes this Builder an AddCommand-Builder.

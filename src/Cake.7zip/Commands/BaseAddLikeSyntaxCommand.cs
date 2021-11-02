@@ -13,16 +13,16 @@ namespace Cake.SevenZip.Commands
         IHaveArgumentDirectories
     {
         /// <inheritdoc/>
-        public FilePathCollection Files { get; set; }
+        public FilePathCollection? Files { get; set; }
 
         /// <inheritdoc/>
-        public DirectoryPathCollection Directories { get; set; }
+        public DirectoryPathCollection? Directories { get; set; }
 
         /// <inheritdoc/>
-        public DirectoryPathCollection DirectoryContents { get; set; }
+        public DirectoryPathCollection? DirectoryContents { get; set; }
 
         /// <inheritdoc/>
-        public FilePath Archive { private get; set; }
+        public FilePath? Archive { private get; set; }
 
         /// <summary>
         /// Gets the name of the command. (i.e. "add", "update" or "extract".)
@@ -44,7 +44,7 @@ namespace Cake.SevenZip.Commands
         protected override void BuildArgumentParams(ref ProcessArgumentBuilder builder)
         {
             Archive.RequireNotNull($"{nameof(Archive)} is required for {CommandName}.");
-            builder.AppendQuoted(Archive.FullPath);
+            builder.AppendQuoted(Archive!.FullPath);
 
             if (ThrowOnMissingInputFiles)
             {

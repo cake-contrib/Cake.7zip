@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchCompressFilesOpenForWriting.
         /// </value>
-        SwitchCompressFilesOpenForWriting CompressFilesOpenForWriting { get; set; }
+        SwitchCompressFilesOpenForWriting? CompressFilesOpenForWriting { get; set; }
     }
 }

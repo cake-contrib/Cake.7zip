@@ -31,7 +31,7 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// The <see cref="UpdateAction"/>.
         /// </value>
-        public UpdateAction P { private get; set; }
+        public UpdateAction? P { private get; set; }
 
         /// <summary>
         /// Sets the <see cref="UpdateAction"/> for the q-state.
@@ -40,7 +40,7 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// The <see cref="UpdateAction"/>.
         /// </value>
-        public UpdateAction Q { private get; set; }
+        public UpdateAction? Q { private get; set; }
 
         /// <summary>
         /// Sets the <see cref="UpdateAction"/> for the r-state.
@@ -49,7 +49,7 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// The <see cref="UpdateAction"/>.
         /// </value>
-        public UpdateAction R { private get; set; }
+        public UpdateAction? R { private get; set; }
 
         /// <summary>
         /// Sets the <see cref="UpdateAction"/> for the x-state.
@@ -58,7 +58,7 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// The <see cref="UpdateAction"/>.
         /// </value>
-        public UpdateAction X { private get; set; }
+        public UpdateAction? X { private get; set; }
 
         /// <summary>
         /// Sets the <see cref="UpdateAction"/> for the y-state.
@@ -67,7 +67,7 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// The <see cref="UpdateAction"/>.
         /// </value>
-        public UpdateAction Y { private get; set; }
+        public UpdateAction? Y { private get; set; }
 
         /// <summary>
         /// Sets the <see cref="UpdateAction"/> for the z-state.
@@ -76,7 +76,7 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// The <see cref="UpdateAction"/>.
         /// </value>
-        public UpdateAction Z { private get; set; }
+        public UpdateAction? Z { private get; set; }
 
         /// <summary>
         /// Sets the <see cref="UpdateAction"/> for the w-state.
@@ -85,7 +85,7 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// The <see cref="UpdateAction"/>.
         /// </value>
-        public UpdateAction W { private get; set; }
+        public UpdateAction? W { private get; set; }
 
         /// <summary>
         /// Sets the new archive-name.
@@ -93,14 +93,14 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// The new name of the archive.
         /// </value>
-        public FilePath NewArchiveName { private get; set; }
+        public FilePath? NewArchiveName { private get; set; }
 
         /// <inheritdoc />
         public void BuildArguments(ref ProcessArgumentBuilder builder)
         {
             var sb = new StringBuilder();
             sb.Append("-u");
-            foreach (var tuple in new Dictionary<string, UpdateAction>
+            foreach (var tuple in new Dictionary<string, UpdateAction?>
             {
                 { "p", P },
                 { "q", Q },

@@ -19,7 +19,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             command.SetupProperty(c => c.RecurseSubdirectories);
             expected.Setup(x => x.Command).Returns(command.Object);
 
-            var actual = expected.Object.WithRecurseSubdirectories(default);
+            var actual = expected.Object.WithRecurseSubdirectories(default!);
 
             actual.ShouldBe(expected.Object);
         }

@@ -22,6 +22,6 @@ namespace Cake.SevenZip.Switches
         /// <value>
         /// SwitchExcludeFilenameCollection.
         /// </value>
-        SwitchExcludeFilenameCollection ExcludeFilenames { get; set; }
+        SwitchExcludeFilenameCollection? ExcludeFilenames { get; set; }
     }
 }

@@ -51,7 +51,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             builder.Object.WithFiles(expected);
 
-            command.Object.Files.Single().ShouldBe(expected);
+            command.Object.Files?.Single().ShouldBe(expected);
         }
 
         [Fact]
@@ -65,7 +65,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
 
             builder.Object.WithFiles(new FilePathCollection(new[] { expected }));
 
-            command.Object.Files.Single().ShouldBe(expected);
+            command.Object.Files?.Single().ShouldBe(expected);
         }
     }
 }

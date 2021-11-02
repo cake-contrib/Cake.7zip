@@ -19,7 +19,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             command.SetupProperty(c => c.ArchiveType);
             expected.Setup(x => x.Command).Returns(command.Object);
 
-            var actual = expected.Object.WithArchiveType(default);
+            var actual = expected.Object.WithArchiveType(default!);
 
             actual.ShouldBe(expected.Object);
         }

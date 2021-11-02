@@ -19,7 +19,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             command.SetupProperty(c => c.CompressionMethod);
             expected.Setup(x => x.Command).Returns(command.Object);
 
-            var actual = expected.Object.WithCompressionMethod(c => { });
+            var actual = expected.Object.WithCompressionMethod(_ => { });
 
             actual.ShouldBe(expected.Object);
         }
@@ -45,7 +45,7 @@ namespace Cake.SevenZip.Tests.FluentBuilder
             command.SetupProperty(c => c.CompressionMethod);
             expected.Setup(x => x.Command).Returns(command.Object);
 
-            var actual = expected.Object.WithCompressionMethodMethod(default);
+            var actual = expected.Object.WithCompressionMethodMethod(default!);
 
             actual.ShouldBe(expected.Object);
         }

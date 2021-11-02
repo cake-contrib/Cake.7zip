@@ -40,34 +40,34 @@ namespace Cake.SevenZip.Commands
         }
 
         /// <inheritdoc />
-        public FilePath Archive { private get; set; }
+        public FilePath? Archive { private get; set; }
 
         /// <inheritdoc />
-        public SwitchIncludeArchiveFilenameCollection IncludeArchiveFilenames { get; set; }
+        public SwitchIncludeArchiveFilenameCollection? IncludeArchiveFilenames { get; set; }
 
         /// <inheritdoc />
-        public SwitchExcludeArchiveFilenameCollection ExcludeArchiveFilenames { get; set; }
+        public SwitchExcludeArchiveFilenameCollection? ExcludeArchiveFilenames { get; set; }
 
         /// <inheritdoc />
-        public SwitchDisableParsingOfArchiveName DisableParsingOfArchiveName { get; set; }
+        public SwitchDisableParsingOfArchiveName? DisableParsingOfArchiveName { get; set; }
 
         /// <inheritdoc />
-        public SwitchIncludeFilenameCollection IncludeFilenames { get; set; }
+        public SwitchIncludeFilenameCollection? IncludeFilenames { get; set; }
 
         /// <inheritdoc />
-        public SwitchExcludeFilenameCollection ExcludeFilenames { get; set; }
+        public SwitchExcludeFilenameCollection? ExcludeFilenames { get; set; }
 
         /// <inheritdoc />
-        public SwitchPassword Password { get; set; }
+        public SwitchPassword? Password { get; set; }
 
         /// <inheritdoc />
-        public SwitchNtfsAlternateStreams NtfsAlternateStreams { get; set; }
+        public SwitchNtfsAlternateStreams? NtfsAlternateStreams { get; set; }
 
         /// <inheritdoc />
-        public SwitchRecurseSubdirectories RecurseSubdirectories { get; set; }
+        public SwitchRecurseSubdirectories? RecurseSubdirectories { get; set; }
 
         /// <inheritdoc />
-        public FilePathCollection Files { get; set; }
+        public FilePathCollection? Files { get; set; }
 
         /// <inheritdoc/>
         internal override IOutputParser<ITestOutput> OutputParser => outputParser;
@@ -76,7 +76,7 @@ namespace Cake.SevenZip.Commands
         protected override string CommandChar { get; } = "t";
 
         /// <inheritdoc />
-        protected override IEnumerable<ISwitch> Switches => new ISwitch[]
+        protected override IEnumerable<ISwitch?> Switches => new ISwitch?[]
         {
             IncludeArchiveFilenames,
             ExcludeArchiveFilenames,
@@ -93,7 +93,7 @@ namespace Cake.SevenZip.Commands
         {
             Archive.RequireNotNull("Archive is required for extract.");
 
-            builder.AppendQuoted(Archive.FullPath);
+            builder.AppendQuoted(Archive!.FullPath);
             builder.AppendPathsNullSafe(Files);
         }
     }

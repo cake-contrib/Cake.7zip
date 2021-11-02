@@ -16,9 +16,9 @@ namespace Cake.SevenZip.Parsers
         /// <inheritdoc />
         public IHashOutput Parse(string[] rawOutput)
         {
-            string information = null;
-            string lastLine = null;
-            string[] hashHeader = null;
+            string? information = null;
+            string? lastLine = null;
+            string[]? hashHeader = null;
             var files = new List<IFileHash>();
             var hashOfData = new List<IHash>();
             var hashOfDataAndNames = new List<IHash>();
@@ -133,7 +133,7 @@ namespace Cake.SevenZip.Parsers
 
             return new HashOutput
             {
-                Information = information,
+                Information = information ?? string.Empty,
                 Files = files,
                 HashesOfData = hashOfData,
                 HashOfDataAndNames = hashOfDataAndNames,
@@ -144,33 +144,33 @@ namespace Cake.SevenZip.Parsers
 
         private class HashOutput : IHashOutput
         {
-            public string Information { get; set; }
+            public string Information { get; set; } = string.Empty;
 
-            public IEnumerable<IFileHash> Files { get; set; }
+            public IEnumerable<IFileHash> Files { get; set; } = Enumerable.Empty<IFileHash>();
 
-            public IEnumerable<IHash> SumOfHashes { get; set; }
+            public IEnumerable<IHash> SumOfHashes { get; set; } = Enumerable.Empty<IHash>();
 
             public long SumOfSizes { get; set; }
 
-            public IEnumerable<IHash> HashesOfData { get; set; }
+            public IEnumerable<IHash> HashesOfData { get; set; } = Enumerable.Empty<IHash>();
 
-            public IEnumerable<IHash> HashOfDataAndNames { get; set; }
+            public IEnumerable<IHash> HashOfDataAndNames { get; set; } = Enumerable.Empty<IHash>();
         }
 
         private class FileHash : IFileHash
         {
-            public IEnumerable<IHash> Hashes { get; set; }
+            public IEnumerable<IHash> Hashes { get; set; } = Enumerable.Empty<IHash>();
 
-            public string FilePath { get; set; }
+            public string FilePath { get; set; } = string.Empty;
 
             public long Size { get; set; }
         }
 
         private class Hash : IHash
         {
-            public string HashFunction { get; set; }
+            public string HashFunction { get; set; } = string.Empty;
 
-            public string HashValue { private get; set; }
+            public string HashValue { private get; set; } = string.Empty;
 
             string IHash.Hash => HashValue;
         }

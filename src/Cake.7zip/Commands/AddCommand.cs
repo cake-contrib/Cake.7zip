@@ -32,61 +32,61 @@ namespace Cake.SevenZip.Commands
         ISupportSwitchFullyQualifiedFilePaths
     {
         /// <inheritdoc />
-        public SwitchVolumeCollection Volumes { get; set; }
+        public SwitchVolumeCollection? Volumes { get; set; }
 
         /// <inheritdoc/>
-        public SwitchCompressionMethod CompressionMethod { get; set; }
+        public SwitchCompressionMethod? CompressionMethod { get; set; }
 
         /// <inheritdoc />
-        public SwitchArchiveType ArchiveType { get; set; }
+        public SwitchArchiveType? ArchiveType { get; set; }
 
         /// <inheritdoc />
-        public SwitchPassword Password { get; set; }
+        public SwitchPassword? Password { get; set; }
 
         /// <inheritdoc />
-        public SwitchNtSecurityInformation NtSecurityInformation { get; set; }
+        public SwitchNtSecurityInformation? NtSecurityInformation { get; set; }
 
         /// <inheritdoc />
-        public SwitchNtfsAlternateStreams NtfsAlternateStreams { get; set; }
+        public SwitchNtfsAlternateStreams? NtfsAlternateStreams { get; set; }
 
         /// <inheritdoc />
-        public SwitchCompressFilesOpenForWriting CompressFilesOpenForWriting { get; set; }
+        public SwitchCompressFilesOpenForWriting? CompressFilesOpenForWriting { get; set; }
 
         /// <inheritdoc />
-        public SwitchSetTimestampFromMostRecentFile TimestampFromMostRecentFile { get; set; }
+        public SwitchSetTimestampFromMostRecentFile? TimestampFromMostRecentFile { get; set; }
 
         /// <inheritdoc />
-        public SwitchWorkingDirectory WorkingDirectory { get; set; }
+        public SwitchWorkingDirectory? WorkingDirectory { get; set; }
 
         /// <inheritdoc />
-        public SwitchRecurseSubdirectories RecurseSubdirectories { get; set; }
+        public SwitchRecurseSubdirectories? RecurseSubdirectories { get; set; }
 
         /// <inheritdoc />
-        public SwitchIncludeFilenameCollection IncludeFilenames { get; set; }
+        public SwitchIncludeFilenameCollection? IncludeFilenames { get; set; }
 
         /// <inheritdoc />
-        public SwitchExcludeFilenameCollection ExcludeFilenames { get; set; }
+        public SwitchExcludeFilenameCollection? ExcludeFilenames { get; set; }
 
         /// <inheritdoc />
-        public SwitchUpdateOptions UpdateOptions { get; set; }
+        public SwitchUpdateOptions? UpdateOptions { get; set; }
 
         /// <inheritdoc />
-        public SwitchDeleteAfterCompression DeleteAfterCompression { get; set; }
+        public SwitchDeleteAfterCompression? DeleteAfterCompression { get; set; }
 
         /// <inheritdoc />
-        public SwitchSelfExtractingArchive SelfExtractingArchive { get; set; }
+        public SwitchSelfExtractingArchive? SelfExtractingArchive { get; set; }
 
         /// <inheritdoc />
-        public SwitchFullyQualifiedFilePaths FullyQualifiedFilePaths { get; set; }
+        public SwitchFullyQualifiedFilePaths? FullyQualifiedFilePaths { get; set; }
 
         /// <inheritdoc/>
-        protected override string CommandName { get; } = "add";
+        protected override string CommandName => "add";
 
         /// <inheritdoc/>
-        protected override string CommandChar { get; } = "a";
+        protected override string CommandChar => "a";
 
         /// <inheritdoc/>
-        protected override IEnumerable<ISwitch> Switches => new ISwitch[]
+        protected override IEnumerable<ISwitch?> Switches => new ISwitch?[]
             {
                 ArchiveType,
                 Volumes,
