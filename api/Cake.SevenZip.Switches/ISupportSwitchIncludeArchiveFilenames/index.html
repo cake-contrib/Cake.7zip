@@ -251,8 +251,8 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand">ListCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand">ExtractCommand</a></li>								
 									</ul>
 								</dd>				
@@ -265,10 +265,10 @@
 	click Interface0 "/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitch"
 	Type["ISupportSwitchIncludeArchiveFilenames"]
 class Type type-node
-	Implementing0["TestCommand"]-.-&gt;Type
-	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand"
-	Implementing1["ListCommand"]-.-&gt;Type
-	click Implementing1 "/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand"
+	Implementing0["ListCommand"]-.-&gt;Type
+	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand"
+	Implementing1["TestCommand"]-.-&gt;Type
+	click Implementing1 "/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand"
 	Implementing2["ExtractCommand"]-.-&gt;Type
 	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand"
 
