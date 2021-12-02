@@ -1,5 +1,5 @@
 #tool "nuget:?package=7-Zip.CommandLine&version=18.1.0"
-#r "..\..\src\Cake.7zip\bin\Debug\netstandard2.0\Cake.7zip.dll"
+#r "..\..\src\Cake.7zip\bin\Release\net6.0\Cake.7zip.dll"
 
 ///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
