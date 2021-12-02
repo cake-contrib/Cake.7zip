@@ -1,9 +1,8 @@
-namespace Cake.SevenZip.Arguments
+namespace Cake.SevenZip.Arguments;
+
+/// <summary>
+/// Base for all arguments.
+/// </summary>
+public interface IHaveArgument
 {
-    /// <summary>
-    /// Base for all arguments.
-    /// </summary>
-    public interface IHaveArgument
-    {
-    }
 }

@@ -1,20 +1,19 @@
-namespace Cake.SevenZip.Switches
+namespace Cake.SevenZip.Switches;
+
+/// <summary>
+/// A Collection of <see cref="SwitchIncludeFilename"/>.
+/// </summary>
+/// <seealso cref="BaseSwitchCollection{T}" />
+public class SwitchIncludeFilenameCollection : BaseSwitchCollection<SwitchIncludeFilename>
 {
     /// <summary>
-    /// A Collection of <see cref="SwitchIncludeFilename"/>.
+    /// Initializes a new instance of the <see cref="SwitchIncludeFilenameCollection"/> class.
     /// </summary>
-    /// <seealso cref="BaseSwitchCollection{T}" />
-    public class SwitchIncludeFilenameCollection : BaseSwitchCollection<SwitchIncludeFilename>
+    /// <param name="initial">The initial.</param>
+    /// <param name="additional">The additional.</param>
+    public SwitchIncludeFilenameCollection(SwitchIncludeFilename initial, params SwitchIncludeFilename[] additional)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SwitchIncludeFilenameCollection"/> class.
-        /// </summary>
-        /// <param name="initial">The initial.</param>
-        /// <param name="additional">The additional.</param>
-        public SwitchIncludeFilenameCollection(SwitchIncludeFilename initial, params SwitchIncludeFilename[] additional)
-        {
-            Switches.Add(initial);
-            Switches.AddRange(additional);
-        }
+        Switches.Add(initial);
+        Switches.AddRange(additional);
     }
 }

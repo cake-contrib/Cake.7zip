@@ -2,18 +2,17 @@ using System;
 
 using Cake.SevenZip.Builder;
 
-namespace Cake.SevenZip.Tests.Fixtures
+namespace Cake.SevenZip.Tests.Fixtures;
+
+public class SevenZipFluentRunnerFixture : SevenZipRunnerFixture
 {
-    public class SevenZipFluentRunnerFixture : SevenZipRunnerFixture
+    public void RunToolFluent(Action<CommandBuilder> action)
     {
-        public void RunToolFluent(Action<CommandBuilder> action)
-        {
-            var builder = new CommandBuilder();
-            action(builder);
+        var builder = new CommandBuilder();
+        action(builder);
 
-            Settings.Command = builder.Command;
+        Settings.Command = builder.Command;
 
-            RunTool();
-        }
+        RunTool();
     }
 }

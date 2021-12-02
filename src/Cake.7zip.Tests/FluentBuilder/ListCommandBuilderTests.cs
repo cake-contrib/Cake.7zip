@@ -9,234 +9,233 @@ using Shouldly;
 using Xunit;
 using Cake.SevenZip.Switches;
 
-namespace Cake.SevenZip.Tests.FluentBuilder
+namespace Cake.SevenZip.Tests.FluentBuilder;
+
+public class ListCommandBuilderTests
 {
-    public class ListCommandBuilderTests
+    [Fact]
+    public void List_throws_on_missing_archive()
     {
-        [Fact]
-        public void List_throws_on_missing_archive()
-        {
-            var fixture = new FluentBuilderFixture();
-            fixture.Context
-              .InListMode();
+        var fixture = new FluentBuilderFixture();
+        fixture.Context
+            .InListMode();
 
-            Action result = () =>
+        Action result = () =>
+        {
+            fixture.EvaluateArgs();
+        };
+
+        result.ShouldThrow<ArgumentException>();
+    }
+
+    [Fact]
+    public void List_can_use_Archive()
+    {
+        var fixture = new FluentBuilderFixture();
+        fixture.Context
+            .InListMode()
+            .WithArchive(new FilePath("in.zip"));
+
+        const string expected = @"l ""in.zip""";
+
+        var actual = fixture.EvaluateArgs();
+
+        actual.ShouldBe(expected);
+    }
+
+    [Fact]
+    public void List_parses_and_sets_the_output()
+    {
+        string? info = null;
+        var fixture = new SevenZipFluentRunnerFixture();
+        fixture.GivenProcessReturnsStdOutputOf(Outputs.List.MultipleArchives);
+
+        fixture.RunToolFluent(t => t
+            .InListMode()
+            .WithArchive(new FilePath("in.zip"))
+            .WithCommandOutput(o =>
             {
-                fixture.EvaluateArgs();
-            };
+                info = o.Information;
+            }));
 
-            result.ShouldThrow<ArgumentException>();
-        }
+        info.ShouldNotBeNull();
+    }
 
-        [Fact]
-        public void List_can_use_Archive()
-        {
-            var fixture = new FluentBuilderFixture();
-            fixture.Context
-              .InListMode()
-              .WithArchive(new FilePath("in.zip"));
+    [Fact]
+    public void List_sets_rawoutput()
+    {
+        string[]? output = null;
+        var fixture = new SevenZipFluentRunnerFixture();
+        fixture.GivenProcessReturnsStdOutputOf(Outputs.List.MultipleArchives);
 
-            const string expected = @"l ""in.zip""";
+        fixture.RunToolFluent(t => t
+            .InListMode()
+            .WithArchive(new FilePath("in.zip"))
+            .WithCommandRawOutput(r =>
+            {
+                output = r;
+            }));
 
-            var actual = fixture.EvaluateArgs();
+        output.ShouldBeEquivalentTo(Outputs.List.MultipleArchives);
+    }
 
-            actual.ShouldBe(expected);
-        }
+    [Fact]
+    public void List_can_use_IncludeArchiveFilenames()
+    {
+        var fixture = new FluentBuilderFixture();
+        fixture.Context
+            .InListMode()
+            .WithArchive(new FilePath("in.zip"))
+            .WithIncludeArchiveFilenames(RecurseType.Enable, "*.pdf");
 
-        [Fact]
-        public void List_parses_and_sets_the_output()
-        {
-            string? info = null;
-            var fixture = new SevenZipFluentRunnerFixture();
-            fixture.GivenProcessReturnsStdOutputOf(Outputs.List.MultipleArchives);
+        const string expected = @"l -air!*.pdf ""in.zip""";
 
-            fixture.RunToolFluent(t => t
-              .InListMode()
-              .WithArchive(new FilePath("in.zip"))
-              .WithCommandOutput(o =>
-              {
-                  info = o.Information;
-              }));
+        var actual = fixture.EvaluateArgs();
 
-            info.ShouldNotBeNull();
-        }
+        actual.ShouldBe(expected);
+    }
 
-        [Fact]
-        public void List_sets_rawoutput()
-        {
-            string[]? output = null;
-            var fixture = new SevenZipFluentRunnerFixture();
-            fixture.GivenProcessReturnsStdOutputOf(Outputs.List.MultipleArchives);
+    [Fact]
+    public void List_can_use_DisableParsingOfArchiveName()
+    {
+        var fixture = new FluentBuilderFixture();
+        fixture.Context
+            .InListMode()
+            .WithArchive(new FilePath("in.zip"))
+            .WithDisableParsingOfArchiveName();
 
-            fixture.RunToolFluent(t => t
-              .InListMode()
-              .WithArchive(new FilePath("in.zip"))
-              .WithCommandRawOutput(r =>
-              {
-                  output = r;
-              }));
+        const string expected = @"l -an ""in.zip""";
 
-            output.ShouldBeEquivalentTo(Outputs.List.MultipleArchives);
-        }
+        var actual = fixture.EvaluateArgs();
 
-        [Fact]
-        public void List_can_use_IncludeArchiveFilenames()
-        {
-            var fixture = new FluentBuilderFixture();
-            fixture.Context
-              .InListMode()
-              .WithArchive(new FilePath("in.zip"))
-              .WithIncludeArchiveFilenames(RecurseType.Enable, "*.pdf");
+        actual.ShouldBe(expected);
+    }
 
-            const string expected = @"l -air!*.pdf ""in.zip""";
+    [Fact]
+    public void List_can_use_ExcludeArchiveFilenames()
+    {
+        var fixture = new FluentBuilderFixture();
+        fixture.Context
+            .InListMode()
+            .WithArchive(new FilePath("in.zip"))
+            .WithExcludeArchiveFilenames(RecurseType.Enable, "*.pdf");
 
-            var actual = fixture.EvaluateArgs();
+        const string expected = @"l -axr!*.pdf ""in.zip""";
 
-            actual.ShouldBe(expected);
-        }
+        var actual = fixture.EvaluateArgs();
 
-        [Fact]
-        public void List_can_use_DisableParsingOfArchiveName()
-        {
-            var fixture = new FluentBuilderFixture();
-            fixture.Context
-              .InListMode()
-              .WithArchive(new FilePath("in.zip"))
-              .WithDisableParsingOfArchiveName();
+        actual.ShouldBe(expected);
+    }
 
-            const string expected = @"l -an ""in.zip""";
+    [Fact]
+    public void List_can_use_IncludeFilenames()
+    {
+        var fixture = new FluentBuilderFixture();
+        fixture.Context
+            .InListMode()
+            .WithArchive(new FilePath("in.zip"))
+            .WithIncludeFilenames(RecurseType.Enable, "*.pdf");
 
-            var actual = fixture.EvaluateArgs();
+        const string expected = @"l -ir!*.pdf ""in.zip""";
 
-            actual.ShouldBe(expected);
-        }
+        var actual = fixture.EvaluateArgs();
 
-        [Fact]
-        public void List_can_use_ExcludeArchiveFilenames()
-        {
-            var fixture = new FluentBuilderFixture();
-            fixture.Context
-              .InListMode()
-              .WithArchive(new FilePath("in.zip"))
-              .WithExcludeArchiveFilenames(RecurseType.Enable, "*.pdf");
+        actual.ShouldBe(expected);
+    }
 
-            const string expected = @"l -axr!*.pdf ""in.zip""";
+    [Fact]
+    public void List_can_use_NtfsAlternateStreams()
+    {
+        var fixture = new FluentBuilderFixture();
+        fixture.Context
+            .InListMode()
+            .WithArchive(new FilePath("in.zip"))
+            .WithNtfsAlternateStreams();
 
-            var actual = fixture.EvaluateArgs();
+        const string expected = @"l -sns ""in.zip""";
 
-            actual.ShouldBe(expected);
-        }
+        var actual = fixture.EvaluateArgs();
 
-        [Fact]
-        public void List_can_use_IncludeFilenames()
-        {
-            var fixture = new FluentBuilderFixture();
-            fixture.Context
-              .InListMode()
-              .WithArchive(new FilePath("in.zip"))
-              .WithIncludeFilenames(RecurseType.Enable, "*.pdf");
+        actual.ShouldBe(expected);
+    }
 
-            const string expected = @"l -ir!*.pdf ""in.zip""";
+    [Fact]
+    public void List_can_use_Password()
+    {
+        var fixture = new FluentBuilderFixture();
+        fixture.Context
+            .InListMode()
+            .WithArchive(new FilePath("in.zip"))
+            .WithPassword("secure!");
 
-            var actual = fixture.EvaluateArgs();
+        const string expected = @"l -p""secure!"" ""in.zip""";
 
-            actual.ShouldBe(expected);
-        }
+        var actual = fixture.EvaluateArgs();
 
-        [Fact]
-        public void List_can_use_NtfsAlternateStreams()
-        {
-            var fixture = new FluentBuilderFixture();
-            fixture.Context
-              .InListMode()
-              .WithArchive(new FilePath("in.zip"))
-              .WithNtfsAlternateStreams();
+        actual.ShouldBe(expected);
+    }
 
-            const string expected = @"l -sns ""in.zip""";
+    [Fact]
+    public void List_can_use_RecurseSubdirectories()
+    {
+        var fixture = new FluentBuilderFixture();
+        fixture.Context
+            .InListMode()
+            .WithArchive(new FilePath("in.zip"))
+            .WithRecurseSubdirectories(RecurseType.Enable);
 
-            var actual = fixture.EvaluateArgs();
+        const string expected = @"l -r ""in.zip""";
 
-            actual.ShouldBe(expected);
-        }
+        var actual = fixture.EvaluateArgs();
 
-        [Fact]
-        public void List_can_use_Password()
-        {
-            var fixture = new FluentBuilderFixture();
-            fixture.Context
-              .InListMode()
-              .WithArchive(new FilePath("in.zip"))
-              .WithPassword("secure!");
+        actual.ShouldBe(expected);
+    }
 
-            const string expected = @"l -p""secure!"" ""in.zip""";
+    [Fact]
+    public void List_can_use_ArchiveType()
+    {
+        var fixture = new FluentBuilderFixture();
+        fixture.Context
+            .InListMode()
+            .WithArchive(new FilePath("in.zip"))
+            .WithArchiveType(SwitchArchiveType.Bzip2);
 
-            var actual = fixture.EvaluateArgs();
+        const string expected = @"l -tbzip2 ""in.zip""";
 
-            actual.ShouldBe(expected);
-        }
+        var actual = fixture.EvaluateArgs();
 
-        [Fact]
-        public void List_can_use_RecurseSubdirectories()
-        {
-            var fixture = new FluentBuilderFixture();
-            fixture.Context
-              .InListMode()
-              .WithArchive(new FilePath("in.zip"))
-              .WithRecurseSubdirectories(RecurseType.Enable);
+        actual.ShouldBe(expected);
+    }
 
-            const string expected = @"l -r ""in.zip""";
+    [Fact]
+    public void List_can_use_ExcludeFilenames()
+    {
+        var fixture = new FluentBuilderFixture();
+        fixture.Context
+            .InListMode()
+            .WithArchive(new FilePath("in.zip"))
+            .WithExcludeFilenames(RecurseType.Disable, "*.pdf");
 
-            var actual = fixture.EvaluateArgs();
+        const string expected = @"l -xr-!*.pdf ""in.zip""";
 
-            actual.ShouldBe(expected);
-        }
+        var actual = fixture.EvaluateArgs();
 
-        [Fact]
-        public void List_can_use_ArchiveType()
-        {
-            var fixture = new FluentBuilderFixture();
-            fixture.Context
-              .InListMode()
-              .WithArchive(new FilePath("in.zip"))
-              .WithArchiveType(SwitchArchiveType.Bzip2);
+        actual.ShouldBe(expected);
+    }
 
-            const string expected = @"l -tbzip2 ""in.zip""";
+    [Fact]
+    public void List_can_use_ShowTechnicalInformation()
+    {
+        var fixture = new FluentBuilderFixture();
+        fixture.Context
+            .InListMode()
+            .WithArchive(new FilePath("in.zip"))
+            .WithShowTechnicalInformation();
 
-            var actual = fixture.EvaluateArgs();
+        const string expected = @"l -slt ""in.zip""";
 
-            actual.ShouldBe(expected);
-        }
+        var actual = fixture.EvaluateArgs();
 
-        [Fact]
-        public void List_can_use_ExcludeFilenames()
-        {
-            var fixture = new FluentBuilderFixture();
-            fixture.Context
-              .InListMode()
-              .WithArchive(new FilePath("in.zip"))
-              .WithExcludeFilenames(RecurseType.Disable, "*.pdf");
-
-            const string expected = @"l -xr-!*.pdf ""in.zip""";
-
-            var actual = fixture.EvaluateArgs();
-
-            actual.ShouldBe(expected);
-        }
-
-        [Fact]
-        public void List_can_use_ShowTechnicalInformation()
-        {
-            var fixture = new FluentBuilderFixture();
-            fixture.Context
-              .InListMode()
-              .WithArchive(new FilePath("in.zip"))
-              .WithShowTechnicalInformation();
-
-            const string expected = @"l -slt ""in.zip""";
-
-            var actual = fixture.EvaluateArgs();
-
-            actual.ShouldBe(expected);
-        }
+        actual.ShouldBe(expected);
     }
 }

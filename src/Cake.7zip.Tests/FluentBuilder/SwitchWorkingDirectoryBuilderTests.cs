@@ -8,21 +8,20 @@ using Moq;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.FluentBuilder
+namespace Cake.SevenZip.Tests.FluentBuilder;
+
+public class SwitchWorkingDirectoryBuilderTests
 {
-    public class SwitchWorkingDirectoryBuilderTests
+    [Fact]
+    public void WithWorkingDirectory_returns_the_builder()
     {
-        [Fact]
-        public void WithWorkingDirectory_returns_the_builder()
-        {
-            var expected = new Mock<ISupportSwitchBuilder<ISupportSwitchWorkingDirectory>>();
-            var command = new Mock<ISupportSwitchWorkingDirectory>();
-            command.SetupProperty(c => c.WorkingDirectory);
-            expected.Setup(x => x.Command).Returns(command.Object);
+        var expected = new Mock<ISupportSwitchBuilder<ISupportSwitchWorkingDirectory>>();
+        var command = new Mock<ISupportSwitchWorkingDirectory>();
+        command.SetupProperty(c => c.WorkingDirectory);
+        expected.Setup(x => x.Command).Returns(command.Object);
 
-            var actual = expected.Object.WithWorkingDirectory(new DirectoryPath("foo"));
+        var actual = expected.Object.WithWorkingDirectory(new DirectoryPath("foo"));
 
-            actual.ShouldBe(expected.Object);
-        }
+        actual.ShouldBe(expected.Object);
     }
 }

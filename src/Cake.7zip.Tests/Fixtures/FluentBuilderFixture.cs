@@ -1,22 +1,21 @@
 using Cake.Core.IO;
 using Cake.SevenZip.Builder;
 
-namespace Cake.SevenZip.Tests.Fixtures
+namespace Cake.SevenZip.Tests.Fixtures;
+
+public class FluentBuilderFixture
 {
-    public class FluentBuilderFixture
+    internal CommandBuilder Context { get; }
+
+    public FluentBuilderFixture()
     {
-        internal CommandBuilder Context { get; }
+        Context = new CommandBuilder();
+    }
 
-        public FluentBuilderFixture()
-        {
-            Context = new CommandBuilder();
-        }
-
-        public string EvaluateArgs()
-        {
-            var args = new ProcessArgumentBuilder();
-            Context.Command?.BuildArguments(ref args);
-            return args.Render();
-        }
+    public string EvaluateArgs()
+    {
+        var args = new ProcessArgumentBuilder();
+        Context.Command?.BuildArguments(ref args);
+        return args.Render();
     }
 }

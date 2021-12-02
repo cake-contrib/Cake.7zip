@@ -10,62 +10,61 @@ using Moq;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.FluentBuilder
+namespace Cake.SevenZip.Tests.FluentBuilder;
+
+public class ArgumentFilesBuilderTests
 {
-    public class ArgumentFilesBuilderTests
+    [Fact]
+    public void WithFiles_returns_the_builder()
     {
-        [Fact]
-        public void WithFiles_returns_the_builder()
-        {
-            var expected = new Mock<ISupportArgumentBuilder<IHaveArgumentFiles>>();
-            var command = new Mock<IHaveArgumentFiles>();
-            command.SetupProperty(c => c.Files);
-            expected.Setup(x => x.Command).Returns(command.Object);
+        var expected = new Mock<ISupportArgumentBuilder<IHaveArgumentFiles>>();
+        var command = new Mock<IHaveArgumentFiles>();
+        command.SetupProperty(c => c.Files);
+        expected.Setup(x => x.Command).Returns(command.Object);
 
-            var actual = expected.Object.WithFiles(new FilePath("foo"));
+        var actual = expected.Object.WithFiles(new FilePath("foo"));
 
-            actual.ShouldBe(expected.Object);
-        }
+        actual.ShouldBe(expected.Object);
+    }
 
-        [Fact]
-        public void WithFiles_collection_returns_the_builder()
-        {
-            var expected = new Mock<ISupportArgumentBuilder<IHaveArgumentFiles>>();
-            var command = new Mock<IHaveArgumentFiles>();
-            command.SetupProperty(c => c.Files);
-            expected.Setup(x => x.Command).Returns(command.Object);
+    [Fact]
+    public void WithFiles_collection_returns_the_builder()
+    {
+        var expected = new Mock<ISupportArgumentBuilder<IHaveArgumentFiles>>();
+        var command = new Mock<IHaveArgumentFiles>();
+        command.SetupProperty(c => c.Files);
+        expected.Setup(x => x.Command).Returns(command.Object);
 
-            var actual = expected.Object.WithFiles(new FilePathCollection());
+        var actual = expected.Object.WithFiles(new FilePathCollection());
 
-            actual.ShouldBe(expected.Object);
-        }
+        actual.ShouldBe(expected.Object);
+    }
 
-        [Fact]
-        public void WithFiles_sets_the_directoryContents()
-        {
-            var builder = new Mock<ISupportArgumentBuilder<IHaveArgumentFiles>>();
-            var command = new Mock<IHaveArgumentFiles>();
-            command.SetupProperty(c => c.Files);
-            builder.Setup(x => x.Command).Returns(command.Object);
-            var expected = new FilePath("foo");
+    [Fact]
+    public void WithFiles_sets_the_directoryContents()
+    {
+        var builder = new Mock<ISupportArgumentBuilder<IHaveArgumentFiles>>();
+        var command = new Mock<IHaveArgumentFiles>();
+        command.SetupProperty(c => c.Files);
+        builder.Setup(x => x.Command).Returns(command.Object);
+        var expected = new FilePath("foo");
 
-            builder.Object.WithFiles(expected);
+        builder.Object.WithFiles(expected);
 
-            command.Object.Files?.Single().ShouldBe(expected);
-        }
+        command.Object.Files?.Single().ShouldBe(expected);
+    }
 
-        [Fact]
-        public void WithFiles_collection_sets_the_directoryContents()
-        {
-            var builder = new Mock<ISupportArgumentBuilder<IHaveArgumentFiles>>();
-            var command = new Mock<IHaveArgumentFiles>();
-            command.SetupProperty(c => c.Files);
-            builder.Setup(x => x.Command).Returns(command.Object);
-            var expected = new FilePath("foo");
+    [Fact]
+    public void WithFiles_collection_sets_the_directoryContents()
+    {
+        var builder = new Mock<ISupportArgumentBuilder<IHaveArgumentFiles>>();
+        var command = new Mock<IHaveArgumentFiles>();
+        command.SetupProperty(c => c.Files);
+        builder.Setup(x => x.Command).Returns(command.Object);
+        var expected = new FilePath("foo");
 
-            builder.Object.WithFiles(new FilePathCollection(new[] { expected }));
+        builder.Object.WithFiles(new FilePathCollection(new[] { expected }));
 
-            command.Object.Files?.Single().ShouldBe(expected);
-        }
+        command.Object.Files?.Single().ShouldBe(expected);
     }
 }

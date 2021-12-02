@@ -8,148 +8,147 @@ using Cake.Core.IO;
 using Cake.Core.Tooling;
 using Cake.SevenZip.Parsers;
 
-namespace Cake.SevenZip
+namespace Cake.SevenZip;
+
+/// <summary>
+/// The Tool-Runner for 7zip.
+/// </summary>
+/// <seealso cref="Tool{SevenZipSettings}" />
+public sealed class SevenZipRunner : Tool<SevenZipSettings>
 {
+    private readonly ICakeLog log;
+    private readonly ICakeEnvironment cakeEnvironment;
+    private readonly IRegistry registry;
+    private readonly IFileSystem fileSystem;
+
     /// <summary>
-    /// The Tool-Runner for 7zip.
+    /// Initializes a new instance of the <see cref="SevenZipRunner"/> class.
     /// </summary>
-    /// <seealso cref="Tool{SevenZipSettings}" />
-    public sealed class SevenZipRunner : Tool<SevenZipSettings>
+    /// <param name="fileSystem">The file system.</param>
+    /// <param name="environment">The environment.</param>
+    /// <param name="processRunner">The process runner.</param>
+    /// <param name="tools">The tool locator.</param>
+    /// <param name="log">The log.</param>
+    /// <param name="registry">The Registry.</param>
+    public SevenZipRunner(
+        IFileSystem fileSystem,
+        ICakeEnvironment environment,
+        IProcessRunner processRunner,
+        IToolLocator tools,
+        ICakeLog log,
+        IRegistry registry)
+        : base(fileSystem, environment, processRunner, tools)
     {
-        private readonly ICakeLog log;
-        private readonly ICakeEnvironment cakeEnvironment;
-        private readonly IRegistry registry;
-        private readonly IFileSystem fileSystem;
+        this.log = log;
+        cakeEnvironment = environment;
+        this.registry = registry;
+        this.fileSystem = fileSystem;
+    }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SevenZipRunner"/> class.
-        /// </summary>
-        /// <param name="fileSystem">The file system.</param>
-        /// <param name="environment">The environment.</param>
-        /// <param name="processRunner">The process runner.</param>
-        /// <param name="tools">The tool locator.</param>
-        /// <param name="log">The log.</param>
-        /// <param name="registry">The Registry.</param>
-        public SevenZipRunner(
-          IFileSystem fileSystem,
-          ICakeEnvironment environment,
-          IProcessRunner processRunner,
-          IToolLocator tools,
-          ICakeLog log,
-          IRegistry registry)
-          : base(fileSystem, environment, processRunner, tools)
+    /// <summary>
+    /// Runs the specified settings.
+    /// </summary>
+    /// <param name="settings">The settings.</param>
+    /// <exception cref="ArgumentNullException">settings.</exception>
+    public void Run(SevenZipSettings settings)
+    {
+        if (settings == null)
         {
-            this.log = log;
-            cakeEnvironment = environment;
-            this.registry = registry;
-            this.fileSystem = fileSystem;
+            throw new ArgumentNullException(nameof(settings));
         }
 
-        /// <summary>
-        /// Runs the specified settings.
-        /// </summary>
-        /// <param name="settings">The settings.</param>
-        /// <exception cref="ArgumentNullException">settings.</exception>
-        public void Run(SevenZipSettings settings)
+        var procSettings = new ProcessSettings
         {
-            if (settings == null)
+            RedirectStandardOutput = true,
+        };
+
+        void AfterRun(IProcess p)
+        {
+            if (settings.Command is ICanParseOutput parseOutput)
             {
-                throw new ArgumentNullException(nameof(settings));
+                parseOutput.SetRawOutput(p.GetStandardOutput());
             }
-
-            var procSettings = new ProcessSettings
-            {
-                RedirectStandardOutput = true,
-            };
-
-            void AfterRun(IProcess p)
-            {
-                if (settings.Command is ICanParseOutput parseOutput)
-                {
-                    parseOutput.SetRawOutput(p.GetStandardOutput());
-                }
-            }
-
-            Run(settings, GetArguments(settings), procSettings, AfterRun);
         }
 
-        /// <inheritdoc/>
-        protected override IEnumerable<string> GetToolExecutableNames()
+        Run(settings, GetArguments(settings), procSettings, AfterRun);
+    }
+
+    /// <inheritdoc/>
+    protected override IEnumerable<string> GetToolExecutableNames()
+    {
+        yield return "7za.exe";
+        yield return "7za";
+        yield return "7z.exe"; // 7z.exe can do everything 7za.exe can.
+        yield return "7z";
+    }
+
+    /// <inheritdoc/>
+    protected override string GetToolName()
+    {
+        return "7-Zip";
+    }
+
+    /// <inheritdoc/>
+    protected override IEnumerable<FilePath> GetAlternativeToolPaths(SevenZipSettings settings)
+    {
+        var paths = new List<FilePath>(base.GetAlternativeToolPaths(settings));
+
+        if (registry != null)
         {
-            yield return "7za.exe";
-            yield return "7za";
-            yield return "7z.exe"; // 7z.exe can do everything 7za.exe can.
-            yield return "7z";
-        }
-
-        /// <inheritdoc/>
-        protected override string GetToolName()
-        {
-            return "7-Zip";
-        }
-
-        /// <inheritdoc/>
-        protected override IEnumerable<FilePath> GetAlternativeToolPaths(SevenZipSettings settings)
-        {
-            var paths = new List<FilePath>(base.GetAlternativeToolPaths(settings));
-
-            if (registry != null)
-            {
-                log.Debug("Trying to detect 7zip from Registry");
-                try
-                {
-                    using (var software = registry.LocalMachine.OpenKey("Software"))
-                    using (var sevenZip = software.OpenKey("7-Zip"))
-                    {
-                        var path32 = sevenZip.GetValue("Path")?.ToString() ?? string.Empty;
-                        log.Debug("7zip path in registry:" + path32);
-                        var path64 = sevenZip.GetValue("Path64")?.ToString() ?? string.Empty;
-                        log.Debug("7zip 64bit-path in registry:" + path64);
-                        var dirs = new List<DirectoryPath>(new[] { new DirectoryPath(path32) });
-                        if (cakeEnvironment.Platform.Is64Bit
-                            && path64 != path32)
-                        {
-                            dirs.Add(new DirectoryPath(path64));
-                        }
-
-                        var names = GetToolExecutableNames().ToList();
-
-                        names
-                            .SelectMany(n => dirs
-                                .Select(d => d.CombineWithFilePath(n)))
-                            .Where(p => fileSystem.Exist(p))
-                            .ToList().ForEach(p => paths.Add(p.FullPath));
-                    }
-                }
-#pragma warning disable CA1031 // Do not catch general exception types
-                catch (Exception e)
-#pragma warning restore CA1031 // Do not catch general exception types
-                {
-                    log.Debug($"{e.GetType()}: {e.Message}");
-                    log.Debug("7zip not found in registry.");
-                }
-            }
-
-            return paths;
-        }
-
-        private ProcessArgumentBuilder GetArguments(SevenZipSettings settings)
-        {
-            if (settings.Command == null)
-            {
-                throw new CakeException($"{GetToolName()}: Command can not be null - a command is needed to run!");
-            }
-
-            var builder = new ProcessArgumentBuilder();
+            log.Debug("Trying to detect 7zip from Registry");
             try
             {
-                settings.Command.BuildArguments(ref builder);
-                return builder;
+                using (var software = registry.LocalMachine.OpenKey("Software"))
+                using (var sevenZip = software.OpenKey("7-Zip"))
+                {
+                    var path32 = sevenZip.GetValue("Path")?.ToString() ?? string.Empty;
+                    log.Debug("7zip path in registry:" + path32);
+                    var path64 = sevenZip.GetValue("Path64")?.ToString() ?? string.Empty;
+                    log.Debug("7zip 64bit-path in registry:" + path64);
+                    var dirs = new List<DirectoryPath>(new[] { new DirectoryPath(path32) });
+                    if (cakeEnvironment.Platform.Is64Bit
+                        && path64 != path32)
+                    {
+                        dirs.Add(new DirectoryPath(path64));
+                    }
+
+                    var names = GetToolExecutableNames().ToList();
+
+                    names
+                        .SelectMany(n => dirs
+                            .Select(d => d.CombineWithFilePath(n)))
+                        .Where(p => fileSystem.Exist(p))
+                        .ToList().ForEach(p => paths.Add(p.FullPath));
+                }
             }
+#pragma warning disable CA1031 // Do not catch general exception types
             catch (Exception e)
+#pragma warning restore CA1031 // Do not catch general exception types
             {
-                throw new CakeException($"{GetToolName()}: {e.Message}", e);
+                log.Debug($"{e.GetType()}: {e.Message}");
+                log.Debug("7zip not found in registry.");
             }
+        }
+
+        return paths;
+    }
+
+    private ProcessArgumentBuilder GetArguments(SevenZipSettings settings)
+    {
+        if (settings.Command == null)
+        {
+            throw new CakeException($"{GetToolName()}: Command can not be null - a command is needed to run!");
+        }
+
+        var builder = new ProcessArgumentBuilder();
+        try
+        {
+            settings.Command.BuildArguments(ref builder);
+            return builder;
+        }
+        catch (Exception e)
+        {
+            throw new CakeException($"{GetToolName()}: {e.Message}", e);
         }
     }
 }
