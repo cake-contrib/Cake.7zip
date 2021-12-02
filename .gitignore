@@ -51,3 +51,4 @@ docs/input/tasks/*
 
 # Wyam related
 config.wyam.*
+.idea/
