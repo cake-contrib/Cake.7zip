@@ -1,27 +1,26 @@
 using Cake.SevenZip.Builder;
 
-namespace Cake.SevenZip.Switches
+namespace Cake.SevenZip.Switches;
+
+/// <summary>
+/// <para>
+/// Command supports switch -i (Include filenames).
+/// </para>
+/// <para>
+/// The Switch is <see cref="SwitchIncludeFilenameCollection"/>.
+/// </para>
+/// <para>
+/// The Builder is <see cref="SwitchIncludeFilenamesBuilder"/>.
+/// </para>
+/// <seealso cref="ISupportSwitch" />
+/// </summary>
+public interface ISupportSwitchIncludeFilenames : ISupportSwitch
 {
     /// <summary>
-    /// <para>
-    /// Command supports switch -i (Include filenames).
-    /// </para>
-    /// <para>
-    /// The Switch is <see cref="SwitchIncludeFilenameCollection"/>.
-    /// </para>
-    /// <para>
-    /// The Builder is <see cref="SwitchIncludeFilenamesBuilder"/>.
-    /// </para>
-    /// <seealso cref="ISupportSwitch" />
+    /// Gets or sets the SwitchIncludeFilenameCollection.
     /// </summary>
-    public interface ISupportSwitchIncludeFilenames : ISupportSwitch
-    {
-        /// <summary>
-        /// Gets or sets the SwitchIncludeFilenameCollection.
-        /// </summary>
-        /// <value>
-        /// SwitchIncludeFilenameCollection.
-        /// </value>
-        SwitchIncludeFilenameCollection IncludeFilenames { get; set; }
-    }
+    /// <value>
+    /// SwitchIncludeFilenameCollection.
+    /// </value>
+    SwitchIncludeFilenameCollection? IncludeFilenames { get; set; }
 }

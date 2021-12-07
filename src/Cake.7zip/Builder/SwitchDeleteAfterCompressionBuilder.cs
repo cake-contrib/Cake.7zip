@@ -1,25 +1,24 @@
 using Cake.SevenZip.Switches;
 
-namespace Cake.SevenZip.Builder
+namespace Cake.SevenZip.Builder;
+
+/// <summary>
+/// Extensions for all Builders that support <see cref="ISupportSwitchDeleteAfterCompression"/>.
+/// <seealso cref="ISupportSwitchBuilder{T}"/>
+/// </summary>
+public static class SwitchDeleteAfterCompressionBuilder
 {
     /// <summary>
-    /// Extensions for all Builders that support <see cref="ISupportSwitchDeleteAfterCompression"/>.
-    /// <seealso cref="ISupportSwitchBuilder{T}"/>
+    /// fluent setter for <see cref="ISupportSwitchDeleteAfterCompression"/>.
     /// </summary>
-    public static class SwitchDeleteAfterCompressionBuilder
+    /// <typeparam name="T">the builder to support the <see cref="ISupportSwitchDeleteAfterCompression"/>.</typeparam>
+    /// <param name="this">The builder-instance.</param>
+    /// <returns>The builder-instance for fluent re-use.</returns>
+    public static T WithDeleteAfterCompression<T>(this T @this)
+        where T : ISupportSwitchBuilder<ISupportSwitchDeleteAfterCompression>
     {
-        /// <summary>
-        /// fluent setter for <see cref="ISupportSwitchDeleteAfterCompression"/>.
-        /// </summary>
-        /// <typeparam name="T">the builder to support the <see cref="ISupportSwitchDeleteAfterCompression"/>.</typeparam>
-        /// <param name="this">The builder-instance.</param>
-        /// <returns>The builder-instance for fluent re-use.</returns>
-        public static T WithDeleteAfterCompression<T>(this T @this)
-            where T : ISupportSwitchBuilder<ISupportSwitchDeleteAfterCompression>
-        {
-            @this.Command.DeleteAfterCompression = new SwitchDeleteAfterCompression(true);
+        @this.Command.DeleteAfterCompression = new SwitchDeleteAfterCompression(true);
 
-            return @this;
-        }
+        return @this;
     }
 }

@@ -1,25 +1,24 @@
 using Cake.SevenZip.Switches;
 
-namespace Cake.SevenZip.Builder
+namespace Cake.SevenZip.Builder;
+
+/// <summary>
+/// Extensions for all Builders that support <see cref="ISupportSwitchDisableParsingOfArchiveName"/>.
+/// <seealso cref="ISupportSwitchBuilder{T}"/>
+/// </summary>
+public static class SwitchDisableParsingOfArchiveNameBuilder
 {
     /// <summary>
-    /// Extensions for all Builders that support <see cref="ISupportSwitchDisableParsingOfArchiveName"/>.
-    /// <seealso cref="ISupportSwitchBuilder{T}"/>
+    /// fluent setter for <see cref="ISupportSwitchDisableParsingOfArchiveName"/>.
     /// </summary>
-    public static class SwitchDisableParsingOfArchiveNameBuilder
+    /// <typeparam name="T">the builder to support the <see cref="ISupportSwitchDisableParsingOfArchiveName"/>.</typeparam>
+    /// <param name="this">The builder-instance.</param>
+    /// <returns>The builder-instance for fluent re-use.</returns>
+    public static T WithDisableParsingOfArchiveName<T>(this T @this)
+        where T : ISupportSwitchBuilder<ISupportSwitchDisableParsingOfArchiveName>
     {
-        /// <summary>
-        /// fluent setter for <see cref="ISupportSwitchDisableParsingOfArchiveName"/>.
-        /// </summary>
-        /// <typeparam name="T">the builder to support the <see cref="ISupportSwitchDisableParsingOfArchiveName"/>.</typeparam>
-        /// <param name="this">The builder-instance.</param>
-        /// <returns>The builder-instance for fluent re-use.</returns>
-        public static T WithDisableParsingOfArchiveName<T>(this T @this)
-            where T : ISupportSwitchBuilder<ISupportSwitchDisableParsingOfArchiveName>
-        {
-            @this.Command.DisableParsingOfArchiveName = new SwitchDisableParsingOfArchiveName(true);
+        @this.Command.DisableParsingOfArchiveName = new SwitchDisableParsingOfArchiveName(true);
 
-            return @this;
-        }
+        return @this;
     }
 }

@@ -7,34 +7,33 @@ using Moq;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.FluentBuilder
+namespace Cake.SevenZip.Tests.FluentBuilder;
+
+public class SwitchIncludeFilenamesBuilderTests
 {
-    public class SwitchIncludeFilenamesBuilderTests
+    [Fact]
+    public void WithIncludeFilenames_returns_the_builder()
     {
-        [Fact]
-        public void WithIncludeFilenames_returns_the_builder()
-        {
-            var expected = new Mock<ISupportSwitchBuilder<ISupportSwitchIncludeFilenames>>();
-            var command = new Mock<ISupportSwitchIncludeFilenames>();
-            command.SetupProperty(c => c.IncludeFilenames);
-            expected.Setup(x => x.Command).Returns(command.Object);
+        var expected = new Mock<ISupportSwitchBuilder<ISupportSwitchIncludeFilenames>>();
+        var command = new Mock<ISupportSwitchIncludeFilenames>();
+        command.SetupProperty(c => c.IncludeFilenames);
+        expected.Setup(x => x.Command).Returns(command.Object);
 
-            var actual = expected.Object.WithIncludeFilenames(default);
+        var actual = expected.Object.WithIncludeFilenames(default!);
 
-            actual.ShouldBe(expected.Object);
-        }
+        actual.ShouldBe(expected.Object);
+    }
 
-        [Fact]
-        public void WithIncludeFilenames_with_recursetype_returns_the_builder()
-        {
-            var expected = new Mock<ISupportSwitchBuilder<ISupportSwitchIncludeFilenames>>();
-            var command = new Mock<ISupportSwitchIncludeFilenames>();
-            command.SetupProperty(c => c.IncludeFilenames);
-            expected.Setup(x => x.Command).Returns(command.Object);
+    [Fact]
+    public void WithIncludeFilenames_with_recursetype_returns_the_builder()
+    {
+        var expected = new Mock<ISupportSwitchBuilder<ISupportSwitchIncludeFilenames>>();
+        var command = new Mock<ISupportSwitchIncludeFilenames>();
+        command.SetupProperty(c => c.IncludeFilenames);
+        expected.Setup(x => x.Command).Returns(command.Object);
 
-            var actual = expected.Object.WithIncludeFilenames((RecurseType)default, default);
+        var actual = expected.Object.WithIncludeFilenames((RecurseType)default!, default!);
 
-            actual.ShouldBe(expected.Object);
-        }
+        actual.ShouldBe(expected.Object);
     }
 }

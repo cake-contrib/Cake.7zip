@@ -7,21 +7,20 @@ using Moq;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.FluentBuilder
+namespace Cake.SevenZip.Tests.FluentBuilder;
+
+public class SwitchOverwriteModeBuilderTests
 {
-    public class SwitchOverwriteModeBuilderTests
+    [Fact]
+    public void WithOverwriteMode_returns_the_builder()
     {
-        [Fact]
-        public void WithOverwriteMode_returns_the_builder()
-        {
-            var expected = new Mock<ISupportSwitchBuilder<ISupportSwitchOverwriteMode>>();
-            var command = new Mock<ISupportSwitchOverwriteMode>();
-            command.SetupProperty(c => c.OverwriteMode);
-            expected.Setup(x => x.Command).Returns(command.Object);
+        var expected = new Mock<ISupportSwitchBuilder<ISupportSwitchOverwriteMode>>();
+        var command = new Mock<ISupportSwitchOverwriteMode>();
+        command.SetupProperty(c => c.OverwriteMode);
+        expected.Setup(x => x.Command).Returns(command.Object);
 
-            var actual = expected.Object.WithOverwriteMode(default);
+        var actual = expected.Object.WithOverwriteMode(default!);
 
-            actual.ShouldBe(expected.Object);
-        }
+        actual.ShouldBe(expected.Object);
     }
 }

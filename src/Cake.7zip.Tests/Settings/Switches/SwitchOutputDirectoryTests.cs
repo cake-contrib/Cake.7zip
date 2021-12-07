@@ -6,20 +6,19 @@ using Shouldly;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.Settings.Switches
+namespace Cake.SevenZip.Tests.Settings.Switches;
+
+public class SwitchOutputDirectoryTests
 {
-    public class SwitchOutputDirectoryTests
+    [Fact]
+    public void OutputDirectory_works()
     {
-        [Fact]
-        public void OutputDirectory_works()
-        {
-            var fixture = new SevenZipSettingsFixture();
-            var sut = new SwitchOutputDirectory(new DirectoryPath("c:\\temp"));
-            const string expected = "-o\"c:/temp\"";
+        var fixture = new SevenZipSettingsFixture();
+        var sut = new SwitchOutputDirectory(new DirectoryPath("c:\\temp"));
+        const string expected = "-o\"c:/temp\"";
 
-            var actual = fixture.Parse(b => sut.BuildArguments(ref b));
+        var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            actual.ShouldBe(expected);
-        }
+        actual.ShouldBe(expected);
     }
 }

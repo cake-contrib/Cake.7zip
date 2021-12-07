@@ -7,34 +7,33 @@ using Moq;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.FluentBuilder
+namespace Cake.SevenZip.Tests.FluentBuilder;
+
+public class SwitchCompressFilesOpenForWritingBuilderTests
 {
-    public class SwitchCompressFilesOpenForWritingBuilderTests
+    [Fact]
+    public void WithCompressFilesOpenForWriting_returns_the_builder()
     {
-        [Fact]
-        public void WithCompressFilesOpenForWriting_returns_the_builder()
-        {
-            var expected = new Mock<ISupportSwitchBuilder<ISupportSwitchCompressFilesOpenForWriting>>();
-            var command = new Mock<ISupportSwitchCompressFilesOpenForWriting>();
-            command.SetupProperty(c => c.CompressFilesOpenForWriting);
-            expected.Setup(x => x.Command).Returns(command.Object);
+        var expected = new Mock<ISupportSwitchBuilder<ISupportSwitchCompressFilesOpenForWriting>>();
+        var command = new Mock<ISupportSwitchCompressFilesOpenForWriting>();
+        command.SetupProperty(c => c.CompressFilesOpenForWriting);
+        expected.Setup(x => x.Command).Returns(command.Object);
 
-            var actual = expected.Object.WithCompressFilesOpenForWriting();
+        var actual = expected.Object.WithCompressFilesOpenForWriting();
 
-            actual.ShouldBe(expected.Object);
-        }
+        actual.ShouldBe(expected.Object);
+    }
 
-        [Fact]
-        public void WithCompressFilesOpenForWriting_sets_switch_CompressFilesOpenForWriting()
-        {
-            var expected = new Mock<ISupportSwitchBuilder<ISupportSwitchCompressFilesOpenForWriting>>();
-            var command = new Mock<ISupportSwitchCompressFilesOpenForWriting>();
-            command.SetupProperty(c => c.CompressFilesOpenForWriting);
-            expected.Setup(x => x.Command).Returns(command.Object);
+    [Fact]
+    public void WithCompressFilesOpenForWriting_sets_switch_CompressFilesOpenForWriting()
+    {
+        var expected = new Mock<ISupportSwitchBuilder<ISupportSwitchCompressFilesOpenForWriting>>();
+        var command = new Mock<ISupportSwitchCompressFilesOpenForWriting>();
+        command.SetupProperty(c => c.CompressFilesOpenForWriting);
+        expected.Setup(x => x.Command).Returns(command.Object);
 
-            expected.Object.WithCompressFilesOpenForWriting();
+        expected.Object.WithCompressFilesOpenForWriting();
 
-            command.Object.CompressFilesOpenForWriting.ShouldNotBeNull();
-        }
+        command.Object.CompressFilesOpenForWriting.ShouldNotBeNull();
     }
 }

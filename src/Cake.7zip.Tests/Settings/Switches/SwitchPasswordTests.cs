@@ -5,32 +5,31 @@ using Shouldly;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.Settings.Switches
+namespace Cake.SevenZip.Tests.Settings.Switches;
+
+public class SwitchPasswordTests
 {
-    public class SwitchPasswordTests
+    [Fact]
+    public void Password_works()
     {
-        [Fact]
-        public void Password_works()
-        {
-            var fixture = new SevenZipSettingsFixture();
-            var sut = new SwitchPassword("verysecure");
-            const string expected = "-p\"verysecure\"";
+        var fixture = new SevenZipSettingsFixture();
+        var sut = new SwitchPassword("verysecure");
+        const string expected = "-p\"verysecure\"";
 
-            var actual = fixture.Parse(b => sut.BuildArguments(ref b));
+        var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            actual.ShouldBe(expected);
-        }
+        actual.ShouldBe(expected);
+    }
 
-        [Fact]
-        public void Password_is_secret()
-        {
-            var fixture = new SevenZipSettingsFixture();
-            var sut = new SwitchPassword("verysecure");
-            const string expected = "-p\"[REDACTED]\"";
+    [Fact]
+    public void Password_is_secret()
+    {
+        var fixture = new SevenZipSettingsFixture();
+        var sut = new SwitchPassword("verysecure");
+        const string expected = "-p\"[REDACTED]\"";
 
-            var actual = fixture.ParseSafe(b => sut.BuildArguments(ref b));
+        var actual = fixture.ParseSafe(b => sut.BuildArguments(ref b));
 
-            actual.ShouldBe(expected);
-        }
+        actual.ShouldBe(expected);
     }
 }
