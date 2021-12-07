@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.7zip/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.7zip/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.7zip - API - BaseOutputBuilder&lt;TBuilder, TOutput&gt;.WithCommandRawOutput(Action&lt;string[]&gt;) Method</title>
+        <title>Cake.7zip - API - SwitchIncludeFilename.SwitchIncludeFilename(string, RecurseType?) Constructor</title>
         <link href="/Cake.7zip/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.7zip/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/Cake.7zip/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -133,15 +133,14 @@
                     <ul class="sidebar-menu">
                         
 			<li class="header">Namespace</li>
-		<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder">Cake<wbr>.SevenZip<wbr>.Builder</a></li>
+		<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches">Cake<wbr>.SevenZip<wbr>.Switches</a></li>
 		<li class="header">Type</li>
-		<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2">BaseOutputBuilder<wbr>&lt;TBuilder, <wbr>TOutput&gt;<wbr></a></li>
+		<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilename">Switch<wbr>Include<wbr>Filename</a></li>
 		<li role="separator" class="divider"></li>
-			<li class="header">Property Members</li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2/E622EB43">OutputCommand</a></li>
+			<li class="header">Constructors</li>
+				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilename/05EE7B96">Switch<wbr>Include<wbr>Filename<wbr>(string, <wbr>RecurseType?)<wbr></a></li>
 			<li class="header">Method Members</li>
-				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2/9967EBEE">WithCommandOutput<wbr>(Action<wbr>&lt;TOutput&gt;<wbr>)<wbr></a></li>
-				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2/39EE6BB4">WithCommandRawOutput<wbr>(Action<wbr>&lt;string[]&gt;<wbr>)<wbr></a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilename/37CD71C3">BuildArguments<wbr>(<wbr>Process<wbr>Argument<wbr>Builder)<wbr></a></li>
 
 
                     </ul>
@@ -156,15 +155,15 @@
 
 
 <section class="content-header">
-			<h3><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2">BaseOutputBuilder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2#typeparam-TBuilder">TBuilder</a>, <wbr><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2#typeparam-TOutput">TOutput</a>&gt;<wbr>.</h3>
-	<h1>WithCommandRawOutput<wbr>(Action<wbr>&lt;string[]&gt;<wbr>)<wbr> <small>Method</small></h1>
+			<h3><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilename">Switch<wbr>Include<wbr>Filename</a>.</h3>
+	<h1>Switch<wbr>Include<wbr>Filename<wbr>(string, <wbr>RecurseType?)<wbr> <small>Constructor</small></h1>
 </section>
 <section class="content">
 	
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-    fluent action to set the raw-output of <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1">BaseOutputCommand&lt;T&gt;</a></code>.
+    Initializes a new instance of the <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilename">SwitchIncludeFilename</a></code> class.
     </div>
 
 		<div class="panel panel-default">
@@ -172,17 +171,17 @@
 				<dl class="dl-horizontal">	
 						
 						<dt>Namespace</dt>
-						<dd><a href="/Cake.7zip/api/Cake.SevenZip.Builder">Cake<wbr>.SevenZip<wbr>.Builder</a></dd>
+						<dd><a href="/Cake.7zip/api/Cake.SevenZip.Switches">Cake<wbr>.SevenZip<wbr>.Switches</a></dd>
 					
 						<dt>Containing Type</dt>
-						<dd><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2">BaseOutputBuilder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2#typeparam-TBuilder">TBuilder</a>, <wbr><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2#typeparam-TOutput">TOutput</a>&gt;<wbr></dd>		
+						<dd><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilename">Switch<wbr>Include<wbr>Filename</a></dd>		
 					
 				</dl>
   			</div>
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public TBuilder WithCommandRawOutput(Action&lt;string[]&gt; rawOutputAction)</code></pre>
+	<pre><code>public SwitchIncludeFilename(string wildcard, RecurseType? recurseType = null)</code></pre>
 
 
 
@@ -200,9 +199,14 @@
 					</tr>
 				</thead>
 					<tbody><tr>
-						<td>rawOutputAction</td>
-						<td>Action<wbr>&lt;string[]&gt;<wbr></td>
-						<td>the action to perform on the output.</td>
+						<td>wildcard</td>
+						<td>string</td>
+						<td>The wildcard.</td>
+					</tr>
+					<tr>
+						<td>recurseType</td>
+						<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/RecurseType">RecurseType?</a></td>
+						<td>Type of the recurse.</td>
 					</tr>
 			</tbody></table>
 		</div>
@@ -219,8 +223,8 @@
 					</tr>
 				</thead>
 				<tbody><tr>
-					<td><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2#typeparam-TBuilder">TBuilder</a></td>
-					<td>The builder-instance for fluent re-use.</td>
+					<td>void</td>
+					<td></td>
 				</tr>
 			</tbody></table>
 		</div>

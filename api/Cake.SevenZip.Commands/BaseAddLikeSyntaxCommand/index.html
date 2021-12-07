@@ -206,8 +206,8 @@
 								<dd>
 									<ul class="list-unstyled">
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand">UpdateCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand">DeleteCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></li>								
 									</ul>
 								</dd>			
 							
@@ -231,10 +231,10 @@
 class Type type-node
 	Derived0["UpdateCommand"]--&gt;Type
 	click Derived0 "/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand"
-	Derived1["AddCommand"]--&gt;Type
-	click Derived1 "/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand"
-	Derived2["DeleteCommand"]--&gt;Type
-	click Derived2 "/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand"
+	Derived1["DeleteCommand"]--&gt;Type
+	click Derived1 "/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand"
+	Derived2["AddCommand"]--&gt;Type
+	click Derived2 "/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand"
 
 						</div>
 					</div>
@@ -268,7 +268,7 @@ class Type type-node
 						</thead>
 							<tbody><tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand/956CE424">Archive</a></td>
-								<td>FilePath</td>
+								<td>FilePath?</td>
 								<td>
 									<div>
     Sets the archive the command operates on.
@@ -296,7 +296,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand/717A1F96">Directories</a></td>
-								<td>Directory<wbr>Path<wbr>Collection</td>
+								<td>Directory<wbr>Path<wbr>Collection?</td>
 								<td>
 									<div>
     Gets or sets the list of Directories the command operates on.
@@ -313,7 +313,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand/728EDFF2">DirectoryContents</a></td>
-								<td>Directory<wbr>Path<wbr>Collection</td>
+								<td>Directory<wbr>Path<wbr>Collection?</td>
 								<td>
 									<div>
     Gets or sets the list of Directory-contents the command operates on.
@@ -330,7 +330,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand/ED0409D9">Files</a></td>
-								<td>FilePathCollection</td>
+								<td>FilePathCollection?</td>
 								<td>
 									<div>
     Gets or sets the list of files this command operates on.
@@ -358,7 +358,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseCommand/D74C7BB9">Switches</a></td>
-								<td>IEnumerable<wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISwitch">ISwitch</a>&gt;<wbr></td>
+								<td>IEnumerable<wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISwitch">ISwitch?</a>&gt;<wbr></td>
 								<td>
 									<div>
     Gets all supported switches.

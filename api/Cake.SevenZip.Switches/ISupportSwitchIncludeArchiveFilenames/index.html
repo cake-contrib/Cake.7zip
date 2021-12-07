@@ -251,9 +251,9 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand">ExtractCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand">ListCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand">ExtractCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -265,12 +265,12 @@
 	click Interface0 "/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitch"
 	Type["ISupportSwitchIncludeArchiveFilenames"]
 class Type type-node
-	Implementing0["TestCommand"]-.-&gt;Type
-	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand"
+	Implementing0["ListCommand"]-.-&gt;Type
+	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand"
 	Implementing1["ExtractCommand"]-.-&gt;Type
 	click Implementing1 "/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand"
-	Implementing2["ListCommand"]-.-&gt;Type
-	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand"
+	Implementing2["TestCommand"]-.-&gt;Type
+	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand"
 
 						</div>
 					</div>
@@ -303,7 +303,7 @@ class Type type-node
 						</thead>
 							<tbody><tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchIncludeArchiveFilenames/A9563D81">Include<wbr>Archive<wbr>Filenames</a></td>
-								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeArchiveFilenameCollection">Switch<wbr>Include<wbr>Archive<wbr>Filename<wbr>Collection</a></td>
+								<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeArchiveFilenameCollection">Switch<wbr>Include<wbr>Archive<wbr>Filename<wbr>Collection?</a></td>
 								<td>
 									<div>
     Gets or sets the SwitchIncludeArchiveFilenameCollection.

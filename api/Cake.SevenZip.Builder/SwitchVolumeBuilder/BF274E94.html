@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.7zip/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.7zip/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.7zip - API - SwitchSelfExtractingArchiveBuilder.WithSelfExtractingArchive&lt;T&gt;(T, FilePath) Method</title>
+        <title>Cake.7zip - API - SwitchVolumeBuilder.WithVolume&lt;T&gt;(T, int, VolumeUnit?) Method</title>
         <link href="/Cake.7zip/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.7zip/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/Cake.7zip/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -136,10 +136,10 @@
 			<li class="header">Namespace</li>
 		<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder">Cake<wbr>.SevenZip<wbr>.Builder</a></li>
 		<li class="header">Type</li>
-		<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSelfExtractingArchiveBuilder">Switch<wbr>Self<wbr>Extracting<wbr>Archive<wbr>Builder</a></li>
+		<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchVolumeBuilder">SwitchVolumeBuilder</a></li>
 		<li role="separator" class="divider"></li>
 			<li class="header">Method Members</li>
-				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSelfExtractingArchiveBuilder/F01A0D89">With<wbr>Self<wbr>Extracting<wbr>Archive<wbr>&lt;T&gt;<wbr><wbr>(T, <wbr>FilePath)<wbr></a></li>
+				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchVolumeBuilder/BF274E94">WithVolume<wbr>&lt;T&gt;<wbr><wbr>(T, <wbr>int, <wbr>VolumeUnit?)<wbr></a></li>
 
 
                     </ul>
@@ -154,15 +154,15 @@
 
 
 <section class="content-header">
-			<h3><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSelfExtractingArchiveBuilder">Switch<wbr>Self<wbr>Extracting<wbr>Archive<wbr>Builder</a>.</h3>
-	<h1>With<wbr>Self<wbr>Extracting<wbr>Archive<wbr>&lt;T&gt;<wbr><wbr>(T, <wbr>FilePath)<wbr> <small>Method</small></h1>
+			<h3><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchVolumeBuilder">SwitchVolumeBuilder</a>.</h3>
+	<h1>WithVolume<wbr>&lt;T&gt;<wbr><wbr>(T, <wbr>int, <wbr>VolumeUnit?)<wbr> <small>Method</small></h1>
 </section>
 <section class="content">
 	
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-    fluent setter for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchSelfExtractingArchive/3B76922D">SelfExtractingArchive</a></code>.
+    fluent setter for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchVolume">ISupportSwitchVolume</a></code>.
     </div>
 
 		<div class="panel panel-default">
@@ -173,15 +173,15 @@
 						<dd><a href="/Cake.7zip/api/Cake.SevenZip.Builder">Cake<wbr>.SevenZip<wbr>.Builder</a></dd>
 					
 						<dt>Containing Type</dt>
-						<dd><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSelfExtractingArchiveBuilder">Switch<wbr>Self<wbr>Extracting<wbr>Archive<wbr>Builder</a></dd>		
+						<dd><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchVolumeBuilder">SwitchVolumeBuilder</a></dd>		
 					
 				</dl>
   			</div>
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public static T WithSelfExtractingArchive&lt;T&gt;(this T this, FilePath module = null) 
-    where T : ISupportSwitchBuilder&lt;ISupportSwitchSelfExtractingArchive&gt;</code></pre>
+	<pre><code>public static T WithVolume&lt;T&gt;(this T this, int size, VolumeUnit? unit = null) 
+    where T : ISupportSwitchBuilder&lt;ISupportSwitchVolume&gt;</code></pre>
 
 
 
@@ -198,7 +198,7 @@
 				</thead>
 					<tbody><tr id="typeparam-T">
 						<td>T</td>
-						<td>the builder to support the <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchOverwriteMode">ISupportSwitchOverwriteMode</a></code>.</td>
+						<td>the builder to support the <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchVolume">ISupportSwitchVolume</a></code>.</td>
 					</tr>
 			</tbody></table>
 		</div>
@@ -221,9 +221,14 @@
 						<td>The builder-instance.</td>
 					</tr>
 					<tr>
-						<td>module</td>
-						<td>FilePath</td>
-						<td>The sfx-module to set. If omitted, the default is used.</td>
+						<td>size</td>
+						<td>int</td>
+						<td>The size.</td>
+					</tr>
+					<tr>
+						<td>unit</td>
+						<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/VolumeUnit">VolumeUnit?</a></td>
+						<td>The unit.</td>
 					</tr>
 			</tbody></table>
 		</div>

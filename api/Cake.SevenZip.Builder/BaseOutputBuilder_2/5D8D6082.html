@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.7zip/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.7zip/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake.7zip - API - SwitchVolumeBuilder.WithVolume&lt;T&gt;(T, int, VolumeUnit) Method</title>
+        <title>Cake.7zip - API - BaseOutputBuilder&lt;TBuilder, TOutput&gt;.WithCommandRawOutput(Action&lt;string[]&gt;?) Method</title>
         <link href="/Cake.7zip/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.7zip/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="/Cake.7zip/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
@@ -72,7 +72,6 @@
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
-<p><a href="#TypeParameters">Type Parameters</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
 <hr class="infobar-hidden">
@@ -136,10 +135,13 @@
 			<li class="header">Namespace</li>
 		<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder">Cake<wbr>.SevenZip<wbr>.Builder</a></li>
 		<li class="header">Type</li>
-		<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchVolumeBuilder">SwitchVolumeBuilder</a></li>
+		<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2">BaseOutputBuilder<wbr>&lt;TBuilder, <wbr>TOutput&gt;<wbr></a></li>
 		<li role="separator" class="divider"></li>
+			<li class="header">Property Members</li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2/E622EB43">OutputCommand</a></li>
 			<li class="header">Method Members</li>
-				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchVolumeBuilder/D95BED5C">WithVolume<wbr>&lt;T&gt;<wbr><wbr>(T, <wbr>int, <wbr>VolumeUnit)<wbr></a></li>
+				<li><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2/22C2854E">WithCommandOutput<wbr>(Action<wbr>&lt;TOutput&gt;<wbr>?)<wbr></a></li>
+				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2/5D8D6082">WithCommandRawOutput<wbr>(Action<wbr>&lt;string[]&gt;<wbr>?)<wbr></a></li>
 
 
                     </ul>
@@ -154,15 +156,15 @@
 
 
 <section class="content-header">
-			<h3><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchVolumeBuilder">SwitchVolumeBuilder</a>.</h3>
-	<h1>WithVolume<wbr>&lt;T&gt;<wbr><wbr>(T, <wbr>int, <wbr>VolumeUnit)<wbr> <small>Method</small></h1>
+			<h3><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2">BaseOutputBuilder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2#typeparam-TBuilder">TBuilder</a>, <wbr><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2#typeparam-TOutput">TOutput</a>&gt;<wbr>.</h3>
+	<h1>WithCommandRawOutput<wbr>(Action<wbr>&lt;string[]&gt;<wbr>?)<wbr> <small>Method</small></h1>
 </section>
 <section class="content">
 	
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-    fluent setter for <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchVolume">ISupportSwitchVolume</a></code>.
+    fluent action to set the raw-output of <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1">BaseOutputCommand&lt;T&gt;</a></code>.
     </div>
 
 		<div class="panel panel-default">
@@ -173,36 +175,18 @@
 						<dd><a href="/Cake.7zip/api/Cake.SevenZip.Builder">Cake<wbr>.SevenZip<wbr>.Builder</a></dd>
 					
 						<dt>Containing Type</dt>
-						<dd><a href="/Cake.7zip/api/Cake.SevenZip.Builder/SwitchVolumeBuilder">SwitchVolumeBuilder</a></dd>		
+						<dd><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2">BaseOutputBuilder</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2#typeparam-TBuilder">TBuilder</a>, <wbr><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2#typeparam-TOutput">TOutput</a>&gt;<wbr></dd>		
 					
 				</dl>
   			</div>
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public static T WithVolume&lt;T&gt;(this T this, int size, VolumeUnit unit = null) 
-    where T : ISupportSwitchBuilder&lt;ISupportSwitchVolume&gt;</code></pre>
+	<pre><code>public TBuilder WithCommandRawOutput(Action&lt;string[]&gt;? rawOutputAction)</code></pre>
 
 
 
 
-	<h1 id="TypeParameters">Type Parameters</h1>
-	<div class="box">
-		<div class="box-body no-padding table-responsive">
-			<table class="table table-striped table-hover two-cols">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Description</th>
-					</tr>
-				</thead>
-					<tbody><tr id="typeparam-T">
-						<td>T</td>
-						<td>the builder to support the <code class="cs"><a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchVolume">ISupportSwitchVolume</a></code>.</td>
-					</tr>
-			</tbody></table>
-		</div>
-	</div>	
 
 	<h1 id="Parameters">Parameters</h1>
 	<div class="box">
@@ -216,19 +200,9 @@
 					</tr>
 				</thead>
 					<tbody><tr>
-						<td>this</td>
-						<td>T</td>
-						<td>The builder-instance.</td>
-					</tr>
-					<tr>
-						<td>size</td>
-						<td>int</td>
-						<td>The size.</td>
-					</tr>
-					<tr>
-						<td>unit</td>
-						<td><a href="/Cake.7zip/api/Cake.SevenZip.Switches/VolumeUnit">VolumeUnit</a></td>
-						<td>The unit.</td>
+						<td>rawOutputAction</td>
+						<td>Action<wbr>&lt;string[]&gt;<wbr>?</td>
+						<td>the action to perform on the output.</td>
 					</tr>
 			</tbody></table>
 		</div>
@@ -245,7 +219,7 @@
 					</tr>
 				</thead>
 				<tbody><tr>
-					<td>T</td>
+					<td><a href="/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2#typeparam-TBuilder">TBuilder</a></td>
 					<td>The builder-instance for fluent re-use.</td>
 				</tr>
 			</tbody></table>

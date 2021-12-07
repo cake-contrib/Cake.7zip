@@ -204,10 +204,10 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand">ListCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand">InformationCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BenchmarkCommand">BenchmarkCommand</a></li>								
 									</ul>
 								</dd>			
@@ -225,14 +225,14 @@
 	Type-.-&gt;Interface1["ICanParseOutput"]
 	Type["BaseOutputCommand&lt;T&gt;"]
 class Type type-node
-	Derived0["TestCommand"]--&gt;Type
-	click Derived0 "/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand"
+	Derived0["ListCommand"]--&gt;Type
+	click Derived0 "/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand"
 	Derived1["HashCommand"]--&gt;Type
 	click Derived1 "/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand"
-	Derived2["ListCommand"]--&gt;Type
-	click Derived2 "/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand"
-	Derived3["InformationCommand"]--&gt;Type
-	click Derived3 "/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand"
+	Derived2["InformationCommand"]--&gt;Type
+	click Derived2 "/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand"
+	Derived3["TestCommand"]--&gt;Type
+	click Derived3 "/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand"
 	Derived4["BenchmarkCommand"]--&gt;Type
 	click Derived4 "/Cake.7zip/api/Cake.SevenZip.Commands/BenchmarkCommand"
 
@@ -295,7 +295,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1/96C92453">OutputAction</a></td>
-								<td>Action<wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1#typeparam-T">T</a>&gt;<wbr></td>
+								<td>Action<wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1#typeparam-T">T</a>&gt;<wbr>?</td>
 								<td>
 									<div>
     Gets or sets the output-action, to be called when output is available.
@@ -304,7 +304,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1/5EF4BDA1">RawOutputAction</a></td>
-								<td>Action<wbr>&lt;string[]&gt;<wbr></td>
+								<td>Action<wbr>&lt;string[]&gt;<wbr>?</td>
 								<td>
 									<div>
     Gets or sets the raw output-action, to be called when output is available.
@@ -313,7 +313,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseCommand/D74C7BB9">Switches</a></td>
-								<td>IEnumerable<wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISwitch">ISwitch</a>&gt;<wbr></td>
+								<td>IEnumerable<wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Switches/ISwitch">ISwitch?</a>&gt;<wbr></td>
 								<td>
 									<div>
     Gets all supported switches.
