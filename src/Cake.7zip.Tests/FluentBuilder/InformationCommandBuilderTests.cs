@@ -4,56 +4,55 @@ using Shouldly;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.FluentBuilder
+namespace Cake.SevenZip.Tests.FluentBuilder;
+
+public class InformationCommandBuilderTests
 {
-    public class InformationCommandBuilderTests
+    [Fact]
+    public void Information_can_be_used()
     {
-        [Fact]
-        public void Information_can_be_used()
-        {
-            var fixture = new FluentBuilderFixture();
-            fixture.Context
-              .InInformationMode();
+        var fixture = new FluentBuilderFixture();
+        fixture.Context
+            .InInformationMode();
 
-            const string expected = @"i";
+        const string expected = @"i";
 
-            var actual = fixture.EvaluateArgs();
+        var actual = fixture.EvaluateArgs();
 
-            actual.ShouldBe(expected);
-        }
+        actual.ShouldBe(expected);
+    }
 
-        [Fact]
-        public void Information_parses_and_sets_the_output()
-        {
-            string info = null;
-            var fixture = new SevenZipFluentRunnerFixture();
-            fixture.GivenProcessReturnsStdOutputOf(Outputs.Information);
+    [Fact]
+    public void Information_parses_and_sets_the_output()
+    {
+        string? info = null;
+        var fixture = new SevenZipFluentRunnerFixture();
+        fixture.GivenProcessReturnsStdOutputOf(Outputs.Information);
 
-            fixture.RunToolFluent(t => t
-              .InInformationMode()
-              .WithCommandOutput(o =>
-              {
-                  info = o.Information;
-              }));
+        fixture.RunToolFluent(t => t
+            .InInformationMode()
+            .WithCommandOutput(o =>
+            {
+                info = o.Information;
+            }));
 
-            info.ShouldNotBeNull();
-        }
+        info.ShouldNotBeNull();
+    }
 
-        [Fact]
-        public void Information_sets_rawoutput()
-        {
-            string[] output = null;
-            var fixture = new SevenZipFluentRunnerFixture();
-            fixture.GivenProcessReturnsStdOutputOf(Outputs.Information);
+    [Fact]
+    public void Information_sets_rawoutput()
+    {
+        string[]? output = null;
+        var fixture = new SevenZipFluentRunnerFixture();
+        fixture.GivenProcessReturnsStdOutputOf(Outputs.Information);
 
-            fixture.RunToolFluent(t => t
-              .InInformationMode()
-              .WithCommandRawOutput(r =>
-              {
-                  output = r;
-              }));
+        fixture.RunToolFluent(t => t
+            .InInformationMode()
+            .WithCommandRawOutput(r =>
+            {
+                output = r;
+            }));
 
-            output.ShouldBeEquivalentTo(Outputs.Information);
-        }
+        output.ShouldBeEquivalentTo(Outputs.Information);
     }
 }

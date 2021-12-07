@@ -1,12 +1,12 @@
-namespace Cake.SevenZip.Tests.Fixtures
+namespace Cake.SevenZip.Tests.Fixtures;
+
+public static class Outputs
 {
-    public static class Outputs
+    public static string[] Information
     {
-        public static string[] Information
+        get
         {
-            get
-            {
-                const string demoOutput = @"
+            const string demoOutput = @"
 7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
 
 Libs:
@@ -99,15 +99,15 @@ Hashers:
  0   32        A SHA256
  0    8        4 CRC64
  0   32      202 BLAKE2sp";
-                return demoOutput.ToArrayOfLines();
-            }
+            return demoOutput.ToArrayOfLines();
         }
+    }
 
-        public static string[] Test
+    public static string[] Test
+    {
+        get
         {
-            get
-            {
-                const string testOutput = @"
+            const string testOutput = @"
 7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
 
 Scanning the drive for archives:
@@ -135,15 +135,15 @@ Can't open as archive: 1
 Files: 3
 Size:       2359279
 Compressed: 2198368";
-                return testOutput.ToArrayOfLines();
-            }
+            return testOutput.ToArrayOfLines();
         }
+    }
 
-        public static string[] Hash
+    public static string[] Hash
+    {
+        get
         {
-            get
-            {
-                const string hash = @"
+            const string hash = @"
 7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
 
 Scanning
@@ -178,15 +178,15 @@ BLAKE2sp for data and names:    222855D590C06DE9B42BF15335DBC6EF14798938E202808A
 
 Everything is Ok";
 
-                return hash.ToArrayOfLines();
-            }
+            return hash.ToArrayOfLines();
         }
+    }
 
-        public static string[] Benchmark
+    public static string[] Benchmark
+    {
+        get
         {
-            get
-            {
-                const string hash = @"
+            const string hash = @"
 7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
 
 Windows 10.0 20201
@@ -211,17 +211,17 @@ Avr:             601   3026  18230  |              740   3464  25637
 Tot:             671   3245  21934
 ";
 
-                return hash.ToArrayOfLines();
-            }
+            return hash.ToArrayOfLines();
         }
+    }
 
-        public static class List
+    public static class List
+    {
+        public static string[] SingleArchive
         {
-            public static string[] SingleArchive
+            get
             {
-                get
-                {
-                    const string list = @"
+                const string list = @"
 
 7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
 
@@ -242,15 +242,15 @@ Physical Size = 788
 2020-06-16 22:07:43               6078          644  1 files
 ";
 
-                    return list.ToArrayOfLines();
-                }
+                return list.ToArrayOfLines();
             }
+        }
 
-            public static string[] MultipleArchives
+        public static string[] MultipleArchives
+        {
+            get
             {
-                get
-                {
-                    const string list = @"
+                const string list = @"
 7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
 
 Scanning the drive for archives:
@@ -322,8 +322,7 @@ Volumes: 2
 Total archives size: 2356029
 ";
 
-                    return list.ToArrayOfLines();
-                }
+                return list.ToArrayOfLines();
             }
         }
     }

@@ -1,35 +1,34 @@
 using Cake.Core;
 using Cake.Core.IO;
 
-namespace Cake.SevenZip.Switches
+namespace Cake.SevenZip.Switches;
+
+/// <summary>
+/// BaseClass for simple boolean switches.
+/// </summary>
+/// <seealso cref="ISwitch" />
+public class BaseBoolSwitch : ISwitch
 {
+    private readonly string @switch;
+    private readonly bool value;
+
     /// <summary>
-    /// BaseClass for simple boolean switches.
+    /// Initializes a new instance of the <see cref="BaseBoolSwitch"/> class.
     /// </summary>
-    /// <seealso cref="ISwitch" />
-    public class BaseBoolSwitch : ISwitch
+    /// <param name="switch">The switch. (e.g "sni" or "sns").</param>
+    /// <param name="value">The value.</param>
+    protected BaseBoolSwitch(string @switch, bool value)
     {
-        private readonly string @switch;
-        private readonly bool value;
+        this.@switch = @switch;
+        this.value = value;
+    }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BaseBoolSwitch"/> class.
-        /// </summary>
-        /// <param name="switch">The switch. (e.g "sni" or "sns").</param>
-        /// <param name="value">The value.</param>
-        protected BaseBoolSwitch(string @switch, bool value)
+    /// <inheritdoc/>
+    public void BuildArguments(ref ProcessArgumentBuilder builder)
+    {
+        if (value)
         {
-            this.@switch = @switch;
-            this.value = value;
-        }
-
-        /// <inheritdoc/>
-        public void BuildArguments(ref ProcessArgumentBuilder builder)
-        {
-            if (value)
-            {
-                builder.Append($"-{@switch}");
-            }
+            builder.Append($"-{@switch}");
         }
     }
 }

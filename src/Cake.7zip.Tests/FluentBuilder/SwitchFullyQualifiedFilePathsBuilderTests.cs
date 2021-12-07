@@ -7,21 +7,20 @@ using Moq;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.FluentBuilder
+namespace Cake.SevenZip.Tests.FluentBuilder;
+
+public class SwitchFullyQualifiedFilePathsBuilderTests
 {
-    public class SwitchFullyQualifiedFilePathsBuilderTests
+    [Fact]
+    public void WithFullyQualifiedFilePaths_returns_the_builder()
     {
-        [Fact]
-        public void WithFullyQualifiedFilePaths_returns_the_builder()
-        {
-            var expected = new Mock<ISupportSwitchBuilder<ISupportSwitchFullyQualifiedFilePaths>>();
-            var command = new Mock<ISupportSwitchFullyQualifiedFilePaths>();
-            command.SetupProperty(c => c.FullyQualifiedFilePaths);
-            expected.Setup(x => x.Command).Returns(command.Object);
+        var expected = new Mock<ISupportSwitchBuilder<ISupportSwitchFullyQualifiedFilePaths>>();
+        var command = new Mock<ISupportSwitchFullyQualifiedFilePaths>();
+        command.SetupProperty(c => c.FullyQualifiedFilePaths);
+        expected.Setup(x => x.Command).Returns(command.Object);
 
-            var actual = expected.Object.WithFullyQualifiedFilePaths(default);
+        var actual = expected.Object.WithFullyQualifiedFilePaths(default);
 
-            actual.ShouldBe(expected.Object);
-        }
+        actual.ShouldBe(expected.Object);
     }
 }

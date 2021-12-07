@@ -2,47 +2,46 @@ using System.Text;
 
 using Cake.SevenZip.Commands;
 
-namespace Cake.SevenZip.Parsers
+namespace Cake.SevenZip.Parsers;
+
+/// <summary>
+/// Parses outputs of the <see cref="BenchmarkCommand"/>.
+/// </summary>
+/// <seealso cref="IOutputParser{T}" />
+internal class BenchmarkOutputParser : IOutputParser<IBenchmarkOutput>
 {
-    /// <summary>
-    /// Parses outputs of the <see cref="BenchmarkCommand"/>.
-    /// </summary>
-    /// <seealso cref="IOutputParser{T}" />
-    internal class BenchmarkOutputParser : IOutputParser<IBenchmarkOutput>
+    /// <inheritdoc />
+    public IBenchmarkOutput Parse(string[] rawOutput)
     {
-        /// <inheritdoc />
-        public IBenchmarkOutput Parse(string[] rawOutput)
+        string? information = null;
+        var benchmark = new StringBuilder();
+        foreach (var line in rawOutput)
         {
-            string information = null;
-            var benchmark = new StringBuilder();
-            foreach (var line in rawOutput)
+            if (information == null && string.IsNullOrWhiteSpace(line))
             {
-                if (information == null && string.IsNullOrWhiteSpace(line))
-                {
-                    continue;
-                }
-
-                if (information == null)
-                {
-                    information = line;
-                    continue;
-                }
-
-                benchmark.AppendLine(line);
+                continue;
             }
 
-            return new BenchmarkOutput
+            if (information == null)
             {
-                Information = information,
-                Benchmark = benchmark.ToString().Trim(),
-            };
+                information = line;
+                continue;
+            }
+
+            benchmark.AppendLine(line);
         }
 
-        private class BenchmarkOutput : IBenchmarkOutput
+        return new BenchmarkOutput
         {
-            public string Information { get; set; }
+            Information = information ?? string.Empty,
+            Benchmark = benchmark.ToString().Trim(),
+        };
+    }
 
-            public string Benchmark { get; set; }
-        }
+    private class BenchmarkOutput : IBenchmarkOutput
+    {
+        public string Information { get; set; } = string.Empty;
+
+        public string Benchmark { get; set; } = string.Empty;
     }
 }

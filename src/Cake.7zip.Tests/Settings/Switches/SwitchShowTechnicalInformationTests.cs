@@ -5,32 +5,31 @@ using Shouldly;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.Settings.Switches
+namespace Cake.SevenZip.Tests.Settings.Switches;
+
+public class SwitchShowTechnicalInformationTests
 {
-    public class SwitchShowTechnicalInformationTests
+    [Fact]
+    public void Sdel_set_outputs_switch()
     {
-        [Fact]
-        public void Sdel_set_outputs_switch()
-        {
-            var fixture = new SevenZipSettingsFixture();
-            var sut = new SwitchShowTechnicalInformation(true);
-            const string expected = "-slt";
+        var fixture = new SevenZipSettingsFixture();
+        var sut = new SwitchShowTechnicalInformation(true);
+        const string expected = "-slt";
 
-            var actual = fixture.Parse(b => sut.BuildArguments(ref b));
+        var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            actual.ShouldBe(expected);
-        }
+        actual.ShouldBe(expected);
+    }
 
-        [Fact]
-        public void Sdel_not_set_outputs_nothing()
-        {
-            var fixture = new SevenZipSettingsFixture();
-            var sut = new SwitchShowTechnicalInformation(false);
-            const string expected = "";
+    [Fact]
+    public void Sdel_not_set_outputs_nothing()
+    {
+        var fixture = new SevenZipSettingsFixture();
+        var sut = new SwitchShowTechnicalInformation(false);
+        const string expected = "";
 
-            var actual = fixture.Parse(b => sut.BuildArguments(ref b));
+        var actual = fixture.Parse(b => sut.BuildArguments(ref b));
 
-            actual.ShouldBe(expected);
-        }
+        actual.ShouldBe(expected);
     }
 }

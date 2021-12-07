@@ -7,29 +7,29 @@ using Shouldly;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.Parsers
+namespace Cake.SevenZip.Tests.Parsers;
+
+public class InformationOutputParserTests
 {
-    public class InformationOutputParserTests
+    [Fact]
+    public void InformationParser_parses_InfoLine()
     {
-        [Fact]
-        public void InformationParser_parses_InfoLine()
-        {
-            var parser = new InformationOutputParser();
+        var parser = new InformationOutputParser();
 
-            var actual = parser.Parse(Outputs.Information);
-            const string expected = "7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21";
+        var actual = parser.Parse(Outputs.Information);
+        const string expected = "7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21";
 
-            actual.Information.ShouldBe(expected);
-        }
+        actual.Information.ShouldBe(expected);
+    }
 
-        [Fact]
-        public void InformationParser_parses_Codecs()
-        {
-            var parser = new InformationOutputParser();
+    [Fact]
+    public void InformationParser_parses_Codecs()
+    {
+        var parser = new InformationOutputParser();
 
-            var actual = parser.Parse(Outputs.Information).Codecs.ToList();
-            var expected =
-@" 0 4ED  303011B BCJ2
+        var actual = parser.Parse(Outputs.Information).Codecs.ToList();
+        var expected =
+            @" 0 4ED  303011B BCJ2
  0  ED  3030103 BCJ
  0  ED  3030205 PPC
  0  ED  3030401 IA64
@@ -53,44 +53,44 @@ namespace Cake.SevenZip.Tests.Parsers
  0  ED  6F10701 7zAES
  0  ED  6F00181 AES256CBC".ToArrayOfLines();
 
-            actual.ShouldBe(expected, true);
-        }
+        actual.ShouldBe(expected, true);
+    }
 
-        [Fact]
-        public void InformationParser_parses_Libs()
-        {
-            var parser = new InformationOutputParser();
+    [Fact]
+    public void InformationParser_parses_Libs()
+    {
+        var parser = new InformationOutputParser();
 
-            var actual = parser.Parse(Outputs.Information).Libs.ToList();
-            var expected = new[] { @" 0  C:\Program Files\7-Zip\7z.dll" };
+        var actual = parser.Parse(Outputs.Information).Libs.ToList();
+        var expected = new[] { @" 0  C:\Program Files\7-Zip\7z.dll" };
 
-            actual.ShouldBe(expected, true);
-        }
+        actual.ShouldBe(expected, true);
+    }
 
-        [Fact]
-        public void InformationParser_parses_Hashers()
-        {
-            var parser = new InformationOutputParser();
+    [Fact]
+    public void InformationParser_parses_Hashers()
+    {
+        var parser = new InformationOutputParser();
 
-            var actual = parser.Parse(Outputs.Information).Hashers.ToList();
-            var expected =
-@" 0    4        1 CRC32
+        var actual = parser.Parse(Outputs.Information).Hashers.ToList();
+        var expected =
+            @" 0    4        1 CRC32
  0   20      201 SHA1
  0   32        A SHA256
  0    8        4 CRC64
  0   32      202 BLAKE2sp".ToArrayOfLines();
 
-            actual.ShouldBe(expected, true);
-        }
+        actual.ShouldBe(expected, true);
+    }
 
-        [Fact]
-        public void InformationParser_parses_Formats()
-        {
-            var parser = new InformationOutputParser();
+    [Fact]
+    public void InformationParser_parses_Formats()
+    {
+        var parser = new InformationOutputParser();
 
-            var actual = parser.Parse(Outputs.Information).Formats.ToList();
-            var expected =
-@" 0               APM      apm           E R
+        var actual = parser.Parse(Outputs.Information).Formats.ToList();
+        var expected =
+            @" 0               APM      apm           E R
  0               Ar       ar a deb lib  ! < a r c h > 0A
  0               Arj      arj           ` EA
  0 CK            bzip2    bz2 bzip2 tbz2 (.tar) tbz (.tar) B Z h
@@ -144,9 +144,8 @@ namespace Cake.SevenZip.Tests.Parsers
  0        O      Udf      udf iso img   offset=32768 01 C D 0 0 1
  0 C SN       LH wim      wim swm esd ppkg M S W I M 00 00 00
  0 C   FMG       zip      zip z01 zipx jar xpi odt ods docx xlsx epub ipa apk appx P K 03 04  ||  P K 05 06  ||  P K 06 06  ||  P K 07 08 P K  ||  P K 0 0 P K"
-    .ToArrayOfLines();
+                .ToArrayOfLines();
 
-            actual.ShouldBe(expected, true);
-        }
+        actual.ShouldBe(expected, true);
     }
 }

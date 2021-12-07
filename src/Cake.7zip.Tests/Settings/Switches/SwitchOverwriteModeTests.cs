@@ -8,43 +8,42 @@ using Shouldly;
 
 using Xunit;
 
-namespace Cake.SevenZip.Tests.Settings.Switches
+namespace Cake.SevenZip.Tests.Settings.Switches;
+
+public class SwitchOverwriteModeTests
 {
-    public class SwitchOverwriteModeTests
+    [Fact]
+    public void OverwriteMode_sets_switch()
     {
-        [Fact]
-        public void OverwriteMode_sets_switch()
+        var fixture = new SevenZipSettingsFixture();
+        var sut = new SwitchOverwriteMode(OverwriteMode.Overwrite);
+        const string expected = "-aoa";
+
+        var actual = fixture.Parse(b => sut.BuildArguments(ref b));
+
+        actual.ShouldBe(expected);
+    }
+
+    [Theory]
+    [ClassData(typeof(TestData))]
+    public void OverwriteMode_work(OverwriteMode mode, string expected)
+    {
+        mode.ToString().ShouldBe(expected);
+    }
+
+    private class TestData : IEnumerable<object[]>
+    {
+        public IEnumerator<object[]> GetEnumerator()
         {
-            var fixture = new SevenZipSettingsFixture();
-            var sut = new SwitchOverwriteMode(OverwriteMode.Overwrite);
-            const string expected = "-aoa";
-
-            var actual = fixture.Parse(b => sut.BuildArguments(ref b));
-
-            actual.ShouldBe(expected);
+            yield return new object[] { OverwriteMode.Overwrite, "a" };
+            yield return new object[] { OverwriteMode.RenameExisting, "t" };
+            yield return new object[] { OverwriteMode.RenameExtracting, "u" };
+            yield return new object[] { OverwriteMode.Skip, "s" };
         }
 
-        [Theory]
-        [ClassData(typeof(TestData))]
-        public void OverwriteMode_work(OverwriteMode mode, string expected)
+        IEnumerator IEnumerable.GetEnumerator()
         {
-            mode.ToString().ShouldBe(expected);
-        }
-
-        private class TestData : IEnumerable<object[]>
-        {
-            public IEnumerator<object[]> GetEnumerator()
-            {
-                yield return new object[] { OverwriteMode.Overwrite, "a" };
-                yield return new object[] { OverwriteMode.RenameExisting, "t" };
-                yield return new object[] { OverwriteMode.RenameExtracting, "u" };
-                yield return new object[] { OverwriteMode.Skip, "s" };
-            }
-
-            IEnumerator IEnumerable.GetEnumerator()
-            {
-                return GetEnumerator();
-            }
+            return GetEnumerator();
         }
     }
 }
