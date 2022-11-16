@@ -251,9 +251,9 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand">DeleteCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand">UpdateCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/RenameCommand">RenameCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand">UpdateCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand">DeleteCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></li>								
 									</ul>
 								</dd>				
@@ -266,12 +266,12 @@
 	click Interface0 "/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitch"
 	Type["ISupportSwitchWorkingDirectory"]
 class Type type-node
-	Implementing0["DeleteCommand"]-.-&gt;Type
-	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand"
+	Implementing0["RenameCommand"]-.-&gt;Type
+	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Commands/RenameCommand"
 	Implementing1["UpdateCommand"]-.-&gt;Type
 	click Implementing1 "/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand"
-	Implementing2["RenameCommand"]-.-&gt;Type
-	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Commands/RenameCommand"
+	Implementing2["DeleteCommand"]-.-&gt;Type
+	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand"
 	Implementing3["AddCommand"]-.-&gt;Type
 	click Implementing3 "/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand"
 
