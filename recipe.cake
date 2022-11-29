@@ -1,4 +1,5 @@
 #load nuget:?package=Cake.Recipe&version=3.1.1
+#l ./.build/statiq-docs.cake
 
 Environment.SetVariableNames();
 
