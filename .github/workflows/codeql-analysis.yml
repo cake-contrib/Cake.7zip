@@ -59,7 +59,7 @@ jobs:
       with:
         script-path: recipe.cake
         target: DotNetCore-Build
-        cake-version: 1.3.0
+        cake-version: tool-manifest
       env:
         COMPlus_DbgEnableMiniDump: 1
         COMPlus_DbgMiniDumpType: 1
