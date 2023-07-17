@@ -39,6 +39,62 @@ var searchModule = function() {
     a(
         {
             id:0,
+            title:"RenamePair",
+            content:"RenamePair",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Arguments/RenamePair',
+            title:"RenamePair",
+            description:""
+        }
+    );
+    a(
+        {
+            id:1,
+            title:"IHaveArgumentArchive",
+            content:"IHaveArgumentArchive",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentArchive',
+            title:"IHaveArgumentArchive",
+            description:""
+        }
+    );
+    a(
+        {
+            id:2,
+            title:"ISupportArgumentBuilder",
+            content:"ISupportArgumentBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/ISupportArgumentBuilder_1',
+            title:"ISupportArgumentBuilder<T>",
+            description:""
+        }
+    );
+    a(
+        {
+            id:3,
+            title:"SwitchSelfExtractingArchive",
+            content:"SwitchSelfExtractingArchive",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSelfExtractingArchive',
+            title:"SwitchSelfExtractingArchive",
+            description:""
+        }
+    );
+    a(
+        {
+            id:4,
             title:"SwitchSetTimestampFromMostRecentFile",
             content:"SwitchSetTimestampFromMostRecentFile",
             description:'',
@@ -52,189 +108,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:1,
-            title:"SwitchWorkingDirectoryBuilder",
-            content:"SwitchWorkingDirectoryBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchWorkingDirectoryBuilder',
-            title:"SwitchWorkingDirectoryBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:2,
-            title:"SwitchVolumeBuilder",
-            content:"SwitchVolumeBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchVolumeBuilder',
-            title:"SwitchVolumeBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:3,
-            title:"IArchiveTestOutput",
-            content:"IArchiveTestOutput",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Parsers/IArchiveTestOutput',
-            title:"IArchiveTestOutput",
-            description:""
-        }
-    );
-    a(
-        {
-            id:4,
-            title:"ISupportSwitchIncludeFilenames",
-            content:"ISupportSwitchIncludeFilenames",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchIncludeFilenames',
-            title:"ISupportSwitchIncludeFilenames",
-            description:""
-        }
-    );
-    a(
-        {
             id:5,
-            title:"TestCommandBuilder",
-            content:"TestCommandBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/TestCommandBuilder',
-            title:"TestCommandBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:6,
-            title:"SwitchIncludeFilenameCollection",
-            content:"SwitchIncludeFilenameCollection",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilenameCollection',
-            title:"SwitchIncludeFilenameCollection",
-            description:""
-        }
-    );
-    a(
-        {
-            id:7,
-            title:"SwitchExcludeArchiveFilename",
-            content:"SwitchExcludeArchiveFilename",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeArchiveFilename',
-            title:"SwitchExcludeArchiveFilename",
-            description:""
-        }
-    );
-    a(
-        {
-            id:8,
-            title:"SwitchRecurseSubdirectoriesBuilder",
-            content:"SwitchRecurseSubdirectoriesBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchRecurseSubdirectoriesBuilder',
-            title:"SwitchRecurseSubdirectoriesBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:9,
-            title:"SwitchFullyQualifiedFilePaths",
-            content:"SwitchFullyQualifiedFilePaths",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchFullyQualifiedFilePaths',
-            title:"SwitchFullyQualifiedFilePaths",
-            description:""
-        }
-    );
-    a(
-        {
-            id:10,
-            title:"RecurseType",
-            content:"RecurseType",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/RecurseType',
-            title:"RecurseType",
-            description:""
-        }
-    );
-    a(
-        {
-            id:11,
-            title:"SwitchVolumeCollection",
-            content:"SwitchVolumeCollection",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolumeCollection',
-            title:"SwitchVolumeCollection",
-            description:""
-        }
-    );
-    a(
-        {
-            id:12,
-            title:"SwitchSelfExtractingArchiveBuilder",
-            content:"SwitchSelfExtractingArchiveBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSelfExtractingArchiveBuilder',
-            title:"SwitchSelfExtractingArchiveBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:13,
-            title:"IHashOutput",
-            content:"IHashOutput",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Parsers/IHashOutput',
-            title:"IHashOutput",
-            description:""
-        }
-    );
-    a(
-        {
-            id:14,
             title:"IArchiveListOutput",
             content:"IArchiveListOutput",
             description:'',
@@ -248,105 +122,91 @@ var searchModule = function() {
     );
     a(
         {
-            id:15,
-            title:"InformationCommandBuilder",
-            content:"InformationCommandBuilder",
+            id:6,
+            title:"ISupportSwitchExcludeFilenames",
+            content:"ISupportSwitchExcludeFilenames",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/InformationCommandBuilder',
-            title:"InformationCommandBuilder",
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchExcludeFilenames',
+            title:"ISupportSwitchExcludeFilenames",
             description:""
         }
     );
     a(
         {
-            id:16,
-            title:"ISupportSwitchRecurseSubdirectories",
-            content:"ISupportSwitchRecurseSubdirectories",
+            id:7,
+            title:"ISupportSwitchExcludeArchiveFilenames",
+            content:"ISupportSwitchExcludeArchiveFilenames",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchRecurseSubdirectories',
-            title:"ISupportSwitchRecurseSubdirectories",
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchExcludeArchiveFilenames',
+            title:"ISupportSwitchExcludeArchiveFilenames",
             description:""
         }
     );
     a(
         {
-            id:17,
-            title:"SwitchSetHashFunctionCollection",
-            content:"SwitchSetHashFunctionCollection",
+            id:8,
+            title:"UpdateAction",
+            content:"UpdateAction",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSetHashFunctionCollection',
-            title:"SwitchSetHashFunctionCollection",
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/UpdateAction',
+            title:"UpdateAction",
             description:""
         }
     );
     a(
         {
-            id:18,
-            title:"SwitchSetTimestampFromMostRecentFileBuilder",
-            content:"SwitchSetTimestampFromMostRecentFileBuilder",
+            id:9,
+            title:"SwitchWorkingDirectoryBuilder",
+            content:"SwitchWorkingDirectoryBuilder",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSetTimestampFromMostRecentFileBuilder',
-            title:"SwitchSetTimestampFromMostRecentFileBuilder",
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchWorkingDirectoryBuilder',
+            title:"SwitchWorkingDirectoryBuilder",
             description:""
         }
     );
     a(
         {
-            id:19,
-            title:"HashCommandBuilder",
-            content:"HashCommandBuilder",
+            id:10,
+            title:"SwitchOutputDirectoryBuilder",
+            content:"SwitchOutputDirectoryBuilder",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/HashCommandBuilder',
-            title:"HashCommandBuilder",
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchOutputDirectoryBuilder',
+            title:"SwitchOutputDirectoryBuilder",
             description:""
         }
     );
     a(
         {
-            id:20,
-            title:"IHaveArgument",
-            content:"IHaveArgument",
+            id:11,
+            title:"AddCommand",
+            content:"AddCommand",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgument',
-            title:"IHaveArgument",
+            url:'/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand',
+            title:"AddCommand",
             description:""
         }
     );
     a(
         {
-            id:21,
-            title:"SwitchExcludeFilenameCollection",
-            content:"SwitchExcludeFilenameCollection",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilenameCollection',
-            title:"SwitchExcludeFilenameCollection",
-            description:""
-        }
-    );
-    a(
-        {
-            id:22,
+            id:12,
             title:"IInformationOutput",
             content:"IInformationOutput",
             description:'',
@@ -360,15 +220,155 @@ var searchModule = function() {
     );
     a(
         {
-            id:23,
-            title:"IHaveArgumentArchive",
-            content:"IHaveArgumentArchive",
+            id:13,
+            title:"SwitchRecurseSubdirectoriesBuilder",
+            content:"SwitchRecurseSubdirectoriesBuilder",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentArchive',
-            title:"IHaveArgumentArchive",
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchRecurseSubdirectoriesBuilder',
+            title:"SwitchRecurseSubdirectoriesBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:14,
+            title:"OverwriteMode",
+            content:"OverwriteMode",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/OverwriteMode',
+            title:"OverwriteMode",
+            description:""
+        }
+    );
+    a(
+        {
+            id:15,
+            title:"ISupportSwitchSelfExtractingArchive",
+            content:"ISupportSwitchSelfExtractingArchive",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchSelfExtractingArchive',
+            title:"ISupportSwitchSelfExtractingArchive",
+            description:""
+        }
+    );
+    a(
+        {
+            id:16,
+            title:"ISupportSwitchCompressFilesOpenForWriting",
+            content:"ISupportSwitchCompressFilesOpenForWriting",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchCompressFilesOpenForWriting',
+            title:"ISupportSwitchCompressFilesOpenForWriting",
+            description:""
+        }
+    );
+    a(
+        {
+            id:17,
+            title:"SevenZipRunner",
+            content:"SevenZipRunner",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip/SevenZipRunner',
+            title:"SevenZipRunner",
+            description:""
+        }
+    );
+    a(
+        {
+            id:18,
+            title:"SwitchOverwriteMode",
+            content:"SwitchOverwriteMode",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchOverwriteMode',
+            title:"SwitchOverwriteMode",
+            description:""
+        }
+    );
+    a(
+        {
+            id:19,
+            title:"AddCommandBuilder",
+            content:"AddCommandBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/AddCommandBuilder',
+            title:"AddCommandBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:20,
+            title:"SwitchSetHashFunction",
+            content:"SwitchSetHashFunction",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSetHashFunction',
+            title:"SwitchSetHashFunction",
+            description:""
+        }
+    );
+    a(
+        {
+            id:21,
+            title:"ArgumentFilesBuilder",
+            content:"ArgumentFilesBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/ArgumentFilesBuilder',
+            title:"ArgumentFilesBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:22,
+            title:"SwitchArchiveType",
+            content:"SwitchArchiveType",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType',
+            title:"SwitchArchiveType",
+            description:""
+        }
+    );
+    a(
+        {
+            id:23,
+            title:"ISupportSwitchArchiveType",
+            content:"ISupportSwitchArchiveType",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchArchiveType',
+            title:"ISupportSwitchArchiveType",
             description:""
         }
     );
@@ -389,188 +389,160 @@ var searchModule = function() {
     a(
         {
             id:25,
-            title:"SevenZipAliases",
-            content:"SevenZipAliases",
+            title:"SevenZipSettings",
+            content:"SevenZipSettings",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip/SevenZipAliases',
-            title:"SevenZipAliases",
+            url:'/Cake.7zip/api/Cake.SevenZip/SevenZipSettings',
+            title:"SevenZipSettings",
             description:""
         }
     );
     a(
         {
             id:26,
-            title:"IArchivedFileListOutput",
-            content:"IArchivedFileListOutput",
+            title:"ISupportSwitchSetHashFunction",
+            content:"ISupportSwitchSetHashFunction",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Parsers/IArchivedFileListOutput',
-            title:"IArchivedFileListOutput",
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchSetHashFunction',
+            title:"ISupportSwitchSetHashFunction",
             description:""
         }
     );
     a(
         {
             id:27,
-            title:"BenchmarkCommandBuilder",
-            content:"BenchmarkCommandBuilder",
+            title:"SwitchExcludeFilenameCollection",
+            content:"SwitchExcludeFilenameCollection",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/BenchmarkCommandBuilder',
-            title:"BenchmarkCommandBuilder",
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilenameCollection',
+            title:"SwitchExcludeFilenameCollection",
             description:""
         }
     );
     a(
         {
             id:28,
-            title:"BaseAddLikeSyntaxCommand",
-            content:"BaseAddLikeSyntaxCommand",
+            title:"ISupportSwitchDeleteAfterCompression",
+            content:"ISupportSwitchDeleteAfterCompression",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand',
-            title:"BaseAddLikeSyntaxCommand",
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchDeleteAfterCompression',
+            title:"ISupportSwitchDeleteAfterCompression",
             description:""
         }
     );
     a(
         {
             id:29,
-            title:"ISupportSwitchUpdateOptions",
-            content:"ISupportSwitchUpdateOptions",
+            title:"BaseOutputBuilder",
+            content:"BaseOutputBuilder",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchUpdateOptions',
-            title:"ISupportSwitchUpdateOptions",
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2',
+            title:"BaseOutputBuilder<TBuilder, TOutput>",
             description:""
         }
     );
     a(
         {
             id:30,
-            title:"SwitchPasswordBuilder",
-            content:"SwitchPasswordBuilder",
+            title:"ISupportSwitchPassword",
+            content:"ISupportSwitchPassword",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchPasswordBuilder',
-            title:"SwitchPasswordBuilder",
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchPassword',
+            title:"ISupportSwitchPassword",
             description:""
         }
     );
     a(
         {
             id:31,
-            title:"ArgumentArchiveBuilder",
-            content:"ArgumentArchiveBuilder",
+            title:"SwitchIncludeFilenameCollection",
+            content:"SwitchIncludeFilenameCollection",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/ArgumentArchiveBuilder',
-            title:"ArgumentArchiveBuilder",
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilenameCollection',
+            title:"SwitchIncludeFilenameCollection",
             description:""
         }
     );
     a(
         {
             id:32,
-            title:"ISupportSwitchExcludeArchiveFilenames",
-            content:"ISupportSwitchExcludeArchiveFilenames",
+            title:"SwitchSetHashFunctionCollection",
+            content:"SwitchSetHashFunctionCollection",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchExcludeArchiveFilenames',
-            title:"ISupportSwitchExcludeArchiveFilenames",
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSetHashFunctionCollection',
+            title:"SwitchSetHashFunctionCollection",
             description:""
         }
     );
     a(
         {
             id:33,
-            title:"SwitchExcludeFilename",
-            content:"SwitchExcludeFilename",
+            title:"ISupportSwitchFullyQualifiedFilePaths",
+            content:"ISupportSwitchFullyQualifiedFilePaths",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilename',
-            title:"SwitchExcludeFilename",
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchFullyQualifiedFilePaths',
+            title:"ISupportSwitchFullyQualifiedFilePaths",
             description:""
         }
     );
     a(
         {
             id:34,
-            title:"ArgumentDirectoriesBuilder",
-            content:"ArgumentDirectoriesBuilder",
+            title:"ISupportSwitchShowTechnicalInformation",
+            content:"ISupportSwitchShowTechnicalInformation",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/ArgumentDirectoriesBuilder',
-            title:"ArgumentDirectoriesBuilder",
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchShowTechnicalInformation',
+            title:"ISupportSwitchShowTechnicalInformation",
             description:""
         }
     );
     a(
         {
             id:35,
-            title:"IListOutput",
-            content:"IListOutput",
+            title:"RenameCommand",
+            content:"RenameCommand",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Parsers/IListOutput',
-            title:"IListOutput",
+            url:'/Cake.7zip/api/Cake.SevenZip.Commands/RenameCommand',
+            title:"RenameCommand",
             description:""
         }
     );
     a(
         {
             id:36,
-            title:"SwitchCompressFilesOpenForWriting",
-            content:"SwitchCompressFilesOpenForWriting",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchCompressFilesOpenForWriting',
-            title:"SwitchCompressFilesOpenForWriting",
-            description:""
-        }
-    );
-    a(
-        {
-            id:37,
-            title:"SwitchOutputDirectory",
-            content:"SwitchOutputDirectory",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchOutputDirectory',
-            title:"SwitchOutputDirectory",
-            description:""
-        }
-    );
-    a(
-        {
-            id:38,
             title:"BaseCommand",
             content:"BaseCommand",
             description:'',
@@ -584,85 +556,113 @@ var searchModule = function() {
     );
     a(
         {
-            id:39,
-            title:"ISupportSwitchDisableParsingOfArchiveName",
-            content:"ISupportSwitchDisableParsingOfArchiveName",
+            id:37,
+            title:"SwitchExcludeFilenamesBuilder",
+            content:"SwitchExcludeFilenamesBuilder",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchDisableParsingOfArchiveName',
-            title:"ISupportSwitchDisableParsingOfArchiveName",
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchExcludeFilenamesBuilder',
+            title:"SwitchExcludeFilenamesBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:38,
+            title:"BaseBoolSwitch",
+            content:"BaseBoolSwitch",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/BaseBoolSwitch',
+            title:"BaseBoolSwitch",
+            description:""
+        }
+    );
+    a(
+        {
+            id:39,
+            title:"SwitchIncludeFilename",
+            content:"SwitchIncludeFilename",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilename',
+            title:"SwitchIncludeFilename",
             description:""
         }
     );
     a(
         {
             id:40,
-            title:"SwitchOverwriteMode",
-            content:"SwitchOverwriteMode",
+            title:"UpdateCommandBuilder",
+            content:"UpdateCommandBuilder",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchOverwriteMode',
-            title:"SwitchOverwriteMode",
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/UpdateCommandBuilder',
+            title:"UpdateCommandBuilder",
             description:""
         }
     );
     a(
         {
             id:41,
-            title:"IOutput",
-            content:"IOutput",
+            title:"SwitchFullyQualifiedFilePathsBuilder",
+            content:"SwitchFullyQualifiedFilePathsBuilder",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Parsers/IOutput',
-            title:"IOutput",
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchFullyQualifiedFilePathsBuilder',
+            title:"SwitchFullyQualifiedFilePathsBuilder",
             description:""
         }
     );
     a(
         {
             id:42,
-            title:"SwitchIncludeArchiveFilenamesBuilder",
-            content:"SwitchIncludeArchiveFilenamesBuilder",
+            title:"SwitchCompressionMethodBuilder",
+            content:"SwitchCompressionMethodBuilder",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchIncludeArchiveFilenamesBuilder',
-            title:"SwitchIncludeArchiveFilenamesBuilder",
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchCompressionMethodBuilder',
+            title:"SwitchCompressionMethodBuilder",
             description:""
         }
     );
     a(
         {
             id:43,
-            title:"RenameCommandBuilder",
-            content:"RenameCommandBuilder",
+            title:"UpdateCommand",
+            content:"UpdateCommand",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/RenameCommandBuilder',
-            title:"RenameCommandBuilder",
+            url:'/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand',
+            title:"UpdateCommand",
             description:""
         }
     );
     a(
         {
             id:44,
-            title:"ArgumentFilesBuilder",
-            content:"ArgumentFilesBuilder",
+            title:"IBenchmarkOutput",
+            content:"IBenchmarkOutput",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/ArgumentFilesBuilder',
-            title:"ArgumentFilesBuilder",
+            url:'/Cake.7zip/api/Cake.SevenZip.Parsers/IBenchmarkOutput',
+            title:"IBenchmarkOutput",
             description:""
         }
     );
@@ -683,580 +683,6 @@ var searchModule = function() {
     a(
         {
             id:46,
-            title:"SwitchSetHashFunctionBuilder",
-            content:"SwitchSetHashFunctionBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSetHashFunctionBuilder',
-            title:"SwitchSetHashFunctionBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:47,
-            title:"SwitchShowTechnicalInformation",
-            content:"SwitchShowTechnicalInformation",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchShowTechnicalInformation',
-            title:"SwitchShowTechnicalInformation",
-            description:""
-        }
-    );
-    a(
-        {
-            id:48,
-            title:"ICommand",
-            content:"ICommand",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Commands/ICommand',
-            title:"ICommand",
-            description:""
-        }
-    );
-    a(
-        {
-            id:49,
-            title:"ISwitch",
-            content:"ISwitch",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISwitch',
-            title:"ISwitch",
-            description:""
-        }
-    );
-    a(
-        {
-            id:50,
-            title:"DeleteCommand",
-            content:"DeleteCommand",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand',
-            title:"DeleteCommand",
-            description:""
-        }
-    );
-    a(
-        {
-            id:51,
-            title:"ISupportSwitchSelfExtractingArchive",
-            content:"ISupportSwitchSelfExtractingArchive",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchSelfExtractingArchive',
-            title:"ISupportSwitchSelfExtractingArchive",
-            description:""
-        }
-    );
-    a(
-        {
-            id:52,
-            title:"CommandBuilder",
-            content:"CommandBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/CommandBuilder',
-            title:"CommandBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:53,
-            title:"ISupportSwitchCompressionMethod",
-            content:"ISupportSwitchCompressionMethod",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchCompressionMethod',
-            title:"ISupportSwitchCompressionMethod",
-            description:""
-        }
-    );
-    a(
-        {
-            id:54,
-            title:"ISupportSwitchNtSecurityInformation",
-            content:"ISupportSwitchNtSecurityInformation",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchNtSecurityInformation',
-            title:"ISupportSwitchNtSecurityInformation",
-            description:""
-        }
-    );
-    a(
-        {
-            id:55,
-            title:"SwitchExcludeArchiveFilenamesBuilder",
-            content:"SwitchExcludeArchiveFilenamesBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchExcludeArchiveFilenamesBuilder',
-            title:"SwitchExcludeArchiveFilenamesBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:56,
-            title:"VolumeUnit",
-            content:"VolumeUnit",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/VolumeUnit',
-            title:"VolumeUnit",
-            description:""
-        }
-    );
-    a(
-        {
-            id:57,
-            title:"SwitchOutputDirectoryBuilder",
-            content:"SwitchOutputDirectoryBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchOutputDirectoryBuilder',
-            title:"SwitchOutputDirectoryBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:58,
-            title:"ISupportSwitchVolume",
-            content:"ISupportSwitchVolume",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchVolume',
-            title:"ISupportSwitchVolume",
-            description:""
-        }
-    );
-    a(
-        {
-            id:59,
-            title:"ISupportSwitchOutputDirectory",
-            content:"ISupportSwitchOutputDirectory",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchOutputDirectory',
-            title:"ISupportSwitchOutputDirectory",
-            description:""
-        }
-    );
-    a(
-        {
-            id:60,
-            title:"ITestOutput",
-            content:"ITestOutput",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Parsers/ITestOutput',
-            title:"ITestOutput",
-            description:""
-        }
-    );
-    a(
-        {
-            id:61,
-            title:"SwitchCompressFilesOpenForWritingBuilder",
-            content:"SwitchCompressFilesOpenForWritingBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchCompressFilesOpenForWritingBuilder',
-            title:"SwitchCompressFilesOpenForWritingBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:62,
-            title:"ISupportSwitchOverwriteMode",
-            content:"ISupportSwitchOverwriteMode",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchOverwriteMode',
-            title:"ISupportSwitchOverwriteMode",
-            description:""
-        }
-    );
-    a(
-        {
-            id:63,
-            title:"BaseBoolSwitch",
-            content:"BaseBoolSwitch",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/BaseBoolSwitch',
-            title:"BaseBoolSwitch",
-            description:""
-        }
-    );
-    a(
-        {
-            id:64,
-            title:"DeleteCommandBuilder",
-            content:"DeleteCommandBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/DeleteCommandBuilder',
-            title:"DeleteCommandBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:65,
-            title:"UpdateAction",
-            content:"UpdateAction",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/UpdateAction',
-            title:"UpdateAction",
-            description:""
-        }
-    );
-    a(
-        {
-            id:66,
-            title:"IFileHash",
-            content:"IFileHash",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Parsers/IFileHash',
-            title:"IFileHash",
-            description:""
-        }
-    );
-    a(
-        {
-            id:67,
-            title:"SwitchDisableParsingOfArchiveName",
-            content:"SwitchDisableParsingOfArchiveName",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchDisableParsingOfArchiveName',
-            title:"SwitchDisableParsingOfArchiveName",
-            description:""
-        }
-    );
-    a(
-        {
-            id:68,
-            title:"ISupportSwitchIncludeArchiveFilenames",
-            content:"ISupportSwitchIncludeArchiveFilenames",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchIncludeArchiveFilenames',
-            title:"ISupportSwitchIncludeArchiveFilenames",
-            description:""
-        }
-    );
-    a(
-        {
-            id:69,
-            title:"SwitchPassword",
-            content:"SwitchPassword",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchPassword',
-            title:"SwitchPassword",
-            description:""
-        }
-    );
-    a(
-        {
-            id:70,
-            title:"SwitchDeleteAfterCompressionBuilder",
-            content:"SwitchDeleteAfterCompressionBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchDeleteAfterCompressionBuilder',
-            title:"SwitchDeleteAfterCompressionBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:71,
-            title:"SwitchNtSecurityInformation",
-            content:"SwitchNtSecurityInformation",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchNtSecurityInformation',
-            title:"SwitchNtSecurityInformation",
-            description:""
-        }
-    );
-    a(
-        {
-            id:72,
-            title:"SwitchIncludeFilename",
-            content:"SwitchIncludeFilename",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeFilename',
-            title:"SwitchIncludeFilename",
-            description:""
-        }
-    );
-    a(
-        {
-            id:73,
-            title:"SwitchSetHashFunction",
-            content:"SwitchSetHashFunction",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSetHashFunction',
-            title:"SwitchSetHashFunction",
-            description:""
-        }
-    );
-    a(
-        {
-            id:74,
-            title:"SwitchSelfExtractingArchive",
-            content:"SwitchSelfExtractingArchive",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchSelfExtractingArchive',
-            title:"SwitchSelfExtractingArchive",
-            description:""
-        }
-    );
-    a(
-        {
-            id:75,
-            title:"ExtractCommand",
-            content:"ExtractCommand",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand',
-            title:"ExtractCommand",
-            description:""
-        }
-    );
-    a(
-        {
-            id:76,
-            title:"IBenchmarkOutput",
-            content:"IBenchmarkOutput",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Parsers/IBenchmarkOutput',
-            title:"IBenchmarkOutput",
-            description:""
-        }
-    );
-    a(
-        {
-            id:77,
-            title:"RenamePair",
-            content:"RenamePair",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Arguments/RenamePair',
-            title:"RenamePair",
-            description:""
-        }
-    );
-    a(
-        {
-            id:78,
-            title:"SevenZipSettings",
-            content:"SevenZipSettings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip/SevenZipSettings',
-            title:"SevenZipSettings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:79,
-            title:"UpdateCommandBuilder",
-            content:"UpdateCommandBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/UpdateCommandBuilder',
-            title:"UpdateCommandBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:80,
-            title:"SwitchUpdateOptionsBuilder",
-            content:"SwitchUpdateOptionsBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchUpdateOptionsBuilder',
-            title:"SwitchUpdateOptionsBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:81,
-            title:"ISupportSwitchExcludeFilenames",
-            content:"ISupportSwitchExcludeFilenames",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchExcludeFilenames',
-            title:"ISupportSwitchExcludeFilenames",
-            description:""
-        }
-    );
-    a(
-        {
-            id:82,
-            title:"ListCommand",
-            content:"ListCommand",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand',
-            title:"ListCommand",
-            description:""
-        }
-    );
-    a(
-        {
-            id:83,
-            title:"AddCommand",
-            content:"AddCommand",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand',
-            title:"AddCommand",
-            description:""
-        }
-    );
-    a(
-        {
-            id:84,
-            title:"SwitchVolume",
-            content:"SwitchVolume",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolume',
-            title:"SwitchVolume",
-            description:""
-        }
-    );
-    a(
-        {
-            id:85,
-            title:"SevenZipRunner",
-            content:"SevenZipRunner",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip/SevenZipRunner',
-            title:"SevenZipRunner",
-            description:""
-        }
-    );
-    a(
-        {
-            id:86,
-            title:"AddCommandBuilder",
-            content:"AddCommandBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/AddCommandBuilder',
-            title:"AddCommandBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:87,
             title:"InformationCommand",
             content:"InformationCommand",
             description:'',
@@ -1270,35 +696,49 @@ var searchModule = function() {
     );
     a(
         {
-            id:88,
-            title:"SwitchIncludeArchiveFilename",
-            content:"SwitchIncludeArchiveFilename",
+            id:47,
+            title:"ArgumentArchiveBuilder",
+            content:"ArgumentArchiveBuilder",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeArchiveFilename',
-            title:"SwitchIncludeArchiveFilename",
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/ArgumentArchiveBuilder',
+            title:"ArgumentArchiveBuilder",
             description:""
         }
     );
     a(
         {
-            id:89,
-            title:"SwitchExcludeFilenamesBuilder",
-            content:"SwitchExcludeFilenamesBuilder",
+            id:48,
+            title:"SwitchPassword",
+            content:"SwitchPassword",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchExcludeFilenamesBuilder',
-            title:"SwitchExcludeFilenamesBuilder",
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchPassword',
+            title:"SwitchPassword",
             description:""
         }
     );
     a(
         {
-            id:90,
+            id:49,
+            title:"SwitchFullyQualifiedFilePaths",
+            content:"SwitchFullyQualifiedFilePaths",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchFullyQualifiedFilePaths',
+            title:"SwitchFullyQualifiedFilePaths",
+            description:""
+        }
+    );
+    a(
+        {
+            id:50,
             title:"ListCommandBuilder",
             content:"ListCommandBuilder",
             description:'',
@@ -1312,231 +752,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:91,
-            title:"SwitchUpdateOptions",
-            content:"SwitchUpdateOptions",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchUpdateOptions',
-            title:"SwitchUpdateOptions",
-            description:""
-        }
-    );
-    a(
-        {
-            id:92,
-            title:"SwitchRecurseSubdirectories",
-            content:"SwitchRecurseSubdirectories",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchRecurseSubdirectories',
-            title:"SwitchRecurseSubdirectories",
-            description:""
-        }
-    );
-    a(
-        {
-            id:93,
-            title:"ISupportSwitchWorkingDirectory",
-            content:"ISupportSwitchWorkingDirectory",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchWorkingDirectory',
-            title:"ISupportSwitchWorkingDirectory",
-            description:""
-        }
-    );
-    a(
-        {
-            id:94,
-            title:"HashCommand",
-            content:"HashCommand",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand',
-            title:"HashCommand",
-            description:""
-        }
-    );
-    a(
-        {
-            id:95,
-            title:"OverwriteMode",
-            content:"OverwriteMode",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/OverwriteMode',
-            title:"OverwriteMode",
-            description:""
-        }
-    );
-    a(
-        {
-            id:96,
-            title:"BaseOutputBuilder",
-            content:"BaseOutputBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/BaseOutputBuilder_2',
-            title:"BaseOutputBuilder<TBuilder, TOutput>",
-            description:""
-        }
-    );
-    a(
-        {
-            id:97,
-            title:"BaseOutputCommand",
-            content:"BaseOutputCommand",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1',
-            title:"BaseOutputCommand<T>",
-            description:""
-        }
-    );
-    a(
-        {
-            id:98,
-            title:"SwitchNtfsAlternateStreams",
-            content:"SwitchNtfsAlternateStreams",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchNtfsAlternateStreams',
-            title:"SwitchNtfsAlternateStreams",
-            description:""
-        }
-    );
-    a(
-        {
-            id:99,
-            title:"ISupportArgumentBuilder",
-            content:"ISupportArgumentBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/ISupportArgumentBuilder_1',
-            title:"ISupportArgumentBuilder<T>",
-            description:""
-        }
-    );
-    a(
-        {
-            id:100,
-            title:"SwitchIncludeFilenamesBuilder",
-            content:"SwitchIncludeFilenamesBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchIncludeFilenamesBuilder',
-            title:"SwitchIncludeFilenamesBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:101,
-            title:"SwitchArchiveTypeBuilder",
-            content:"SwitchArchiveTypeBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchArchiveTypeBuilder',
-            title:"SwitchArchiveTypeBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:102,
-            title:"SwitchCompressionMethodBuilder",
-            content:"SwitchCompressionMethodBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchCompressionMethodBuilder',
-            title:"SwitchCompressionMethodBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:103,
-            title:"SwitchDeleteAfterCompression",
-            content:"SwitchDeleteAfterCompression",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchDeleteAfterCompression',
-            title:"SwitchDeleteAfterCompression",
-            description:""
-        }
-    );
-    a(
-        {
-            id:104,
-            title:"IHaveArgumentFiles",
-            content:"IHaveArgumentFiles",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentFiles',
-            title:"IHaveArgumentFiles",
-            description:""
-        }
-    );
-    a(
-        {
-            id:105,
-            title:"ISupportSwitchArchiveType",
-            content:"ISupportSwitchArchiveType",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchArchiveType',
-            title:"ISupportSwitchArchiveType",
-            description:""
-        }
-    );
-    a(
-        {
-            id:106,
-            title:"IHaveArgumentDirectories",
-            content:"IHaveArgumentDirectories",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentDirectories',
-            title:"IHaveArgumentDirectories",
-            description:""
-        }
-    );
-    a(
-        {
-            id:107,
+            id:51,
             title:"SwitchOverwriteModeBuilder",
             content:"SwitchOverwriteModeBuilder",
             description:'',
@@ -1550,119 +766,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:108,
-            title:"SwitchArchiveType",
-            content:"SwitchArchiveType",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchArchiveType',
-            title:"SwitchArchiveType",
-            description:""
-        }
-    );
-    a(
-        {
-            id:109,
-            title:"SwitchCompressionMethod",
-            content:"SwitchCompressionMethod",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchCompressionMethod',
-            title:"SwitchCompressionMethod",
-            description:""
-        }
-    );
-    a(
-        {
-            id:110,
-            title:"SwitchDisableParsingOfArchiveNameBuilder",
-            content:"SwitchDisableParsingOfArchiveNameBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchDisableParsingOfArchiveNameBuilder',
-            title:"SwitchDisableParsingOfArchiveNameBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:111,
-            title:"TestCommand",
-            content:"TestCommand",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand',
-            title:"TestCommand",
-            description:""
-        }
-    );
-    a(
-        {
-            id:112,
-            title:"BaseSwitchCollection",
-            content:"BaseSwitchCollection",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/BaseSwitchCollection_1',
-            title:"BaseSwitchCollection<T>",
-            description:""
-        }
-    );
-    a(
-        {
-            id:113,
-            title:"ISupportSwitchTimestampFromMostRecentFile",
-            content:"ISupportSwitchTimestampFromMostRecentFile",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchTimestampFromMostRecentFile',
-            title:"ISupportSwitchTimestampFromMostRecentFile",
-            description:""
-        }
-    );
-    a(
-        {
-            id:114,
-            title:"SwitchFullyQualifiedFilePathsBuilder",
-            content:"SwitchFullyQualifiedFilePathsBuilder",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchFullyQualifiedFilePathsBuilder',
-            title:"SwitchFullyQualifiedFilePathsBuilder",
-            description:""
-        }
-    );
-    a(
-        {
-            id:115,
-            title:"BenchmarkCommand",
-            content:"BenchmarkCommand",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Commands/BenchmarkCommand',
-            title:"BenchmarkCommand",
-            description:""
-        }
-    );
-    a(
-        {
-            id:116,
+            id:52,
             title:"SwitchNtSecurityInformationBuilder",
             content:"SwitchNtSecurityInformationBuilder",
             description:'',
@@ -1676,21 +780,63 @@ var searchModule = function() {
     );
     a(
         {
-            id:117,
-            title:"ISupportSwitchDeleteAfterCompression",
-            content:"ISupportSwitchDeleteAfterCompression",
+            id:53,
+            title:"TestCommandBuilder",
+            content:"TestCommandBuilder",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchDeleteAfterCompression',
-            title:"ISupportSwitchDeleteAfterCompression",
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/TestCommandBuilder',
+            title:"TestCommandBuilder",
             description:""
         }
     );
     a(
         {
-            id:118,
+            id:54,
+            title:"ISupportSwitchTimestampFromMostRecentFile",
+            content:"ISupportSwitchTimestampFromMostRecentFile",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchTimestampFromMostRecentFile',
+            title:"ISupportSwitchTimestampFromMostRecentFile",
+            description:""
+        }
+    );
+    a(
+        {
+            id:55,
+            title:"SwitchUpdateOptions",
+            content:"SwitchUpdateOptions",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchUpdateOptions',
+            title:"SwitchUpdateOptions",
+            description:""
+        }
+    );
+    a(
+        {
+            id:56,
+            title:"SwitchIncludeArchiveFilename",
+            content:"SwitchIncludeArchiveFilename",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeArchiveFilename',
+            title:"SwitchIncludeArchiveFilename",
+            description:""
+        }
+    );
+    a(
+        {
+            id:57,
             title:"SwitchExcludeArchiveFilenameCollection",
             content:"SwitchExcludeArchiveFilenameCollection",
             description:'',
@@ -1704,91 +850,63 @@ var searchModule = function() {
     );
     a(
         {
-            id:119,
-            title:"SwitchShowTechnicalInformationBuilder",
-            content:"SwitchShowTechnicalInformationBuilder",
+            id:58,
+            title:"SwitchVolumeCollection",
+            content:"SwitchVolumeCollection",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchShowTechnicalInformationBuilder',
-            title:"SwitchShowTechnicalInformationBuilder",
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolumeCollection',
+            title:"SwitchVolumeCollection",
             description:""
         }
     );
     a(
         {
-            id:120,
-            title:"ISupportSwitchPassword",
-            content:"ISupportSwitchPassword",
+            id:59,
+            title:"SwitchExcludeArchiveFilenamesBuilder",
+            content:"SwitchExcludeArchiveFilenamesBuilder",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchPassword',
-            title:"ISupportSwitchPassword",
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchExcludeArchiveFilenamesBuilder',
+            title:"SwitchExcludeArchiveFilenamesBuilder",
             description:""
         }
     );
     a(
         {
-            id:121,
-            title:"RenameCommand",
-            content:"RenameCommand",
+            id:60,
+            title:"SwitchVolume",
+            content:"SwitchVolume",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Commands/RenameCommand',
-            title:"RenameCommand",
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchVolume',
+            title:"SwitchVolume",
             description:""
         }
     );
     a(
         {
-            id:122,
-            title:"ISupportSwitchBuilder",
-            content:"ISupportSwitchBuilder",
+            id:61,
+            title:"HashCommandBuilder",
+            content:"HashCommandBuilder",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Builder/ISupportSwitchBuilder_1',
-            title:"ISupportSwitchBuilder<T>",
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/HashCommandBuilder',
+            title:"HashCommandBuilder",
             description:""
         }
     );
     a(
         {
-            id:123,
-            title:"ISupportSwitchFullyQualifiedFilePaths",
-            content:"ISupportSwitchFullyQualifiedFilePaths",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchFullyQualifiedFilePaths',
-            title:"ISupportSwitchFullyQualifiedFilePaths",
-            description:""
-        }
-    );
-    a(
-        {
-            id:124,
-            title:"ISupportSwitchCompressFilesOpenForWriting",
-            content:"ISupportSwitchCompressFilesOpenForWriting",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchCompressFilesOpenForWriting',
-            title:"ISupportSwitchCompressFilesOpenForWriting",
-            description:""
-        }
-    );
-    a(
-        {
-            id:125,
+            id:62,
             title:"ISupportSwitch",
             content:"ISupportSwitch",
             description:'',
@@ -1802,49 +920,525 @@ var searchModule = function() {
     );
     a(
         {
-            id:126,
-            title:"UpdateCommand",
-            content:"UpdateCommand",
+            id:63,
+            title:"SwitchCompressionMethod",
+            content:"SwitchCompressionMethod",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand',
-            title:"UpdateCommand",
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchCompressionMethod',
+            title:"SwitchCompressionMethod",
             description:""
         }
     );
     a(
         {
-            id:127,
-            title:"ISupportSwitchSetHashFunction",
-            content:"ISupportSwitchSetHashFunction",
+            id:64,
+            title:"IArchiveTestOutput",
+            content:"IArchiveTestOutput",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchSetHashFunction',
-            title:"ISupportSwitchSetHashFunction",
+            url:'/Cake.7zip/api/Cake.SevenZip.Parsers/IArchiveTestOutput',
+            title:"IArchiveTestOutput",
             description:""
         }
     );
     a(
         {
-            id:128,
-            title:"ISupportSwitchShowTechnicalInformation",
-            content:"ISupportSwitchShowTechnicalInformation",
+            id:65,
+            title:"ArgumentDirectoriesBuilder",
+            content:"ArgumentDirectoriesBuilder",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchShowTechnicalInformation',
-            title:"ISupportSwitchShowTechnicalInformation",
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/ArgumentDirectoriesBuilder',
+            title:"ArgumentDirectoriesBuilder",
             description:""
         }
     );
     a(
         {
-            id:129,
+            id:66,
+            title:"ITestOutput",
+            content:"ITestOutput",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Parsers/ITestOutput',
+            title:"ITestOutput",
+            description:""
+        }
+    );
+    a(
+        {
+            id:67,
+            title:"ISupportSwitchOverwriteMode",
+            content:"ISupportSwitchOverwriteMode",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchOverwriteMode',
+            title:"ISupportSwitchOverwriteMode",
+            description:""
+        }
+    );
+    a(
+        {
+            id:68,
+            title:"RenameCommandBuilder",
+            content:"RenameCommandBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/RenameCommandBuilder',
+            title:"RenameCommandBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:69,
+            title:"SwitchRecurseSubdirectories",
+            content:"SwitchRecurseSubdirectories",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchRecurseSubdirectories',
+            title:"SwitchRecurseSubdirectories",
+            description:""
+        }
+    );
+    a(
+        {
+            id:70,
+            title:"DeleteCommand",
+            content:"DeleteCommand",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand',
+            title:"DeleteCommand",
+            description:""
+        }
+    );
+    a(
+        {
+            id:71,
+            title:"HashCommand",
+            content:"HashCommand",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand',
+            title:"HashCommand",
+            description:""
+        }
+    );
+    a(
+        {
+            id:72,
+            title:"SwitchDeleteAfterCompressionBuilder",
+            content:"SwitchDeleteAfterCompressionBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchDeleteAfterCompressionBuilder',
+            title:"SwitchDeleteAfterCompressionBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:73,
+            title:"SwitchUpdateOptionsBuilder",
+            content:"SwitchUpdateOptionsBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchUpdateOptionsBuilder',
+            title:"SwitchUpdateOptionsBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:74,
+            title:"SwitchExcludeFilename",
+            content:"SwitchExcludeFilename",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeFilename',
+            title:"SwitchExcludeFilename",
+            description:""
+        }
+    );
+    a(
+        {
+            id:75,
+            title:"SwitchSelfExtractingArchiveBuilder",
+            content:"SwitchSelfExtractingArchiveBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSelfExtractingArchiveBuilder',
+            title:"SwitchSelfExtractingArchiveBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:76,
+            title:"SwitchNtSecurityInformation",
+            content:"SwitchNtSecurityInformation",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchNtSecurityInformation',
+            title:"SwitchNtSecurityInformation",
+            description:""
+        }
+    );
+    a(
+        {
+            id:77,
+            title:"ISupportSwitchDisableParsingOfArchiveName",
+            content:"ISupportSwitchDisableParsingOfArchiveName",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchDisableParsingOfArchiveName',
+            title:"ISupportSwitchDisableParsingOfArchiveName",
+            description:""
+        }
+    );
+    a(
+        {
+            id:78,
+            title:"IArchivedFileListOutput",
+            content:"IArchivedFileListOutput",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Parsers/IArchivedFileListOutput',
+            title:"IArchivedFileListOutput",
+            description:""
+        }
+    );
+    a(
+        {
+            id:79,
+            title:"SwitchShowTechnicalInformation",
+            content:"SwitchShowTechnicalInformation",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchShowTechnicalInformation',
+            title:"SwitchShowTechnicalInformation",
+            description:""
+        }
+    );
+    a(
+        {
+            id:80,
+            title:"SwitchDisableParsingOfArchiveNameBuilder",
+            content:"SwitchDisableParsingOfArchiveNameBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchDisableParsingOfArchiveNameBuilder',
+            title:"SwitchDisableParsingOfArchiveNameBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:81,
+            title:"SwitchIncludeArchiveFilenamesBuilder",
+            content:"SwitchIncludeArchiveFilenamesBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchIncludeArchiveFilenamesBuilder',
+            title:"SwitchIncludeArchiveFilenamesBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:82,
+            title:"ISupportSwitchCompressionMethod",
+            content:"ISupportSwitchCompressionMethod",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchCompressionMethod',
+            title:"ISupportSwitchCompressionMethod",
+            description:""
+        }
+    );
+    a(
+        {
+            id:83,
+            title:"RecurseType",
+            content:"RecurseType",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/RecurseType',
+            title:"RecurseType",
+            description:""
+        }
+    );
+    a(
+        {
+            id:84,
+            title:"BenchmarkCommand",
+            content:"BenchmarkCommand",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Commands/BenchmarkCommand',
+            title:"BenchmarkCommand",
+            description:""
+        }
+    );
+    a(
+        {
+            id:85,
+            title:"SevenZipAliases",
+            content:"SevenZipAliases",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip/SevenZipAliases',
+            title:"SevenZipAliases",
+            description:""
+        }
+    );
+    a(
+        {
+            id:86,
+            title:"SwitchSetHashFunctionBuilder",
+            content:"SwitchSetHashFunctionBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSetHashFunctionBuilder',
+            title:"SwitchSetHashFunctionBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:87,
+            title:"SwitchVolumeBuilder",
+            content:"SwitchVolumeBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchVolumeBuilder',
+            title:"SwitchVolumeBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:88,
+            title:"ISupportSwitchOutputDirectory",
+            content:"ISupportSwitchOutputDirectory",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchOutputDirectory',
+            title:"ISupportSwitchOutputDirectory",
+            description:""
+        }
+    );
+    a(
+        {
+            id:89,
+            title:"IHashOutput",
+            content:"IHashOutput",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Parsers/IHashOutput',
+            title:"IHashOutput",
+            description:""
+        }
+    );
+    a(
+        {
+            id:90,
+            title:"BaseSwitchCollection",
+            content:"BaseSwitchCollection",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/BaseSwitchCollection_1',
+            title:"BaseSwitchCollection<T>",
+            description:""
+        }
+    );
+    a(
+        {
+            id:91,
+            title:"ISupportSwitchVolume",
+            content:"ISupportSwitchVolume",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchVolume',
+            title:"ISupportSwitchVolume",
+            description:""
+        }
+    );
+    a(
+        {
+            id:92,
+            title:"SwitchShowTechnicalInformationBuilder",
+            content:"SwitchShowTechnicalInformationBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchShowTechnicalInformationBuilder',
+            title:"SwitchShowTechnicalInformationBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:93,
+            title:"SwitchSetTimestampFromMostRecentFileBuilder",
+            content:"SwitchSetTimestampFromMostRecentFileBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchSetTimestampFromMostRecentFileBuilder',
+            title:"SwitchSetTimestampFromMostRecentFileBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:94,
+            title:"SwitchOutputDirectory",
+            content:"SwitchOutputDirectory",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchOutputDirectory',
+            title:"SwitchOutputDirectory",
+            description:""
+        }
+    );
+    a(
+        {
+            id:95,
+            title:"SwitchArchiveTypeBuilder",
+            content:"SwitchArchiveTypeBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchArchiveTypeBuilder',
+            title:"SwitchArchiveTypeBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:96,
+            title:"InformationCommandBuilder",
+            content:"InformationCommandBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/InformationCommandBuilder',
+            title:"InformationCommandBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:97,
+            title:"SwitchNtfsAlternateStreams",
+            content:"SwitchNtfsAlternateStreams",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchNtfsAlternateStreams',
+            title:"SwitchNtfsAlternateStreams",
+            description:""
+        }
+    );
+    a(
+        {
+            id:98,
+            title:"SwitchCompressFilesOpenForWritingBuilder",
+            content:"SwitchCompressFilesOpenForWritingBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchCompressFilesOpenForWritingBuilder',
+            title:"SwitchCompressFilesOpenForWritingBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:99,
+            title:"SwitchDisableParsingOfArchiveName",
+            content:"SwitchDisableParsingOfArchiveName",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchDisableParsingOfArchiveName',
+            title:"SwitchDisableParsingOfArchiveName",
+            description:""
+        }
+    );
+    a(
+        {
+            id:100,
             title:"SwitchNtfsAlternateStreamsBuilder",
             content:"SwitchNtfsAlternateStreamsBuilder",
             description:'',
@@ -1858,7 +1452,301 @@ var searchModule = function() {
     );
     a(
         {
-            id:130,
+            id:101,
+            title:"SwitchCompressFilesOpenForWriting",
+            content:"SwitchCompressFilesOpenForWriting",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchCompressFilesOpenForWriting',
+            title:"SwitchCompressFilesOpenForWriting",
+            description:""
+        }
+    );
+    a(
+        {
+            id:102,
+            title:"ISupportSwitchUpdateOptions",
+            content:"ISupportSwitchUpdateOptions",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchUpdateOptions',
+            title:"ISupportSwitchUpdateOptions",
+            description:""
+        }
+    );
+    a(
+        {
+            id:103,
+            title:"ISupportSwitchIncludeFilenames",
+            content:"ISupportSwitchIncludeFilenames",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchIncludeFilenames',
+            title:"ISupportSwitchIncludeFilenames",
+            description:""
+        }
+    );
+    a(
+        {
+            id:104,
+            title:"BaseAddLikeSyntaxCommand",
+            content:"BaseAddLikeSyntaxCommand",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand',
+            title:"BaseAddLikeSyntaxCommand",
+            description:""
+        }
+    );
+    a(
+        {
+            id:105,
+            title:"SwitchIncludeArchiveFilenameCollection",
+            content:"SwitchIncludeArchiveFilenameCollection",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeArchiveFilenameCollection',
+            title:"SwitchIncludeArchiveFilenameCollection",
+            description:""
+        }
+    );
+    a(
+        {
+            id:106,
+            title:"ISupportSwitchIncludeArchiveFilenames",
+            content:"ISupportSwitchIncludeArchiveFilenames",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchIncludeArchiveFilenames',
+            title:"ISupportSwitchIncludeArchiveFilenames",
+            description:""
+        }
+    );
+    a(
+        {
+            id:107,
+            title:"SwitchExcludeArchiveFilename",
+            content:"SwitchExcludeArchiveFilename",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchExcludeArchiveFilename',
+            title:"SwitchExcludeArchiveFilename",
+            description:""
+        }
+    );
+    a(
+        {
+            id:108,
+            title:"ListCommand",
+            content:"ListCommand",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand',
+            title:"ListCommand",
+            description:""
+        }
+    );
+    a(
+        {
+            id:109,
+            title:"ISupportSwitchNtSecurityInformation",
+            content:"ISupportSwitchNtSecurityInformation",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchNtSecurityInformation',
+            title:"ISupportSwitchNtSecurityInformation",
+            description:""
+        }
+    );
+    a(
+        {
+            id:110,
+            title:"ISupportSwitchBuilder",
+            content:"ISupportSwitchBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/ISupportSwitchBuilder_1',
+            title:"ISupportSwitchBuilder<T>",
+            description:""
+        }
+    );
+    a(
+        {
+            id:111,
+            title:"SwitchIncludeFilenamesBuilder",
+            content:"SwitchIncludeFilenamesBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchIncludeFilenamesBuilder',
+            title:"SwitchIncludeFilenamesBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:112,
+            title:"BaseOutputCommand",
+            content:"BaseOutputCommand",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1',
+            title:"BaseOutputCommand<T>",
+            description:""
+        }
+    );
+    a(
+        {
+            id:113,
+            title:"ExtractCommand",
+            content:"ExtractCommand",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand',
+            title:"ExtractCommand",
+            description:""
+        }
+    );
+    a(
+        {
+            id:114,
+            title:"IHaveArgumentDirectories",
+            content:"IHaveArgumentDirectories",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentDirectories',
+            title:"IHaveArgumentDirectories",
+            description:""
+        }
+    );
+    a(
+        {
+            id:115,
+            title:"IOutput",
+            content:"IOutput",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Parsers/IOutput',
+            title:"IOutput",
+            description:""
+        }
+    );
+    a(
+        {
+            id:116,
+            title:"VolumeUnit",
+            content:"VolumeUnit",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/VolumeUnit',
+            title:"VolumeUnit",
+            description:""
+        }
+    );
+    a(
+        {
+            id:117,
+            title:"CommandBuilder",
+            content:"CommandBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/CommandBuilder',
+            title:"CommandBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:118,
+            title:"IHaveArgument",
+            content:"IHaveArgument",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgument',
+            title:"IHaveArgument",
+            description:""
+        }
+    );
+    a(
+        {
+            id:119,
+            title:"ICommand",
+            content:"ICommand",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Commands/ICommand',
+            title:"ICommand",
+            description:""
+        }
+    );
+    a(
+        {
+            id:120,
+            title:"TestCommand",
+            content:"TestCommand",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand',
+            title:"TestCommand",
+            description:""
+        }
+    );
+    a(
+        {
+            id:121,
+            title:"SwitchDeleteAfterCompression",
+            content:"SwitchDeleteAfterCompression",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchDeleteAfterCompression',
+            title:"SwitchDeleteAfterCompression",
+            description:""
+        }
+    );
+    a(
+        {
+            id:122,
             title:"ISupportSwitchNtfsAlternateStreams",
             content:"ISupportSwitchNtfsAlternateStreams",
             description:'',
@@ -1872,15 +1760,127 @@ var searchModule = function() {
     );
     a(
         {
-            id:131,
-            title:"SwitchIncludeArchiveFilenameCollection",
-            content:"SwitchIncludeArchiveFilenameCollection",
+            id:123,
+            title:"ISupportSwitchRecurseSubdirectories",
+            content:"ISupportSwitchRecurseSubdirectories",
             description:'',
             tags:''
         },
         {
-            url:'/Cake.7zip/api/Cake.SevenZip.Switches/SwitchIncludeArchiveFilenameCollection',
-            title:"SwitchIncludeArchiveFilenameCollection",
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchRecurseSubdirectories',
+            title:"ISupportSwitchRecurseSubdirectories",
+            description:""
+        }
+    );
+    a(
+        {
+            id:124,
+            title:"SwitchPasswordBuilder",
+            content:"SwitchPasswordBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/SwitchPasswordBuilder',
+            title:"SwitchPasswordBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:125,
+            title:"DeleteCommandBuilder",
+            content:"DeleteCommandBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/DeleteCommandBuilder',
+            title:"DeleteCommandBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:126,
+            title:"IListOutput",
+            content:"IListOutput",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Parsers/IListOutput',
+            title:"IListOutput",
+            description:""
+        }
+    );
+    a(
+        {
+            id:127,
+            title:"IFileHash",
+            content:"IFileHash",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Parsers/IFileHash',
+            title:"IFileHash",
+            description:""
+        }
+    );
+    a(
+        {
+            id:128,
+            title:"ISwitch",
+            content:"ISwitch",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISwitch',
+            title:"ISwitch",
+            description:""
+        }
+    );
+    a(
+        {
+            id:129,
+            title:"BenchmarkCommandBuilder",
+            content:"BenchmarkCommandBuilder",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Builder/BenchmarkCommandBuilder',
+            title:"BenchmarkCommandBuilder",
+            description:""
+        }
+    );
+    a(
+        {
+            id:130,
+            title:"IHaveArgumentFiles",
+            content:"IHaveArgumentFiles",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentFiles',
+            title:"IHaveArgumentFiles",
+            description:""
+        }
+    );
+    a(
+        {
+            id:131,
+            title:"ISupportSwitchWorkingDirectory",
+            content:"ISupportSwitchWorkingDirectory",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/Cake.7zip/api/Cake.SevenZip.Switches/ISupportSwitchWorkingDirectory',
+            title:"ISupportSwitchWorkingDirectory",
             description:""
         }
     );
