@@ -1,3 +1,4 @@
 [submodule "docs/theme"]
 	path = docs/theme
 	url = https://github.com/statiqdev/Docable.git
+    branch = main
