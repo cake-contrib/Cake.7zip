@@ -4,15 +4,10 @@ NoSidebar: true
 NoContainer: false
 NoGutter: true
 ---
-<script>
-if(!document.location.href.endsWith("/")){
-  document.location.href = document.location.href + "/"; // or else the relative hyperlinks won't work...
-}
-</script>
-<div class="container">				
+<div class="container">
 	<h1>What is it?</h1>
     <p>
-        Cake.7zip is an Addin for <a href="http://cakebuild.net/">Cake</a> to use <a href="https://www.7-zip.org/">7Zip</a>.
+        Cake.7zip is an Addin for <a href="https://cakebuild.net/">Cake</a> to use <a href="https://www.7-zip.org/">7Zip</a>.
     </p>
 </div>
 <div class="container">
@@ -20,24 +15,30 @@ if(!document.location.href.endsWith("/")){
   <div>
   <h2>Usage in Cake</H2>
     <p>
-        Have a look at <a href="api/Cake.SevenZip/SevenZipAliases/">SevenZipAliases</a> on how to integrate with <a href="http://cakebuild.net/">Cake</a>. There are also some examples there.
+        Have a look at <a href=@Context.GetLink("/api/Cake.SevenZip/SevenZipAliases/")>SevenZipAliases</a>
+        on how to integrate with <a href="https://cakebuild.net/">Cake</a>. There are also some examples there.
     </p>
   </div>
   <div>
   <h2>Available Commands</H2>
     <p>
-        All available commands are listed at the <a href="api/Cake.SevenZip.Commands/ICommand/">ICommand</a>-Interface.
+        All available commands are listed at the
+        <a href=@Context.GetLink("/api/Cake.SevenZip.Commands/ICommand/")>ICommand</a>-Interface.
     </p>
   </div>
   <div>
   <h2>Available Switches</H2>
     <p>
-        All available switches are listed at the <a href="api/Cake.SevenZip.Switches/ISupportSwitch/">ISupportSwitch</a>-Interface. However, not all commands support every switch.
+        All available switches are listed at the
+        <a href=@Context.GetLink("/api/Cake.SevenZip.Switches/ISupportSwitch/")>ISupportSwitch</a>-Interface.
+        However, not all commands support every switch.
     </p>
   </div>
   <h2>Available Arguments</H2>
     <p>
-        All available arguments are listed at the <a href="api/Cake.SevenZip.Commands/IHaveArgument/">IHaveArgument</a>-Interface. However, not all commands support every argument.
+        All available arguments are listed at the
+        <a href=@Context.GetLink("/api/Cake.SevenZip.Arguments/IHaveArgument/")>IHaveArgument</a>-Interface.
+        However, not all commands support every argument.
     </p>
   </div>
 </div>

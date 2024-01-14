@@ -1,0 +1,4 @@
+Logo: /Cake.7zip/assets/Logo.png
+EditRoot: https://github.com/cake-contrib/cake.7zip/edit/main/input
+MirrorResources: true
+OptimizeContentFileNames: false
