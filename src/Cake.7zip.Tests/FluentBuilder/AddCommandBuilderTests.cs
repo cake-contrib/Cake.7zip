@@ -180,6 +180,45 @@ public class AddCommandBuilderTests
     }
 
     [Fact]
+    public void Add_can_use_CompressionMethod_additional_options()
+    {
+        var fixture = new FluentBuilderFixture();
+        fixture.Context
+            .InAddMode()
+            .WithArchive(new FilePath("out.zip"))
+            .WithFiles(new FilePath("in.txt"))
+            .WithCompressionMethodDictionarySize(26)
+            .WithCompressionMethodSortFilesByType(true);
+
+        const string expected = @"a -md=26 -mqs=on ""out.zip"" ""in.txt""";
+
+        var actual = fixture.EvaluateArgs();
+
+        actual.ShouldBe(expected);
+    }
+
+    [Fact]
+    public void Add_can_use_CompressionMethod_additional_options2()
+    {
+        var fixture = new FluentBuilderFixture();
+        fixture.Context
+            .InAddMode()
+            .WithArchive(new FilePath("out.zip"))
+            .WithFiles(new FilePath("in.txt"))
+            .WithCompressionMethod(m =>
+            {
+                m.DictionarySize = 25; // 32MB
+                m.SortFilesByType = false;
+            });
+
+        const string expected = @"a -md=25 -mqs=off ""out.zip"" ""in.txt""";
+
+        var actual = fixture.EvaluateArgs();
+
+        actual.ShouldBe(expected);
+    }
+
+    [Fact]
     public void Add_can_use_CompressionMethod_multiple_times()
     {
         var fixture = new FluentBuilderFixture();

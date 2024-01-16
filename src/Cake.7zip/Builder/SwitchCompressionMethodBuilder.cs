@@ -55,4 +55,30 @@ public static class SwitchCompressionMethodBuilder
     {
         return @this.WithCompressionMethod(x => x.Level = level);
     }
+
+    /// <summary>
+    /// fluent setter for the method of <see cref="ISupportSwitchCompressionMethod"/>.
+    /// </summary>
+    /// <typeparam name="T">the builder to support the <see cref="ISupportSwitchCompressionMethod"/>.</typeparam>
+    /// <param name="this">The this.</param>
+    /// <param name="dictionarySize">Size of the dictionary.</param>
+    /// <returns>The builder-instance for fluent re-use.</returns>
+    public static T WithCompressionMethodDictionarySize<T>(this T @this, int dictionarySize)
+        where T : ISupportSwitchBuilder<ISupportSwitchCompressionMethod>
+    {
+        return @this.WithCompressionMethod(x => x.DictionarySize = dictionarySize);
+    }
+
+    /// <summary>
+    /// fluent setter for the method of <see cref="ISupportSwitchCompressionMethod"/>.
+    /// </summary>
+    /// <typeparam name="T">the builder to support the <see cref="ISupportSwitchCompressionMethod"/>.</typeparam>
+    /// <param name="this">The this.</param>
+    /// <param name="sortFilesByType">enable / disable the sorting files by type in solid archives.</param>
+    /// <returns>The builder-instance for fluent re-use.</returns>
+    public static T WithCompressionMethodSortFilesByType<T>(this T @this, bool sortFilesByType)
+        where T : ISupportSwitchBuilder<ISupportSwitchCompressionMethod>
+    {
+        return @this.WithCompressionMethod(x => x.SortFilesByType = sortFilesByType);
+    }
 }
