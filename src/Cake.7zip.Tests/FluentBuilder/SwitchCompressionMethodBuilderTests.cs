@@ -49,4 +49,30 @@ public class SwitchCompressionMethodBuilderTests
 
         actual.ShouldBe(expected.Object);
     }
+
+    [Fact]
+    public void WithCompressionMethodDictionarySize_returns_the_builder()
+    {
+        var expected = new Mock<ISupportSwitchBuilder<ISupportSwitchCompressionMethod>>();
+        var command = new Mock<ISupportSwitchCompressionMethod>();
+        command.SetupProperty(c => c.CompressionMethod);
+        expected.Setup(x => x.Command).Returns(command.Object);
+
+        var actual = expected.Object.WithCompressionMethodDictionarySize(default!);
+
+        actual.ShouldBe(expected.Object);
+    }
+
+    [Fact]
+    public void WithCompressionMethodSortFilesByType_returns_the_builder()
+    {
+        var expected = new Mock<ISupportSwitchBuilder<ISupportSwitchCompressionMethod>>();
+        var command = new Mock<ISupportSwitchCompressionMethod>();
+        command.SetupProperty(c => c.CompressionMethod);
+        expected.Setup(x => x.Command).Returns(command.Object);
+
+        var actual = expected.Object.WithCompressionMethodSortFilesByType(default!);
+
+        actual.ShouldBe(expected.Object);
+    }
 }
