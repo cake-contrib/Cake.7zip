@@ -179,18 +179,18 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/RenameCommand">RenameCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentDirectories">I<wbr>Have<wbr>Argument<wbr>Directories</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand">ListCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand">ExtractCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand">DeleteCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand">UpdateCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentArchive">IHaveArgumentArchive</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand">Base<wbr>Add<wbr>Like<wbr>Syntax<wbr>Command</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand">ListCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentFiles">IHaveArgumentFiles</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/RenameCommand">RenameCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentArchive">IHaveArgumentArchive</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand">Base<wbr>Add<wbr>Like<wbr>Syntax<wbr>Command</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -200,30 +200,30 @@
 							graph BT
 	Type["IHaveArgument"]
 class Type type-node
-	Implementing0["IHaveArgumentDirectories"]-.-&gt;Type
-	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentDirectories"
-	Implementing1["ExtractCommand"]-.-&gt;Type
-	click Implementing1 "/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand"
-	Implementing2["DeleteCommand"]-.-&gt;Type
-	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand"
-	Implementing3["UpdateCommand"]-.-&gt;Type
-	click Implementing3 "/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand"
-	Implementing4["HashCommand"]-.-&gt;Type
-	click Implementing4 "/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand"
-	Implementing5["IHaveArgumentArchive"]-.-&gt;Type
-	click Implementing5 "/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentArchive"
-	Implementing6["BaseAddLikeSyntaxCommand"]-.-&gt;Type
-	click Implementing6 "/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand"
-	Implementing7["ListCommand"]-.-&gt;Type
-	click Implementing7 "/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand"
+	Implementing0["RenameCommand"]-.-&gt;Type
+	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Commands/RenameCommand"
+	Implementing1["IHaveArgumentDirectories"]-.-&gt;Type
+	click Implementing1 "/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentDirectories"
+	Implementing2["ListCommand"]-.-&gt;Type
+	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand"
+	Implementing3["ExtractCommand"]-.-&gt;Type
+	click Implementing3 "/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand"
+	Implementing4["DeleteCommand"]-.-&gt;Type
+	click Implementing4 "/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand"
+	Implementing5["UpdateCommand"]-.-&gt;Type
+	click Implementing5 "/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand"
+	Implementing6["IHaveArgumentFiles"]-.-&gt;Type
+	click Implementing6 "/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentFiles"
+	Implementing7["AddCommand"]-.-&gt;Type
+	click Implementing7 "/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand"
 	Implementing8["TestCommand"]-.-&gt;Type
 	click Implementing8 "/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand"
-	Implementing9["IHaveArgumentFiles"]-.-&gt;Type
-	click Implementing9 "/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentFiles"
-	Implementing10["AddCommand"]-.-&gt;Type
-	click Implementing10 "/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand"
-	Implementing11["RenameCommand"]-.-&gt;Type
-	click Implementing11 "/Cake.7zip/api/Cake.SevenZip.Commands/RenameCommand"
+	Implementing9["IHaveArgumentArchive"]-.-&gt;Type
+	click Implementing9 "/Cake.7zip/api/Cake.SevenZip.Arguments/IHaveArgumentArchive"
+	Implementing10["BaseAddLikeSyntaxCommand"]-.-&gt;Type
+	click Implementing10 "/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand"
+	Implementing11["HashCommand"]-.-&gt;Type
+	click Implementing11 "/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand"
 
 						</div>
 					</div>
