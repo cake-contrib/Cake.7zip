@@ -16,6 +16,5 @@
       "matchUpdateTypes": ["major"],
       "labels": ["Breaking Change"]
     }
-  ],
-  "milestone": 18
+  ]
 }
