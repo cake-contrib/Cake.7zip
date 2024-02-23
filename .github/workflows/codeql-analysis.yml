@@ -31,24 +31,24 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
       with:
         fetch-depth: 0
-    - uses: actions/setup-dotnet@v4.0.0
+    - uses: actions/setup-dotnet@4d6c8fcf3c8f7a60068d26b594648e99df24cee3 # v4.0.0
       with:
         dotnet-version: |
             5.0.x
             8.0.x
 
     - name: Cache Tools
-      uses: actions/cache@v4
+      uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4
       with:
         path: tools
         key: ${{ runner.os }}-tools-${{ hashFiles('recipe.cake') }}
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
+      uses: github/codeql-action/init@47b3d888fe66b639e431abf22ebca059152f1eea # v3
       with:
         languages: ${{ matrix.language }}
         # If you wish to specify custom queries, you can do so here or in a config file.
@@ -57,7 +57,7 @@ jobs:
         # queries: ./path/to/local/query, your-org/your-repo/queries@main
 
     - name: Build project
-      uses: cake-build/cake-action@v1
+      uses: cake-build/cake-action@a6eb054329257c9e70a6c6bf01747ad6e1d9d52b # v1
       with:
         script-path: recipe.cake
         target: DotNetCore-Build
@@ -68,10 +68,10 @@ jobs:
         COMPlus_DbgMiniDumpName: BuildArtifacts/coredump.dmp
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
+      uses: github/codeql-action/analyze@47b3d888fe66b639e431abf22ebca059152f1eea # v3
 
     - name: Upload CoreDump
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4
       if: failure()
       with:
         if-no-files-found: warn
