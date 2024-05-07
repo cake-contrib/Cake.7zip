@@ -11,6 +11,7 @@ BuildParameters.SetParameters(
   repositoryOwner: "cake-contrib",
   shouldRunDotNetCorePack: true,
   shouldUseDeterministicBuilds: true,
+  shouldRunCodecov: false,
   preferredBuildProviderType: BuildProviderType.GitHubActions,
   preferredBuildAgentOperatingSystem: PlatformFamily.Linux);
 
