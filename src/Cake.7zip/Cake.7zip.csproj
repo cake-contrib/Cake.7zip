@@ -41,7 +41,7 @@
         </PackageReference>
         <PackageReference Include="Cake.Core" Version="4.0.0" PrivateAssets="All" />
         <PackageReference Include="CakeContrib.Guidelines" Version="1.5.1" PrivateAssets="All" />
-        <PackageReference Include="IDisposableAnalyzers" Version="4.0.7">
+        <PackageReference Include="IDisposableAnalyzers" Version="4.0.8">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
