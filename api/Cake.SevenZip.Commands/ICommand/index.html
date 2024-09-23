@@ -134,6 +134,8 @@
 			<li class="header">Namespace</li>
 		<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands">Cake<wbr>.SevenZip<wbr>.Commands</a></li>
 		<li role="separator" class="divider"></li>
+			<li class="header">Interface Types</li>
+				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ICommand">ICommand</a></li>
 			<li class="header">Class Types</li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseAddLikeSyntaxCommand">Base<wbr>Add<wbr>Like<wbr>Syntax<wbr>Command</a></li>
@@ -148,8 +150,6 @@
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/RenameCommand">RenameCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>
 				<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand">UpdateCommand</a></li>
-			<li class="header">Interface Types</li>
-				<li class="selected"><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ICommand">ICommand</a></li>
 
 
                     </ul>
@@ -189,17 +189,17 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand">ListCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand">ExtractCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BenchmarkCommand">BenchmarkCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand">DeleteCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/RenameCommand">RenameCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1">BaseOutputCommand</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1#typeparam-T">T</a>&gt;<wbr></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand">InformationCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></li>								
-											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand">UpdateCommand</a></li>								
 											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand">TestCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand">UpdateCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BenchmarkCommand">BenchmarkCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand">ListCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand">DeleteCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand">AddCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand">InformationCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand">ExtractCommand</a></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1">BaseOutputCommand</a><wbr>&lt;<a href="/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1#typeparam-T">T</a>&gt;<wbr></li>								
+											<li><a href="/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand">HashCommand</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -209,28 +209,28 @@
 							graph BT
 	Type["ICommand"]
 class Type type-node
-	Implementing0["ListCommand"]-.-&gt;Type
-	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand"
-	Implementing1["AddCommand"]-.-&gt;Type
-	click Implementing1 "/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand"
-	Implementing2["ExtractCommand"]-.-&gt;Type
-	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand"
+	Implementing0["RenameCommand"]-.-&gt;Type
+	click Implementing0 "/Cake.7zip/api/Cake.SevenZip.Commands/RenameCommand"
+	Implementing1["TestCommand"]-.-&gt;Type
+	click Implementing1 "/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand"
+	Implementing2["UpdateCommand"]-.-&gt;Type
+	click Implementing2 "/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand"
 	Implementing3["BenchmarkCommand"]-.-&gt;Type
 	click Implementing3 "/Cake.7zip/api/Cake.SevenZip.Commands/BenchmarkCommand"
-	Implementing4["DeleteCommand"]-.-&gt;Type
-	click Implementing4 "/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand"
-	Implementing5["RenameCommand"]-.-&gt;Type
-	click Implementing5 "/Cake.7zip/api/Cake.SevenZip.Commands/RenameCommand"
-	Implementing6["BaseOutputCommand&lt;T&gt;"]-.-&gt;Type
-	click Implementing6 "/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1"
+	Implementing4["ListCommand"]-.-&gt;Type
+	click Implementing4 "/Cake.7zip/api/Cake.SevenZip.Commands/ListCommand"
+	Implementing5["DeleteCommand"]-.-&gt;Type
+	click Implementing5 "/Cake.7zip/api/Cake.SevenZip.Commands/DeleteCommand"
+	Implementing6["AddCommand"]-.-&gt;Type
+	click Implementing6 "/Cake.7zip/api/Cake.SevenZip.Commands/AddCommand"
 	Implementing7["InformationCommand"]-.-&gt;Type
 	click Implementing7 "/Cake.7zip/api/Cake.SevenZip.Commands/InformationCommand"
-	Implementing8["HashCommand"]-.-&gt;Type
-	click Implementing8 "/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand"
-	Implementing9["UpdateCommand"]-.-&gt;Type
-	click Implementing9 "/Cake.7zip/api/Cake.SevenZip.Commands/UpdateCommand"
-	Implementing10["TestCommand"]-.-&gt;Type
-	click Implementing10 "/Cake.7zip/api/Cake.SevenZip.Commands/TestCommand"
+	Implementing8["ExtractCommand"]-.-&gt;Type
+	click Implementing8 "/Cake.7zip/api/Cake.SevenZip.Commands/ExtractCommand"
+	Implementing9["BaseOutputCommand&lt;T&gt;"]-.-&gt;Type
+	click Implementing9 "/Cake.7zip/api/Cake.SevenZip.Commands/BaseOutputCommand_1"
+	Implementing10["HashCommand"]-.-&gt;Type
+	click Implementing10 "/Cake.7zip/api/Cake.SevenZip.Commands/HashCommand"
 
 						</div>
 					</div>
