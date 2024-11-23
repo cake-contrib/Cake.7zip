@@ -12,7 +12,7 @@ namespace Build.Tasks
             context.SevenZip(m => m
                 .InAddMode()
                 .WithArchive(context.Output.CombineWithFilePath("archive.zip"))
-                .WithFiles(context.Root.CombineWithFilePath("README.MD"))
+                .WithFiles(context.Root.CombineWithFilePath("README.md"))
                 .WithFiles(context.Root.CombineWithFilePath("CODE_OF_CONDUCT.md")));
         }
     }
