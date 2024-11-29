@@ -57,20 +57,7 @@ public sealed class SevenZipRunner : Tool<SevenZipSettings>
             throw new ArgumentNullException(nameof(settings));
         }
 
-        var procSettings = new ProcessSettings
-        {
-            RedirectStandardOutput = true,
-        };
-
-        void AfterRun(IProcess p)
-        {
-            if (settings.Command is ICanParseOutput parseOutput)
-            {
-                parseOutput.SetRawOutput(p.GetStandardOutput());
-            }
-        }
-
-        Run(settings, GetArguments(settings), procSettings, AfterRun);
+        Run(settings, GetArguments(settings));
     }
 
     /// <inheritdoc/>
