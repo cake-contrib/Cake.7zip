@@ -11,11 +11,14 @@ BuildParameters.SetParameters(
   repositoryOwner: "cake-contrib",
   shouldRunDotNetCorePack: true,
   shouldUseDeterministicBuilds: true,
+  shouldRunCodecov: false,
   preferredBuildProviderType: BuildProviderType.GitHubActions,
   preferredBuildAgentOperatingSystem: PlatformFamily.Linux);
 
 BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(context: Context);
+ToolSettings.SetToolPreprocessorDirectives(
+    gitReleaseManagerGlobalTool: "#tool dotnet:?package=GitReleaseManager.Tool&version=0.18.0");
 
 Build.RunDotNetCore();

@@ -92,7 +92,7 @@ public class SevenZipRunnerTests
 
         var sevenZipKey = new Mock<IRegistryKey>();
         sevenZipKey.Setup(k => k.GetValue("Path")).Returns(installLocation.Path.FullPath);
-        sevenZipKey.Setup(k => k.GetValue("Path64")).Returns(null);
+        sevenZipKey.Setup(k => k.GetValue("Path64")).Returns(null!);
         var softwareKey = new Mock<IRegistryKey>();
         softwareKey.Setup(k => k.OpenKey("7-Zip")).Returns(sevenZipKey.Object);
         var hklm = new Mock<IRegistryKey>();
@@ -124,7 +124,7 @@ public class SevenZipRunnerTests
         var file = fixture.FileSystem.CreateFile(installLocation.Path.CombineWithFilePath("7z.exe"));
 
         var sevenZipKey = new Mock<IRegistryKey>();
-        sevenZipKey.Setup(k => k.GetValue("Path")).Returns(null);
+        sevenZipKey.Setup(k => k.GetValue("Path")).Returns(null!);
         sevenZipKey.Setup(k => k.GetValue("Path64")).Returns(installLocation.Path.FullPath);
         var softwareKey = new Mock<IRegistryKey>();
         softwareKey.Setup(k => k.OpenKey("7-Zip")).Returns(sevenZipKey.Object);
