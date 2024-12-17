@@ -75,7 +75,7 @@ jobs:
       uses: github/codeql-action/analyze@df409f7d9260372bd5f19e5b04e83cb3c43714ae # v3
 
     - name: Upload CoreDump
-      uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4
+      uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b # v4
       if: failure()
       with:
         if-no-files-found: warn
