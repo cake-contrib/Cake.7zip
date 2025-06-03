@@ -13,12 +13,14 @@ BuildParameters.SetParameters(
   shouldUseDeterministicBuilds: true,
   shouldRunCodecov: false,
   preferredBuildProviderType: BuildProviderType.GitHubActions,
-  preferredBuildAgentOperatingSystem: PlatformFamily.Linux);
+  preferredBuildAgentOperatingSystem: PlatformFamily.Linux,
+  shouldUseTargetFrameworkPath: false);
 
 BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(context: Context);
 ToolSettings.SetToolPreprocessorDirectives(
-    gitReleaseManagerGlobalTool: "#tool dotnet:?package=GitReleaseManager.Tool&version=0.18.0");
+    gitReleaseManagerGlobalTool: "#tool dotnet:?package=GitReleaseManager.Tool&version=0.18.0",
+    gitVersionGlobalTool: "#tool dotnet:?package=GitVersion.Tool&version=5.12.0");
 
 Build.RunDotNetCore();
