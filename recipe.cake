@@ -1,4 +1,4 @@
-#load nuget:?package=Cake.Recipe&version=3.1.1
+#load nuget:?package=Cake.Recipe&version=4.0.0
 
 Environment.SetVariableNames();
 
@@ -20,8 +20,6 @@ BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(context: Context);
 ToolSettings.SetToolPreprocessorDirectives(
-    gitReleaseManagerGlobalTool: "#tool dotnet:?package=GitReleaseManager.Tool&version=0.18.0",
-    gitVersionGlobalTool: "#tool dotnet:?package=GitVersion.Tool&version=5.12.0",
     reportGeneratorGlobalTool: "#tool dotnet:?package=dotnet-reportgenerator-globaltool&version=5.4.7",
     coverallsGlobalTool: "#tool dotnet:?package=coveralls.net&version=4.0.1");
 
