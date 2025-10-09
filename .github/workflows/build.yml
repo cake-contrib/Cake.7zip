@@ -19,7 +19,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ windows-2022, ubuntu-24.04, macos-13 ]
+        os: [ windows-2025, ubuntu-24.04, macos-15 ]
 
     env:
       AZURE_PASSWORD: ${{ secrets.AZURE_PASSWORD }}
@@ -71,6 +71,10 @@ jobs:
             sudo apt update
             sudo apt install -y mono-complete
             mono --version
+      - name: Install libgit2 on macOS
+        if: runner.os == 'macOS'
+        run: |
+            brew install libgit2
       - name: Cache Tools
         uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
