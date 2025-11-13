@@ -49,8 +49,8 @@ jobs:
         run: git fetch --prune --unshallow
       - uses: actions/setup-dotnet@d4c94342e560b34958eacfc5d055d21461ed1c5d # v5.0.0
         with:
-          # codecov needs 2.1
-          # unittests needs 3.1
+          # codecov,wyam need 2.1
+          # unittests, kudusync need 3.1
           # gitversion needs 5.0
           # cake 2.3 needs 6.0
           # .NET 10 to build
